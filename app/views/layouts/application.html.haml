@@ -1,10 +1,13 @@
 !!!
-%html
+%html{lang: 'en'}
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Maciej K., Rails and Angular web developer from Warsaw
+    %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
+    %title Maciej K.: Rails and Angular web developer from Warsaw
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
-    = csrf_meta_tags
+    -# = csrf_meta_tags
   %body
-    = yield
+    %header
+      %h1 Maciej Kasprzyk
+    %section
+      = yield
