@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'haml', '~> 4.0.7'
+gem 'quiet_assets'
 
 group :development do
   gem 'haml-rails'
