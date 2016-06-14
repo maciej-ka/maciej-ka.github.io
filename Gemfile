@@ -14,6 +14,8 @@ group :development do
   gem 'haml-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
 
 group :test do
