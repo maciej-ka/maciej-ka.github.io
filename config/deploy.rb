@@ -44,6 +44,12 @@ namespace :deploy do
     end
   end
 
+  # after :publishing, :finish do
+  #   invoke :bower_install
+  #   invoke :compile_assets
+  #   invoke :restart
+  # end
+
   after :publishing, :bower_install
   after :publishing, :compile_assets
   after :publishing, :restart
