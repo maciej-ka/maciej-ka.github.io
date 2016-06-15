@@ -27,7 +27,7 @@ set :repo_url, 'git@github.com:lokson/portfolio.git'
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'vendor/assets/bower_components')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -44,13 +44,6 @@ namespace :deploy do
     end
   end
 
-  # after :publishing, :finish do
-  #   invoke :bower_install
-  #   invoke :compile_assets
-  #   invoke :restart
-  # end
-
-  after :publishing, :bower_install
-  after :publishing, :compile_assets
-  after :publishing, :restart
+  before :compile_assets, :bower_install
+  after :published, :restart
 end
