@@ -36,12 +36,20 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # set :keep_releases, 5
 
 namespace :deploy do
-  task :bower_install do
+  def execute_in_path(*args, path: release_path)
     on roles(:app) do
-      within "#{release_path}/vendor/assets" do
-        execute :bower, 'install'
+      within path do
+        execute *args
       end
     end
+  end
+
+  task :bower_install do
+    execute_in_path :bower, 'install', path: "#{release_path}/vendor/assets"
+  end
+
+  task :restart do
+    execute_in_path :touch, 'touch tmp/restart.txt'
   end
 
   before :compile_assets, :bower_install
