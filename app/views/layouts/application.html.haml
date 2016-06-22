@@ -2,13 +2,13 @@
 %html{lang: 'en'}
   %head
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
-    %title Maciej K.: Rails and Angular web developer from Warsaw
+    %title Web developer from Warsaw ♥ Rails, Angular
     :coffee
-      window.data = #{Rails.configuration.try(:js_data) || 'null'}
+      @data = #{Rails.configuration.try(:js_data) || 'null'}
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
     %header
       %h1 Maciej Kasprzyk
-    %section
+    %section{'ng-app':'portfolio', 'ng-controller':'PortfolioController as c'}
       = yield

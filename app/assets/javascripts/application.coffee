@@ -4,4 +4,10 @@
 # = require jquery
 # = require jquery_ujs
 # = require angular/angular
-# = require_tree .
+# = require project
+# = require skill
+# = require data
+# = require_self
+# = require portfolio_controller
+
+@app = angular.module 'portfolio', []

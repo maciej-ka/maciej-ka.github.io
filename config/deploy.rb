@@ -48,10 +48,10 @@ namespace :deploy do
     execute_in_path :bower, 'install', path: "#{release_path}/vendor/assets"
   end
 
-  task :restart do
-    execute_in_path :touch, 'touch tmp/restart.txt'
-  end
+  # task :restart do
+  #   execute_in_path :touch, 'touch tmp/restart.txt'
+  # end
 
   before :compile_assets, :bower_install
-  after :published, :restart
+  # after :published, :restart
 end

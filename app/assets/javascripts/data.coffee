@@ -1,5 +1,5 @@
-window.data ?= {}
-window.data.projects ?= [
+@data ?= {}
+@data.projects ?= [
   {
     name: 'FIFA: a portal about football rules'
     role: 'Lead developer'
@@ -83,5 +83,3 @@ window.data.projects ?= [
     ]
   }
 ]
-
-console.log window.data.projects
