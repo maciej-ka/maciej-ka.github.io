@@ -1,3 +1,4 @@
 class @Project
   constructor: (data) ->
-    @name = data.name
+    # copy all data to this project
+    $.extend @, data
