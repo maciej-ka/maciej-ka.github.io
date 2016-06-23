@@ -22,6 +22,8 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano-passenger'
+  gem 'guard-livereload', '~> 2.5'
+  gem 'rack-livereload'
 end
 
 group :test do
