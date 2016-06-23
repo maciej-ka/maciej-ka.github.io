@@ -4,7 +4,7 @@ html lang="en"
     meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
     title Web developer from Warsaw ♥ Rails, Angular
     javascript:
-      var data = #{Rails.configuration.try(:js_data) || 'null'};
+      window.data = #{Rails.configuration.try(:js_data).try(:html_safe) || 'null'};
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
   body

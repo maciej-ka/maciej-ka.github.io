@@ -1,5 +1,15 @@
-rails_project:
-  start: 2016-03
-  end: 2016-05
-  skills:
-    - rails
+one_month:
+  start: 2015-01
+  end: 2015-01
+
+half_year:
+  start: 2015-01
+  end: 2015-06
+
+year:
+  start: 2015-01
+  end: 2015-12
+
+year_and_half:
+  start: 2015-01
+  end: 2016-06
