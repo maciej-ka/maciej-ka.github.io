@@ -172,6 +172,8 @@ GEM
       railties (= 4.2.6)
       sprockets-rails
     rails-assets-angular (1.5.7)
+    rails-assets-angular-toArrayFilter (1.0.1)
+      rails-assets-angular (>= 1.2.0)
     rails-assets-moment (2.13.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -265,6 +267,7 @@ DEPENDENCIES
   rack-livereload
   rails (= 4.2.6)
   rails-assets-angular!
+  rails-assets-angular-toArrayFilter!
   rails-assets-moment!
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

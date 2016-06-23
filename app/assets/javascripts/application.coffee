@@ -4,6 +4,7 @@
 # = require jquery
 # = require jquery_ujs
 # = require angular
+# = require angular-toArrayFilter
 # = require moment
 #
 # = require_self
@@ -12,4 +13,24 @@
 # = require portfolio_controller
 # = require data
 
-@app = angular.module 'portfolio', []
+@app = angular.module 'portfolio', [
+  'angular-toArrayFilter'
+]
+
+@Helpers =
+  months_to_human: (time) ->
+    years = Math.floor(time / 12)
+    months = time % 12
+
+    if months == 1
+      month_s = '1 month'
+    else if months > 1
+      month_s = "#{months} months"
+
+    if years == 1
+      year_s = '1 year'
+    else if years > 1
+      year_s = "#{years} years"
+
+    [year_s, month_s].filter((n)->n).join ' '
+

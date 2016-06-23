@@ -1,26 +1,15 @@
 class @Project
-  constructor: (data) ->
+  constructor: (data, skills) ->
     # copy all data to this project
     $.extend @, data
+    @skills ?= []
 
     # time calculations
     @start = moment @start
     @end = moment @end
-    @duration = @end.diff(@start, 'months') + 1
-    @human_duration = @months_to_human @duration
+    @months = @end.diff(@start, 'months') + 1
+    @human_time = Helpers.months_to_human @months
 
-  months_to_human: (time) ->
-    years = Math.floor(time / 12)
-    months = time % 12
-
-    if months == 1
-      month_s = '1 month'
-    else if months > 1
-      month_s = "#{months} months"
-
-    if years == 1
-      year_s = '1 year'
-    else if years > 1
-      year_s = "#{years} years"
-
-    [year_s, month_s].filter((n)->n).join ' '
+    for name in @skills
+      skills[name] ?= new Skill name
+      skills[name].add_months @months

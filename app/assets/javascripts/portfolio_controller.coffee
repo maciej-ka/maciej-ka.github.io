@@ -1,5 +1,5 @@
 app.controller 'PortfolioController',
   class PortfolioController
     constructor: ->
-      @projects = (new Project(data) for data in window.data.projects)
       @skills = {}
+      @projects = (new Project(data, @skills) for data in window.data.projects)

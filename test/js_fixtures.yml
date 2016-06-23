@@ -1,10 +1,12 @@
 one_month:
   start: 2015-01
   end: 2015-01
+  skills: ['Rails']
 
 half_year:
   start: 2015-01
   end: 2015-06
+  skills: ['Rails']
 
 year:
   start: 2015-01
