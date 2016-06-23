@@ -1,11 +1,14 @@
 @data ?= {}
 @data.projects ?= [
   {
-    name: 'FIFA: a portal about football rules'
+    company: 'FIFA'
+    name: 'IFAB'
+    description: 'A portal about football rules.'
     role: 'Lead developer'
+    team_size: 3
     link: 'theifab.com'
-    end: '2016-05'
     start: '2016-01'
+    end: '2016-05'
     skills: [
       'Java', 'Spring', 'Gradle', 'FluentLenium',
       'JavaScipt', 'Angular', 'CoffeeScript',
@@ -15,11 +18,14 @@
   }
 
   {
-    name: 'Apax: a prototype of online analytics services'
-    role: 'Developer (solo)'
+    company: 'Apax'
+    name: 'DSO'
+    description: 'A prototype of online analytics services.'
+    role: 'Developer'
+    team_size: 1
     link: '(intranet)'
-    end: '2015-12'
     start: '2015-12'
+    end: '2015-12'
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Devise',
       'Ember', 'JavaScript', 'CoffeeScript',
@@ -29,11 +35,14 @@
   }
 
   {
-    name: 'SAWP: a panel to merge database duplicates'
+    company: 'SAWP'
+    name: 'Duplikaty'
+    description: 'A panel to merge database duplicates.'
     role: 'Senior developer'
+    team_size: 3
     link: '(intranet)'
-    end: '2015-11'
     start: '2015-11'
+    end: '2015-11'
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara',
       'Ember', 'JavaScript', 'CoffeeScript',
@@ -43,11 +52,14 @@
   }
 
   {
-    name: 'SAWP: a workflow application for SDEG exchanges'
+    company: 'SAWP'
+    name: 'SDEG'
+    description: 'A workflow for exchanging artist royalties between countries.'
     role: 'Senior developer'
+    team_size: 3
     link: '(intranet)'
-    end: '2015-09'
     start: '2015-08'
+    end: '2015-09'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Capybara',
       'Angular', 'JavaScript', 'CoffeeScript',
@@ -57,11 +69,14 @@
   }
 
   {
-    name: 'Motabi: a generator of Motabi Intelligence instances'
-    role: 'Developer (solo)'
+    company: 'Motabi'
+    name: 'Motabi Intelligence'
+    description: 'A panel to configure charts, data sources and layouts.'
+    role: 'Developer'
+    team_size: 1
     link: '(intranet)'
-    end: '2015-07'
     start: '2015-05'
+    end: '2015-07'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Capybara',
       'Angular', 'JavaScript', 'CoffeeScript',
@@ -71,11 +86,14 @@
   }
 
   {
-    name: 'Orange Polska: a member panel and a portal about DDoS protection services'
+    company: 'Orange Polska'
+    name: 'CERT'
+    description: 'A member panel and a portal about DDoS protection services.'
     role: 'Senior developer'
+    team_size: 3
     link: 'cert.orange.pl'
-    end: '2014-12'
     start: '2014-09'
+    end: '2014-12'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Devise', 'Savon', 'SOAP', 'ComfortableMexicanSofa'
       'Haml',
