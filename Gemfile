@@ -10,6 +10,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'slim', '~> 3.0.7'
 gem 'quiet_assets'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular'
+  gem 'rails-assets-moment'
+end
+
 group :development do
   gem 'slim-rails', '~> 3.1.0'
   gem 'web-console', '~> 2.0'
@@ -30,3 +35,4 @@ group :doc do
 end
 
 gem 'byebug', group: [:development, :test]
+

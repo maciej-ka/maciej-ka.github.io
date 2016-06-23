@@ -27,7 +27,7 @@ set :repo_url, 'git@github.com:lokson/portfolio.git'
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system', 'vendor/assets/bower_components')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -36,22 +36,11 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # set :keep_releases, 5
 
 namespace :deploy do
-  def execute_in_path(*args, path: release_path)
-    on roles(:app) do
-      within path do
-        execute *args
-      end
-    end
-  end
-
-  task :bower_install do
-    execute_in_path :bower, 'install', path: "#{release_path}/vendor/assets"
-  end
-
-  # task :restart do
-  #   execute_in_path :touch, 'touch tmp/restart.txt'
+  # def execute_in_path(*args, path: release_path)
+  #   on roles(:app) do
+  #     within path do
+  #       execute *args
+  #     end
+  #   end
   # end
-
-  before :compile_assets, :bower_install
-  # after :published, :restart
 end

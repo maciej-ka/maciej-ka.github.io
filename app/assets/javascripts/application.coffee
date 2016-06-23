@@ -3,11 +3,13 @@
 
 # = require jquery
 # = require jquery_ujs
-# = require angular/angular
+# = require angular
+# = require moment
+#
+# = require_self
 # = require project
 # = require skill
-# = require data
-# = require_self
 # = require portfolio_controller
+# = require data
 
 @app = angular.module 'portfolio', []
