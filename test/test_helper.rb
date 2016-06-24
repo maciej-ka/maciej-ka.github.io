@@ -5,12 +5,7 @@ require 'capybara/rails'
 require 'minitest/reporters'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
-
-# Webdriver for Firefox v.47 requires marionette
-Capybara.register_driver :selenium_firefox do |app|
-  Capybara::Selenium::Driver.new(app, browser: :firefox, marionette: true)
-end
-Capybara.current_driver = :selenium_firefox
+Capybara.current_driver = :selenium
 
 class ActiveSupport::TestCase
   include Capybara::DSL
@@ -19,7 +14,7 @@ class ActiveSupport::TestCase
   @@fixtures = YAML.load_file Rails.root.join('test', 'js_fixtures.yml')
 
   def use_projects(*names)
-    projects = @@fixtures.fetch_values *names.map(&:to_s)
+    projects = @@fixtures.fetch_values *(names.map &:to_s)
     Rails.configuration.js_data = { projects: projects }.to_json()
   end
 

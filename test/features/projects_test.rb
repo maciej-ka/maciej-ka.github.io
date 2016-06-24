@@ -19,4 +19,10 @@ class ProjectsTest < ActiveSupport::TestCase
     visit '/'
     assert page.find('.projects').has_content? '1 year 6 months'
   end
+
+  # test 'searching hides projects without searched skill' do
+  #   use_projects :one_month, :year
+  #   visit '/'
+  #   assert page.find('.projects').has_content? @@fixtures['one_month']['name']
+  # end
 end

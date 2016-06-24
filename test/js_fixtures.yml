@@ -1,16 +1,20 @@
 one_month:
+  name: Webpage short
   start: 2015-01
   end: 2015-01
   skills: ['Rails']
 
 half_year:
+  name: Webpage long
   start: 2015-01
   end: 2015-06
   skills: ['Rails']
 
 year:
+  name: A game
   start: 2015-01
   end: 2015-12
+  skills: ['C#']
 
 year_and_half:
   start: 2015-01

@@ -1,11 +1,13 @@
+h2 Skills
+input name="query" ng-model="c.query"
+ul.skills
+  li ng-repeat="element in c.skills | toArray | orderBy: '-months'"
+    | {{element.name}}:
+    |  {{element.human_time}}
+
 h2 Projects
 ul.projects
   li ng-repeat="element in c.projects"
     | {{element.company}}: {{element.name}}
     |  ({{element.human_time}})
 
-h2 Skills
-ul.skills
-  li ng-repeat="element in c.skills | toArray | orderBy: '-months'"
-    | {{element.name}}:
-    |  {{element.human_time}}
