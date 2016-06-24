@@ -4,7 +4,6 @@
 # = require jquery
 # = require jquery_ujs
 # = require angular
-# = require angular-toArrayFilter
 # = require moment
 #
 # = require_self
@@ -13,9 +12,7 @@
 # = require portfolio_controller
 # = require data
 
-@app = angular.module 'portfolio', [
-  'angular-toArrayFilter'
-]
+@app = angular.module 'portfolio', []
 
 @Helpers =
   months_to_human: (time) ->

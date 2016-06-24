@@ -11,7 +11,7 @@ class SkillsTest < ActiveSupport::TestCase
     assert page.find('.skills').has_content? '7 months'
   end
 
-  test 'searching hides unmatched skills' do
+  test 'search shows only matching skills' do
     use_projects :one_month, :year
     visit '/'
     assert page.find('.skills').has_content? 'Rails'
@@ -19,7 +19,8 @@ class SkillsTest < ActiveSupport::TestCase
     fill_in 'query', with: 'Rails'
     assert page.find('.skills').has_content? 'Rails'
     assert page.find('.skills').has_no_content? 'C#'
-
-    # search two skills
   end
+
+  # search of several skills finds any matching data
+  # search is case independent
 end

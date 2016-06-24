@@ -1,11 +1,11 @@
 one_month:
-  name: Webpage short
+  name: A small webpage
   start: 2015-01
   end: 2015-01
   skills: ['Rails']
 
 half_year:
-  name: Webpage long
+  name: A large webpage
   start: 2015-01
   end: 2015-06
   skills: ['Rails']

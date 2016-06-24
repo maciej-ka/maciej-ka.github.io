@@ -20,9 +20,16 @@ class ProjectsTest < ActiveSupport::TestCase
     assert page.find('.projects').has_content? '1 year 6 months'
   end
 
-  # test 'searching hides projects without searched skill' do
-  #   use_projects :one_month, :year
-  #   visit '/'
-  #   assert page.find('.projects').has_content? @@fixtures['one_month']['name']
-  # end
+  test 'search shows only matching projects' do
+    use_projects :one_month, :year
+    visit '/'
+    assert page.find('.projects').has_content? 'A small webpage'
+    assert page.find('.projects').has_content? 'A game'
+    fill_in 'query', with: 'Rails'
+    assert page.find('.projects').has_content? 'A small webpage'
+    assert page.find('.projects').has_no_content? 'A game'
+  end
+
+  # search of several skills finds any matching data
+  # search is case independent
 end
