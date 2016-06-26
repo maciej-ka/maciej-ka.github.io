@@ -11,7 +11,7 @@ class SkillsTest < ActiveSupport::TestCase
     assert page.find('.skills').has_content? '7 months'
   end
 
-  test 'search shows only matching skills' do
+  test 'search shows matching skills' do
     use_projects :one_month, :year
     visit '/'
     assert page.find('.skills').has_content? 'Rails'
@@ -28,6 +28,7 @@ class SkillsTest < ActiveSupport::TestCase
     assert page.find('.skills').has_content? 'Rails'
   end
 
-  # search of several skills finds any matching data
-  # skills can be defined using aliases
+  # search for many skills finds any matching data
+  # search for many skills accepts different separators
+  # search for name aliases
 end
