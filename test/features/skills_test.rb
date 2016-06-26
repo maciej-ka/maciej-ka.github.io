@@ -21,6 +21,13 @@ class SkillsTest < ActiveSupport::TestCase
     assert page.find('.skills').has_no_content? 'C#'
   end
 
+  test 'search is case independent' do
+    use_projects :one_month, :year
+    visit '/'
+    fill_in 'query', with: 'rails'
+    assert page.find('.skills').has_content? 'Rails'
+  end
+
   # search of several skills finds any matching data
-  # search is case independent
+  # skills can be defined using aliases
 end

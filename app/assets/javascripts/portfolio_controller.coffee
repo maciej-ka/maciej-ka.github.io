@@ -1,17 +1,16 @@
 app.controller 'PortfolioController',
   class PortfolioController
     constructor: ->
-      @all_skills = {}
+      window.c = @
+      @all_skills = []
       @all_projects = (new Project(data, @all_skills) for data in window.data.projects)
+      @all_skills = (e for i,e of @all_skills)
 
     skills: ->
-      if !@query
-        skill for _,skill of @all_skills
-      else
-        @all_skills[skill] for skill in @query.split()
+      return @all_skills if !@query
+      searched = @query.split()
+      e for e in @all_skills when searched.indexOf(e.name) >= 0
 
     projects: ->
-      if !@query
-        @all_projects
-      else
-        project for project in @all_projects when project.skills.indexOf(@query) >= 0
+      return @all_projects if !@query
+      e for e in @all_projects when e.skills.indexOf(@query) >= 0
