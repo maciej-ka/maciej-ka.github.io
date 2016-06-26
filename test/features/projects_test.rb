@@ -30,6 +30,11 @@ class ProjectsTest < ActiveSupport::TestCase
     assert page.find('.projects').has_no_content? 'A game'
   end
 
-  # search of several skills finds any matching data
-  # search is case independent
+  test 'search can be for many skills' do
+    use_projects :one_month, :year
+    visit '/'
+    fill_in 'query', with: 'c# rails'
+    assert page.find('.projects').has_content? 'A small webpage'
+    assert page.find('.projects').has_content? 'A game'
+  end
 end

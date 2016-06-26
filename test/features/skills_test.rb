@@ -28,7 +28,11 @@ class SkillsTest < ActiveSupport::TestCase
     assert page.find('.skills').has_content? 'Rails'
   end
 
-  # search for many skills finds any matching data
-  # search for many skills accepts different separators
-  # search for name aliases
+  test 'search can be for many skills' do
+    use_projects :one_month, :year
+    visit '/'
+    fill_in 'query', with: 'c# rails'
+    assert page.find('.skills').has_content? 'Rails'
+    assert page.find('.skills').has_content? 'C#'
+  end
 end
