@@ -1,21 +1,21 @@
 one_month:
   name: A small webpage
-  start: 2015-01
-  end: 2015-01
+  start: 2015-01-01
+  end: 2015-02-01
   skills: ['Rails']
 
 half_year:
   name: A large webpage
-  start: 2015-01
-  end: 2015-06
+  start: 2015-01-01
+  end: 2015-07-01
   skills: ['Rails']
 
 year:
   name: A game
-  start: 2015-01
-  end: 2015-12
+  start: 2015-01-01
+  end: 2016-01-01
   skills: ['C#']
 
 year_and_half:
-  start: 2015-01
-  end: 2016-06
+  start: 2014-01-01
+  end: 2015-07-01

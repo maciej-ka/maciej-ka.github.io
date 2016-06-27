@@ -1,5 +1,6 @@
 class @Project
   @all = []
+  @min_date = moment()
 
   @create: (data) ->
     @all.push(new Project data)
@@ -13,8 +14,9 @@ class @Project
   init_time: ->
     @start = moment @start
     @end = moment @end
-    @months = @end.diff(@start, 'months') + 1
+    @months = @end.diff @start, 'months'
     @human_time = Helpers.months_to_human @months
+    Project.min_date = Math.min Project.min_date, @start
 
   parse_skills: (skills) ->
     for name in skills

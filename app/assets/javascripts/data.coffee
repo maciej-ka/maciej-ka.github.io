@@ -7,8 +7,8 @@
     role: 'Lead developer'
     team_size: 3
     link: 'theifab.com'
-    start: '2016-01'
-    end: '2016-05'
+    start: '2016-01-01'
+    end: '2016-06-01'
     skills: [
       'Java', 'Spring', 'Gradle', 'FluentLenium',
       'JavaScipt', 'Angular', 'CoffeeScript',
@@ -24,8 +24,8 @@
     role: 'Developer'
     team_size: 1
     link: '(intranet)'
-    start: '2015-12'
-    end: '2015-12'
+    start: '2015-12-01'
+    end: '2016-01-01'
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Devise',
       'Ember', 'JavaScript', 'CoffeeScript',
@@ -41,8 +41,8 @@
     role: 'Senior developer'
     team_size: 3
     link: '(intranet)'
-    start: '2015-11'
-    end: '2015-11'
+    start: '2015-11-01'
+    end: '2015-12-01'
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara',
       'Ember', 'JavaScript', 'CoffeeScript',
@@ -58,8 +58,8 @@
     role: 'Senior developer'
     team_size: 3
     link: '(intranet)'
-    start: '2015-08'
-    end: '2015-09'
+    start: '2015-08-01'
+    end: '2015-10-01'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Capybara',
       'Angular', 'JavaScript', 'CoffeeScript',
@@ -75,8 +75,8 @@
     role: 'Developer'
     team_size: 1
     link: '(intranet)'
-    start: '2015-05'
-    end: '2015-07'
+    start: '2015-05-01'
+    end: '2015-08-01'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Capybara',
       'Angular', 'JavaScript', 'CoffeeScript',
@@ -92,8 +92,8 @@
     role: 'Senior developer'
     team_size: 3
     link: 'cert.orange.pl'
-    start: '2014-09'
-    end: '2014-12'
+    start: '2014-09-01'
+    end: '2015-01-01'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Devise', 'Savon', 'SOAP', 'ComfortableMexicanSofa'
       'Haml',

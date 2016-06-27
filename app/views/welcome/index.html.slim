@@ -1,13 +1,14 @@
 h2 Skills
-input name="query" ng-model="c.query"
-br
-svg.skills_chart width=800 height=300
+input name="query" ng-model="c.query" ng-change="c.query_changed()" autofocus=true
+/ input name="query" ng-model="c.query"
+/ svg.skills_chart width=800 height=300
 ul.skills
   li ng-repeat="element in c.skills() | orderBy: '-months'"
     | {{element.name}}:
     |  {{element.human_time}}
 
 h2 Projects
+svg.projects_chart width=800 height=50
 ul.projects
   li ng-repeat="element in c.projects()"
     | {{element.company}}: {{element.name}}
