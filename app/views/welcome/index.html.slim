@@ -1,5 +1,7 @@
 h2 Skills
 input name="query" ng-model="c.query"
+br
+svg.skills_chart width=800 height=300
 ul.skills
   li ng-repeat="element in c.skills() | orderBy: '-months'"
     | {{element.name}}:

@@ -13,6 +13,7 @@ gem 'quiet_assets'
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
   gem 'rails-assets-moment'
+  gem 'rails-assets-d3'
 end
 
 group :development do

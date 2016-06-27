@@ -5,6 +5,7 @@
 # = require jquery_ujs
 # = require angular
 # = require moment
+# = require d3
 #
 # = require_self
 # = require project
