@@ -11,7 +11,7 @@ class @Skill
     skill
 
   constructor: (@name) ->
-    @months = 0
+    @time = 0
 
   # arg: a string or an array of strings
   matches: (arg) ->
@@ -21,7 +21,9 @@ class @Skill
       return true if @matches string
     false
 
-  add_months: (months) ->
-    @months += months
-    @human_time = Helpers.months_to_human @months
-
+  add_project: (project) ->
+    @time += project.time
+    @human_time = Helpers.months_to_human @time
+    @ago ?= project.end
+    @ago = Math.min @ago, project.end
+    @human_ago = moment(@ago).fromNow()

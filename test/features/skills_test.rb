@@ -35,4 +35,11 @@ class SkillsTest < ActiveSupport::TestCase
     assert page.find('.skills').has_content? 'Rails'
     assert page.find('.skills').has_content? 'C#'
   end
+
+  test 'show how long ago was the last experience' do
+    project = { start: 12.months.ago, end: 3.months.ago , skills: ['Rails'] }
+    Rails.configuration.js_data = { projects: [project] }.to_json()
+    visit '/'
+    assert page.find('.skills').has_content? '3 months ago'
+  end
 end

@@ -14,14 +14,14 @@ class @Project
   init_time: ->
     @start = moment @start
     @end = moment @end
-    @months = @end.diff @start, 'months'
-    @human_time = Helpers.months_to_human @months
-    Project.min_date = Math.min Project.min_date, @start
+    @time = @end.diff @start, 'months'
+    @human_time = Helpers.months_to_human @time
+    Project.min_date = Math.min @start, Project.min_date
 
   parse_skills: (skills) ->
     for name in skills
       skill = Skill.find(name) || Skill.create(name)
-      skill.add_months @months
+      skill.add_project @
       skill
 
   matches: (query) ->
