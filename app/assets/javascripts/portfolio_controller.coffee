@@ -1,6 +1,7 @@
 app.controller 'PortfolioController',
   class PortfolioController
     constructor: ->
+      @current_strip = 1
       for data in window.data.projects
         Project.create data
       @draw_projects_graph()

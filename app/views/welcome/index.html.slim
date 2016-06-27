@@ -1,10 +1,11 @@
 h2 Skills
 input name="query" ng-model="c.query" ng-change="c.draw_projects_graph()" autofocus=true
 ul.skills
-  li ng-repeat="element in c.skills() | orderBy: '-months'"
+  li ng-repeat="element in c.skills() | orderBy: '-time'"
     | {{element.name}}:
-    |  {{element.human_time}},
-    |  {{element.human_ago}}
+    |  {{element.human_time}}
+    small
+      | , {{element.human_ago}}
 
 h2 Projects
 svg.projects_chart width=800 height=50
@@ -13,3 +14,9 @@ ul.projects
     | {{element.company}}: {{element.name}}
     |  ({{element.human_time}})
 
+- (1..6).each do |n|
+  button ng-mouseover="c.current_strip=#{n}"
+    = n
+br
+- (1..6).each do |n|
+  = image_tag "strip#{n}", 'ng-if':"c.current_strip == #{n}"
