@@ -1,5 +1,6 @@
 class @Skill
   @all = []
+  @max_duration = 0
 
   @find: (name) ->
     for e in @all
@@ -23,7 +24,11 @@ class @Skill
 
   add_project: (project) ->
     @time += project.time
+    Skill.max_duration = Math.max @time, Skill.max_duration
     @human_time = Helpers.months_to_human @time
     @ago ?= project.end
     @ago = Math.min @ago, project.end
     @human_ago = moment(@ago).fromNow()
+
+  percent: ->
+    @time/Skill.max_duration

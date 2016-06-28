@@ -1,18 +1,22 @@
 h2 Skills
 input name="query" ng-model="c.query" ng-change="c.draw_projects_graph()" autofocus=true
 ul.skills
-  li ng-repeat="element in c.skills() | orderBy: '-time'"
-    | {{element.name}}:
-    |  {{element.human_time}}
+  li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.25em"
+    div style="width:100px; float:left"
+      div style="position:absolute"
+        | {{e.human_time}}
+      div style="width:{{100*e.percent()}}px; background: #333; float:right"
+        | &nbsp;
+    | {{e.name}}
     small
-      | , {{element.human_ago}}
+      |  {{e.human_ago}}
 
 h2 Projects
 svg.projects_chart width=800 height=50
 ul.projects
-  li ng-repeat="element in c.projects()"
-    | {{element.company}}: {{element.name}}
-    |  ({{element.human_time}})
+  li ng-repeat="e in c.projects()"
+    | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
+    |  ({{e.human_time}})
 
 - (1..6).each do |n|
   button ng-mouseover="c.current_strip=#{n}"
