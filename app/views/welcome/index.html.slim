@@ -2,10 +2,10 @@ h2 Skills
 input name="query" ng-model="c.query" ng-change="c.draw_projects_graph()" autofocus=true
 ul.skills
   li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.25em"
-    div style="width:100px; float:left"
+    div style="width:150px; float:left"
       div style="position:absolute"
         | {{e.human_time}}
-      div style="width:{{100*e.percent()}}px; background: #333; float:right"
+      div style="width:{{150*e.percent()}}px; background: #333; float:right"
         | &nbsp;
     | {{e.name}}
     small
