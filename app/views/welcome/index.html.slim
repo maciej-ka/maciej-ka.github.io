@@ -13,7 +13,7 @@ ul.skills
 
 h2 Projects
 svg.projects_chart width=800 height=50
-ul.projects
+ol.projects
   li ng-repeat="e in c.projects()"
     | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
     |  ({{e.human_time}})

@@ -27,7 +27,7 @@ class @Skill
     Skill.max_duration = Math.max @time, Skill.max_duration
     @human_time = Helpers.months_to_human @time
     @ago ?= project.end
-    @ago = Math.min @ago, project.end
+    @ago = Math.max @ago, project.end
     @human_ago = moment(@ago).fromNow()
 
   percent: ->
