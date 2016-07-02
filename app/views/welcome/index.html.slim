@@ -1,3 +1,10 @@
+- (1..6).each do |n|
+  button ng-mouseover="c.current_strip=#{n}"
+    = n
+br
+- (1..6).each do |n|
+  = image_tag "strip#{n}.jpg", 'ng-if':"c.current_strip == #{n}"
+
 h2 Skills
 input name="query" ng-model="c.query" ng-change="c.draw_projects_graph()" autofocus=true
 ul.skills
@@ -18,9 +25,3 @@ ol.projects
     | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
     |  ({{e.human_time}})
 
-- (1..6).each do |n|
-  button ng-mouseover="c.current_strip=#{n}"
-    = n
-br
-- (1..6).each do |n|
-  = image_tag "strip#{n}.jpg", 'ng-if':"c.current_strip == #{n}"
