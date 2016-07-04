@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'slim', '~> 3.0.7'
 gem 'quiet_assets'
+gem 'sass', github: 'lokson/sass', branch: 'multiline-expressions-#216'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
