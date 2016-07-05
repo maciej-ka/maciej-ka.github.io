@@ -1,0 +1,24 @@
+=prefix($property, $options...)
+  -webkit-#{$property}: $options
+  -moz-#{$property}: $options
+  -ms-#{$property}: $options
+  -o-#{$property}: $options
+  #{$property}: $options
+
+=transform($options...)
+  +prefix(transform, $options)
+
+=transition($options...)
+  +prefix(transition, $options)
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @-o-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
