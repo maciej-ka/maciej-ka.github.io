@@ -10,11 +10,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'slim', '~> 3.0.7'
 gem 'quiet_assets'
 gem 'sass', github: 'lokson/sass', branch: 'multiline-expressions-#216'
+gem 'byebug'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
   gem 'rails-assets-moment'
   gem 'rails-assets-d3'
+  gem 'rails-assets-bootstrap'
 end
 
 group :development do
@@ -38,5 +40,4 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
-gem 'byebug', group: [:development, :test]
 

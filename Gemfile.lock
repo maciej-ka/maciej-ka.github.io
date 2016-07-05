@@ -179,7 +179,10 @@ GEM
       railties (= 4.2.6)
       sprockets-rails
     rails-assets-angular (1.5.7)
+    rails-assets-bootstrap (3.3.6)
+      rails-assets-jquery (>= 1.9.1, < 3)
     rails-assets-d3 (3.5.17)
+    rails-assets-jquery (2.2.4)
     rails-assets-moment (2.13.0)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
@@ -272,6 +275,7 @@ DEPENDENCIES
   rack-livereload
   rails (= 4.2.6)
   rails-assets-angular!
+  rails-assets-bootstrap!
   rails-assets-d3!
   rails-assets-moment!
   sass!

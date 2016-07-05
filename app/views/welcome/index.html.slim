@@ -1,9 +1,14 @@
-- (1..6).each do |n|
-  button ng-mouseover="c.current_strip=#{n}"
-    = n
-br
-- (1..6).each do |n|
-  = image_tag "strip#{n}.jpg", 'ng-if':"c.current_strip == #{n}"
+#carousel.carousel.slide data-ride="carousel" data-interval="false"
+  .carousel-inner role="listbox"
+    .item.active
+      = image_tag "strip1.jpg"
+    - (2..6).each do |n|
+      .item
+        = image_tag "strip#{n}.jpg"
+  a.left.carousel-control data-slide="prev" href="#carousel" role="button"
+    span.glyphicon.glyphicon-chevron-left aria-hidden="true"
+  a.right.carousel-control data-slide="next" href="#carousel" role="button"
+    span.glyphicon.glyphicon-chevron-right aria-hidden="true"
 
 h2 Skills
 input name="query" ng-model="c.query" ng-change="c.draw_projects_graph()" autofocus=true
