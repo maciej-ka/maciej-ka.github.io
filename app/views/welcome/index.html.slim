@@ -1,32 +1,34 @@
-#carousel.carousel.slide data-ride="carousel" data-interval="false"
-  .carousel-inner role="listbox"
-    .item.active
-      = image_tag "strip1.jpg"
-    - (2..6).each do |n|
-      .item
-        = image_tag "strip#{n}.jpg"
-  a.left.carousel-control data-slide="prev" href="#carousel" role="button"
-    span.glyphicon.glyphicon-chevron-left aria-hidden="true"
-  a.right.carousel-control data-slide="next" href="#carousel" role="button"
-    span.glyphicon.glyphicon-chevron-right aria-hidden="true"
+section
+  #carousel.carousel.slide data-ride="carousel" data-interval="false"
+    .carousel-inner role="listbox"
+      .item.active
+        = image_tag "strip1.jpg"
+      - (2..6).each do |n|
+        .item
+          = image_tag "strip#{n}.jpg"
+    a.left.carousel-control data-slide="prev" href="#carousel" role="button"
+      span.glyphicon.glyphicon-chevron-left aria-hidden="true"
+    a.right.carousel-control data-slide="next" href="#carousel" role="button"
+      span.glyphicon.glyphicon-chevron-right aria-hidden="true"
 
-h2 Skills
-input name="query" ng-model="c.query" ng-change="c.draw_projects_graph()" autofocus=true
-ul.skills
-  li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.25em"
-    div style="width:150px; float:left"
-      div style="position:absolute"
-        | {{e.human_time}}
-      div style="width:{{150*e.percent()}}px; background: #333; float:right"
-        | &nbsp;
-    | {{e.name}}
-    small
-      |  {{e.human_ago}}
+section
+  h2 Skills
+  input name="query" ng-model="c.query" ng-change="c.draw_projects_graph()"
+  ul.skills
+    li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.25em"
+      div style="width:150px; float:left"
+        div style="position:absolute"
+          | {{e.human_time}}
+        div style="width:{{150*e.percent()}}px; background: #333; float:right"
+          | &nbsp;
+      | {{e.name}}
+      small
+        |  {{e.human_ago}}
 
-h2 Projects
-svg.projects_chart width=800 height=50
-ol.projects
-  li ng-repeat="e in c.projects()"
-    | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
-    |  ({{e.human_time}})
+  h2 Projects
+  svg.projects_chart width=800 height=50
+  ol.projects
+    li ng-repeat="e in c.projects()"
+      | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
+      |  ({{e.human_time}})
 

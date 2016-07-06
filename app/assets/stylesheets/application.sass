@@ -10,7 +10,6 @@
 @import 'animations'
 
 body
-  +prefix(animation, reveal .6s ease-in-out)
   color: black
   background: \
     // radial-gradient(circle at 50% 10%, hsl(212, 88%, 85%) 10%, transparent 60%),
@@ -18,9 +17,12 @@ body
     // radial-gradient(circle at 90% 43%, hsl(224, 48%, 61%) 11%, transparent 120%)
     radial-gradient(circle at 90% 43%, hsl(224, 48%, 61%), white 120%)
 
+section
+  min-height: 100vh
+  &:nth-of-type(1)
+    display: flex
+    align-items: center
+
 #carousel
   box-shadow: 0 0 5vmin 1em hsl(0,0,80%)
-  margin: 20vmin 0
-  .right
-    +prefix(animation, half-reveal .15s ease-in-out 2s 8 alternate)
 

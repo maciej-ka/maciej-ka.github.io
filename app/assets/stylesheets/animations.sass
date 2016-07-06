@@ -1,3 +1,22 @@
+// page reveal
+body
+  +prefix(animation, reveal .6s ease-in-out)
+
+// next button blink
+#carousel
+  .right
+    +prefix(animation, half-reveal .15s ease-in-out 2s 6 alternate)
+  .carousel-inner
+    +prefix(animation, \
+      half-dim 6*.15s+.5s ease-out 1.5s,
+      half-reveal .6s ease-out 2s+6*.15s)
+
+
+
+/*
+ * keyframes
+ */
+
 +keyframes(reveal)
   from
     opacity: 0
@@ -9,3 +28,10 @@
     opacity: .5
   to
     opacity: 1
+
++keyframes(half-dim)
+  from
+    opacity: 1
+  to
+    opacity: .5
+
