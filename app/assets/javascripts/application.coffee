@@ -9,6 +9,7 @@
 # = require d3
 #
 # = require_self
+# = require summary
 # = require project
 # = require skill
 # = require portfolio_controller
@@ -17,19 +18,14 @@
 @app = angular.module 'portfolio', []
 
 @Helpers =
+  # format date in style of linkedIn
   months_to_human: (time) ->
     years = Math.floor(time / 12)
     months = time % 12
 
-    if months == 1
-      month_s = '1 month'
-    else if months > 1
-      month_s = "#{months} months"
-
-    if years == 1
-      year_s = '1 year'
-    else if years > 1
-      year_s = "#{years} years"
-
-    [year_s, month_s].filter((n)->n).join ' '
-
+    str = ''
+    str += '1 year ' if years == 1
+    str += "#{years} years " if years > 1
+    str += '1 month ' if months == 1
+    str += "#{months} months" if months > 1
+    str.trim()

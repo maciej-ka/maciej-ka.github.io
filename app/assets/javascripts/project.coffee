@@ -10,6 +10,7 @@ class @Project
     $.extend @, data
     @init_time()
     @skills = @parse_skills(data.skills || [])
+    Summary.add_project @
 
   init_time: ->
     @start = moment @start

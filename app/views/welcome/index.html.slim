@@ -11,8 +11,12 @@ section
     a.right.carousel-control data-slide="next" href="#carousel" role="button"
       span.glyphicon.glyphicon-chevron-right aria-hidden="true"
 
+section.summary
+  h1 Summary
+  | {{ c.total_time }} of IT experience in different roles.
+
 section
-  h2 Skills
+  h1 Skills
   input name="query" ng-model="c.query" ng-change="c.draw_projects_graph()"
   ul.skills
     li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.25em"
@@ -25,7 +29,7 @@ section
       small
         |  {{e.human_ago}}
 
-  h2 Projects
+  h1 Projects
   svg.projects_chart width=800 height=50
   ol.projects
     li ng-repeat="e in c.projects()"
