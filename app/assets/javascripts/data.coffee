@@ -1,8 +1,8 @@
 @data ?= {}
 @data.projects ?= [
   {
-    company: 'Myself'
-    name: 'this portfolio'
+    company: 'Me'
+    name: 'portfolio'
     description: ''
     link: 'maciej-kasprzyk.pl'
 

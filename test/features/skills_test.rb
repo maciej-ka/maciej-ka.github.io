@@ -37,7 +37,9 @@ class SkillsTest < ActiveSupport::TestCase
   end
 
   test 'show how long ago was the last experience' do
-    project = { start: 12.months.ago, end: 3.months.ago , skills: ['Rails'] }
+    project = @@fixtures['year'].clone()
+    project['start'] = 12.months.ago
+    project['end'] = 3.months.ago
     Rails.configuration.js_data = { projects: [project] }.to_json()
     visit '/'
     assert page.find('.skills').has_content? '3 months ago'

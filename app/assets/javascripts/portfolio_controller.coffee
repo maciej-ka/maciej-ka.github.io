@@ -4,7 +4,7 @@ app.controller 'PortfolioController',
       for data in window.data.projects
         Project.create data
       @draw_projects_graph()
-      @total_time = Helpers.months_to_human Object.keys(Summary.months).length
+      @summary = Summary.calculate()
 
     skills: ->
       return Skill.all if !@query

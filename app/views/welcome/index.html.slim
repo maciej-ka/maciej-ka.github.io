@@ -13,7 +13,9 @@ section
 
 section.summary
   h1 Summary
-  | {{ c.total_time }} of IT experience in different roles.
+  | {{ c.summary.human_time }} of IT experience in different roles.
+  ul ng-repeat="e in c.summary.roles | orderBy: time"
+    | {{ e.name }}: {{ e.human_time }}
 
 section
   h1 Skills
