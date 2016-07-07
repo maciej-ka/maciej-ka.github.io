@@ -2,8 +2,8 @@ one_month:
   name: A small webpage
   role: 'Software architect'
 
-  start: 2014-01-01
-  end: 2014-02-01
+  start: 2013-01-01
+  end: 2013-02-01
   skills: ['Rails']
 
 
@@ -34,3 +34,4 @@ year_and_half:
 
   start: 2014-01-01
   end: 2015-07-01
+  skills: ['CSS']

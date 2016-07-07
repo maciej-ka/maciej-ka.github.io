@@ -41,7 +41,7 @@ class ProjectsTest < ActiveSupport::TestCase
   test 'project dates are shown' do
     use_projects :one_month
     visit '/'
-    assert page.find('.projects').has_content? '2014.01'
-    assert page.find('.projects').has_content? '2014.02'
+    assert page.find('.projects').has_content? '2013.01'
+    assert page.find('.projects').has_content? '2013.02'
   end
 end

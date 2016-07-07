@@ -12,9 +12,12 @@ section
       span.glyphicon.glyphicon-chevron-right aria-hidden="true"
 
 section.summary
-  h1 Summary
+  h1 Roles
   | {{ c.summary.human_time }} of IT experience in different roles.
-  ul ng-repeat="e in c.summary.roles | orderBy: time"
+  ul ng-repeat="e in c.summary.roles | orderBy: '-time'"
+    | {{ e.name }}: {{ e.human_time }}
+  h1 Front-end / Back-end
+  ul ng-repeat="e in c.summary.sides | orderBy: '-time'"
     | {{ e.name }}: {{ e.human_time }}
 
 section

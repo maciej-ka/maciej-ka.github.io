@@ -102,7 +102,7 @@
     end: '2015-11-01'
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium WebDriver', 'Devise'
-      'PayPal', 'Twitter', 'Facebook', 'LinkedIn'
+      'PayPal', 'Twitter API', 'Facebook API', 'LinkedIn API'
     ]
   }
 
@@ -402,7 +402,7 @@
     start: '2010-07-01'
     end: '2010-11-01'
     skills: [
-      'Android', 'Java', 'Google Maps'
+      'Android', 'Java'
     ]
   }
 
@@ -464,7 +464,7 @@
     skills: [
       'PHP', 'Symfony', 'Doctrine'
       'HTML', 'CSS'
-      'MySQL', 'Facebook'
+      'MySQL', 'Facebook API'
     ]
   }
 
