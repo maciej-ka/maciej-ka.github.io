@@ -47,7 +47,10 @@ svg
       font-size: 200%
       opacity: .8
     .subtitle
-      font-size: 150%
+      stroke: white
+      stroke-width: 0
+      paint-order: stroke
+      font-size: 118%
       opacity: .3
 
     &:hover, &.active
@@ -56,6 +59,9 @@ svg
         opacity: .95
       .subtitle
         opacity: .7
+        stroke-width: 6px
+        // filter: url(#blur)
+        // text-shadow: 0 0 3px white
 
 .summary
   span
