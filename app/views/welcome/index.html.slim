@@ -12,36 +12,72 @@ section
       span.glyphicon.glyphicon-chevron-right aria-hidden="true"
 
 section.summary
-  h1 Roles
-  - if Rails.env.test?
-    | {{ c.summary.human_time }} of IT experience in different roles.
-    ul ng-repeat="e in c.summary.roles | orderBy: '-time'"
-      | {{ e.name }}: {{ e.human_time }}
-  svg.roles_chart width='100%' height=600
-    g
-  p
-    | I used to be an uml-centric 
-    span ng-mouseover="c.activate_role('software architect')" ng-mouseleave="c.activate_role()" software architect
-    | , an use case oriented 
-    span ng-mouseover="c.activate_role('analyst')" ng-mouseleave="c.activate_role()" analyst
-    |  and a too soft 
-    span ng-mouseover="c.activate_role('project manager')" ng-mouseleave="c.activate_role()" project manager
-    | .
-  p
-    | To be a 
-    span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" developer
-    |  is a choice of passion.
+  .row
+    .col-sm-6.col-lg-4
+      / h1 Roles
+      h1 Web Developer
+      - if Rails.env.test?
+        | {{ c.summary.human_time }} of IT experience in different roles.
+        ul ng-repeat="e in c.summary.roles | orderBy: '-time'"
+          | {{ e.name }}: {{ e.human_time }}
 
+      p
+        | I have worked as an 
+        span ng-mouseover="c.activate_role('software architect')" ng-mouseleave="c.activate_role()" software architect
+        | , an use case 
+        span ng-mouseover="c.activate_role('analyst')" ng-mouseleave="c.activate_role()" requirements analyst
+        |  and a rather soft 
+        span ng-mouseover="c.activate_role('project manager')" ng-mouseleave="c.activate_role()" project manager
+        | .
+      p
+        | To be a 
+        span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" developer
+        |  is a choice and passion.
+      svg.roles_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 700 600"
+        g.pie-container
 
-  h1 Front-end / Back-end
-  ul ng-repeat="e in c.summary.sides | orderBy: '-time'"
-    | {{ e.name }}: {{ e.human_time }}
+    .col-sm-6.col-lg-4
+      / h1 Front-end / Back-end
+      h1 Fullstack
+      - if Rails.env.test?
+        ul ng-repeat="e in c.summary.sides | orderBy: '-time'"
+          | {{ e.name }}: {{ e.human_time }}
+      p
+        | Due to trends in modern web development I moved from a 
+        span ng-mouseover="c.activate_side('backend')" ng-mouseleave="c.activate_role()" back-end
+        |  world closer to the 
+        span ng-mouseover="c.activate_side('frontend')" ng-mouseleave="c.activate_role()" front-end
+        |  and most often work as a 
+        span ng-mouseover="c.activate_side('frontend')" ng-mouseleave="c.activate_role()" fullstack
+        |  developer now.
+
+      svg.sides_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
+        g.pie-container
+
+    .col-sm-6.col-lg-4
+      h1 Contact
+      p
+        | Maciej Kasprzyk
+        br
+        a href='mailto:kapustka.maciek@gmail.com' kapustka.maciek@gmail.com
+        br
+        |  660 452 456
+      p
+        | My micro office:
+      p
+        |  ul. Humańska 8,
+        br
+        | 00-792 Warszawa
+
+      h1 CV
+      a href='' maciej_kasprzyk_en_cv.pdf
+
 
 section
   h1 Skills
   input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
   ul.skills
-    li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.25em"
+    li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.2em"
       div style="width:150px; float:left"
         div style="position:absolute"
           | {{e.human_time}}
