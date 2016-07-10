@@ -19,6 +19,9 @@ body
   text
     +transition(all .5s ease-in-out)
 
+.pie-container
+  +prefix(animation, fix-chrome .01s ease-in-out)
+
 
 
 /*
@@ -42,3 +45,8 @@ body
   to
     opacity: .5
 
++keyframes(fix-chrome)
+  from
+    transform: translate(49%,50%)
+  to
+    transform: translate(50%,50%)

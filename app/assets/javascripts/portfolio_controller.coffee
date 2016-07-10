@@ -71,6 +71,7 @@ app.controller 'PortfolioController',
 
       arcs = chart
         .select 'g'
+        # .attr 'transform', 'translate(50%,50%)'
         .selectAll '.arc'
         .data pie data
 
