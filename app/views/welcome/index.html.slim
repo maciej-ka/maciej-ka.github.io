@@ -1,114 +1,117 @@
-section
-  #carousel.carousel.slide data-ride="carousel" data-interval="false"
-    .carousel-inner role="listbox"
-      .item.active
-        = image_tag "strip1.jpg"
-      - (2..6).each do |n|
-        .item
-          = image_tag "strip#{n}.jpg"
-    a.left.carousel-control data-slide="prev" href="#carousel" role="button"
-      span.glyphicon.glyphicon-chevron-left aria-hidden="true"
-    a.right.carousel-control data-slide="next" href="#carousel" role="button"
-      span.glyphicon.glyphicon-chevron-right aria-hidden="true"
+.container
+  section.intro
+    #carousel.carousel.slide data-ride="carousel" data-interval="false"
+      .carousel-inner role="listbox"
+        .item.active
+          = image_tag "strip1.jpg"
+        - (2..6).each do |n|
+          .item
+            = image_tag "strip#{n}.jpg"
+      a.left.carousel-control data-slide="prev" href="#carousel" role="button"
+        span.glyphicon.glyphicon-chevron-left aria-hidden="true"
+      a.right.carousel-control data-slide="next" href="#carousel" role="button"
+        span.glyphicon.glyphicon-chevron-right aria-hidden="true"
 
-section.summary
-  .row
-    .col-sm-6.col-lg-4
-      / h1 Front-end / Back-end
-      h1 Fullstack
-      - if Rails.env.test?
-        ul ng-repeat="e in c.summary.sides | orderBy: '-time'"
-          | {{ e.name }}: {{ e.human_time }}
-      p
-        | Due to trends in modern web development I moved from a 
-        span ng-mouseover="c.activate_side('backend')" ng-mouseleave="c.activate_side()" back-end
-        |  world closer to the 
-        span ng-mouseover="c.activate_side('frontend')" ng-mouseleave="c.activate_side()" front-end
-        |  and most often work as a 
-        span ng-mouseover="c.activate_side('fullstack')" ng-mouseleave="c.activate_side()" fullstack
-        |  developer now.
+  section.summary
+    .row
+      .col-sm-6.col-lg-4
+        / h1 Front-end / Back-end
+        h1 Fullstack
+        - if Rails.env.test?
+          ul ng-repeat="e in c.summary.sides | orderBy: '-time'"
+            | {{ e.name }}: {{ e.human_time }}
+        p
+          | Due to trends in modern web development I moved from a 
+          span ng-mouseover="c.activate_side('backend')" ng-mouseleave="c.activate_side()" back-end
+          |  world closer to the 
+          span ng-mouseover="c.activate_side('frontend')" ng-mouseleave="c.activate_side()" front-end
+          |  and most often work as a 
+          span ng-mouseover="c.activate_side('fullstack')" ng-mouseleave="c.activate_side()" fullstack
+          |  developer now.
 
-      svg.sides_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
-        g.pie-container
+        svg.sides_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
+          g.pie-container
 
-    .col-sm-6.col-lg-4
-      / h1 Roles
-      h1 Web Developer
-      - if Rails.env.test?
-        | {{ c.summary.human_time }} of IT experience in different roles.
-        ul ng-repeat="e in c.summary.roles | orderBy: '-time'"
-          | {{ e.name }}: {{ e.human_time}}
+      .col-sm-6.col-lg-4
+        / h1 Roles
+        h1 Web Developer
+        - if Rails.env.test?
+          | {{ c.summary.human_time }} of IT experience in different roles.
+          ul ng-repeat="e in c.summary.roles | orderBy: '-time'"
+            | {{ e.name }}: {{ e.human_time}}
 
-      p
-        | I have worked as an 
-        span ng-mouseover="c.activate_role('software architect')" ng-mouseleave="c.activate_role()" software architect
-        | , an use case 
-        span ng-mouseover="c.activate_role('analyst')" ng-mouseleave="c.activate_role()" requirements analyst
-        |  and a rather soft 
-        span ng-mouseover="c.activate_role('project manager')" ng-mouseleave="c.activate_role()" project manager
-        | .
-      p
-        | To be a 
-        span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" developer
-        |  is a choice and a passion.
-      svg.roles_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
-        g.pie-container
-
-
-    .col-sm-6.col-lg-4
-      h1 Open Source
-      p
-        | To have an impact on a programming itself would be a dream. From 2015 I send fixes to 
-        a href='https://github.com/lokson' github
-        |  and recently become more active with a multiline operator 
-        a href='https://github.com/sass/sass/pull/2094' addition to sass
-        / |  . I plan to spend more time like this, it's fun and close to the programming beat.
-        / |  . I plan to spend more time like this.
-
-    .col-sm-6.col-lg-4
-      h1 CV
-      p
-        a href='' maciej_kasprzyk_en_cv.pdf
-      p
-        small * Summaries are counted on base of data you can browse next on this page.
-
-section
-  h1 Skills
-  input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
-  ul.skills
-    li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.2em"
-      div style="width:150px; float:left"
-        div style="position:absolute"
-          | {{e.human_time}}
-        div style="width:{{150*e.percent()}}px; background: #333; float:right"
-          | &nbsp;
-      | {{e.name}}
-      small
-        |  {{e.human_ago}}
-
-  h1 Projects
-  svg.projects_chart width=800 height=50
-  ol.projects
-    li ng-repeat="e in c.projects()"
-      | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
-      |  ({{e.human_time}})
+        p
+          | I have worked as an 
+          span ng-mouseover="c.activate_role('software architect')" ng-mouseleave="c.activate_role()" software architect
+          | , an use case 
+          span ng-mouseover="c.activate_role('analyst')" ng-mouseleave="c.activate_role()" requirements analyst
+          |  and a rather soft 
+          span ng-mouseover="c.activate_role('project manager')" ng-mouseleave="c.activate_role()" project manager
+          | .
+        p
+          | To be a 
+          span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" developer
+          |  is a choice and a passion.
+        svg.roles_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
+          g.pie-container
 
 
+      .col-sm-6.col-lg-4
+        h1 Open Source
+        p
+          | To have an impact on a programming itself would be a dream. From 2015 I send fixes to 
+          a href='https://github.com/lokson' github
+          |  and recently become more active with a multiline operator 
+          a href='https://github.com/sass/sass/pull/2094' addition to sass
+          / |  . I plan to spend more time like this, it's fun and close to the programming beat.
+          / |  . I plan to spend more time like this.
 
-section
-  .row
-    .col-sm-6.col-lg-4
-      h1 Contact
-      p
-        | Maciej Kasprzyk
-        br
-        a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
-        br
-        |  +48 660 452 456
-      p
-        | My micro office:
-      p
-        |  ul. Humańska 8,
-        br
-        | 00-792 Warszawa
+      .col-sm-6.col-lg-4
+        h1 CV
+        p
+          a href='' maciej_kasprzyk_en_cv.pdf
+        p
+          small * Summaries are counted on base of data you can browse next on this page.
+
+.container-fluid.skills
+  .container
+    section
+      h1 Skills
+      input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
+      ul.skills
+        li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.2em"
+          div style="width:150px; float:left"
+            div style="position:absolute"
+              | {{e.human_time}}
+            div style="width:{{150*e.percent()}}px; background: #333; float:right"
+              | &nbsp;
+          | {{e.name}}
+          small
+            |  {{e.human_ago}}
+
+      h1 Projects
+      svg.projects_chart width=800 height=50
+      ol.projects
+        li ng-repeat="e in c.projects()"
+          | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
+          |  ({{e.human_time}})
+
+    section.footer
+      .row
+        .col-sm-6.col-lg-4.center-block
+          h1 Contact
+          p
+            | Maciej Kasprzyk
+            br
+            a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
+            br
+            |  +48 660 452 456
+          p
+            | My micro office:
+          p
+            |  ul. Humańska 8,
+            br
+            | 00-792 Warszawa
+          p
+            = image_tag 'footer_small.jpg'
 

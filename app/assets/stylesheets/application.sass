@@ -14,20 +14,33 @@ body
   background: \
     // radial-gradient(circle at 50% 10%, hsl(212, 88%, 85%) 10%, transparent 60%),
     // radial-gradient(circle at 15% 90%, hsl(193, 39%, 75%) 15%, transparent 50%),
-    // radial-gradient(circle at 90% 43%, hsl(224, 48%, 61%) 11%, transparent 120%)
+    // radial-gradient(circle at 90% 43%, hsl(224, 48%, 61%) 11%, transparent 120%), \
+    // radial-gradient(circle at 20% 100%, hsl(224, 49%, 86%), transparent 40%),
     radial-gradient(circle at 90% 43%, hsl(224, 48%, 61%), white 120%)
   // font-family: Lato
   font: 14pt Lato
 
-section
-  &:nth-of-type(1)
-    // min-height: 100vh
-    margin: 10vh 0 10vh
-    // display: flex
-    // align-items: center
-  &:nth-of-type(2)
-    margin-bottom: 30vh
-    // margin-top: -6.5em
+.container-fluid
+  padding: 0
+
+section.intro
+  // min-height: 100vh
+  margin: 10vh 0 10vh
+  // display: flex
+  // align-items: center
+section.summary
+  margin-bottom: 10vh
+  // margin-top: -6.5em
+  // margin-bottom: 30vh
+  // margin-top: -6.5em
+.container-fluid.skills
+  background: \
+    radial-gradient(circle at 15% 10%, hsl(193, 39%, 75%) 15%, transparent 50%),
+    radial-gradient(circle at 15% 100%, hsl(0,0,93%), transparent 16%)
+    // radial-gradient(circle at 0% 100%, white, transparent 80%)
+// section.footer
+//   background: \
+//     radial-gradient(circle at 0% 100%, white, transparent 80%)
 
 #carousel
   box-shadow: 0 0 5vmin 1em hsl(0,0,80%)
@@ -67,3 +80,9 @@ svg
 .summary
   span
     border-bottom: 1px dashed
+
+.footer
+  img
+    margin-top: 1em
+    width: 200px
+    border: 10em black
