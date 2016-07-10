@@ -1,6 +1,6 @@
 .container
   section.intro
-    #carousel.carousel.slide data-ride="carousel" data-interval="false"
+    #carousel.carousel.slide data-ride="carousel" data-interval="false" data-wrap="false"
       .carousel-inner role="listbox"
         .item.active
           = image_tag "strip1.jpg"
@@ -68,6 +68,17 @@
           / |  . I plan to spend more time like this.
 
       .col-sm-6.col-lg-4
+        h1 Contact
+        address
+          strong Maciej Kasprzyk 
+          br
+          a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
+          br
+          |  +48 660 452 456
+          br
+          | Humańska 8
+          br
+          | 00-792 Warszawa
         h1 CV
         p
           a href='' maciej_kasprzyk_en_cv.pdf
@@ -98,21 +109,19 @@
           |  ({{e.human_time}})
 
     section.footer
-      .row
-        .col-sm-6.col-lg-4.center-block
-          h1 Contact
-          p
-            | Maciej Kasprzyk
-            br
-            a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
-            br
-            |  +48 660 452 456
-          p
-            | My micro office:
-          p
-            |  ul. Humańska 8,
-            br
-            | 00-792 Warszawa
-          p
-            = image_tag 'footer_small.jpg'
-
+      .row.text-center
+        p
+          = image_tag 'footer_small_2.png'
+        / h1 Contact
+        / p
+        /   | Maciej Kasprzyk
+        /   br
+        /   a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
+        /   br
+        /   |  +48 660 452 456
+        / p
+        /   | My micro office:
+        / p
+        /   |  ul. Humańska 8,
+        /   br
+        /   | 00-792 Warszawa
