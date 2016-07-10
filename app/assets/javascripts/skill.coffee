@@ -1,6 +1,26 @@
 class @Skill
   @all = []
   @max_duration = 0
+  @big_technologies = [
+    'Ruby'
+    'Rails'
+    'JavaScript'
+    'PHP'
+    'CSS'
+    'Java'
+    'Symfony'
+    'CoffeeScript'
+    'Sass'
+    'Angular'
+    'Android'
+    'Spring'
+    'Python'
+    'D3'
+    'Bootstrap'
+    'Single Page Application'
+    'Ember'
+    'SQL'
+  ]
 
   @find: (name) ->
     for e in @all
@@ -10,6 +30,10 @@ class @Skill
     skill = new Skill name
     @all.push skill
     skill
+
+  @find_by_type: (type) ->
+    return @all if type == 'all technologies'
+    e for e in @all when @big_technologies.indexOf(e.name) >= 0
 
   constructor: (@name) ->
     @time = 0
@@ -32,3 +56,4 @@ class @Skill
 
   percent: ->
     @time/Skill.max_duration
+

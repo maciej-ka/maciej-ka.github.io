@@ -339,7 +339,7 @@
       'PHP', 'Symfony', 'Doctrine', 'Apache Lucene'
       'HTML', 'CSS', 'interface design'
       'JavaScript', 'jQuery', 'JS animations'
-      'MySQL', 'Photoshop'
+      'MySQL', 'Photoshop', 'SQL'
     ]
   }
 
@@ -360,8 +360,8 @@
     skills: [
       'PHP', 'Symfony', 'Doctrine'
       'HTML', 'CSS', 'interface design'
-      'JavaScript', 'jQuery'
-      'MySQL'
+      'JavaScript', 'jQuery', 'Single Page Application'
+      'MySQL', 'SQL'
     ]
   }
 
@@ -383,7 +383,7 @@
       'PHP', 'Symfony', 'Doctrine'
       'HTML', 'CSS', 'interface design'
       'JavaScript', 'jQuery'
-      'MySQL', 'requirement analysis'
+      'MySQL', 'requirement analysis', 'SQL'
     ]
   }
 
@@ -442,8 +442,8 @@
     skills: [
       'PHP', 'Symfony', 'Doctrine'
       'HTML', 'CSS', 'interface design'
-      'JavaScript', 'jQuery'
-      'MySQL'
+      'JavaScript', 'jQuery', 'Single Page Application'
+      'MySQL', 'SQL'
     ]
   }
 
@@ -464,7 +464,7 @@
     skills: [
       'PHP', 'Symfony', 'Doctrine'
       'HTML', 'CSS'
-      'MySQL', 'Facebook API'
+      'MySQL', 'Facebook API', 'SQL'
     ]
   }
 
@@ -485,8 +485,8 @@
     skills: [
       'PHP', 'Symfony', 'Doctrine'
       'HTML', 'CSS', 'interface design'
-      'JavaScript', 'jQuery'
-      'MySQL'
+      'JavaScript', 'jQuery', 'Single Page Application'
+      'MySQL', 'SQL'
     ]
   }
 
@@ -695,7 +695,7 @@
     start: '2005-09-01'
     end: '2005-12-01'
     skills: [
-      'PHP', 'MySQL'
+      'PHP', 'MySQL', 'SQL'
     ]
   }
 
@@ -714,7 +714,7 @@
     start: '2005-07-01'
     end: '2005-09-01'
     skills: [
-      'PHP', 'MySQL'
+      'PHP', 'MySQL', 'SQL'
     ]
   }
 
@@ -733,7 +733,7 @@
     start: '2005-02-01'
     end: '2005-07-01'
     skills: [
-      'UML', 'Use-case analysis', 'requirements analysis', 'SQL Server'
+      'UML', 'Use-case analysis', 'requirements analysis', 'SQL Server', 'SQL'
     ]
   }
 

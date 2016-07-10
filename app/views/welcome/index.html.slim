@@ -55,6 +55,8 @@
 
         svg.sides_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
           g.pie-container
+        br
+        br
 
       .col-sm-6.col-lg-4
         h1 Open Source
@@ -89,6 +91,16 @@
   .container
     section
       h1 Skills
+      | show:
+      select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
+      br
+      | from:
+      br
+      | ordered by:
+      br
+      br
+      br
+      | or search:
       input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
       ul.skills
         li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.2em"

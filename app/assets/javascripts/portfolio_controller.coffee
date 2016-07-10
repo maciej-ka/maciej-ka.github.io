@@ -3,14 +3,16 @@ app.controller 'PortfolioController',
     constructor: ->
       for data in window.data.projects
         Project.create data
+      @skill_type = 'big technologies'
       @summary = Summary.calculate()
       @draw_projects_chart()
       @draw_roles_chart()
       @draw_sides_chart()
 
     skills: ->
-      return Skill.all if !@query
-      e for e in Skill.all when e.matches @query.split(' ')
+      skills = Skill.find_by_type @skill_type
+      return skills if !@query
+      e for e in skills when e.matches @query.split(' ')
 
     projects: ->
       return Project.all if !@query
