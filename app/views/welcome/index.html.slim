@@ -15,24 +15,6 @@
   section.summary
     .row
       .col-sm-6.col-lg-4
-        / h1 Front-end / Back-end
-        h1 Fullstack
-        - if Rails.env.test?
-          ul ng-repeat="e in c.summary.sides | orderBy: '-time'"
-            | {{ e.name }}: {{ e.human_time }}
-        p
-          | Due to trends in modern web development I moved from a 
-          span ng-mouseover="c.activate_side('backend')" ng-mouseleave="c.activate_side()" back-end
-          |  world closer to the 
-          span ng-mouseover="c.activate_side('frontend')" ng-mouseleave="c.activate_side()" front-end
-          |  and most often work as a 
-          span ng-mouseover="c.activate_side('fullstack')" ng-mouseleave="c.activate_side()" fullstack
-          |  developer now.
-
-        svg.sides_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
-          g.pie-container
-
-      .col-sm-6.col-lg-4
         / h1 Roles
         h1 Web Developer
         - if Rails.env.test?
@@ -56,6 +38,23 @@
         svg.roles_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox='0 0 600 600'
           g.pie-container
 
+      .col-sm-6.col-lg-4
+        / h1 Front-end / Back-end
+        h1 Fullstack
+        - if Rails.env.test?
+          ul ng-repeat="e in c.summary.sides | orderBy: '-time'"
+            | {{ e.name }}: {{ e.human_time }}
+        p
+          | Due to trends in modern web development I moved from a 
+          span ng-mouseover="c.activate_side('backend')" ng-mouseleave="c.activate_side()" back-end
+          |  world closer to the 
+          span ng-mouseover="c.activate_side('frontend')" ng-mouseleave="c.activate_side()" front-end
+          |  and most often work as a 
+          span ng-mouseover="c.activate_side('fullstack')" ng-mouseleave="c.activate_side()" fullstack
+          |  developer now.
+
+        svg.sides_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
+          g.pie-container
 
       .col-sm-6.col-lg-4
         h1 Open Source
@@ -72,7 +71,8 @@
         address
           strong Maciej Kasprzyk 
           br
-          a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
+          / a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
+          | maciej.kasprzyk.it@gmail.com
           br
           |  +48 660 452 456
           br
@@ -85,7 +85,7 @@
         p
           small * Summaries are counted on base of data you can browse next on this page.
 
-.container-fluid.skills
+.container-fluid.skills-container
   .container
     section
       h1 Skills
