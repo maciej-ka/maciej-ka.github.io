@@ -14,29 +14,6 @@ section
 section.summary
   .row
     .col-sm-6.col-lg-4
-      / h1 Roles
-      h1 Web Developer
-      - if Rails.env.test?
-        | {{ c.summary.human_time }} of IT experience in different roles.
-        ul ng-repeat="e in c.summary.roles | orderBy: '-time'"
-          | {{ e.name }}: {{ e.human_time }}
-
-      p
-        | I have worked as an 
-        span ng-mouseover="c.activate_role('software architect')" ng-mouseleave="c.activate_role()" software architect
-        | , an use case 
-        span ng-mouseover="c.activate_role('analyst')" ng-mouseleave="c.activate_role()" requirements analyst
-        |  and a rather soft 
-        span ng-mouseover="c.activate_role('project manager')" ng-mouseleave="c.activate_role()" project manager
-        | .
-      p
-        | To be a 
-        span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" developer
-        |  is a choice and a passion.
-      svg.roles_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
-        g.pie-container
-
-    .col-sm-6.col-lg-4
       / h1 Front-end / Back-end
       h1 Fullstack
       - if Rails.env.test?
@@ -55,23 +32,45 @@ section.summary
         g.pie-container
 
     .col-sm-6.col-lg-4
-      h1 Contact
-      p
-        | Maciej Kasprzyk
-        br
-        a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
-        br
-        |  +48 660 452 456
-      p
-        | My micro office:
-      p
-        |  ul. Humańska 8,
-        br
-        | 00-792 Warszawa
+      / h1 Roles
+      h1 Web Developer
+      - if Rails.env.test?
+        | {{ c.summary.human_time }} of IT experience in different roles.
+        ul ng-repeat="e in c.summary.roles | orderBy: '-time'"
+          | {{ e.name }}: {{ e.human_time}}
 
+      p
+        | I have worked as an 
+        span ng-mouseover="c.activate_role('software architect')" ng-mouseleave="c.activate_role()" software architect
+        | , an use case 
+        span ng-mouseover="c.activate_role('analyst')" ng-mouseleave="c.activate_role()" requirements analyst
+        |  and a rather soft 
+        span ng-mouseover="c.activate_role('project manager')" ng-mouseleave="c.activate_role()" project manager
+        | .
+      p
+        | To be a 
+        span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" developer
+        |  is a choice and a passion.
+      svg.roles_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
+        g.pie-container
+
+
+    .col-sm-6.col-lg-4
+      h1 Open Source
+      p
+        | To have an impact on a programming itself would be a dream. From 2015 I send fixes to 
+        a href='https://github.com/lokson' github
+        |  and recently become more active with a multiline operator 
+        a href='https://github.com/sass/sass/pull/2094' addition to sass
+        / |  . I plan to spend more time like this, it's fun and close to the programming beat.
+        / |  . I plan to spend more time like this.
+
+    .col-sm-6.col-lg-4
       h1 CV
-      a href='' maciej_kasprzyk_en_cv.pdf
-
+      p
+        a href='' maciej_kasprzyk_en_cv.pdf
+      p
+        small * Summaries are counted on base of data you can browse next on this page.
 
 section
   h1 Skills
@@ -93,4 +92,23 @@ section
     li ng-repeat="e in c.projects()"
       | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
       |  ({{e.human_time}})
+
+
+
+section
+  .row
+    .col-sm-6.col-lg-4
+      h1 Contact
+      p
+        | Maciej Kasprzyk
+        br
+        a href='mailto:maciej.kasprzyk.it@gmail.com' maciej.kasprzyk.it@gmail.com
+        br
+        |  +48 660 452 456
+      p
+        | My micro office:
+      p
+        |  ul. Humańska 8,
+        br
+        | 00-792 Warszawa
 
