@@ -37,7 +37,7 @@ app.controller 'PortfolioController',
 
       bars.enter()
         .append 'rect'
-        .style 'opacity', 0.8
+        # .style 'opacity', 0.8
         .attr 'width', (d) -> scale(d.end) - scale(d.start)
         .attr 'height', 30
         .attr 'x', (d) -> scale d.start

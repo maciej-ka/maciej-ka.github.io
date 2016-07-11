@@ -1,24 +1,24 @@
 @data ?= {}
 @data.projects ?= [
-  {
-    company: 'Me'
-    name: 'portfolio'
-    description: ''
-    link: 'maciej-kasprzyk.pl'
+  # {
+  #   company: 'Me'
+  #   name: 'portfolio'
+  #   description: ''
+  #   link: 'maciej-kasprzyk.pl'
 
-    software_house: null
-    role: 'Web developer'
-    team: []
+  #   software_house: null
+  #   role: 'Web developer'
+  #   team: []
 
-    start: '2016-06-01'
-    end: '2016-07-01'
-    skills: [
-      'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium WebDriver'
-      'JavaScript', 'Angular', 'CoffeeScript', 'Single Page Application', 'D3'
-      'Sass', 'Slim', 'Responsive Web Design', 'CSS animations', 'interface design', 'Bootstrap'
-      'PostgreSQL', 'nginx'
-    ]
-  }
+  #   start: '2016-06-01'
+  #   end: '2016-07-01'
+  #   skills: [
+  #     'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium WebDriver'
+  #     'JavaScript', 'Angular', 'CoffeeScript', 'Single Page Application', 'D3'
+  #     'Sass', 'Slim', 'Responsive Web Design', 'CSS animations', 'interface design', 'Bootstrap', 'CSS'
+  #     'PostgreSQL', 'nginx'
+  #   ]
+  # }
 
 
 
@@ -37,7 +37,7 @@
     skills: [
       'Java', 'Spring', 'Gradle', 'FluentLenium', 'Elasticsearch'
       'JavaScript', 'Angular', 'CoffeeScript', 'Single Page Application'
-      'Bootstrap', 'material design', 'Sass', 'Jade', 'Responsive Web Design', 'CSS animations', 'interface design'
+      'Bootstrap', 'material design', 'Sass', 'Jade', 'Responsive Web Design', 'CSS animations', 'interface design', 'CSS'
       'CDN', 'SEO', 'Prerender.io', 'gulp', 'MySQL', 'UML'
     ]
   }
@@ -59,7 +59,7 @@
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Devise', 'Selenium WebDriver'
       'Ember', 'JavaScript', 'CoffeeScript', 'Single Page Application'
-      'Haml', 'Bootstrap', 'Sass', 'CSS animations'
+      'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS'
       'Capistrano', 'nginx', 'PostgreSQL', 'UML', 'requirements analysis'
     ]
   }
@@ -72,16 +72,16 @@
     description: 'A panel to merge database duplicates.'
     link: null
 
-    software_house: null
+    software_house: 'Motabi'
     role: 'Senior web developer'
-    team: ['Senior SQL Server developer', 'UI designer']
+    team: ['SQL Server developer', 'UI designer']
 
     start: '2015-11-01'
     end: '2015-12-01'
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium WebDriver'
       'Ember', 'JavaScript', 'CoffeeScript', 'Single Page Application'
-      'Haml', 'Sass'
+      'Haml', 'Sass', 'CSS'
       'PostgreSQL', 'UML'
     ]
   }
@@ -94,7 +94,7 @@
     description: 'A To-Do planner.'
     link: null
 
-    software_house: null
+    software_house: 'Motabi'
     role: 'Senior web developer'
     team: ['Senior web developer', 'Front-end developer']
 
@@ -115,16 +115,16 @@
     description: 'A workflow for exchanging artist royalties between countries.'
     link: null
 
-    software_house: null
+    software_house: 'Motabi'
     role: 'Senior web developer'
-    team: ['Senior SQL Server developer', 'Front-end developer']
+    team: ['SQL Server developer', 'Front-end developer']
 
     start: '2015-08-01'
     end: '2015-10-01'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Capybara', 'Selenium WebDriver'
       'Angular', 'JavaScript', 'CoffeeScript', 'Single Page Application'
-      'Haml', 'Sass'
+      'Haml', 'Sass', 'CSS'
       'PostgreSQL', 'UML'
     ]
   }
@@ -137,7 +137,7 @@
     description: 'A panel to configure charts, data sources and layouts.'
     link: null
 
-    software_house: null
+    software_house: 'Motabi'
     role: 'Web developer'
     team: []
 
@@ -146,7 +146,7 @@
     skills: [
       'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Capybara', 'Selenium WebDriver'
       'Angular', 'JavaScript', 'CoffeeScript', 'Single Page Application'
-      'Haml', 'Sass', 'CSS animations', 'interface design'
+      'Haml', 'Sass', 'CSS animations', 'interface design', 'CSS'
       'PostgreSQL', 'UML'
     ]
   }
@@ -159,7 +159,7 @@
     description: 'A member panel and a portal about DDoS protection services.'
     link: 'cert.orange.pl'
 
-    software_house: null
+    software_house: 'Motabi'
     role: 'Lead web developer'
     team: ['Web developer', 'Front-end developer']
 
@@ -182,13 +182,13 @@
 
     software_house: 'Hemnes'
     role: 'Lead web developer'
-    team: ['Mobile developer', 'Mobile developer']
+    team: ['Mobile developer #1', 'Mobile developer #2']
 
     start: '2014-06-01'
     end: '2015-06-01'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'factory_girl', 'Devise', 'Savon', 'SOAP'
-      'Haml', 'Bootstrap', 'interface design'
+      'Haml', 'Bootstrap', 'interface design', 'CSS'
       'Capistrano', 'nginx', 'MySQL', 'Magento', 'PrestaShop', 'UML'
     ]
   }
@@ -369,7 +369,7 @@
 
   {
     company: 'Burda International Polska'
-    name: 'Magazine prerelease surveys.'
+    name: 'Prerelease surveys'
     description: 'System to find best magazine cover and article titles.'
     link: null
 
@@ -397,7 +397,7 @@
 
     software_house: 'High Quality Solutions'
     role: 'Mobile developer'
-    team: ['Mobile developer', 'Mobile developer']
+    team: ['Mobile developer #1', 'Mobile developer #2']
 
     start: '2010-07-01'
     end: '2010-11-01'
@@ -416,7 +416,7 @@
 
     software_house: 'High Quality Solutions'
     role: 'Mobile developer'
-    team: ['Mobile developer', 'Mobile developer']
+    team: ['Mobile developer #1', 'Mobile developer #2']
 
     start: '2010-03-01'
     end: '2010-07-01'
@@ -471,7 +471,8 @@
 
 
   {
-    company: 'Europejskie Centrum Muzyki Krzysztofa Pendereckiego'
+    # company: 'Europejskie Centrum Muzyki Krzysztofa Pendereckiego'
+    company: 'Centrum Krzysztofa Pendereckiego'
     name: 'Homepage'
     description: 'Portal and custom CMS.'
     link: null
@@ -614,7 +615,7 @@
 
     software_house: 'Gateway 2 Future'
     role: 'Software architect'
-    team: ['PHP developer', 'PHP developer', 'Front-end developer', 'Senior developer']
+    team: ['PHP developer #1', 'PHP developer #2', 'Front-end developer', 'Senior developer']
 
     start: '2006-06-01'
     end: '2006-08-01'
@@ -652,7 +653,7 @@
 
     software_house: 'Software Business Group'
     role: 'Software architect'
-    team: ['Java developer', 'Java developer', 'Java developer', 'Java developer', 'Analyst']
+    team: ['Java developer #1', 'Java developer #2', 'Java developer #3', 'Java developer #4', 'Analyst']
 
     start: '2006-02-01'
     end: '2007-02-01'
@@ -728,7 +729,7 @@
 
     software_house: 'Microsoft (Students to Business)'
     role: 'Lead analyst'
-    team: ['Analyst', 'Analyst', 'Analyst', 'Analyst']
+    team: ['Analyst #1', 'Analyst #2', 'Analyst #3', 'Analyst #4']
 
     start: '2005-02-01'
     end: '2005-07-01'

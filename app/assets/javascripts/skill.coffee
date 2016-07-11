@@ -2,24 +2,25 @@ class @Skill
   @all = []
   @max_duration = 0
   @big_technologies = [
-    'Ruby'
+    # 'Ruby'
     'Rails'
     'JavaScript'
     'PHP'
     'CSS'
     'Java'
-    'Symfony'
-    'CoffeeScript'
-    'Sass'
+    # 'Symfony'
+    # 'CoffeeScript'
+    # 'Sass'
     'Angular'
     'Android'
     'Spring'
     'Python'
-    'D3'
-    'Bootstrap'
-    'Single Page Application'
+    # 'D3'
+    # 'Bootstrap'
+    # 'Single Page Application'
     'Ember'
     'SQL'
+    # 'jQuery'
   ]
 
   @find: (name) ->

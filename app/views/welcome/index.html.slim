@@ -67,6 +67,11 @@
           a href='https://github.com/sass/sass/pull/2094' addition to sass
           / |  . I plan to spend more time like this, it's fun and close to the programming beat.
           / |  . I plan to spend more time like this.
+        h1 CV
+        p
+          a href='' maciej_kasprzyk_en_cv.pdf
+        p
+          small * Summaries are counted on base of data you can browse next on this page.
 
       .col-sm-6.col-lg-4
         h1 Contact
@@ -81,44 +86,76 @@
           | Humańska 8
           br
           | 00-792 Warszawa
-        h1 CV
-        p
-          a href='' maciej_kasprzyk_en_cv.pdf
-        p
-          small * Summaries are counted on base of data you can browse next on this page.
 
 .container-fluid.skills-container
   .container
-    section
-      h1 Skills
-      | show:
-      select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
-      br
-      | from:
-      br
-      | ordered by:
-      br
-      br
-      br
-      | or search:
-      input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
-      ul.skills
-        li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.2em"
-          div style="width:150px; float:left"
-            div style="position:absolute"
-              | {{e.human_time}}
-            div style="width:{{150*e.percent()}}px; background: #333; float:right"
-              | &nbsp;
-          | {{e.name}}
-          small
-            |  {{e.human_ago}}
+    .row
+      .col-sm-6
+        section
+          h1 Skills
+          | show:
+          select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
+          br
+          | from: last 3 years / all years
+          br
+          | ordered by: experience / last used
+          br
+          br
+          | or search:
+          input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
+          br
+          br
+          ul.skills.list-unstyled.bar-chart
+            li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.2em"
+              .pull-left style="width:200px"
+                / div style="position:absolute"
+                /   | {{e.human_time}}
+                div.bar style="width:{{200*e.percent()}}px; float:right"
+                  | &nbsp;
+              span.title
+                | {{e.name}}
+              br
+              .pull-left style="width:200px"
+                span.pull-right.subtitle.skill-time
+                  | {{e.human_time}}
+              span.subtitle.ago
+                |  {{e.human_ago}}
 
-      h1 Projects
-      svg.projects_chart width=800 height=50
-      ol.projects
-        li ng-repeat="e in c.projects()"
-          | {{e.company}}: {{e.name}} {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}}
-          |  ({{e.human_time}})
+      .col-sm-6
+        section
+          h1 Projects
+          svg.projects_chart width=800 height=50
+          ul.projects.list-unstyled
+            li ng-repeat="e in c.projects()"
+              br
+              span.subtitle 
+                | {{$index}}. 
+              | {{e.company}}: {{e.name}} 
+              .hover
+                span
+                  | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
+                br
+                span.title
+                  | {{e.company}}: {{e.name}}
+                br
+                a href="{{e.link}}" ng-if="e.link" {{e.link}}
+                p
+                  | {{e.description}}
+                strong
+                  | {{e.role}}
+                span ng-if='e.software_house'
+                  br
+                  small
+                    | at 
+                  strong
+                    | {{e.software_house}}
+                span ng-repeat="partner in e.team"
+                  br
+                  | + {{partner}}
+                br
+                br
+                small.skill-name ng-repeat="skill in e.skills"
+                  | {{skill.name}}, 
 
     section.footer
       .row.text-center
