@@ -5,6 +5,7 @@ app.controller 'PortfolioController',
       @Summary = Summary
       @skill_type = 'big technologies'
       @project_time = 'last 3 years'
+      @skill_sort_by = 'experience'
       @recalculate()
 
     recalculate: ->
@@ -23,8 +24,24 @@ app.controller 'PortfolioController',
       for data in window.data.projects when !filter || filter data
         @Project.create data
 
-    skills: ->
+    skills: =>
       skills = Skill.find_by_type @skill_type
+      skills.sort (a, b) =>
+        @use_time = @skill_sort_by == 'experience' || a.ago == b.ago
+        if @use_time
+          if a.time < b.time
+            return 1
+          if a.time > b.time
+            return -1
+        if a.ago < b.ago
+          return 1
+        if a.ago > b.ago
+          return -1
+        # if a.time < b.time
+        #   return 1
+        # if a.time > b.time
+        #   return -1
+        return 0
       return skills if !@query
       e for e in skills when e.matches @query.split(' ')
 

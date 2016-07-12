@@ -99,7 +99,8 @@
           | show:
           select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
           br
-          | ordered by: experience / last used
+          | ordered by:
+          select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
           br
           br
           | or search:
@@ -107,7 +108,7 @@
           br
           br
           ul.skills.list-unstyled.bar-chart
-            li ng-repeat="e in c.skills() | orderBy: '-time'" style="margin-bottom:0.2em"
+            li ng-repeat="e in c.skills()" style="margin-bottom:0.2em"
               .pull-left style="width:200px"
                 / div style="position:absolute"
                 /   | {{e.human_time}}
