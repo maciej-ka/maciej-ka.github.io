@@ -93,10 +93,11 @@
       .col-sm-6
         section
           h1 Skills
+          | from:
+          select ng-model="c.project_time" ng-options="e for e in ['last 3 years', 'all years']" ng-change="c.recalculate()"
+          br
           | show:
           select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
-          br
-          | from: last 3 years / all years
           br
           | ordered by: experience / last used
           br
@@ -124,38 +125,38 @@
       .col-sm-6
         section
           h1 Projects
-          svg.projects_chart width=800 height=50
+          / svg.projects_chart width=800 height=50
           ul.projects.list-unstyled
             li ng-repeat="e in c.projects()"
               br
               span.subtitle 
                 | {{$index}}. 
               | {{e.company}}: {{e.name}} 
-              .hover
-                span
-                  | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
-                br
-                span.title
-                  | {{e.company}}: {{e.name}}
-                br
-                a href="{{e.link}}" ng-if="e.link" {{e.link}}
-                p
-                  | {{e.description}}
-                strong
-                  | {{e.role}}
-                span ng-if='e.software_house'
-                  br
-                  small
-                    | at 
-                  strong
-                    | {{e.software_house}}
-                span ng-repeat="partner in e.team"
-                  br
-                  | + {{partner}}
-                br
-                br
-                small.skill-name ng-repeat="skill in e.skills"
-                  | {{skill.name}}, 
+              / .hover
+              /   span
+              /     | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
+              /   br
+              /   span.title
+              /     | {{e.company}}: {{e.name}}
+              /   br
+              /   a href="{{e.link}}" ng-if="e.link" {{e.link}}
+              /   p
+              /     | {{e.description}}
+              /   strong
+              /     | {{e.role}}
+              /   span ng-if='e.software_house'
+              /     br
+              /     small
+              /       | at 
+              /     strong
+              /       | {{e.software_house}}
+              /   span ng-repeat="partner in e.team"
+              /     br
+              /     | + {{partner}}
+              /   br
+              /   br
+              /   small.skill-name ng-repeat="skill in e.skills"
+              /     | {{skill.name}}, 
 
     section.footer
       .row.text-center

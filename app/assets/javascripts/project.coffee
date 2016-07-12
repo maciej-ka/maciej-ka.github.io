@@ -1,6 +1,8 @@
 class @Project
-  @all = []
-  @min_date = moment()
+  @reset: ->
+    @min_data = moment()
+    @all = []
+    Skill.all = []
 
   @create: (data) ->
     @all.push(new Project data)

@@ -1,13 +1,27 @@
 app.controller 'PortfolioController',
   class PortfolioController
     constructor: ->
-      for data in window.data.projects
-        Project.create data
+      @Project = Project
+      @Summary = Summary
       @skill_type = 'big technologies'
-      @summary = Summary.calculate()
-      @draw_projects_chart()
+      @project_time = 'last 3 years'
+      @recalculate()
+
+    recalculate: ->
+      # summary on base of all data
+      @read_data()
+      @summary = @Summary.calculate()
       @draw_roles_chart()
       @draw_sides_chart()
+      # charts on base of filtered data
+      if @project_time != 'all years'
+        @read_data (e) -> moment(e.start).isAfter moment().subtract(3, 'years')
+      @draw_projects_chart()
+
+    read_data: (filter) ->
+      @Project.reset()
+      for data in window.data.projects when !filter || filter data
+        @Project.create data
 
     skills: ->
       skills = Skill.find_by_type @skill_type
@@ -28,7 +42,7 @@ app.controller 'PortfolioController',
       chart = d3.select '.projects_chart'
 
       scale = d3.time.scale()
-        .domain [Project.min_date, moment()]
+        .domain [@Project.min_date, moment()]
         .range [0, 800]
 
       bars = chart
@@ -38,7 +52,9 @@ app.controller 'PortfolioController',
       bars.enter()
         .append 'rect'
         # .style 'opacity', 0.8
-        .attr 'width', (d) -> scale(d.end) - scale(d.start)
+        .attr 'width', (d) -> 
+          # console.log d
+          scale(d.end) - scale(d.start)
         .attr 'height', 30
         .attr 'x', (d) -> scale d.start
         .attr 'y', 0
