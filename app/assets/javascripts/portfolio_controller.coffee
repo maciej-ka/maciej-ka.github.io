@@ -18,9 +18,11 @@ app.controller 'PortfolioController',
       @draw_sides_chart()
       # charts on base of filtered data
       @hidden_skills_count = @Skill.all.length
+      @hidden_projects_count = @Project.all.length
       if @project_time != 'all years'
         @read_data (e) -> moment(e.start).isAfter moment().subtract(3, 'years')
       @hidden_skills_count -= @Skill.all.length
+      @hidden_projects_count = @Project.all.length
       @draw_projects_chart()
 
 

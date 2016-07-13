@@ -125,23 +125,28 @@
                 |  {{e.human_ago}}
             br
             .text-center ng-if="c.skill_type!='all technologies'"
-              | and {{c.hidden_skills_count}} smaller technologies hidden
               br
-              br
+              .small
+                | and {{c.hidden_skills_count}} smaller technologies hidden
               button ng-click="c.skill_type='all technologies'" show all
             .text-center ng-if="c.skill_type=='all technologies'"
-              button ng-click="c.skill_type='big technologies'" show important
+              button ng-click="c.skill_type='big technologies'" show only important
 
       .col-sm-6
         section
           h1 Projects
-          | from:
-          select ng-model="c.project_time" ng-options="e for e in ['last 3 years', 'all years']" ng-change="c.recalculate()"
-          br
+          / div ng-if="c.project_time!='all years'"
+          /   button ng-click="c.project_time='all years'" show all
+          /   br
+          div ng-if="c.project_time=='all years'"
+            button ng-click="c.project_time='last 3 years'; c.recalculate()" show only last 3 years
+            br
+            br
+          / | from:
+          / select ng-model="c.project_time" ng-options="e for e in ['last 3 years', 'all years']" ng-change="c.recalculate()"
           / svg.projects_chart width=800 height=50
           ul.projects.list-unstyled
             li ng-repeat="e in c.projects()"
-              br
               small.subtitle
                 | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
                 br
@@ -150,6 +155,8 @@
               a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
               br
               | {{e.role}}
+              br
+              br
               / .hover
               /   span
               /     | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
@@ -175,6 +182,15 @@
               /   br
               /   small.skill-name ng-repeat="skill in e.skills"
               /     | {{skill.name}}, 
+
+          .text-center ng-if="c.project_time!='all years'"
+            br
+            br
+            .small
+              | and {{c.hidden_projects_count}} older projects hidden
+            button ng-click="c.project_time='all years'; c.recalculate()" show all
+          .text-center ng-if="c.project_time=='all years'"
+            button ng-click="c.project_time='last 3 years'; c.recalculate()" show only last 3 years
 
     section.footer
       .row.text-center
