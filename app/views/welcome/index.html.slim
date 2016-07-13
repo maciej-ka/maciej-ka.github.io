@@ -93,9 +93,6 @@
       .col-sm-6
         section
           h1 Skills
-          | from:
-          select ng-model="c.project_time" ng-options="e for e in ['last 3 years', 'all years']" ng-change="c.recalculate()"
-          br
           | show:
           select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
           br
@@ -126,13 +123,21 @@
       .col-sm-6
         section
           h1 Projects
+          | from:
+          select ng-model="c.project_time" ng-options="e for e in ['last 3 years', 'all years']" ng-change="c.recalculate()"
+          br
           / svg.projects_chart width=800 height=50
           ul.projects.list-unstyled
             li ng-repeat="e in c.projects()"
               br
-              span.subtitle 
-                | {{$index}}. 
-              | {{e.company}}: {{e.name}} 
+              small.subtitle
+                | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
+                br
+              strong
+                | {{e.company}}: {{e.name}} 
+              a href="{{e.link}}" ng-if="e.link" {{e.link}}
+              br
+              | {{e.role}}
               / .hover
               /   span
               /     | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
