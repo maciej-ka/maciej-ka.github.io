@@ -123,20 +123,27 @@ svg.pie
     margin-left: 40px
     width: 200px
 
+.date
+  opacity: .3
+  font-size: 70%
+
 .projects li
   .hover
-    width: 60%
+    // width: 60%
+    width: 20em
     padding: 1em
-    // background: hsla(0,0,100%,0.3)
-    background: hsla(0,0,100%,0.6)
+    background: hsla(0,0,100%,0.92)
+    // background: hsl(0,0,93%)
+    // background: hsl(0,0,100%)
     opacity: 0
     // position: relative
-    position: absolute
+    // position: absolute
+    position: fixed
     // top: -10em
     // left: 10em
-    margin-top: -10em
+    // margin-top: -10em
     // margin-left: -64%
-    margin-left: 80%
+    // margin-left: 80%
     // display: none
     .title
       font-size: 120%
@@ -146,3 +153,4 @@ svg.pie
   &:hover
     .hover
       opacity: 1
+      z-index: 1

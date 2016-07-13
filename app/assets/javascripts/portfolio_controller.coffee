@@ -25,8 +25,9 @@ app.controller 'PortfolioController',
       @hidden_skills_count -= @Skill.all.length
       @hidden_projects_count = @Project.all.length
       @draw_projects_chart()
-
-
+      # @summary = @Summary.calculate()
+      # @draw_roles_chart()
+      # @draw_sides_chart()
 
     read_data: (filter) ->
       @Project.reset()
@@ -61,9 +62,19 @@ app.controller 'PortfolioController',
     activate_side: (@active_side) ->
       @draw_sides_chart()
 
+    project_hover: (index) ->
+
+    move_project_tooltip: (event, index) ->
+      tooltip = document.querySelector(".hover-#{index}")
+      # tooltip.style.left = "#{event.pageX}px"
+      # tooltip.style.top = "#{event.pageY}px"
+      tooltip.style.left = "#{event.clientX + 20}px"
+      tooltip.style.top = "#{event.clientY + 20}px"
+      # tooltip.style.left = '200px'
+      # tooltip.style.top = '200px'
+
     draw_projects_chart: ->
       chart = d3.select '.projects_chart'
-
       scale = d3.time.scale()
         .domain [@Project.min_date, moment()]
         .range [0, 800]
