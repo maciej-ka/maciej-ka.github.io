@@ -93,19 +93,20 @@
       .col-sm-6
         section
           h1 Skills
-          / | show:
-          / select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
-          / br
+          | show:
+          select ng-model="c.skill_type" ng-options="e for e in ['important technologies', 'all technologies']"
+          br
           | ordered by: 
           select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
           div ng-if="c.skill_type=='all technologies'"
-            br
             | search: 
             input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
 
-          div ng-if="c.skill_type=='all technologies'"
-            br
-            button ng-click="c.skill_type='big technologies'" show only important
+          / div ng-if="c.skill_type=='all technologies'"
+          /   br
+          /   button ng-click="c.skill_type='important technologies'" show only important
+          / br
+          / br
           br
           br
           ul.skills.list-unstyled.bar-chart
@@ -123,27 +124,26 @@
                   | {{e.human_time}}
               span.subtitle.ago
                 |  {{e.human_ago}}
-            br
-            .text-center ng-if="c.skill_type!='all technologies'"
-              br
-              .small
-                | and {{c.hidden_skills_count}} smaller technologies hidden
-              button ng-click="c.skill_type='all technologies'" show all
-            .text-center ng-if="c.skill_type=='all technologies'"
-              button ng-click="c.skill_type='big technologies'" show only important
+            / br
+            / .text-center ng-if="c.skill_type!='all technologies'"
+            /   br
+            /   .small
+            /     | and {{c.hidden_skills_count}} smaller technologies hidden
+            /   button ng-click="c.skill_type='all technologies'" show all
+            / .text-center ng-if="c.skill_type=='all technologies'"
+            /   button ng-click="c.skill_type='important technologies'" show only important
 
       .col-sm-6
         section
           h1 Projects
-          / div ng-if="c.project_time!='all years'"
-          /   button ng-click="c.project_time='all years'" show all
+          / div ng-if="c.project_time=='all years'"
+          /   button ng-click="c.project_time='last 3 years'; c.recalculate()" show only last 3 years
           /   br
-          div ng-if="c.project_time=='all years'"
-            button ng-click="c.project_time='last 3 years'; c.recalculate()" show only last 3 years
-            br
-            br
-          / | from:
-          / select ng-model="c.project_time" ng-options="e for e in ['last 3 years', 'all years']" ng-change="c.recalculate()"
+            / br
+          | from:
+          select ng-model="c.project_time" ng-options="e for e in ['last 3 years', 'all years']" ng-change="c.recalculate()"
+          br
+          br
           / svg.projects_chart width=800 height=50
           ul.projects.list-unstyled
             li ng-repeat="e in c.projects()"
@@ -183,14 +183,14 @@
               /   small.skill-name ng-repeat="skill in e.skills"
               /     | {{skill.name}}, 
 
-          .text-center ng-if="c.project_time!='all years'"
-            br
-            br
-            .small
-              | and {{c.hidden_projects_count}} older projects hidden
-            button ng-click="c.project_time='all years'; c.recalculate()" show all
-          .text-center ng-if="c.project_time=='all years'"
-            button ng-click="c.project_time='last 3 years'; c.recalculate()" show only last 3 years
+          / .text-center ng-if="c.project_time!='all years'"
+          /   br
+          /   br
+          /   .small
+          /     | and {{c.hidden_projects_count}} older projects hidden
+          /   button ng-click="c.project_time='all years'; c.recalculate()" show all
+          / .text-center ng-if="c.project_time=='all years'"
+          /   button ng-click="c.project_time='last 3 years'; c.recalculate()" show only last 3 years
 
     section.footer
       .row.text-center

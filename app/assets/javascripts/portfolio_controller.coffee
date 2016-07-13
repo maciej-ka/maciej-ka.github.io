@@ -5,8 +5,9 @@ app.controller 'PortfolioController',
       @Project = Project
       @Summary = Summary
       @Skill = Skill
-      @skill_type = 'big technologies'
-      @project_time = 'last 3 years'
+      @skill_type = 'important technologies'
+      # @project_time = 'last 3 years'
+      @project_time = 'all years'
       @skill_sort_by = 'experience'
       @recalculate()
 
