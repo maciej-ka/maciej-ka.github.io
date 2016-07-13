@@ -1,6 +1,6 @@
 class @Project
   @reset: ->
-    @min_data = moment()
+    @min_date = moment()
     @all = []
     Skill.all = []
 

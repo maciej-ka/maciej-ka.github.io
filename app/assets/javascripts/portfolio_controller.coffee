@@ -5,9 +5,8 @@ app.controller 'PortfolioController',
       @Project = Project
       @Summary = Summary
       @Skill = Skill
-      @skill_type = 'important technologies'
-      # @project_time = 'last 3 years'
-      @project_time = 'all years'
+      @skill_type = 'important'
+      @project_time = 'last 2 years'
       @skill_sort_by = 'experience'
       @recalculate()
       @caluculate_project_groups()
@@ -19,16 +18,9 @@ app.controller 'PortfolioController',
       @draw_roles_chart()
       @draw_sides_chart()
       # charts on base of filtered data
-      @hidden_skills_count = @Skill.all.length
-      @hidden_projects_count = @Project.all.length
-      if @project_time != 'all years'
-        @read_data (e) -> moment(e.start).isAfter moment().subtract(3, 'years')
-      @hidden_skills_count -= @Skill.all.length
-      @hidden_projects_count = @Project.all.length
+      if @project_time != 'all'
+        @read_data (e) -> moment(e.start).isAfter moment().subtract(2, 'years')
       @draw_projects_chart()
-      # @summary = @Summary.calculate()
-      # @draw_roles_chart()
-      # @draw_sides_chart()
 
     read_data: (filter) ->
       @Project.reset()
@@ -59,9 +51,21 @@ app.controller 'PortfolioController',
 
     caluculate_project_groups: ->
       # create buckets
-      time = moment()
-      console.log @Project.min_data
+      from = moment().dayOfYear(1).add(1, 'year').subtract(1, 'day')
       @project_groups = []
+      loop
+        to = from.clone()
+        from = from.subtract 2, 'years'
+        @project_groups.push {
+          from: from.clone().add 1, 'year'
+          to: to.clone()
+          projects: (e for e in @Project.all when from.isBefore(e.start) && to.isAfter(e.start))
+        }
+        console.log from
+        console.log moment(@Project.min_date)
+        if from.isBefore @Project.min_date
+          break
+      console.log @project_groups
 
     activate_role: (@active_role) ->
       @draw_roles_chart()
@@ -73,12 +77,8 @@ app.controller 'PortfolioController',
 
     move_project_tooltip: (event, index) ->
       tooltip = document.querySelector(".hover-#{index}")
-      # tooltip.style.left = "#{event.pageX}px"
-      # tooltip.style.top = "#{event.pageY}px"
       tooltip.style.left = "#{event.clientX + 20}px"
       tooltip.style.top = "#{event.clientY + 20}px"
-      # tooltip.style.left = '200px'
-      # tooltip.style.top = '200px'
 
     draw_projects_chart: ->
       chart = d3.select '.projects_chart'
@@ -92,9 +92,7 @@ app.controller 'PortfolioController',
 
       bars.enter()
         .append 'rect'
-        # .style 'opacity', 0.8
         .attr 'width', (d) -> 
-          # console.log d
           scale(d.end) - scale(d.start)
         .attr 'height', 30
         .attr 'x', (d) -> scale d.start
@@ -130,7 +128,6 @@ app.controller 'PortfolioController',
 
       arcs = chart
         .select 'g'
-        # .attr 'transform', 'translate(50%,50%)'
         .selectAll '.arc'
         .data pie data
 
@@ -159,52 +156,3 @@ app.controller 'PortfolioController',
         .attr 'class', 'subtitle'
         .text (d) -> d.data.human_time
 
-    # draw_roles_chart: ->
-    #   radius = 600 * .35
-    #   active_role = @active_role
-
-    #   chart = d3.select '.roles_chart'
-
-    #   pie = d3.layout.pie()
-    #     .value (d) -> d.time
-    #     .padAngle .03
-    #     .startAngle .8 * Math.PI
-    #     .endAngle 2.8 * Math.PI
-
-    #   arc = d3.svg.arc()
-    #     .outerRadius radius * 1
-    #     .innerRadius radius * .2
-
-    #   label_arc = d3.svg.arc()
-    #     .outerRadius radius * .6
-    #     .innerRadius radius * .6
-
-    #   arcs = chart
-    #     .select 'g'
-    #     .selectAll '.arc'
-    #     .data pie @summary.roles
-
-    #   # update
-    #   arcs
-    #     .classed 'active': (d) -> d.data.name == active_role
-
-    #   # enter
-    #   g = arcs
-    #     .enter()
-    #     .append 'g'
-    #     .attr 'class', 'arc'
-    #   g.append 'path'
-    #     .attr 'd', arc
-    #   g.append 'text'
-    #     .attr 'transform', (d) -> "translate(#{label_arc.centroid d})"
-    #     .attr 'dy', '.35em'
-    #     .attr 'class', 'title'
-    #     .text (d) ->
-    #       return 'manager' if d.data.name == 'project manager'
-    #       return 'architect' if d.data.name == 'software architect'
-    #       d.data.name
-    #   g.append 'text'
-    #     .attr 'transform', (d) -> "translate(#{label_arc.centroid d})"
-    #     .attr 'dy', '1.35em'
-    #     .attr 'class', 'subtitle'
-    #     .text (d) -> d.data.human_time

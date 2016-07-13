@@ -33,7 +33,7 @@ class @Skill
     skill
 
   @find_by_type: (type) ->
-    return @all if type == 'all technologies'
+    return @all if type == 'all'
     e for e in @all when @big_technologies.indexOf(e.name) >= 0
 
   constructor: (@name) ->
