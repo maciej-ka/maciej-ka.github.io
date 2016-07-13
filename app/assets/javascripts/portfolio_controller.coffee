@@ -10,6 +10,7 @@ app.controller 'PortfolioController',
       @project_time = 'all years'
       @skill_sort_by = 'experience'
       @recalculate()
+      @caluculate_project_groups()
 
     recalculate: ->
       # summary on base of all data
@@ -55,6 +56,12 @@ app.controller 'PortfolioController',
     projects: ->
       return Project.all if !@query
       e for e in Project.all when e.matches @query.split(' ')
+
+    caluculate_project_groups: ->
+      # create buckets
+      time = moment()
+      console.log @Project.min_data
+      @project_groups = []
 
     activate_role: (@active_role) ->
       @draw_roles_chart()
