@@ -93,15 +93,19 @@
       .col-sm-6
         section
           h1 Skills
-          | show:
-          select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
-          br
-          | ordered by:
+          / | show:
+          / select ng-model="c.skill_type" ng-options="e for e in ['big technologies', 'all technologies']"
+          / br
+          | ordered by: 
           select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
-          br
-          br
-          | or search:
-          input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
+          div ng-if="c.skill_type=='all technologies'"
+            br
+            | search: 
+            input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
+
+          div ng-if="c.skill_type=='all technologies'"
+            br
+            button ng-click="c.skill_type='big technologies'" show only important
           br
           br
           ul.skills.list-unstyled.bar-chart
@@ -119,6 +123,14 @@
                   | {{e.human_time}}
               span.subtitle.ago
                 |  {{e.human_ago}}
+            br
+            .text-center ng-if="c.skill_type!='all technologies'"
+              | and {{c.hidden_skills_count}} smaller technologies hidden
+              br
+              br
+              button ng-click="c.skill_type='all technologies'" show all
+            .text-center ng-if="c.skill_type=='all technologies'"
+              button ng-click="c.skill_type='big technologies'" show important
 
       .col-sm-6
         section
@@ -135,7 +147,7 @@
                 br
               strong
                 | {{e.company}}: {{e.name}} 
-              a href="{{e.link}}" ng-if="e.link" {{e.link}}
+              a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
               br
               | {{e.role}}
               / .hover

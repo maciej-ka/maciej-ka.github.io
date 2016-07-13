@@ -1,8 +1,10 @@
 app.controller 'PortfolioController',
   class PortfolioController
     constructor: ->
+      window.c = @
       @Project = Project
       @Summary = Summary
+      @Skill = Skill
       @skill_type = 'big technologies'
       @project_time = 'last 3 years'
       @skill_sort_by = 'experience'
@@ -15,9 +17,13 @@ app.controller 'PortfolioController',
       @draw_roles_chart()
       @draw_sides_chart()
       # charts on base of filtered data
+      @hidden_skills_count = @Skill.all.length
       if @project_time != 'all years'
         @read_data (e) -> moment(e.start).isAfter moment().subtract(3, 'years')
+      @hidden_skills_count -= @Skill.all.length
       @draw_projects_chart()
+
+
 
     read_data: (filter) ->
       @Project.reset()
