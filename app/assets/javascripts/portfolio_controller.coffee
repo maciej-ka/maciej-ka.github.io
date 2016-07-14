@@ -55,16 +55,25 @@ app.controller 'PortfolioController',
 
     caluculate_project_groups: ->
       # create buckets
+      @group_mins = {}
       from = moment().dayOfYear(1).add(1, 'year').subtract(1, 'day')
       @project_groups = []
+      id = 0
       loop
+        @group_mins[id] ?= moment()
         to = from.clone()
         from = from.subtract 2, 'years'
+        projects = []
+        for e in @Project.all when from.isBefore(e.start) && to.isAfter(e.start)
+          @group_mins[id] = Math.min(@group_mins[id], e.start)
+          projects.push e
         @project_groups.push {
           from: from.clone().add 1, 'year'
           to: to.clone()
-          projects: (e for e in @Project.all when from.isBefore(e.start) && to.isAfter(e.start))
+          projects: projects
+          id: id
         }
+        id++
         if from.isBefore @Project.min_date
           break
 
@@ -85,14 +94,24 @@ app.controller 'PortfolioController',
       tooltip.style.left = "#{event.clientX + 20}px"
       tooltip.style.top = "#{event.clientY + 20}px"
 
-    draw_projects_charts: ->
-      @draw_projects_chart '.last-2-years-chart', @projects()
+    draw_projects_charts: =>
+      if @project_time == 'last 2 years'
+        @draw_projects_chart '.last-2-years-chart', @projects(), Project.min_date, moment()
+      else
+        i = 0
+        loop
+          @draw_projects_chart ".bucket-#{i}", @project_groups[i].projects, @group_mins[i], @project_groups[i].to
+          i++
+          break if i >= @project_groups.length
+        # for i,e of @project_groups
+        #   @draw_projects_chart '.bucket-0', @project_groups[0].projects, @group_mins[0]
 
-    draw_projects_chart: (selector, data) ->
+    draw_projects_chart: (selector, data, min_date, to) ->
+      console.log to
       active = @active_project
       chart = d3.select selector
       scale = d3.time.scale()
-        .domain [@Project.min_date, moment()]
+        .domain [min_date, to]
         .range [0, 800]
       axis = d3.svg.axis()
         .scale scale
