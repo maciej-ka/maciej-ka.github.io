@@ -85,15 +85,17 @@
 .container-fluid.skills-container
   .container
     .row
-      .col-sm-6
+      .col-sm-6.col-md-8
         section
           h1 Projects
           | show: 
           select ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.recalculate()"
           br
           br
-          / svg.projects_chart width=800 height=50
           ul.projects.list-unstyled
+            / svg.projects_chart.latest-projects width=800 height=50
+            svg.projects_chart.last-2-years-chart preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
+              g.axis
             li ng-repeat="e in c.projects()" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover(e)" ng-mouseleave="c.project_hover()" ng-if="c.project_time=='last 2 years'"
               small.date
                 | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
@@ -103,6 +105,8 @@
               a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
               br
               | {{e.role}}
+              span.toggle data-toggle="popover" data-trigger="hover" data-content="test"
+              / |  in team
               br
               br
               .hover ng-class="'hover-{{$index}}'"
@@ -136,6 +140,7 @@
             div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
               h1
                 | {{list.from.format('YYYY')}} - {{list.to.format('YYYY')}}
+              svg.projects_chart ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 40'
               / li ng-repeat="e in list.projects" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover($index)" ng-mouseleave="c.project_hover()"
               li ng-repeat="e in list.projects" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover(e)" ng-mouseleave="c.project_hover()"
                 small.date
@@ -146,6 +151,7 @@
                 a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
                 br
                 | {{e.role}}
+                / |  in team
                 br
                 br
                 .hover ng-class="'hover-{{$index}}'"
@@ -175,7 +181,7 @@
                   small.skill-name ng-repeat="skill in e.skills"
                     | {{skill.name}}, 
 
-      .col-sm-6
+      .col-sm-6.col-md-4
         section
           h1 Skills
           | show: 
@@ -190,7 +196,7 @@
           br
           br
           ul.skills.list-unstyled.bar-chart
-            li ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}"
+            li ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
               .pull-left style="width:200px"
                 div.bar style="width:{{200*e.percent()}}px; float:right"
                   | &nbsp;

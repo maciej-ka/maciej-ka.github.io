@@ -24,7 +24,7 @@ app.controller 'PortfolioController',
         @read_data (e) -> moment(e.start).isAfter moment().subtract(2, 'years')
       else
         @read_data()
-      @draw_projects_chart()
+      @draw_projects_charts()
 
     read_data: (filter) ->
       @Project.reset()
@@ -75,32 +75,63 @@ app.controller 'PortfolioController',
       @draw_sides_chart()
 
     project_hover: (@active_project) =>
+      @draw_projects_charts()
+
+    skill_hover: (@active_skill) =>
+      @draw_projects_charts()
 
     move_project_tooltip: (event, index) ->
       tooltip = document.querySelector(".hover-#{index}")
       tooltip.style.left = "#{event.clientX + 20}px"
       tooltip.style.top = "#{event.clientY + 20}px"
 
-    draw_projects_chart: ->
-      chart = d3.select '.projects_chart'
+    draw_projects_charts: ->
+      @draw_projects_chart '.last-2-years-chart', @projects()
+
+    draw_projects_chart: (selector, data) ->
+      active = @active_project
+      chart = d3.select selector
       scale = d3.time.scale()
         .domain [@Project.min_date, moment()]
         .range [0, 800]
+      axis = d3.svg.axis()
+        .scale scale
+        # .orient 'bottom'
+        # .tickFormat d3.time.format('%Y')
+        .ticks d3.time.years, 1
+        # .tickFormat d3.time.format('%Y')
+        # .tickSubdivide 12
 
       bars = chart
         .selectAll 'rect'
-        .data @projects()
+        .data data
+
+      # update
+      bars
+        .classed 'active': (d) =>
+          if @active_project
+            return d == @active_project
+          if @active_skill
+            return d.matches @active_skill.name
+          false
 
       bars.enter()
         .append 'rect'
         .attr 'width', (d) -> 
-          scale(d.end) - scale(d.start)
-        .attr 'height', 30
+          scale(d.end) - scale(d.start) - 4
+        .attr 'height', 80
         .attr 'x', (d) -> scale d.start
         .attr 'y', 0
 
       bars.exit()
         .remove()
+
+      chart
+        .select '.axis'
+        # .append 'g'
+        .attr 'transform', 'translate(0,80)'
+        .call axis
+        # .classed 'axis'
 
     draw_roles_chart: ->
       @draw_pie_chart '.roles_chart', @summary.roles, @active_role, .6

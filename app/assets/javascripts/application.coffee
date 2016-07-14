@@ -29,3 +29,5 @@
     str += '1 month ' if months == 1
     str += "#{months} months" if months > 1
     str.trim()
+
+$('.tooltip').tooltip()
