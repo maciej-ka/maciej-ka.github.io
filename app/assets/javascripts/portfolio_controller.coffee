@@ -8,18 +8,22 @@ app.controller 'PortfolioController',
       @skill_type = 'important'
       @project_time = 'last 2 years'
       @skill_sort_by = 'experience'
-      @recalculate()
-      @caluculate_project_groups()
-
-    recalculate: ->
-      # summary on base of all data
+      # calculate once
       @read_data()
       @summary = @Summary.calculate()
       @draw_roles_chart()
       @draw_sides_chart()
+      @caluculate_project_groups()
+      # calculate what neeed more than once
+      @recalculate()
+
+    recalculate: ->
+      # summary on base of all data
       # charts on base of filtered data
       if @project_time != 'all'
         @read_data (e) -> moment(e.start).isAfter moment().subtract(2, 'years')
+      else
+        @read_data()
       @draw_projects_chart()
 
     read_data: (filter) ->
@@ -61,11 +65,8 @@ app.controller 'PortfolioController',
           to: to.clone()
           projects: (e for e in @Project.all when from.isBefore(e.start) && to.isAfter(e.start))
         }
-        console.log from
-        console.log moment(@Project.min_date)
         if from.isBefore @Project.min_date
           break
-      console.log @project_groups
 
     activate_role: (@active_role) ->
       @draw_roles_chart()
@@ -73,7 +74,7 @@ app.controller 'PortfolioController',
     activate_side: (@active_side) ->
       @draw_sides_chart()
 
-    project_hover: (index) ->
+    project_hover: (@active_project) =>
 
     move_project_tooltip: (event, index) ->
       tooltip = document.querySelector(".hover-#{index}")

@@ -14,7 +14,7 @@ class @Skill
     'Angular'
     'Android'
     'Spring'
-    'Python'
+    # 'Python'
     # 'D3'
     # 'Bootstrap'
     # 'Single Page Application'

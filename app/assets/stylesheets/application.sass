@@ -36,12 +36,15 @@ section.summary
   // margin-top: -6.5em
 .skills-container
   padding-top: 5vh
+  section ul
+    height: 100vh
+    overflow: scroll
   background: \
     // radial-gradient(circle at 15% 10%, hsl(193, 39%, 75%) 15%, transparent 50%),
     // radial-gradient(circle at 15% 10%, hsl(193, 39%, 62%), transparent 50%),
-    // radial-gradient(circle at 15% 10%, hsl(237, 39%, 62%), transparent 50%),
+    // radial-gradient(circle at 85% 10%, hsl(237, 39%, 62%), transparent 50%),
+    radial-gradient(circle at 85% 10%, hsl(237, 39%, 62%), transparent 70%),
     // radial-gradient(circle at 85% 10%, hsla(237, 39%, 62%, .8), hsla(237, 39%, 62%, .4)),
-    radial-gradient(circle at 15% 10%, hsla(237, 39%, 62%, .8), hsla(237, 39%, 62%, .4)),
     // radial-gradient(circle at 15% 100%, hsl(0, 0, 93%), transparent 16%)
     // radial-gradient(circle at 0% 100%, white, transparent 80%)
 // section.footer
@@ -107,6 +110,14 @@ svg.pie
 .skills
   > li
     padding-bottom: 1em
+    &.active
+      .bar
+        opacity: .8
+      .title
+        color: white
+        opacity: .8
+        // font-size: 130%
+        // padding-top: -2em
 
 .subtitle
   font-size: 80%
@@ -160,5 +171,5 @@ svg.pie
       font-size: 80%
   &:hover
     .hover
-      opacity: 1
+      // opacity: .9
       z-index: 1

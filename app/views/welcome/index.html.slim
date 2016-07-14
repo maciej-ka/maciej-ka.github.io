@@ -94,7 +94,7 @@
           br
           / svg.projects_chart width=800 height=50
           ul.projects.list-unstyled
-            li ng-repeat="e in c.projects()" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover($index)" ng-mouseleave="c.project_hover()" ng-if="c.project_time=='last 2 years'"
+            li ng-repeat="e in c.projects()" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover(e)" ng-mouseleave="c.project_hover()" ng-if="c.project_time=='last 2 years'"
               small.date
                 | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
                 br
@@ -136,7 +136,8 @@
             div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
               h1
                 | {{list.from.format('YYYY')}} - {{list.to.format('YYYY')}}
-              li ng-repeat="e in list.projects" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover($index)" ng-mouseleave="c.project_hover()"
+              / li ng-repeat="e in list.projects" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover($index)" ng-mouseleave="c.project_hover()"
+              li ng-repeat="e in list.projects" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover(e)" ng-mouseleave="c.project_hover()"
                 small.date
                   | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
                   br
@@ -189,13 +190,13 @@
           br
           br
           ul.skills.list-unstyled.bar-chart
-            li ng-repeat="e in c.skills()" style="margin-bottom:0.2em"
+            li ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}"
               .pull-left style="width:200px"
                 div.bar style="width:{{200*e.percent()}}px; float:right"
                   | &nbsp;
               span.title
                 | {{e.name}}
-              br
+              br.clearfix
               .pull-left style="width:200px"
                 span.pull-right.subtitle.skill-time
                   | {{e.human_time}}

@@ -563,7 +563,7 @@
     start: '2008-04-01'
     end: '2008-09-01'
     skills: [
-      'UML', 'Use-case analysis', 'requrements analysis', 'Oracle Database', 'PL/SQL'
+      'UML', 'Use-case analysis', 'requirements analysis', 'Oracle Database', 'PL/SQL'
     ]
   }
 
