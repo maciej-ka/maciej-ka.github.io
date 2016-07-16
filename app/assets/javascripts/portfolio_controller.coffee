@@ -1,6 +1,6 @@
 app.controller 'PortfolioController',
   class PortfolioController
-    constructor: ->
+    constructor: (@$scope)->
       window.c = @
       @Project = Project
       @Summary = Summary
@@ -17,11 +17,12 @@ app.controller 'PortfolioController',
       # calculate what neeed more than once
       @recalculate()
 
-    recalculate: ->
+    recalculate: =>
       # summary on base of all data
       # charts on base of filtered data
       if @project_time != 'all'
         @read_data (e) -> moment(e.start).isAfter moment().subtract(2, 'years')
+        @halves = @calculate_halves @projects()
       else
         @read_data()
       @draw_projects_charts()
@@ -34,7 +35,7 @@ app.controller 'PortfolioController',
     skills_compare: (a, b) =>
       if @skill_sort_by == 'experience' || a.ago == b.ago
         if a.time < b.time
-          return 1
+          return 2
         if a.time > b.time
           return -1
       if a.ago < b.ago
@@ -71,11 +72,25 @@ app.controller 'PortfolioController',
           from: from.clone().add 1, 'year'
           to: to.clone()
           projects: projects
+          halves: @calculate_halves projects
           id: id
         }
         id++
         if from.isBefore @Project.min_date
           break
+
+    calculate_halves: (items) =>
+      # return [[],[]] if !items || items.length == 0
+      # # to make first stack larger
+      # l = (items.length+1)/2
+      # return [items.slice(0,l), items.slice(l,items.length)]
+      result = [[],[]]
+      for e in items
+        if even = !even
+          result[0].push e
+        else
+          result[1].push e
+      result
 
     activate_role: (@active_role) ->
       @draw_roles_chart()
@@ -83,8 +98,9 @@ app.controller 'PortfolioController',
     activate_side: (@active_side) ->
       @draw_sides_chart()
 
-    project_hover: (@active_project) =>
+    project_hover: (@active_project, apply = false) =>
       @draw_projects_charts()
+      @$scope.$apply() if apply
 
     skill_hover: (@active_skill) =>
       @draw_projects_charts()
@@ -106,8 +122,8 @@ app.controller 'PortfolioController',
         # for i,e of @project_groups
         #   @draw_projects_chart '.bucket-0', @project_groups[0].projects, @group_mins[0]
 
-    draw_projects_chart: (selector, data, min_date, to) ->
-      console.log to
+    draw_projects_chart: (selector, data, min_date, to) =>
+      controller = @
       active = @active_project
       chart = d3.select selector
       scale = d3.time.scale()
@@ -141,6 +157,8 @@ app.controller 'PortfolioController',
         .attr 'height', 80
         .attr 'x', (d) -> scale d.start
         .attr 'y', 0
+        .on 'mouseover', (d) -> controller.project_hover(d,true)
+        .on 'mouseleave', (d) -> controller.project_hover(null,true)
 
       bars.exit()
         .remove()

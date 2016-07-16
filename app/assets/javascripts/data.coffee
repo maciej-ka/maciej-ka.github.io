@@ -248,7 +248,7 @@
     role: 'Lead web developer'
     team: ['Web developer', 'Front-end developer']
 
-    start: '2013-11-01'
+    start: '2013-12-01'
     end: '2014-03-01'
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'factory_girl', 'Devise'
