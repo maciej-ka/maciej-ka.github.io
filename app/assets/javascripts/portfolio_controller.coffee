@@ -1,5 +1,6 @@
 app.controller 'PortfolioController',
   class PortfolioController
+    @$inject: ['$scope']
     constructor: (@$scope)->
       window.c = @
       @Project = Project
