@@ -27,6 +27,10 @@ app.controller 'PortfolioController',
       else
         @read_data()
       @draw_projects_charts()
+      # skill max duration
+      @max_duration = 0
+      for skill in @skills()
+        @max_duration = Math.max @max_duration, skill.time
 
     read_data: (filter) ->
       @Project.reset()
@@ -44,6 +48,11 @@ app.controller 'PortfolioController',
       if a.ago > b.ago
         return -1
       return 0
+
+    percent: (skill) =>
+      if @project_time != 'last 2 years'
+        return (skill.time/Skill.max_duration)
+      return (skill.time/@max_duration)
 
     skills: =>
       skills = Skill.find_by_type @skill_type

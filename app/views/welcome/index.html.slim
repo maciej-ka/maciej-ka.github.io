@@ -50,6 +50,7 @@
           |  and most often work as a 
           span ng-mouseover="c.activate_side('fullstack')" ng-mouseleave="c.activate_side()" fullstack
           | .
+        br
 
         svg.sides_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
           g.pie-container
@@ -91,6 +92,9 @@
         | show: 
         select.selectpicker ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.recalculate()"
         span.caret
+        br
+        br
+        br
         br
         br
 
@@ -142,7 +146,7 @@
                       small.skill-name ng-repeat="skill in e.skills"
                         | {{skill.name}}, 
 
-        div ng-show="c.project_time!='last 2 years'"
+        div.project-list ng-show="c.project_time!='last 2 years'"
           / todo: remove duplicate
           div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
             h1
@@ -203,25 +207,28 @@
           | ordered by: 
           select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
           span.caret
+          div ng-if="c.skill_type!='all'"
+            br
           div ng-if="c.skill_type=='all'"
             | search: 
             input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
-
           br
           br
           ul.skills.list-unstyled.bar-chart
-            li ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
-              .pull-left style="width:200px"
-                div.bar style="width:{{200*e.percent()}}px; float:right"
+            li.clearfix ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
+              div.pull-left style="width:40%"
+                span.title
+                  | {{e.name}}
+              div.pull-left style="width:40%"
+                div.bar style="width:{{100*c.percent(e)}}%"
                   | &nbsp;
-              span.title
-                | {{e.name}}
               br.clearfix
-              .pull-left style="width:200px"
-                span.pull-right.subtitle.skill-time
+              div.pull-left style="width:40%"
+                span.subtitle.ago
+                  |  {{e.human_ago}}
+              div.pull-left style="width:40%"
+                span.subtitle.skill-time
                   | {{e.human_time}}
-              span.subtitle.ago
-                |  {{e.human_ago}}
 
     section.footer
       .row.text-center

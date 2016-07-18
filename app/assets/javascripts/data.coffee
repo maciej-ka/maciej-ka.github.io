@@ -13,10 +13,10 @@
   #   start: '2016-06-01'
   #   end: '2016-07-01'
   #   skills: [
-  #     'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium WebDriver'
-  #     'JavaScript', 'Angular', 'CoffeeScript', 'Single Page Application', 'D3'
+  #     'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium'
+  #     'JavaScript', 'Angular', 'CoffeeScript', 'D3'
   #     'Sass', 'Slim', 'Responsive Web Design', 'CSS animations', 'interface design', 'Bootstrap', 'CSS'
-  #     'PostgreSQL', 'nginx'
+  #     'PostgreSQL'
   #   ]
   # }
 
@@ -35,10 +35,10 @@
     start: '2016-01-01'
     end: '2016-06-01'
     skills: [
-      'Java', 'Spring', 'Gradle', 'FluentLenium', 'Elasticsearch'
-      'JavaScript', 'Angular', 'CoffeeScript', 'Single Page Application'
-      'Bootstrap', 'material design', 'Sass', 'Jade', 'Responsive Web Design', 'CSS animations', 'interface design', 'CSS'
-      'CDN', 'SEO', 'Prerender.io', 'gulp', 'MySQL', 'UML'
+      'Java', 'Spring', 'Gradle', 'Elasticsearch'
+      'JavaScript', 'Angular', 'CoffeeScript'
+      'Bootstrap', 'Sass', 'Jade', 'Responsive Web Design', 'CSS animations', 'interface design', 'CSS'
+      'gulp', 'UML'
     ]
   }
 
@@ -57,10 +57,10 @@
     start: '2015-12-01'
     end: '2016-01-01'
     skills: [
-      'Ruby', 'Rails', 'Minitest', 'Capybara', 'Devise', 'Selenium WebDriver'
-      'Ember', 'JavaScript', 'CoffeeScript', 'Single Page Application'
+      'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium'
+      'Ember', 'JavaScript', 'CoffeeScript'
       'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS'
-      'Capistrano', 'nginx', 'PostgreSQL', 'UML', 'requirements analysis'
+      'Capistrano', 'PostgreSQL', 'UML', 'requirements analysis'
     ]
   }
 
@@ -79,8 +79,8 @@
     start: '2015-11-01'
     end: '2015-12-01'
     skills: [
-      'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium WebDriver'
-      'Ember', 'JavaScript', 'CoffeeScript', 'Single Page Application'
+      'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium'
+      'Ember', 'JavaScript', 'CoffeeScript'
       'Haml', 'Sass', 'CSS'
       'PostgreSQL', 'UML'
     ]
@@ -101,8 +101,8 @@
     start: '2015-10-01'
     end: '2015-11-01'
     skills: [
-      'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium WebDriver', 'Devise'
-      'PayPal', 'Twitter API', 'Facebook API', 'LinkedIn API'
+      'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium'
+      'PayPal API'
     ]
   }
 
@@ -122,8 +122,8 @@
     start: '2015-08-01'
     end: '2015-10-01'
     skills: [
-      'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Capybara', 'Selenium WebDriver'
-      'Angular', 'JavaScript', 'CoffeeScript', 'Single Page Application'
+      'Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium'
+      'Angular', 'JavaScript', 'CoffeeScript'
       'Haml', 'Sass', 'CSS'
       'PostgreSQL', 'UML'
     ]
@@ -144,8 +144,8 @@
     start: '2015-05-01'
     end: '2015-08-01'
     skills: [
-      'Ruby', 'Rails', 'RSpec', 'factory_girl', 'Capybara', 'Selenium WebDriver'
-      'Angular', 'JavaScript', 'CoffeeScript', 'Single Page Application'
+      'Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium'
+      'Angular', 'JavaScript', 'CoffeeScript'
       'Haml', 'Sass', 'CSS animations', 'interface design', 'CSS'
       'PostgreSQL', 'UML'
     ]
@@ -166,7 +166,7 @@
     start: '2014-09-01'
     end: '2015-01-01'
     skills: [
-      'Ruby', 'Rails', 'RSpec', 'Capybara', 'factory_girl', 'Devise', 'Savon', 'SOAP', 'ComfortableMexicanSofa'
+      'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP'
       'Haml'
       'Capistrano', 'PostgreSQL', 'UML'
     ]
@@ -187,9 +187,9 @@
     start: '2014-06-01'
     end: '2015-06-01'
     skills: [
-      'Ruby', 'Rails', 'RSpec', 'Capybara', 'factory_girl', 'Devise', 'Savon', 'SOAP'
+      'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP'
       'Haml', 'Bootstrap', 'interface design', 'CSS'
-      'Capistrano', 'nginx', 'MySQL', 'Magento', 'PrestaShop', 'UML'
+      'Capistrano', 'UML'
     ]
   }
 
@@ -209,9 +209,9 @@
     start: '2014-05-01'
     end: '2014-06-01'
     skills: [
-      'Ruby', 'Rails', 'RSpec', 'Capybara', 'factory_girl', 'Devise'
+      'Ruby', 'Rails', 'RSpec', 'Capybara'
       'Haml'
-      'Capistrano', 'nginx', 'MySQL'
+      'Capistrano'
     ]
   }
 
@@ -230,9 +230,9 @@
     start: '2014-03-01'
     end: '2014-05-01'
     skills: [
-      'Ruby', 'Rails', 'RSpec', 'Capybara', 'factory_girl', 'Devise'
+      'Ruby', 'Rails', 'RSpec', 'Capybara'
       'Haml'
-      'Capistrano', 'nginx', 'MySQL', 'Bash Script', 'Raspberry Pi'
+      'Capistrano' 
     ]
   }
 
@@ -251,9 +251,9 @@
     start: '2013-12-01'
     end: '2014-03-01'
     skills: [
-      'Ruby', 'Rails', 'RSpec', 'Capybara', 'factory_girl', 'Devise'
+      'Ruby', 'Rails', 'RSpec', 'Capybara'
       'Haml'
-      'Capistrano', 'nginx', 'MySQL', 'UML'
+      'Capistrano', 'UML'
     ]
   }
 
@@ -295,7 +295,7 @@
     skills: [
       'Ruby', 'Rails'
       'Haml'
-      'SQL', 'MySQL'
+      'SQL'
     ]
   }
 
@@ -314,8 +314,8 @@
     start: '2013-01-01'
     end: '2013-06-01'
     skills: [
-      'Ruby', 'Rails', 'RSpec', 'Devise'
-      'ERB', 'CSS', 'interface design'
+      'Ruby', 'Rails', 'RSpec'
+      'CSS', 'interface design'
       'JavaScript', 'jQuery', 'JS animations'
       'MySQL', 'requirements analysis'
     ]
@@ -337,9 +337,9 @@
     end: '2011-11-01'
     skills: [
       'PHP', 'Symfony', 'Doctrine', 'Apache Lucene'
-      'HTML', 'CSS', 'interface design'
+       'interface design'
       'JavaScript', 'jQuery', 'JS animations'
-      'MySQL', 'Photoshop', 'SQL'
+      'MySQL', 'SQL'
     ]
   }
 
@@ -359,8 +359,8 @@
     end: '2011-06-01'
     skills: [
       'PHP', 'Symfony', 'Doctrine'
-      'HTML', 'CSS', 'interface design'
-      'JavaScript', 'jQuery', 'Single Page Application'
+       'CSS', 'interface design'
+      'JavaScript', 'jQuery'
       'MySQL', 'SQL'
     ]
   }
@@ -381,7 +381,7 @@
     end: '2011-02-01'
     skills: [
       'PHP', 'Symfony', 'Doctrine'
-      'HTML', 'CSS', 'interface design'
+       'CSS', 'interface design'
       'JavaScript', 'jQuery'
       'MySQL', 'requirement analysis', 'SQL'
     ]
@@ -441,8 +441,8 @@
     end: '2010-03-01'
     skills: [
       'PHP', 'Symfony', 'Doctrine'
-      'HTML', 'CSS', 'interface design'
-      'JavaScript', 'jQuery', 'Single Page Application'
+       'CSS', 'interface design'
+      'JavaScript', 'jQuery'
       'MySQL', 'SQL'
     ]
   }
@@ -463,7 +463,7 @@
     end: '2009-12-01'
     skills: [
       'PHP', 'Symfony', 'Doctrine'
-      'HTML', 'CSS'
+       'CSS'
       'MySQL', 'Facebook API', 'SQL'
     ]
   }
@@ -485,8 +485,8 @@
     end: '2009-09-01'
     skills: [
       'PHP', 'Symfony', 'Doctrine'
-      'HTML', 'CSS', 'interface design'
-      'JavaScript', 'jQuery', 'Single Page Application'
+       'CSS', 'interface design'
+      'JavaScript', 'jQuery'
       'MySQL', 'SQL'
     ]
   }
@@ -544,7 +544,7 @@
     start: '2008-09-01'
     end: '2008-11-01'
     skills: [
-      'PHP', 'CSS', 'Mantis'
+      'PHP', 'CSS'
     ]
   }
 
@@ -563,7 +563,7 @@
     start: '2008-04-01'
     end: '2008-09-01'
     skills: [
-      'UML', 'Use-case analysis', 'requirements analysis', 'Oracle Database', 'PL/SQL'
+      'UML', 'requirements analysis', 'Oracle Database', 'PL/SQL'
     ]
   }
 
@@ -582,7 +582,7 @@
     start: '2008-01-01'
     end: '2008-04-01'
     skills: [
-      'UML', 'Use-case analysis', 'requirements analysis', 'Oracle Database', 'PL/SQL'
+      'UML', 'requirements analysis', 'Oracle Database', 'PL/SQL'
     ]
   }
 
@@ -620,7 +620,7 @@
     start: '2006-10-01'
     end: '2006-12-01'
     skills: [
-      'Java', 'Peer to peer', 'Java RMI'
+      'Java'
     ]
   }
 
@@ -639,7 +639,7 @@
     start: '2006-06-01'
     end: '2006-08-01'
     skills: [
-      'PHP', 'Oracle', 'UML'
+      'PHP', 'Oracle Database', 'UML'
     ]
   }
 
@@ -658,7 +658,7 @@
     start: '2006-02-01'
     end: '2007-02-01'
     skills: [
-      'UML', 'requirements analysis', 'Java', 'evolutionary programming'
+      'UML', 'requirements analysis', 'Java'
     ]
   }
 
@@ -677,7 +677,7 @@
     start: '2005-12-01'
     end: '2006-02-01'
     skills: [
-      'PHP', 'PHPUnit', 'SQL'
+      'PHP', 'SQL'
     ]
   }
 
@@ -715,7 +715,7 @@
     start: '2005-07-01'
     end: '2005-09-01'
     skills: [
-      'PHP', 'MySQL', 'SQL'
+      'PHP', 'SQL'
     ]
   }
 
@@ -734,7 +734,7 @@
     start: '2005-02-01'
     end: '2005-07-01'
     skills: [
-      'UML', 'Use-case analysis', 'requirements analysis', 'SQL Server', 'SQL'
+      'UML', 'requirements analysis', 'SQL Server', 'SQL'
     ]
   }
 
@@ -753,7 +753,7 @@
     start: '2004-12-01'
     end: '2005-02-01'
     skills: [
-      'Flash', 'ActionScript', 'requirements analysis', 'interface design'
+      'ActionScript', 'requirements analysis', 'interface design'
     ]
   }
 
@@ -772,7 +772,7 @@
     start: '2004-07-01'
     end: '2004-10-01'
     skills: [
-      'MySQL', 'Flash', 'ActionScript', 'HTML', 'CSS'
+      'MySQL', 'ActionScript',  'CSS'
     ]
   }
 
@@ -791,7 +791,7 @@
     start: '2004-02-01'
     end: '2004-04-01'
     skills: [
-      'PHP', 'HTML', 'Apache', 'CSS', 'requirements analysis'
+      'PHP',  'CSS', 'requirements analysis'
     ]
   }
 ]
