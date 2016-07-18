@@ -2,6 +2,7 @@ class @Project
   @reset: ->
     @min_date = moment()
     @all = []
+    @id = 0
     Skill.all = []
 
   @create: (data) ->
@@ -10,6 +11,8 @@ class @Project
   constructor: (data) ->
     # copy all data to self
     $.extend @, data
+    @id = Project.id
+    Project.id++
     @init_time()
     @skills = @parse_skills(data.skills || [])
     Summary.add_project @

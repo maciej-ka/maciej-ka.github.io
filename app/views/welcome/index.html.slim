@@ -115,8 +115,8 @@
                     a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
                     br
                     | {{e.role}}
-                    span.toggle data-toggle="popover" data-trigger="hover" data-content="test"
-                    / |  in team
+                    span.toggle.tooltip data-toggle="popover" data-trigger="hover" data-content="test" data-placement="right"
+                    |  in team
                     br
                     br
                     .hover ng-class="'hover-{{$index}}'"
@@ -226,7 +226,7 @@
               div.pull-left style="width:40%"
                 span.subtitle.ago
                   |  {{e.human_ago}}
-              div.pull-left style="width:40%"
+              div.pull-left
                 span.subtitle.skill-time
                   | {{e.human_time}}
 

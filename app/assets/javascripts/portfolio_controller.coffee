@@ -34,8 +34,11 @@ app.controller 'PortfolioController',
 
     read_data: (filter) ->
       @Project.reset()
+      id = 0
       for data in window.data.projects when !filter || filter data
-        @Project.create data
+        project = @Project.create data
+        project.id = id
+        id++
 
     skills_compare: (a, b) =>
       if @skill_sort_by == 'experience' || a.ago == b.ago
@@ -90,17 +93,17 @@ app.controller 'PortfolioController',
           break
 
     calculate_halves: (items) =>
-      # return [[],[]] if !items || items.length == 0
-      # # to make first stack larger
-      # l = (items.length+1)/2
-      # return [items.slice(0,l), items.slice(l,items.length)]
-      result = [[],[]]
-      for e in items
-        if even = !even
-          result[0].push e
-        else
-          result[1].push e
-      result
+      return [[],[]] if !items || items.length == 0
+      # to make first stack larger
+      l = (items.length+1)/2
+      return [items.slice(0,l), items.slice(l,items.length)]
+      # result = [[],[]]
+      # for e in items
+      #   if even = !even
+      #     result[0].push e
+      #   else
+      #     result[1].push e
+      # result
 
     activate_role: (@active_role) ->
       @draw_roles_chart()
@@ -155,7 +158,7 @@ app.controller 'PortfolioController',
       bars
         .classed 'active': (d) =>
           if @active_project
-            return d == @active_project
+            return d.id == @active_project.id
           if @active_skill
             return d.matches @active_skill.name
           false
