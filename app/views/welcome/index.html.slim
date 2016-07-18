@@ -22,17 +22,17 @@
             | {{ e.name }}: {{ e.human_time}}
 
         p
-          | I have worked as an 
+          | My main focus is to 
+          span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" write clean code
+          | .
+        p
+          | I can work in roles of a 
           span ng-mouseover="c.activate_role('software architect')" ng-mouseleave="c.activate_role()" software architect
           | , an use case 
           span ng-mouseover="c.activate_role('analyst')" ng-mouseleave="c.activate_role()" requirements analyst
           |  and a rather soft 
           span ng-mouseover="c.activate_role('project manager')" ng-mouseleave="c.activate_role()" project manager
           | .
-        p
-          | To be a 
-          span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" developer
-          |  is a choice and a passion.
 
         svg.roles_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox='0 0 600 600'
           g.pie-container
@@ -43,13 +43,13 @@
           ul ng-repeat="e in c.summary.sides | orderBy: '-time'"
             | {{ e.name }}: {{ e.human_time }}
         p
-          | Due to trends in modern web development I moved from a 
-          span ng-mouseover="c.activate_side('backend')" ng-mouseleave="c.activate_side()" back-end
-          |  world closer to the 
-          span ng-mouseover="c.activate_side('frontend')" ng-mouseleave="c.activate_side()" front-end
+          | Due to possibilities in a modern javascript I moved from the 
+          span ng-mouseover="c.activate_side('backend')" ng-mouseleave="c.activate_side()" server side
+          |  to the 
+          span ng-mouseover="c.activate_side('frontend')" ng-mouseleave="c.activate_side()" client side
           |  and most often work as a 
           span ng-mouseover="c.activate_side('fullstack')" ng-mouseleave="c.activate_side()" fullstack
-          |  developer now.
+          | .
 
         svg.sides_chart.pie preserveAcpectRatio='xMinYmin meet' viewBox="0 0 600 600"
           g.pie-container
@@ -59,13 +59,14 @@
       .col-sm-6.col-lg-4
         h1 Open Source
         p
-          | To have an impact on a programming itself would be a dream. From 2015 I send fixes to 
+          | To have an impact on a programming itself would be a dream. From 2015 I sent fixes to 
           a href='https://github.com/lokson' github
-          |  and recently becomed more active with a multiline operator 
+          |  and became more active with a multiline operator 
           a href='https://github.com/sass/sass/pull/2094' addition to sass
+          | .
         h1 CV
         p
-          a href='' maciej_kasprzyk_en_cv.pdf
+          a href='maciej_kasprzyk_cv_en.pdf' maciej_kasprzyk_en_cv.pdf
         p
           small * Summaries are counted on base of data you can browse next on this page.
 
@@ -88,7 +89,8 @@
       section.projects.col-sm-6.col-md-8
         h1 Projects
         | show: 
-        select ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.recalculate()"
+        select.selectpicker ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.recalculate()"
+        span.caret
         br
         br
 
@@ -196,9 +198,11 @@
           h1 Skills
           | show: 
           select ng-model="c.skill_type" ng-options="e for e in ['important', 'all']"
+          span.caret
           br
           | ordered by: 
           select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
+          span.caret
           div ng-if="c.skill_type=='all'"
             | search: 
             input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"

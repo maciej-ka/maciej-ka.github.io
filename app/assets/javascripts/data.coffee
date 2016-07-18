@@ -608,25 +608,6 @@
 
 
   {
-    company: 'Institute of Bankers in Ireland'
-    name: 'Software architect'
-    description: 'Helping to match required coding standards, understand the custom framework and design database.'
-    link: null
-
-    software_house: 'Gateway 2 Future'
-    role: 'Software architect'
-    team: ['PHP developer #1', 'PHP developer #2', 'Front-end developer', 'Senior developer']
-
-    start: '2006-06-01'
-    end: '2006-08-01'
-    skills: [
-      'PHP', 'Oracle', 'UML'
-    ]
-  }
-
-
-
-  {
     company: 'PJWSTK'
     name: 'Peer to Peer computation grid'
     description: 'Platform to send computation task to be calculated parallel, working on a spontanous Peer to Peer network.'
@@ -640,6 +621,25 @@
     end: '2006-12-01'
     skills: [
       'Java', 'Peer to peer', 'Java RMI'
+    ]
+  }
+
+
+
+  {
+    company: 'Institute of Bankers in Ireland'
+    name: 'Software architect'
+    description: 'Helping to match required coding standards, understand the custom framework and design database.'
+    link: null
+
+    software_house: 'Gateway 2 Future'
+    role: 'Software architect'
+    team: ['PHP developer #1', 'PHP developer #2', 'Front-end developer', 'Senior developer']
+
+    start: '2006-06-01'
+    end: '2006-08-01'
+    skills: [
+      'PHP', 'Oracle', 'UML'
     ]
   }
 

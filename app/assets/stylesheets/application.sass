@@ -9,6 +9,12 @@
 @import 'mixins'
 @import 'animations'
 
+select
+  background: transparent
+  border: none
+  border-bottom: 1px solid hsla(0,0,0%,0.8)
+  +prefix(appearance, none)
+
 body
   color: black
   background: \
@@ -81,12 +87,14 @@ svg.pie
     .title
       font-size: 200%
       opacity: .8
+      cursor: default
     .subtitle
       stroke: white
       stroke-width: 0
       paint-order: stroke
       font-size: 118%
       opacity: .3
+      cursor: default
 
     &:hover, &.active
       transform: scale(1.1)
@@ -128,6 +136,7 @@ svg.pie
 
 .skills
   > li
+    cursor: default
     // margin-bottom: -5px
     padding-bottom: 1em
     &.active, &:hover
@@ -151,6 +160,7 @@ svg.pie
 .summary
   span
     border-bottom: 1px dashed
+    cursor: default
 
 .tools-image
   width: 200px
@@ -170,6 +180,7 @@ svg.pie
   font-size: 70%
 
 .projects li
+  cursor: default
   .hover
     // width: 60%
     width: 20em
