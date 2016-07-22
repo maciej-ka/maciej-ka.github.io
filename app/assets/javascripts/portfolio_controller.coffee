@@ -19,6 +19,7 @@ app.controller 'PortfolioController',
       @recalculate()
 
     recalculate: =>
+      # $('[data-toggle="popover"]').popover()
       # summary on base of all data
       # charts on base of filtered data
       if @project_time != 'all'

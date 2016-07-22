@@ -26,7 +26,7 @@
           span ng-mouseover="c.activate_role('developer')" ng-mouseleave="c.activate_role()" write clean code
           | .
         p
-          | I can work in roles of a 
+          | In past I worked as a 
           span ng-mouseover="c.activate_role('software architect')" ng-mouseleave="c.activate_role()" software architect
           | , an use case 
           span ng-mouseover="c.activate_role('analyst')" ng-mouseleave="c.activate_role()" requirements analyst
@@ -60,9 +60,9 @@
       .col-sm-6.col-lg-4
         h1 Open Source
         p
-          | To have an impact on a programming itself would be a dream. From 2015 I sent fixes to 
+          | To have an impact on a programming itself would be a dream. From 2015 I send fixes to 
           a href='https://github.com/lokson' github
-          |  and became more active with a multiline operator 
+          |  and becomed more active with a multiline operator 
           a href='https://github.com/sass/sass/pull/2094' addition to sass
           | .
         h1 CV
@@ -86,18 +86,41 @@
 
 .container-fluid.skills-container
   .container
-    .row
-      section.projects.col-sm-6.col-md-8
+    .row.filters
+      .col-sm-6.col-md-8
         h1 Projects
         | show: 
         select.selectpicker ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.recalculate()"
         span.caret
-        br
-        br
-        br
-        br
-        br
 
+      .col-sm-6.col-md-4
+        section
+          h1 Skills
+          | show: 
+          select ng-model="c.skill_type" ng-options="e for e in ['important', 'all']"
+          span.caret
+          br
+          | ordered by: 
+          select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
+          span.caret
+          div ng-if="c.skill_type!='all'"
+            br
+          div ng-if="c.skill_type=='all'"
+            | search: 
+            input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
+
+
+    .row
+      section.projects.col-sm-6.col-md-8
+        / h1 Projects
+        / | show: 
+        / select.selectpicker ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.recalculate()"
+        / span.caret
+        / br
+        / br
+        / br
+        / br
+        / br
         div ng-show="c.project_time=='last 2 years'"
           / svg.projects_chart.latest-projects width=800 height=50
           svg.projects_chart.last-2-years-chart preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120' ng-show="c.project_time=='last 2 years'"
@@ -115,8 +138,6 @@
                     a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
                     br
                     | {{e.role}}
-                    span.toggle.tooltip data-toggle="popover" data-trigger="hover" data-content="test" data-placement="right"
-                    |  in team
                     br
                     br
                     .hover ng-class="'hover-{{$index}}'"
@@ -135,7 +156,7 @@
                       span ng-if='e.software_house'
                         br
                         small
-                          | at 
+                          | at
                         strong
                           | {{e.software_house}}
                       span ng-repeat="partner in e.team"
@@ -167,6 +188,8 @@
                       a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
                       br
                       | {{e.role}}
+                      span.mytooltip data-toggle="popover" data-trigger="hover" data-content="test" data-placement="right"
+                        |  tooltip
                       / |  in team
                       br
                       br
@@ -199,21 +222,21 @@
 
       .col-sm-6.col-md-4
         section
-          h1 Skills
-          | show: 
-          select ng-model="c.skill_type" ng-options="e for e in ['important', 'all']"
-          span.caret
-          br
-          | ordered by: 
-          select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
-          span.caret
-          div ng-if="c.skill_type!='all'"
-            br
-          div ng-if="c.skill_type=='all'"
-            | search: 
-            input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
-          br
-          br
+          / h1 Skills
+          / | show: 
+          / select ng-model="c.skill_type" ng-options="e for e in ['important', 'all']"
+          / span.caret
+          / br
+          / | ordered by: 
+          / select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
+          / span.caret
+          / div ng-if="c.skill_type!='all'"
+          /   br
+          / div ng-if="c.skill_type=='all'"
+          /   | search: 
+          /   input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
+          / br
+          / br
           ul.skills.list-unstyled.bar-chart
             li.clearfix ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
               div.pull-left style="width:40%"
