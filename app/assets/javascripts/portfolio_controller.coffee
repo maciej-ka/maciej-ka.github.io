@@ -84,6 +84,7 @@ app.controller 'PortfolioController',
           projects.push e
         @project_groups.push {
           from: from.clone().add 1, 'year'
+          chart_from: from.clone()
           to: to.clone()
           projects: projects
           halves: @calculate_halves projects
@@ -130,7 +131,8 @@ app.controller 'PortfolioController',
       else
         i = 0
         loop
-          @draw_projects_chart ".bucket-#{i}", @project_groups[i].projects, @group_mins[i], @project_groups[i].to
+          # @draw_projects_chart ".bucket-#{i}", @project_groups[i].projects, @group_mins[i], @project_groups[i].to
+          @draw_projects_chart ".bucket-#{i}", @project_groups[i].projects, @project_groups[i].chart_from, @project_groups[i].to
           i++
           break if i >= @project_groups.length
         # for i,e of @project_groups
