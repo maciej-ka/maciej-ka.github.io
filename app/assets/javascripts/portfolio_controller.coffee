@@ -7,7 +7,8 @@ app.controller 'PortfolioController',
       @Summary = Summary
       @Skill = Skill
       @skill_type = 'important'
-      @project_time = 'last 2 years'
+      # @project_time = 'last 2 years'
+      @project_time = 'all'
       @skill_sort_by = 'experience'
       # calculate once
       @read_data()
@@ -119,6 +120,11 @@ app.controller 'PortfolioController',
 
     skill_hover: (@active_skill) =>
       @draw_projects_charts()
+
+    project_time_changed: =>
+      @recalculate()
+      # @skill_hover()
+      # @draw_projects_charts()
 
     move_project_tooltip: (event, index) ->
       tooltip = document.querySelector(".hover-#{index}")

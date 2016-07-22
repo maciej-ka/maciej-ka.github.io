@@ -32,6 +32,26 @@ body
 .container-fluid
   padding: 0
 
+.ps-scrollbar-y
+  opacity: 1
+
+.scroller
+  // white-space: pre-line
+  height: 80vh
+  // overflow-y: auto
+  // overflow-y: auto
+  overflow: hidden
+  // position: relative
+  .ps-scrollbar-y-rail
+    background-color: red
+    opacity: 1
+    .ps-scrollbar-y
+      opacity: 1
+      color: red
+      background: red
+    //   background: red
+    //   display: none
+
 section.intro
   // min-height: 100vh
   margin: 10vh 0 10vh
@@ -48,7 +68,8 @@ section.summary
   section.projects, ul.skills
     height: 80vh
     // overflow: scroll
-    overflow: auto
+    // overflow: auto
+    // overflow-y: hidden
   background: \
     // radial-gradient(circle at 15% 10%, hsl(193, 39%, 75%) 15%, transparent 50%),
     // radial-gradient(circle at 15% 10%, hsl(193, 39%, 62%), transparent 50%),

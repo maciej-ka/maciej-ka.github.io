@@ -90,7 +90,7 @@
       .col-sm-6.col-md-8
         h1 Projects
         | show: 
-        select.selectpicker ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.recalculate()"
+        select.selectpicker ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.project_time_changed()"
         span.caret
 
       .col-sm-6.col-md-4
@@ -111,16 +111,8 @@
 
 
     .row
-      section.projects.col-sm-6.col-md-8
-        / h1 Projects
-        / | show: 
-        / select.selectpicker ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.recalculate()"
-        / span.caret
-        / br
-        / br
-        / br
-        / br
-        / br
+      / section.projects.col-sm-6.col-md-8
+      perfect-scrollbar class="scroller projects col-sm-6 col-md-8" min-scrollbar-length="20"
         div ng-show="c.project_time=='last 2 years'"
           / svg.projects_chart.latest-projects width=800 height=50
           svg.projects_chart.last-2-years-chart preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120' ng-show="c.project_time=='last 2 years'"
@@ -140,6 +132,8 @@
                     | {{e.role}}
                     br
                     br
+                    .hover-trigger
+
                     .hover ng-class="'hover-{{$index}}'"
                       div
                         span
@@ -168,14 +162,18 @@
                         | {{skill.name}}, 
 
         div.project-list ng-show="c.project_time!='last 2 years'"
-          / todo: remove duplicate
+          div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
+            .container-fluid
+              .row
+                svg.projects_chart.all ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
+                  g.axis
           div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
             h1
               | {{list.from.format('YYYY')}} - {{list.to.format('YYYY')}}
             .container-fluid
               .row
-                svg.projects_chart ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
-                  g.axis
+                / svg.projects_chart ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
+                /   g.axis
                 .col-sm-12.col-md-6 ng-repeat='half in list.halves'
                   ul.projects.list-unstyled
                     / li ng-repeat="e in list.projects" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover($index)" ng-mouseleave="c.project_hover()"
@@ -222,21 +220,6 @@
 
       .col-sm-6.col-md-4
         section
-          / h1 Skills
-          / | show: 
-          / select ng-model="c.skill_type" ng-options="e for e in ['important', 'all']"
-          / span.caret
-          / br
-          / | ordered by: 
-          / select ng-model="c.skill_sort_by" ng-options="e for e in ['experience', 'last used']"
-          / span.caret
-          / div ng-if="c.skill_type!='all'"
-          /   br
-          / div ng-if="c.skill_type=='all'"
-          /   | search: 
-          /   input name="query" ng-model="c.query" ng-change="c.draw_projects_chart()"
-          / br
-          / br
           ul.skills.list-unstyled.bar-chart
             li.clearfix ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
               div.pull-left style="width:40%"
