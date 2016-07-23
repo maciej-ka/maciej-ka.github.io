@@ -111,8 +111,7 @@
 
 
     .row
-      / section.projects.col-sm-6.col-md-8
-      perfect-scrollbar class="scroller projects col-sm-6 col-md-8" min-scrollbar-length="20"
+      section.projects.col-sm-6.col-md-8
         div ng-show="c.project_time=='last 2 years'"
           / svg.projects_chart.latest-projects width=800 height=50
           svg.projects_chart.last-2-years-chart preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120' ng-show="c.project_time=='last 2 years'"
@@ -165,7 +164,7 @@
           div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
             .container-fluid
               .row
-                svg.projects_chart.all ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
+                svg.projects_chart ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
                   g.axis
           div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
             h1
@@ -239,4 +238,4 @@
     section.footer
       .row.text-center
         p
-          = image_tag 'footer_small_2.png'
+          = image_tag 'footer_small_3.png'

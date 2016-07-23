@@ -20,3 +20,6 @@ bower_components
 
 # Debugger
 .byebug_history
+
+# System files
+.DS_Store

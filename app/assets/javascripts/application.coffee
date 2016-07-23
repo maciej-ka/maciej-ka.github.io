@@ -4,9 +4,7 @@
 # = require jquery
 # = require jquery_ujs
 # = require bootstrap
-# = require perfect-scrollbar
 # = require angular
-# = require angular-perfect-scrollbar
 # = require moment
 # = require d3
 #
@@ -17,8 +15,7 @@
 # = require portfolio_controller
 # = require data
 
-# @app = angular.module 'portfolio', ['']
-@app = angular.module 'portfolio', ['perfect_scrollbar']
+@app = angular.module 'portfolio', []
 
 @Helpers =
   # format date in style of linkedIn
