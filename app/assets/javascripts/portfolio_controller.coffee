@@ -1,13 +1,14 @@
 app.controller 'PortfolioController',
   class PortfolioController
-    @$inject: ['$scope']
-    constructor: (@$scope)->
+    @$inject: ['$scope', '$timeout']
+    constructor: (@$scope, @$timeout)->
+      window.c = @
       @Project = Project
       @Summary = Summary
       @Skill = Skill
       @skill_type = 'important'
-      @project_time = 'last 2 years'
-      # @project_time = 'all'
+      # @project_time = 'last 2 years'
+      @project_time = 'all'
       @skill_sort_by = 'experience'
       # calculate once
       @read_data()
@@ -17,6 +18,7 @@ app.controller 'PortfolioController',
       @caluculate_project_groups()
       # calculate what we need more than once
       @recalculate()
+      @$timeout @draw_projects_charts, 50
 
     recalculate: =>
       # $('[data-toggle="popover"]').popover()
@@ -149,12 +151,14 @@ app.controller 'PortfolioController',
       chart = d3.select selector
       scale = d3.time.scale()
         .domain [min_date, to]
+        # .range [0, 600]
         .range [0, 800]
       axis = d3.svg.axis()
         .scale scale
         # .orient 'bottom'
         # .tickFormat d3.time.format('%Y')
         .ticks d3.time.years, 1
+        # .tickSize 1
         # .tickFormat d3.time.format('%Y')
         # .tickSubdivide 12
 
@@ -175,8 +179,11 @@ app.controller 'PortfolioController',
         .append 'rect'
         .attr 'width', (d) -> 
           scale(d.end) - scale(d.start) - 4
-        .attr 'height', 80
-        .attr 'x', (d) -> scale d.start
+        # .attr 'height', 40
+        .attr 'height', 60
+        # .attr 'x', (d) -> scale d.start.subtract(1, 'month')
+        # minus january length
+        .attr 'x', (d) -> scale d.start.subtract(29, 'days')
         .attr 'y', 0
         .on 'mouseover', (d) -> controller.project_hover(d,true)
         .on 'mouseleave', (d) -> controller.project_hover(null,true)
@@ -187,7 +194,7 @@ app.controller 'PortfolioController',
       chart
         .select '.axis'
         # .append 'g'
-        .attr 'transform', 'translate(0,80)'
+        .attr 'transform', 'translate(0,60)'
         .call axis
         # .classed 'axis'
 
