@@ -12,7 +12,7 @@ class @Skill
     # 'CoffeeScript'
     # 'Sass'
     'Angular'
-    'Android'
+    # 'Android'
     # 'Spring'
     # 'Python'
     # 'D3'
