@@ -5,6 +5,7 @@
 # = require jquery_ujs
 # = require bootstrap
 # = require angular
+# = require angular-animate
 # = require moment
 # = require d3
 #

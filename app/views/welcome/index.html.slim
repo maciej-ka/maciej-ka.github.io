@@ -252,6 +252,14 @@
             span.skill-name ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
               | {{e.name.replace(' ', '\u00a0')}} 
 
+          .active_project_details
+            div ng-if="c.active_project"
+              strong
+                | {{c.active_project.company}}: {{c.active_project.name}} 
+                br
+              p
+                | {{c.active_project.description}}
+
 .container-fluid
   .container
     .row
