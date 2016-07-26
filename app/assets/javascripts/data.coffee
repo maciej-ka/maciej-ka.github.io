@@ -383,7 +383,7 @@
       'PHP', 'Symfony', 'Doctrine'
        'CSS', 'interface design'
       'JavaScript', 'jQuery'
-      'MySQL', 'requirement analysis', 'SQL'
+      'MySQL', 'requirements analysis', 'SQL'
     ]
   }
 

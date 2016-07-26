@@ -237,7 +237,7 @@
           span.caret
           br
           br
-          ul.skills.list-unstyled.bar-chart
+          ul.skills.list-unstyled.bar-chart ng-if="c.skill_type == 'important'"
             li.clearfix ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
               div.pull-left style="width:40%"
                 span.title
@@ -252,6 +252,10 @@
               div.pull-left
                 span.subtitle.skill-time
                   | {{e.human_time}}
+
+          div ng-if="c.skill_type != 'important'"
+            span.skill-name ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
+              | {{e.name.replace(' ', '\u00a0')}} 
 
     section.footer
       .row.text-center
