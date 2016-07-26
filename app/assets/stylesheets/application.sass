@@ -24,7 +24,9 @@ body
     // radial-gradient(circle at 20% 100%, hsl(224, 49%, 86%), transparent 40%),
     // radial-gradient(circle at 90% 43%, hsl(224, 48%, 61%), white 120%)
     // radial-gradient(circle at 90% 46%, hsl(224, 48%, 61%), white 120%),
-    radial-gradient(circle at 90% 46%, hsl(224, 48%, 48%) 20%, white 102%),
+    // radial-gradient(circle at 90% 46%, hsl(224, 48%, 48%) 20%, white 102%),
+    // radial-gradient(circle at 90% 23%, hsl(224, 48%, 48%) 1%, white 43%),
+    radial-gradient(circle at 90% 23%, hsl(224, 48%, 48%) 1%, hsl(204,38%,92%) 43%),
     // radial-gradient(circle at 90% 46%, hsl(241, 48%, 61%), white 120%)
     // radial-gradient(circle at 90% 46%, hsl(241, 39%, 79%), white 120%)
   // font-family: Lato
@@ -35,6 +37,9 @@ body
 
 .ps-scrollbar-y
   opacity: 1
+
+.project-details
+  margin-bottom: 3em
 
 section.intro
   // min-height: 100vh
@@ -48,6 +53,7 @@ section.summary
   // margin-bottom: 30vh
   // margin-top: -6.5em
 .skills-container
+  min-height: 80vh
   padding-top: 5vh
   // section.projects, ul.skills
   // section.projects, ul.skills
@@ -77,16 +83,22 @@ section.summary
     // radial-gradient(circle at 95% 10%, hsl(237, 39%, 62%), transparent 195%),
     // radial-gradient(circle at 95% 0%, hsl(237, 39%, 58%), transparent 195%),
     // radial-gradient(circle at 95% 0%, hsl(241, 41%, 56%) 20%, transparent 95%),
-    radial-gradient(circle at 15% 0%, hsl(241, 41%, 58%) 20%, transparent 50%, transparent 95%),
+    // radial-gradient(circle at 15% 0%, hsl(241, 41%, 58%) 20%, transparent 50%, transparent 95%),
+    // radial-gradient(circle at 15% 0%, hsl(241, 41%, 58%) 60%, transparent 90%),
+    hsl(241, 41%, 58%)
+    // hsl(237, 39%, 62%)
     // hsl(237, 39%, 62%)
 // section.footer
   // padding-top: 5vh
 //   background: \
 //     radial-gradient(circle at 0% 100%, white, transparent 80%)
 
+section.details
+  padding-top: 5vh
+
 #carousel
   box-shadow: 0 0 5vmin 1em hsl(0,0,80%)
-  width: 80%
+  // width: 80%
   margin: 0 auto
 
 .pie-container
@@ -182,15 +194,15 @@ svg.pie
 
 .skill-name
   +transition(all .5s ease-in-out)
-  margin-right: 0.25em
-  line-height: 2em
+  margin-right: 0.35em
+  line-height: 2.10em
   padding:  0.25em
   background: hsla(0,0,100%, 0.1)
   &.active, &:hover
-    background: none
     color: white
     opacity: .8
     cursor: default
+    background: none
   &:hover
     +transition(none .5s ease-in-out)
 
@@ -221,11 +233,15 @@ svg.pie
     width: 200px
 
 .date
-  opacity: .3
-  font-size: 70%
+  opacity: .75
+  font-size: 90%
 
 .projects li
   cursor: default
+  .date
+    border-bottom: 1px solid black
+    width: 100%
+    display: block
   .hover
     // width: 60%
     width: 20em
@@ -253,7 +269,7 @@ svg.pie
       font-weight: bold
     .skill-name
       font-size: 80%
-  &:hover, &.active
+  // &:hover, &.active
     a
       color: white
       opacity: .8

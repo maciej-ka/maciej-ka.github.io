@@ -93,7 +93,7 @@
         / select.selectpicker ng-model="c.project_time" ng-options="e for e in ['last 2 years', 'all']" ng-change="c.project_time_changed()"
         / span.caret
 
-      .col-sm-6.col-md-4
+      / .col-sm-6.col-md-4
         section
           h1 Skills
           | show: 
@@ -169,20 +169,15 @@
           div.bar_chart_container ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
             .container-fluid
               .row
-                / svg.projects_chart ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 1000 120'
-                / svg.projects_chart ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
                 svg.projects_chart ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
                   g.axis
-          div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
+          / div ng-repeat="list in c.project_groups" ng-if="c.project_time!='last 2 years'"
             h1
               | {{list.from.format('YYYY')}} - {{list.to.format('YYYY')}}
             .container-fluid
               .row
-                / svg.projects_chart ng-class="'bucket-{{$index}}'" preserveAcpectRatio='xMinYmin meet' viewBox='0 0 800 120'
-                /   g.axis
                 .col-sm-12.col-md-6 ng-repeat='half in list.halves'
                   ul.projects.list-unstyled
-                    / li ng-repeat="e in list.projects" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover($index)" ng-mouseleave="c.project_hover()"
                     li ng-repeat="e in half" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover(e)" ng-mouseleave="c.project_hover()"
                       small.date
                         | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
@@ -256,6 +251,87 @@
           div ng-if="c.skill_type != 'important'"
             span.skill-name ng-repeat="e in c.skills()" style="margin-bottom:0.2em" ng-class="{'active': c.active_project.matches(e.name)}" ng-mouseover="c.skill_hover(e)" ng-mouseleave="c.skill_hover()"
               | {{e.name.replace(' ', '\u00a0')}} 
+
+.container-fluid
+  .container
+    .row
+      section.details
+        .col-sm-6.col-lg-4.project-details ng-repeat-start="list in c.project_groups" ng-if="c.project_time!='last 2 years'" 
+          h1
+            | {{list.from.format('YYYY')}} - {{list.to.format('YYYY')}}
+          ul.projects.list-unstyled
+            li ng-repeat="e in list.projects" 
+              small.date
+                | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
+                br
+              strong
+                | {{e.company}}: {{e.name}} 
+                br
+              span ng-if='e.link'
+                a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
+                br
+              p
+                | {{e.description}}
+              strong
+                | {{e.role}}
+              small ng-if='e.software_house'
+                br
+                small
+                  | at 
+                strong
+                  | {{e.software_house}}
+              small ng-repeat="partner in e.team"
+                br
+                | + {{partner}}
+              br
+              br
+              br
+        .clearfix ng-if="$index%3==2"
+        div ng-repeat-end=""
+
+          / .col-sm-12.col-md-6 ng-repeat='half in list.halves'
+            ul.projects.list-unstyled
+              li ng-repeat="e in half" ng-mousemove="c.move_project_tooltip($event, $index)" ng-mouseover="c.project_hover(e)" ng-mouseleave="c.project_hover()"
+                small.date
+                  | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
+                  br
+                strong
+                  | {{e.company}}: {{e.name}} 
+                span ng-if='e.link'
+                  br
+                  a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
+                  br
+                | {{e.role}}
+                span.mytooltip data-toggle="popover" data-trigger="hover" data-content="test" data-placement="right"
+                / |  in team
+                br
+                br
+                .hover ng-class="'hover-{{$index}}'"
+                  div
+                    span
+                      | {{e.start.format('YYYY.MM')}} - {{e.end.format('YYYY.MM')}} ({{e.human_time}})
+                  br
+                  span.title
+                    | {{e.company}}: {{e.name}}
+                  br
+                  a href="{{e.link}}" ng-if="e.link" {{e.link}}
+                  p
+                    | {{e.description}}
+                  strong
+                    | {{e.role}}
+                  span ng-if='e.software_house'
+                    br
+                    small
+                      | at 
+                    strong
+                      | {{e.software_house}}
+                  span ng-repeat="partner in e.team"
+                    br
+                    | + {{partner}}
+                  br
+                  br
+                  small.skill-name ng-repeat="skill in e.skills"
+                    | {{skill.name}}, 
 
     section.footer
       .row.text-center
