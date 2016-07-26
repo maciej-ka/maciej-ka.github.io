@@ -2,13 +2,12 @@ app.controller 'PortfolioController',
   class PortfolioController
     @$inject: ['$scope']
     constructor: (@$scope)->
-      window.c = @
       @Project = Project
       @Summary = Summary
       @Skill = Skill
       @skill_type = 'important'
-      # @project_time = 'last 2 years'
-      @project_time = 'all'
+      @project_time = 'last 2 years'
+      # @project_time = 'all'
       @skill_sort_by = 'experience'
       # calculate once
       @read_data()
@@ -16,7 +15,7 @@ app.controller 'PortfolioController',
       @draw_roles_chart()
       @draw_sides_chart()
       @caluculate_project_groups()
-      # calculate what neeed more than once
+      # calculate what we need more than once
       @recalculate()
 
     recalculate: =>

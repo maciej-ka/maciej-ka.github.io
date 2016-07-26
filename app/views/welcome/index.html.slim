@@ -126,7 +126,9 @@
                       br
                     strong
                       | {{e.company}}: {{e.name}} 
-                    a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
+                    span ng-if='e.link'
+                      br
+                      a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
                     br
                     | {{e.role}}
                     br
@@ -140,8 +142,9 @@
                       br
                       span.title
                         | {{e.company}}: {{e.name}}
-                      br
-                      a href="{{e.link}}" ng-if="e.link" {{e.link}}
+                      span ng-if='e.link'
+                        br
+                        a href="{{e.link}}" ng-if="e.link" {{e.link}}
                       p
                         | {{e.description}}
                       strong
@@ -182,11 +185,12 @@
                         br
                       strong
                         | {{e.company}}: {{e.name}} 
-                      a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
-                      br
+                      span ng-if='e.link'
+                        br
+                        a href="http://{{e.link}}" ng-if="e.link" {{e.link}}
+                        br
                       | {{e.role}}
                       span.mytooltip data-toggle="popover" data-trigger="hover" data-content="test" data-placement="right"
-                        |  tooltip
                       / |  in team
                       br
                       br
