@@ -34,7 +34,7 @@ body
   > div
     min-height: 9em
     // background: hsla(0,0,100%,.1)
-    background: hsla(0,0,100%,.5)
+    background: hsla(0,0,100%,.7)
     padding: 1em
 
 section.intro
@@ -52,10 +52,14 @@ section.details
   padding-top: 5vh
 
 #carousel
-  box-shadow: 0 0 5vmin 1em hsl(0,0,80%)
   // width: 80%
   margin: 0 auto
-
+  .carousel-control
+    background: none
+  .carousel-inner
+    box-shadow: 0 0 5vmin 1em hsl(0,0,80%)
+    width: 75%
+    margin: 0 auto
 
 .pie-container
   transform: translate(50%,50%)
