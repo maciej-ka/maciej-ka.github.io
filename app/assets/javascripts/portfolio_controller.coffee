@@ -65,6 +65,14 @@ app.controller 'PortfolioController',
       return skills if !@query
       e for e in skills when e.matches @query.split(' ')
 
+    important_skills: (project) =>
+      result = []
+      for e in project.skills
+        if @Skill.big_technologies.indexOf(e.name) >= 0
+          result.push e
+      result
+
+
     projects: ->
       return Project.all if !@query
       e for e in Project.all when e.matches @query.split(' ')

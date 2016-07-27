@@ -591,7 +591,7 @@
   {
     company: 'Software Business Group'
     name: 'Project management'
-    description: 'Running projects for Polish Television, Feuvert and Wasa-Barilla'
+    description: 'Projects for Polish Television, Feuvert and Wasa-Barilla'
     link: null
 
     software_house: 'Software Business Group'

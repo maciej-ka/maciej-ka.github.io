@@ -177,6 +177,9 @@
                 br
                 | + {{partner}}
               br
+              .techs
+                span.tech ng-repeat="tech in c.important_skills(e)"
+                  | {{tech.name}}
               br
               br
         .clearfix ng-if="$index%3==2"
