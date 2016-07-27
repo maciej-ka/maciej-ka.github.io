@@ -591,7 +591,7 @@
   {
     company: 'Software Business Group'
     name: 'Project management'
-    description: 'Management of: 1. sales system for Polish Television, 2. CMS for Feuvert, 3. sales system for Wasa-Barilla, 4. CRM for Support Online.'
+    description: 'Running projects for Polish Television, Feuvert and Wasa-Barilla'
     link: null
 
     software_house: 'Software Business Group'
@@ -686,7 +686,7 @@
   {
     company: 'Ministry of Environment'
     name: 'Projects database'
-    description: 'An interactive map (just before Google maps API) to place pins and describe ministry projects.'
+    description: 'An interactive map to place pins and describe ministry projects.'
     link: null
 
     software_house: 'Software Business Group'

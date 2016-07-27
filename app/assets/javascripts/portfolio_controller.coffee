@@ -7,7 +7,6 @@ app.controller 'PortfolioController',
       @Summary = Summary
       @Skill = Skill
       @skill_type = 'important'
-      # @project_time = 'last 2 years'
       @project_time = 'all'
       @skill_sort_by = 'experience'
       # calculate once
@@ -19,9 +18,9 @@ app.controller 'PortfolioController',
       # calculate what we need more than once
       @recalculate()
       @$timeout @draw_projects_charts, 50
+      @tooltip = false
 
     recalculate: =>
-      # $('[data-toggle="popover"]').popover()
       # summary on base of all data
       # charts on base of filtered data
       if @project_time != 'all'
@@ -124,13 +123,6 @@ app.controller 'PortfolioController',
 
     project_time_changed: =>
       @recalculate()
-      # @skill_hover()
-      # @draw_projects_charts()
-
-    move_project_tooltip: (event, index) ->
-      tooltip = document.querySelector(".hover-#{index}")
-      tooltip.style.left = "#{event.clientX + 20}px"
-      tooltip.style.top = "#{event.clientY + 20}px"
 
     draw_projects_charts: =>
       if @project_time == 'last 2 years'
@@ -138,12 +130,9 @@ app.controller 'PortfolioController',
       else
         i = 0
         loop
-          # @draw_projects_chart ".bucket-#{i}", @project_groups[i].projects, @group_mins[i], @project_groups[i].to
           @draw_projects_chart ".bucket-#{i}", @project_groups[i].projects, @project_groups[i].chart_from, @project_groups[i].to
           i++
           break if i >= @project_groups.length
-        # for i,e of @project_groups
-        #   @draw_projects_chart '.bucket-0', @project_groups[0].projects, @group_mins[0]
 
     draw_projects_chart: (selector, data, min_date, to) =>
       controller = @
@@ -151,18 +140,10 @@ app.controller 'PortfolioController',
       chart = d3.select selector
       scale = d3.time.scale()
         .domain [min_date, to]
-        # .range [0, 600]
-        # .range [22, 800]
-        # .range [760, 0]
         .range [760, 47]
       axis = d3.svg.axis()
         .scale scale
-        # .orient 'bottom'
-        # .tickFormat d3.time.format('%Y')
         .ticks d3.time.years, 1
-        # .tickSize 1
-        # .tickFormat d3.time.format('%Y')
-        # .tickSubdivide 12
 
       bars = chart
         .selectAll 'rect'
@@ -181,26 +162,22 @@ app.controller 'PortfolioController',
         .append 'rect'
         .attr 'width', (d) -> 
           -1 * (scale(d.end) - scale(d.start) + 4)
-          # 1 * (scale(d.end) - scale(d.start) + 4)
-        # .attr 'height', 40
         .attr 'height', 60
-        # .attr 'x', (d) -> scale d.start.subtract(1, 'month')
-        # minus january length
-        # .attr 'x', (d) -> scale d.end.subtract(30, 'days')
-        .attr 'x', (d) -> scale d.end.subtract(0, 'days')
+        .attr 'x', (d) -> scale d.end
         .attr 'y', 0
         .on 'mouseover', (d) -> controller.project_hover(d,true)
         .on 'mouseleave', (d) -> controller.project_hover(null,true)
+        .on 'click', (d) -> 
+          controller.tooltip = !controller.tooltip
+          controller.$scope.$apply()
 
       bars.exit()
         .remove()
 
       chart
         .select '.axis'
-        # .append 'g'
         .attr 'transform', 'translate(0,60)'
         .call axis
-        # .classed 'axis'
 
     draw_roles_chart: ->
       @draw_pie_chart '.roles_chart', @summary.roles, @active_role, .6
