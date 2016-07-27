@@ -253,7 +253,7 @@
               | {{e.name.replace(' ', '\u00a0')}} 
 
           .active_project_details
-            div ng-if="c.active_project"
+            / div ng-if="c.active_project"
               strong
                 | {{c.active_project.company}}: {{c.active_project.name}} 
                 br
@@ -266,7 +266,8 @@
       section.details
         .col-sm-6.col-lg-4.project-details ng-repeat-start="list in c.project_groups" ng-if="c.project_time!='last 2 years'" 
           h1
-            | {{list.from.format('YYYY')}} - {{list.to.format('YYYY')}}
+            / | {{list.from.format('YYYY')}} - {{list.to.format('YYYY')}}
+            | {{list.to.format('YYYY')}} - {{list.from.format('YYYY')}}
           ul.projects.list-unstyled
             li ng-repeat="e in list.projects" 
               small.date

@@ -17,7 +17,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-moment'
   gem 'rails-assets-d3'
   gem 'rails-assets-bootstrap'
-  gem 'rails-assets-angular-animate'
 end
 
 group :development do

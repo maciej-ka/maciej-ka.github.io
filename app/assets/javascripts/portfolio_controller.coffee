@@ -152,7 +152,9 @@ app.controller 'PortfolioController',
       scale = d3.time.scale()
         .domain [min_date, to]
         # .range [0, 600]
-        .range [0, 800]
+        # .range [22, 800]
+        # .range [760, 0]
+        .range [760, 47]
       axis = d3.svg.axis()
         .scale scale
         # .orient 'bottom'
@@ -178,12 +180,14 @@ app.controller 'PortfolioController',
       bars.enter()
         .append 'rect'
         .attr 'width', (d) -> 
-          scale(d.end) - scale(d.start) - 4
+          -1 * (scale(d.end) - scale(d.start) + 4)
+          # 1 * (scale(d.end) - scale(d.start) + 4)
         # .attr 'height', 40
         .attr 'height', 60
         # .attr 'x', (d) -> scale d.start.subtract(1, 'month')
         # minus january length
-        .attr 'x', (d) -> scale d.start.subtract(29, 'days')
+        # .attr 'x', (d) -> scale d.end.subtract(30, 'days')
+        .attr 'x', (d) -> scale d.end.subtract(0, 'days')
         .attr 'y', 0
         .on 'mouseover', (d) -> controller.project_hover(d,true)
         .on 'mouseleave', (d) -> controller.project_hover(null,true)

@@ -309,7 +309,7 @@
 
     software_house: 'Pracownia Gier Szkoleniowych'
     role: 'Web developer'
-    team: []
+    team: ['Junior web developer']
 
     start: '2013-01-01'
     end: '2013-06-01'
