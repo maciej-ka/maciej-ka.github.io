@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch & live-server",
+    "start": "webpack -w & stylus assets/css/ -w & live-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/lokson/portfolio#readme",
   "devDependencies": {
     "live-server": "^1.2.0",
+    "stylus": "^0.54.5",
     "webpack": "^2.2.1"
   }
 }
