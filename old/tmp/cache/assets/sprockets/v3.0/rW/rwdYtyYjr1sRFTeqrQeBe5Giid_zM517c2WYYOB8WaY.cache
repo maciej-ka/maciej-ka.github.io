@@ -1,0 +1,82 @@
+I"‘(function() {
+  this.Skill = (function() {
+    Skill.all = [];
+
+    Skill.max_duration = 0;
+
+    Skill.big_technologies = ['Rails', 'JavaScript', 'PHP', 'CSS', 'Java', 'Angular', 'Android', 'SQL'];
+
+    Skill.find = function(name) {
+      var e, i, len, ref;
+      ref = this.all;
+      for (i = 0, len = ref.length; i < len; i++) {
+        e = ref[i];
+        if (e.matches(name)) {
+          return e;
+        }
+      }
+    };
+
+    Skill.create = function(name) {
+      var skill;
+      skill = new Skill(name);
+      this.all.push(skill);
+      return skill;
+    };
+
+    Skill.find_by_type = function(type) {
+      var e, i, len, ref, results;
+      if (type === 'all') {
+        return this.all;
+      }
+      ref = this.all;
+      results = [];
+      for (i = 0, len = ref.length; i < len; i++) {
+        e = ref[i];
+        if (this.big_technologies.indexOf(e.name) >= 0) {
+          results.push(e);
+        }
+      }
+      return results;
+    };
+
+    function Skill(name1) {
+      this.name = name1;
+      this.time = 0;
+    }
+
+    Skill.prototype.matches = function(arg) {
+      var i, len, string;
+      if (typeof arg === "string") {
+        return this.name.toLowerCase() === arg.toLowerCase();
+      }
+      for (i = 0, len = arg.length; i < len; i++) {
+        string = arg[i];
+        if (this.matches(string)) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    Skill.prototype.add_project = function(project) {
+      this.time += project.time;
+      Skill.max_duration = Math.max(this.time, Skill.max_duration);
+      this.human_time = Helpers.months_to_human(this.time);
+      if (this.ago == null) {
+        this.ago = project.end;
+      }
+      this.ago = Math.max(this.ago, project.end);
+      return this.human_ago = moment(this.ago).fromNow();
+    };
+
+    Skill.prototype.percent = function() {
+      return this.time / Skill.max_duration;
+    };
+
+    return Skill;
+
+  })();
+
+}).call(this);
+:ET
