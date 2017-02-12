@@ -1,1 +1,2 @@
-console.log("test");
+import projectData from './projectData';
+console.log(projectData);
