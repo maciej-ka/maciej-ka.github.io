@@ -1,15 +1,13 @@
 module.exports = {
     "env": {
+        "es6": true,
         "browser": true,
-        "es6": true
+        "node": true
     },
     "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "jsx": true
-        },
-        "sourceType": "module"
+    "parser": "babel-eslint",
+    "ecmaFeatures": {
+        "jsx": true
     },
     "plugins": [
         "react"
@@ -31,6 +29,9 @@ module.exports = {
             "error",
             "always"
         ],
-        "no-console": 0
+        "react/jsx-uses-vars": 1,
+        "react/jsx-uses-react": 1,
+        "react/react-in-jsx-scope": 1,
+        "no-console": 0,
     }
 };
