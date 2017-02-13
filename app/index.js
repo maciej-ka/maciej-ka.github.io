@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Portfolio from './Portfolio/Portfolio';
-// import projectData from './projectData';
+import Portfolio from './Portfolio/';
+// import projects from './projectData';
+import projects from './testData';
 
 ReactDOM.render(
-  <Portfolio/>,
+  <Portfolio projects={projects} />,
   document.getElementById('portfolio')
 );

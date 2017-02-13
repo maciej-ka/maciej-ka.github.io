@@ -1,6 +1,15 @@
 import React from 'react';
+import PieChart from '../PieChart/';
 
 class Portfolio extends React.Component {
+
+  constructor(props) {
+    super();
+    this.state = {
+      projects: props.projects
+    };
+  }
+
   render() {
     return (
       <div>
@@ -12,6 +21,7 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
+
           <div className='col-xs-6'>
             <h1>
               <span className='hidden-xs'>Web </span>
@@ -22,7 +32,9 @@ class Portfolio extends React.Component {
               software architect, an requirements analyst and a rather soft
               project manager.
             </p>
+            <PieChart />
           </div>
+
           <div className='col-xs-6'>
             <h1>Fullstack</h1>
             <p>
@@ -31,11 +43,17 @@ class Portfolio extends React.Component {
               now.
             </p>
           </div>
+
         </section>
 
       </div>
     );
   }
+
 }
+
+Portfolio.propTypes = {
+  projects: React.PropTypes.array
+};
 
 export default Portfolio;
