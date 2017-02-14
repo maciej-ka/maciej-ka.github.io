@@ -28,8 +28,8 @@ class Portfolio extends React.Component {
               developer
             </h1>
             <p>
-              My main focus is to write clean code. In past I worked as a
-              software architect, an requirements analyst and a rather soft
+              My main focus is to write clean code. In past, I worked as a
+              software architect, requirements analyst and a rather soft
               project manager.
             </p>
             <PieChart />

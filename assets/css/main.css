@@ -11,3 +11,7 @@ body {
 h1:first-letter {
   text-transform: capitalize;
 }
+path {
+  fill: #cfd6f2;
+  opacity: 0.3;
+}

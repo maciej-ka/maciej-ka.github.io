@@ -1,25 +1,26 @@
 import React from 'react';
-// import * as d3 from 'd3';
+import * as d3 from 'd3';
 
 class PieChart extends React.Component {
 
   // componentDidMount() {
-  //   console.log(d3);
   //   var data = [
   //     {time: 20, data: {name: 'name 1'}}
   //   ];
   //   this.drawChart('.roles-chart', data, null, .6);
   // }
 
+  componentDidMount() {
+    var data = [
+      {age: '<5', population: 2704659},
+      {age: '5-13', population: 4499890},
+      {age: '14-17', population: 2159981},
+      {age: '18-24', population: 3853788}
+    ];
+    this.drawChart(data);
+  }
+
   // drawChart(selector, data, active, rotate) {
-  //   var arc, arcs, chart, g, label_arc, pie, radius;
-  //   radius = 600 * .35;
-  //   chart = d3.select(selector);
-  //   pie = d3.pie().value(function(d) {
-  //     return d.time;
-  //   }).padAngle(.03).startAngle(rotate * Math.PI).endAngle((2 + rotate) * Math.PI);
-  //   arc = d3.arc().outerRadius(radius * 1).innerRadius(radius * .2);
-  //   label_arc = d3.arc().outerRadius(radius * .6).innerRadius(radius * .6);
   //   arcs = chart.select('g').selectAll('.arc').data(pie(data));
   //   arcs.classed({
   //     'active': function(d) {
@@ -46,6 +47,45 @@ class PieChart extends React.Component {
   //   });
   // }
 
+
+  drawChart(data) {
+    var radius = 600;
+    var rotate = 0;
+
+    var arc = d3.arc()
+      .outerRadius(radius)
+      .innerRadius(radius * .2);
+
+    var labelArc = d3.arc()
+      .outerRadius(radius * .6)
+      .innerRadius(radius * .6);
+
+    var pie = d3.pie()
+      .padAngle(.03)
+      .startAngle(rotate * Math.PI)
+      .endAngle((2 + rotate) * Math.PI)
+      // .sort(null)
+      .value(function(d) { return d.population; });
+
+    var svg = d3.select('.some-chart')
+      .attr('viewBox', `0 0 ${radius * 2} ${radius * 2}`)
+      .append('g')
+      .attr('transform', 'translate(' + radius + ',' + radius + ')');
+
+    var g = svg.selectAll('.arc')
+      .data(pie(data))
+      .enter().append('g')
+      .attr('class', 'arc');
+
+    g.append('path')
+      .attr('d', arc);
+
+    g.append('text')
+      .attr('transform', function(d) { return 'translate(' + labelArc.centroid(d) + ')'; })
+      .attr('dy', '.35em')
+      .text(function(d) { return d.data.age; });
+  }
+
   // constructor(props) {
   //   super();
   //   this.state = {
@@ -56,9 +96,7 @@ class PieChart extends React.Component {
   render() {
     return (
       <div>
-        <svg className='roles_chart' viewBox='0 0 600 600'>
-          <g className='pie-container' />
-        </svg>
+        <svg className='some-chart'></svg>
       </div>
     );
   }
