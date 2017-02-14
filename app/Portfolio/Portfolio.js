@@ -22,25 +22,21 @@ class Portfolio extends React.Component {
 
         <section className='row'>
 
-          <div className='col-xs-6'>
+          <div className='col-sm-6'>
             <h1>
-              <span className='hidden-xs'>Web </span>
-              developer
+              Web developer
             </h1>
             <p>
-              My main focus is to write clean code. In past, I worked as a
-              software architect, requirements analyst and a rather soft
-              project manager.
+              I write code and hope that machines will not take revenge on programmers one day.
             </p>
             <PieChart />
           </div>
 
-          <div className='col-xs-6'>
+          <div className='col-sm-6'>
             <h1>Fullstack</h1>
             <p>
               Due to possibilities in a modern javascript I moved from the
-              server side to the client side and most often work as a fullstack
-              now.
+              server side to fullstack.
             </p>
           </div>
 

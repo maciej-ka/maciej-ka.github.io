@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Portfolio from './Portfolio/';
-// import projects from './projectData';
-import projects from './testData';
+import projects from './projectData';
 
 ReactDOM.render(
   <Portfolio projects={projects} />,

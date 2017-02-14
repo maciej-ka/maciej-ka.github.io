@@ -15,3 +15,15 @@ path {
   fill: #cfd6f2;
   opacity: 0.3;
 }
+.title {
+  opacity: 0.8;
+  cursor: default;
+}
+.subtitle {
+  stroke: #fff;
+  stroke-width: 0;
+  paint-order: stroke;
+  font-size: 59%;
+  opacity: 0.3;
+  cursor: default;
+}

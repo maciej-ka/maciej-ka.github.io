@@ -12,10 +12,10 @@ class PieChart extends React.Component {
 
   componentDidMount() {
     var data = [
-      {age: '<5', population: 2704659},
-      {age: '5-13', population: 4499890},
-      {age: '14-17', population: 2159981},
-      {age: '18-24', population: 3853788}
+      {title: 'architect', value: 1.2, subtitle: '1 year 2 months'},
+      {title: 'analyst', value: 1.0, subtitle: '1 year 1 months'},
+      {title: 'manager', value: 0.8, subtitle: '11 months'},
+      {title: 'developer', value: 7.5, subtitle: '7 year 6 months'},
     ];
     this.drawChart(data);
   }
@@ -29,6 +29,7 @@ class PieChart extends React.Component {
   //   });
   //   g = arcs.enter().append('g').attr('class', 'arc');
   //   g.append('path').attr('d', arc);
+  //
   //   g.append('text').attr('transform', function(d) {
   //     return 'translate(' + (label_arc.centroid(d)) + ')';
   //   }).attr('dy', '.35em').attr('class', 'title').text(function(d) {
@@ -40,6 +41,7 @@ class PieChart extends React.Component {
   //     }
   //     return d.data.name;
   //   });
+  //
   //   return g.append('text').attr('transform', function(d) {
   //     return 'translate(' + (label_arc.centroid(d)) + ')';
   //   }).attr('dy', '1.35em').attr('class', 'subtitle').text(function(d) {
@@ -47,43 +49,76 @@ class PieChart extends React.Component {
   //   });
   // }
 
-
   drawChart(data) {
-    var radius = 600;
+    var height = 218;
+    var width = 269;
+    var radius = 100;
     var rotate = 0;
 
     var arc = d3.arc()
       .outerRadius(radius)
-      .innerRadius(radius * .2);
+      .innerRadius(radius * 0.2);
 
     var labelArc = d3.arc()
-      .outerRadius(radius * .6)
-      .innerRadius(radius * .6);
+      .outerRadius(radius * 0.6)
+      .innerRadius(radius * 0.6);
 
     var pie = d3.pie()
-      .padAngle(.03)
+      .padAngle(0.03)
       .startAngle(rotate * Math.PI)
       .endAngle((2 + rotate) * Math.PI)
-      // .sort(null)
-      .value(function(d) { return d.population; });
+      .sort(null)
+      .value(function(d) { return d.value; });
 
     var svg = d3.select('.some-chart')
-      .attr('viewBox', `0 0 ${radius * 2} ${radius * 2}`)
+      .attr('viewBox', `0 0 ${width} ${height}`)
       .append('g')
-      .attr('transform', 'translate(' + radius + ',' + radius + ')');
+      .attr('transform', `translate(${width/2} ${height/2})`);
 
     var g = svg.selectAll('.arc')
       .data(pie(data))
-      .enter().append('g')
+      .enter()
+      .append('path')
+      .attr('d', arc)
       .attr('class', 'arc');
 
-    g.append('path')
-      .attr('d', arc);
+    g = svg.selectAll('.label')
+      .data(pie(data))
+      .enter()
+      .append('g')
+      .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; });
 
     g.append('text')
-      .attr('transform', function(d) { return 'translate(' + labelArc.centroid(d) + ')'; })
-      .attr('dy', '.35em')
-      .text(function(d) { return d.data.age; });
+      .attr('dy', '0.35em')
+      .attr('class', 'title')
+      .text(function(d) { return d.data.title; });
+
+    g.append('text')
+      .attr('dy', '1.55em')
+      .attr('class', 'subtitle')
+      .text(function(d) { return d.data.subtitle; });
+
+    // var g = svg.selectAll('.arc')
+    //   .data(pie(data))
+    //   .enter()
+    //   .append('g')
+    //   .attr('class', 'option');
+
+    // g.append('path')
+    //   .attr('d', arc);
+
+    // g.append('text')
+    //   .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; })
+    //   .attr('dy', '0.35em')
+    //   .attr('class', 'title')
+    //   .text(function(d) { return d.data.title; });
+
+    // g.append('text')
+    //   .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; })
+    //   .attr('dy', '1.55em')
+    //   .attr('class', 'subtitle')
+    //   .text(function(d) { return d.data.subtitle; });
+
   }
 
   // constructor(props) {
