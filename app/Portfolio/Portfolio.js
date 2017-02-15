@@ -1,14 +1,7 @@
 import React from 'react';
-import PieChart from '../PieChart/';
+import RolesChart from '../RolesChart/';
 
 class Portfolio extends React.Component {
-
-  constructor(props) {
-    super();
-    this.state = {
-      projects: props.projects
-    };
-  }
 
   render() {
     return (
@@ -29,7 +22,7 @@ class Portfolio extends React.Component {
             <p>
               I write code and hope that machines will not take revenge on programmers one day.
             </p>
-            <PieChart />
+            <RolesChart projects={this.props.projects} />
           </div>
 
           <div className='col-sm-6'>
