@@ -12,8 +12,7 @@ class RolesChart extends React.Component {
   }
 
   calculate(projects) {
-    // deal with overlaping by priorities and calendar
-    // build roles priorities dictionary
+    // solve overlaping by priorities
     var calendar = {};
     var roles = {};
     projects.forEach(project => {

@@ -4,10 +4,11 @@ import * as d3 from 'd3';
 class PieChart extends React.Component {
 
   componentDidMount() {
-    this.drawChart(this.props.data);
+    this.drawChart();
   }
 
-  drawChart(data) {
+  drawChart() {
+    var data = this.props.data;
     var height = 218;
     var width = 269;
     var radius = 100;
