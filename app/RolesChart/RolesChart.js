@@ -1,5 +1,6 @@
 import React from 'react';
 import PieChart from '../PieChart';
+import {monthsToHuman} from '../helpers';
 
 class RolesChart extends React.Component {
 
@@ -39,7 +40,7 @@ class RolesChart extends React.Component {
     // format chart data
     return ['architect', 'analyst', 'manager', 'developer'].map(role => ({
       title: role,
-      subtitle: counters[roles[role]],
+      subtitle: monthsToHuman(counters[roles[role]]),
       value: counters[roles[role]]
     }));
   }
