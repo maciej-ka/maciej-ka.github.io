@@ -7,12 +7,25 @@ class Portfolio extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      projects: props.projects.map(project => {
-        project.start = moment(project.start);
-        project.end = project.end ? moment(project.end) : moment().startOf('month');
-        return project;
+      projects: props.projects.map(p => {
+        p.start = moment(p.start);
+        p.end = p.end ? moment(p.end) : moment().startOf('month');
+        this.parseRole(p);
+        return p;
       })
     };
+  }
+
+  parseRole(project) {
+    var role = project.role.toLowerCase();
+    var roles = ['analyst', 'manager', 'developer', 'architect'];
+    for(let i=0; i<roles.length; i++) {
+      if (role.indexOf(roles[i]) >= 0) {
+        project.rolePriority = i;
+        project.roleLabel = roles[i];
+        return;
+      }
+    }
   }
 
   render() {

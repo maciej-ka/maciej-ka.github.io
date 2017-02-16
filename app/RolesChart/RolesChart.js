@@ -3,10 +3,6 @@ import PieChart from '../PieChart';
 
 class RolesChart extends React.Component {
 
-  static roles() {
-    return ['analyst', 'manager', 'developer', 'architect'];
-  }
-
   constructor(props) {
     super();
     this.state = {
@@ -14,31 +10,24 @@ class RolesChart extends React.Component {
     };
   }
 
-  getRole(project) {
-    var role = project.role.toLowerCase();
-    var roles = RolesChart.roles();
-    for(let i=0; i<roles.length; i++) {
-      if (role.indexOf(roles[i]) >= 0) {
-        return i;
-      }
-    }
-  }
-
   calculate(projects) {
+    // deal with overlaping by priorities and calendar
+    // build roles priorities dictionary
     var calendar = {};
-
+    var roles = {};
     projects.forEach(project => {
-      let role = this.getRole(project);
+      roles[project.roleLabel] = project.rolePriority;
       let date = project.start.clone();
       while (date < project.end) {
         let year = date.year();
         let month = date.month();
         calendar[year] = calendar[year] || [];
-        calendar[year][month] = Math.max(role, calendar[year][month] || -1);
+        calendar[year][month] = Math.max(project.rolePriority, calendar[year][month] || -1);
         date = date.add(1, 'month');
       }
     });
 
+    // calculate counters
     var counters = {};
     for (let year in calendar) {
       for (let month in calendar[year]) {
@@ -47,14 +36,12 @@ class RolesChart extends React.Component {
       }
     }
 
-    return ['architect', 'analyst', 'manager', 'developer'].map(role => {
-      let i = RolesChart.roles().indexOf(role);
-      return {
-        title: role,
-        subtitle: counters[i],
-        value: counters[i]
-      };
-    });
+    // format chart data
+    return ['architect', 'analyst', 'manager', 'developer'].map(role => ({
+      title: role,
+      subtitle: counters[roles[role]],
+      value: counters[roles[role]]
+    }));
   }
 
   render() {
