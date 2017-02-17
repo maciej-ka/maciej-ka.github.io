@@ -9,24 +9,24 @@ class TimelineChart extends React.Component {
 
   drawChart() {
     var data = this.props.data;
-    var height = 100;
+    var height = 60;
     var width = 600;
     var margin = 20;
 
     var scale = d3.scaleTime()
-      .domain([new Date('2016-01-01'), new Date('2014-01-01')])
-      .range([width, 0]);
+      .domain([this.props.end, this.props.start])
+      .range([0, width]);
 
-    var svg = d3.select('.timeline-chart')
+    var svg = d3.select(`.timeline-${this.props.id}`)
       .attr('viewBox', `0 0 ${width +  margin} ${height}`);
 
     svg.selectAll('rect')
       .data(data)
       .enter()
       .append('rect')
-      .attr('width', d => scale(d.end) - scale(d.start) - 4)
+      .attr('width', d => scale(d.start) - scale(d.end) - 4)
       .attr('height', height - 20)
-      .attr('x', d => width - scale(d.end) + 2)
+      .attr('x', d => scale(d.end) + 2)
       .attr('y', 0);
 
     var axis = d3.axisBottom()
@@ -40,14 +40,17 @@ class TimelineChart extends React.Component {
 
   render() {
     return (
-      <svg className='timeline-chart'></svg>
+      <svg className={`timeline-${this.props.id}`}></svg>
     );
   }
 
 }
 
 TimelineChart.propTypes = {
-  data: React.PropTypes.array
+  data: React.PropTypes.array,
+  start: React.PropTypes.object,
+  end: React.PropTypes.object,
+  id: React.PropTypes.number
 };
 
 export default TimelineChart;
