@@ -13,13 +13,33 @@ export default [
     remote: true,
 
     role: 'Web developer',
-    team: 60,
+    team: [],
 
     skills: [
       'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal API',
       'JavaScript', 'ES6', 'React', 'Redux', 'JSX',
       'CSS',
       'Webpack', 'Babel', 'Mocha', 'Enzyme'
+    ]
+  },
+
+  {
+    name: 'Portfolio',
+    start: '2016-07-01',
+    end: '2016-08-01',
+    description: 'This page',
+    link: 'maciej-kasprzyk.pl',
+
+    company: null,
+    software_house: null,
+    form: 'Freelancer',
+    remote: true,
+
+    role: 'Web developer',
+    team: 60,
+
+    skills: [
+      'React', 'ES6', 'JSX', 'JavaScript', 'Webpack', 'Babel', 'CSS', 'D3'
     ]
   },
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SkillsImportant extends React.Component {
+class ImportantSkills extends React.Component {
 
   constructor(props) {
     super();
@@ -19,13 +19,17 @@ class SkillsImportant extends React.Component {
       'CSS',
       'Java',
       'Angular',
-      'React'
+      'React',
+      'SQL'
     ];
     return skills.filter(skill => important.indexOf(skill.name) >= 0);
   }
 
+  componentWillReceiveProps(props) {
+    this.setState({skills: this.calculate(props.skills)});
+  }
+
   render() {
-    console.log(this.state.max);
     return (
       <div>
         {this.state.skills.map(s =>
@@ -43,8 +47,8 @@ class SkillsImportant extends React.Component {
 
 }
 
-SkillsImportant.propTypes = {
+ImportantSkills.propTypes = {
   skills: React.PropTypes.array
 };
 
-export default SkillsImportant;
+export default ImportantSkills;

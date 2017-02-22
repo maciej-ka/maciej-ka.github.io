@@ -1,3 +1,4 @@
 import component from './Skills';
 export default component;
-export { default as SkillsImportant } from './SkillsImportant';
+export { default as ImportantSkills } from './ImportantSkills';
+export { default as AllSkills } from './AllSkills';
