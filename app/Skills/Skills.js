@@ -59,10 +59,9 @@ class Skills extends React.Component {
   }
 
   sortSkills(skills = this.state.skills, order = this.state.order) {
-    if(order === 'duration') {
-      return skills.sort((a,b) => b.duration - a.duration || a.ago - b.ago || a.name.localeCompare(b.name));
-    }
-    return skills.sort((a,b) => a.ago - b.ago || b.duration - a.duration || a.name.localeCompare(b.name));
+    return order === 'duration'
+      ? skills.sort((a,b) => b.duration - a.duration || a.ago - b.ago || a.name.localeCompare(b.name))
+      : skills.sort((a,b) => a.ago - b.ago || b.duration - a.duration || a.name.localeCompare(b.name));
   }
 
   render() {
