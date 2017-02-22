@@ -1,0 +1,60 @@
+I"×(function() {
+  this.Project = (function() {
+    Project.reset = function() {
+      this.min_date = moment();
+      this.all = [];
+      this.id = 0;
+      return Skill.all = [];
+    };
+
+    Project.create = function(data) {
+      return this.all.push(new Project(data));
+    };
+
+    function Project(data) {
+      $.extend(this, data);
+      this.id = Project.id;
+      Project.id++;
+      this.init_time();
+      this.skills = this.parse_skills(data.skills || []);
+      Summary.add_project(this);
+    }
+
+    Project.prototype.init_time = function() {
+      this.start = moment(this.start);
+      this.end = moment(this.end);
+      this.time = this.end.diff(this.start, 'months');
+      this.human_time = Helpers.months_to_human(this.time);
+      return Project.min_date = Math.min(this.start, Project.min_date);
+    };
+
+    Project.prototype.parse_skills = function(skills) {
+      var i, len, name, results, skill;
+      results = [];
+      for (i = 0, len = skills.length; i < len; i++) {
+        name = skills[i];
+        skill = Skill.find(name) || Skill.create(name);
+        skill.add_project(this);
+        results.push(skill);
+      }
+      return results;
+    };
+
+    Project.prototype.matches = function(query) {
+      var e, i, len, ref;
+      ref = this.skills;
+      for (i = 0, len = ref.length; i < len; i++) {
+        e = ref[i];
+        if (e.matches(query)) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    return Project;
+
+  })();
+
+}).call(this);
+:ET

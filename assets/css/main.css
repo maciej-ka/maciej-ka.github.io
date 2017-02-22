@@ -1,0 +1,30 @@
+body {
+  padding-top: 1em;
+  font: 14pt Lato;
+  color: #000;
+  background: radial-gradient(circle at 90% 46%, #7b92d1 1%, #e3ecf2 174%);
+}
+.strip {
+  width: 100%;
+  box-shadow: 0 0 5vmin 2vmin #ccc;
+}
+h1:first-letter {
+  text-transform: capitalize;
+}
+rect,
+path {
+  fill: #cfd6f2;
+  opacity: 0.3;
+}
+.title {
+  opacity: 0.8;
+  cursor: default;
+}
+.subtitle {
+  stroke: #fff;
+  stroke-width: 0;
+  paint-order: stroke;
+  font-size: 59%;
+  opacity: 0.3;
+  cursor: default;
+}

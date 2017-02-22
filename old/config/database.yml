@@ -1,0 +1,15 @@
+default: &default
+  username: postgres
+  password: 123123123
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: portfolio_development
+
+test:
+  <<: *default
+  database: portfolio_test
+
