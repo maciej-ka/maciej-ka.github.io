@@ -46,7 +46,10 @@ class RolesChart extends React.Component {
 
   render() {
     return (
-      <PieChart data={this.state.data} />
+      <PieChart
+        data={this.state.data}
+        rotate={0}
+      />
     );
   }
 

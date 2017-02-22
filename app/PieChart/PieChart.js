@@ -12,7 +12,7 @@ class PieChart extends React.Component {
     var height = 218;
     var width = 269;
     var radius = 100;
-    var rotate = 0;
+    var rotate = this.props.rotate;
 
     var arc = d3.arc()
       .outerRadius(radius)
@@ -68,7 +68,12 @@ class PieChart extends React.Component {
 }
 
 PieChart.propTypes = {
-  data: React.PropTypes.array
+  data: React.PropTypes.array,
+  rotate:  React.PropTypes.number
+};
+
+PieChart.defaultProps = {
+  rotate: 0
 };
 
 export default PieChart;

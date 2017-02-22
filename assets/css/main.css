@@ -12,7 +12,9 @@ h1:first-letter {
   text-transform: capitalize;
 }
 rect,
-path {
+path,
+.bar {
+  background: #cfd6f2;
   fill: #cfd6f2;
   opacity: 0.3;
 }

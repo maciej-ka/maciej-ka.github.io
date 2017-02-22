@@ -1,12 +1,13 @@
 import React from 'react';
-import {monthsToHuman} from '../helpers';
 
 class SkillsImportant extends React.Component {
 
   constructor(props) {
     super();
+    const skills = this.calculate(props.skills);
     this.state = {
-      data: this.calculate(props.skills)
+      skills: skills,
+      max: Math.max(...skills.map(s => s.duration))
     };
   }
 
@@ -18,20 +19,22 @@ class SkillsImportant extends React.Component {
       'CSS',
       'Java',
       'Angular',
-      'React',
-      'SQL'
+      'React'
     ];
     return skills.filter(skill => important.indexOf(skill.name) >= 0);
   }
 
   render() {
+    console.log(this.state.max);
     return (
       <div>
-        {this.state.data.map(s =>
+        {this.state.skills.map(s =>
           <div key={s.name}>
             <span className="title">{s.name}</span>
+            <div className="bar" style={{height: '1em', width: `${100 * s.duration / this.state.max}%`}}></div>
+            <span className="subtitle">{s.durationHuman}</span>
             <br />
-            <span className="subtitle">{monthsToHuman(s.duration)}</span>
+            <span className="subtitle">{s.agoHuman}</span>
           </div>
         )}
       </div>
