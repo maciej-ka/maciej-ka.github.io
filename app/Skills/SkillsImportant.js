@@ -1,7 +1,7 @@
 import React from 'react';
 import {monthsToHuman} from '../helpers';
 
-class SkillsChart extends React.Component {
+class SkillsImportant extends React.Component {
 
   constructor(props) {
     super();
@@ -29,9 +29,9 @@ class SkillsChart extends React.Component {
       <div>
         {this.state.data.map(s =>
           <div key={s.name}>
-            {s.name}
+            <span className="title">{s.name}</span>
             <br />
-            {monthsToHuman(s.duration)}
+            <span className="subtitle">{monthsToHuman(s.duration)}</span>
           </div>
         )}
       </div>
@@ -40,8 +40,8 @@ class SkillsChart extends React.Component {
 
 }
 
-SkillsChart.propTypes = {
+SkillsImportant.propTypes = {
   skills: React.PropTypes.array
 };
 
-export default SkillsChart;
+export default SkillsImportant;

@@ -1,26 +1,22 @@
 import React from 'react';
 import moment from 'moment';
 import RolesChart from '../RolesChart/';
-import ProjectsChart from '../ProjectsChart/';
-import SkillsChart from '../SkillsChart/';
+import Projects from '../Projects/';
+import Skills from '../Skills/';
 
 class Portfolio extends React.Component {
 
   constructor(props) {
     super();
-    let skills = [];
     let projects = props.projects.map(p => {
       p.start = moment(p.start);
       p.end = p.end ? moment(p.end) : moment().startOf('month');
       p.duration = p.end.diff(p.start, 'months');
       this.parseRole(p);
-      this.parseSkills(p, skills);
       return p;
     });
-    skills = skills.sort((a,b) => b.duration - a.duration);
     this.state = {
-      projects: projects,
-      skills: skills
+      projects: projects
     };
   }
 
@@ -34,17 +30,6 @@ class Portfolio extends React.Component {
         return;
       }
     }
-  }
-
-  parseSkills(project, skills) {
-    project.skills.forEach(name => {
-      let skill = skills.find(s => s.name == name);
-      if(!skill) {
-        skill = {name: name, duration: 0};
-        skills.push(skill);
-      }
-      skill.duration += project.duration;
-    });
   }
 
   render() {
@@ -73,12 +58,12 @@ class Portfolio extends React.Component {
         <section>
           <div className='col-sm-9'>
             <h1>Projects</h1>
-            <ProjectsChart projects={this.state.projects} />
+            <Projects projects={this.state.projects} />
           </div>
 
           <div className='col-sm-3'>
             <h1>Skills</h1>
-            <SkillsChart skills={this.state.skills} />
+            <Skills projects={this.state.projects} />
           </div>
         </section>
 

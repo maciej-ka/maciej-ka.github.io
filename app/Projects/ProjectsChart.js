@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import TimelineChart from '../TimelineChart';
+import {TimelineChart} from '.';
 
 class ProjectsChart extends React.Component {
 
