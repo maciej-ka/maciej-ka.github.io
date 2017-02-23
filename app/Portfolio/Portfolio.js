@@ -4,15 +4,19 @@ import RolesChart from '../RolesChart/';
 import Calendar from '../Calendar/';
 import Skills from '../Skills/';
 import ProjectList from '../ProjectList/';
+import {monthsToHuman} from '../helpers';
 
 class Portfolio extends React.Component {
 
   constructor(props) {
     super();
+    let id=0;
     let projects = props.projects.map(p => {
+      p.id = id++;
       p.start = moment(p.start);
       p.end = p.end ? moment(p.end) : moment().startOf('month');
       p.duration = p.end.diff(p.start, 'months');
+      p.durationHuman = monthsToHuman(p.duration);
       this.parseRole(p);
       return p;
     });

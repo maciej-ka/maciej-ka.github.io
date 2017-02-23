@@ -8,12 +8,12 @@ export default [
     link: 'immmr.com',
 
     company: 'Detsche Telekom',
-    software_house: 'IMPAQ',
+    softwareHouse: 'IMPAQ',
     form: 'Contractor',
     remote: true,
 
     role: 'Web developer',
-    team: [],
+    team: ['35 developers'],
 
     skills: [
       'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal API',
@@ -31,12 +31,12 @@ export default [
     link: 'maciej-kasprzyk.pl',
 
     company: null,
-    software_house: null,
+    softwareHouse: null,
     form: 'Freelancer',
     remote: true,
 
     role: 'Web developer',
-    team: 60,
+    team: [],
 
     skills: [
       'React', 'ES6', 'JSX', 'JavaScript', 'Webpack', 'Babel', 'CSS', 'D3'
@@ -53,11 +53,11 @@ export default [
     link: 'theifab.com',
 
     company: 'FIFA',
-    software_house: 'Me & My Friends',
+    softwareHouse: 'Me & My Friends',
     form: 'Contractor',
     remote: true,
 
-    role: 'Senior web developer',
+    role: 'Lead web developer',
     team: ['Junior web developer', 'Front-end developer'],
 
     skills: [
@@ -78,7 +78,7 @@ export default [
     link: null,
 
     company: 'Apax',
-    software_house: null,
+    softwareHouse: null,
     form: 'Freelancer',
     remote: true,
 
@@ -103,7 +103,7 @@ export default [
     link: null,
 
     company: 'SAWP',
-    software_house: 'Motabi',
+    softwareHouse: 'Motabi',
     form: 'Freelancer',
     remote: true,
 
@@ -128,7 +128,7 @@ export default [
     link: null,
 
     company: 'Motabi',
-    software_house: 'Motabi',
+    softwareHouse: 'Motabi',
     form: 'Freelancer',
     remote: true,
 
@@ -151,7 +151,7 @@ export default [
     link: null,
 
     company: 'SAWP',
-    software_house: 'Motabi',
+    softwareHouse: 'Motabi',
     form: 'Freelancer',
     remote: true,
 
@@ -176,7 +176,7 @@ export default [
     link: null,
 
     company: 'Motabi',
-    software_house: 'Motabi',
+    softwareHouse: 'Motabi',
     form: 'Freelancer',
     remote: true,
 
@@ -201,7 +201,7 @@ export default [
     link: 'cert.orange.pl',
 
     company: 'Orange Polska',
-    software_house: 'Motabi',
+    softwareHouse: 'Motabi',
     form: 'Freelancer',
     remote: true,
 
@@ -225,12 +225,12 @@ export default [
     link: null,
 
     company: 'DMT',
-    software_house: 'Hemnes',
+    softwareHouse: 'Hemnes',
     form: 'Employee',
     remote: true,
 
     role: 'Web developer',
-    team: ['Mobile developer', 'Mobile developer'],
+    team: ['2 Mobile developers'],
 
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP',
@@ -249,11 +249,11 @@ export default [
     link: 'personallawyers.pl',
 
     company: 'Juszkiewicz',
-    software_house: 'Hemnes',
+    softwareHouse: 'Hemnes',
     form: 'Employee',
     remote: false,
 
-    role: 'Senior web developer',
+    role: 'Lead web developer',
     team: ['Web developer', 'Front-end developer'],
 
     skills: [
@@ -273,11 +273,11 @@ export default [
     link: null,
 
     company: 'Top Market',
-    software_house: 'Hemnes',
+    softwareHouse: 'Hemnes',
     form: 'Employee',
     remote: false,
 
-    role: 'Senior developer',
+    role: 'Lead developer',
     team: ['Developer'],
 
     skills: [
@@ -297,11 +297,11 @@ export default [
     link: null,
 
     company: 'Top Market',
-    software_house: 'Hemnes',
+    softwareHouse: 'Hemnes',
     form: 'Employee',
     remote: false,
 
-    role: 'Senior web developer',
+    role: 'Lead web developer',
     team: ['Web developer', 'Front-end developer'],
 
     skills: [
@@ -321,7 +321,7 @@ export default [
     link: 'bluewhite.pl',
 
     company: 'One99',
-    software_house: 'Beside the Park',
+    softwareHouse: 'Beside the Park',
     form: 'Employee',
     remote: false,
 
@@ -345,7 +345,7 @@ export default [
     link: 'guaranteesbox.com',
 
     company: 'Moja Gwarancja',
-    software_house: 'Beside the Park',
+    softwareHouse: 'Beside the Park',
     form: 'Employee',
     remote: false,
 
@@ -369,11 +369,11 @@ export default [
     link: null,
 
     company: 'Mondelēz International',
-    software_house: 'Pracownia Gier Szkoleniowych',
+    softwareHouse: 'Pracownia Gier Szkoleniowych',
     form: 'Employee',
     remote: true,
 
-    role: 'Web developer',
+    role: 'Lead web developer',
     team: ['Junior web developer'],
 
     skills: [
@@ -394,7 +394,7 @@ export default [
     link: null,
 
     company: 'Scott Wilson',
-    software_house: 'High Quality Solutions',
+    softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
 
@@ -419,7 +419,7 @@ export default [
     link: null,
 
     company: 'Polish Post Office',
-    software_house: 'High Quality Solutions',
+    softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
 
@@ -444,11 +444,11 @@ export default [
     link: null,
 
     company: 'Burda International Polska',
-    software_house: 'High Quality Solutions',
+    softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
 
-    role: 'Senior web developer',
+    role: 'Lead web developer',
     team: ['Web developer'],
 
     skills: [
@@ -469,12 +469,12 @@ export default [
     link: null,
 
     company: 'Heineken',
-    software_house: 'High Quality Solutions',
+    softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
 
     role: 'Mobile developer',
-    team: ['Mobile developer', 'Mobile developer'],
+    team: ['2 Mobile developers'],
 
     skills: [
       'Android', 'Java'
@@ -491,12 +491,12 @@ export default [
     link: null,
 
     company: 'Myslovitz',
-    software_house: 'High Quality Solutions',
+    softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
 
     role: 'Mobile developer',
-    team: ['Mobile developer', 'Mobile developer'],
+    team: ['2 Mobile developers'],
 
     skills: [
       'Android', 'Java'
@@ -513,7 +513,7 @@ export default [
     link: null,
 
     company: 'Business Talents',
-    software_house: 'High Quality Solutions',
+    softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
 
@@ -538,7 +538,7 @@ export default [
     link: null,
 
     company: 'EPL Group',
-    software_house: 'High Quality Solutions',
+    softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
 
@@ -562,7 +562,7 @@ export default [
     link: null,
 
     company: 'Centrum Krzysztofa Pendereckiego',
-    software_house: 'High Quality Solutions',
+    softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
 
@@ -587,7 +587,7 @@ export default [
     link: null,
 
     company: 'Gemius',
-    software_house: 'Gemius',
+    softwareHouse: 'Gemius',
     form: 'Employee',
     remote: false,
 
@@ -609,7 +609,7 @@ export default [
     link: null,
 
     company: 'Gemius',
-    software_house: 'Gemius',
+    softwareHouse: 'Gemius',
     form: 'Employee',
     remote: false,
 
@@ -632,7 +632,7 @@ export default [
     link: null,
 
     company: 'Gemius',
-    software_house: 'Gemius',
+    softwareHouse: 'Gemius',
     form: 'Employee',
     remote: false,
 
@@ -654,7 +654,7 @@ export default [
     link: null,
 
     company: 'Orange Polska',
-    software_house: 'Orange Polska',
+    softwareHouse: 'Orange Polska',
     form: 'Employee',
     remote: false,
 
@@ -676,7 +676,7 @@ export default [
     link: null,
 
     company: 'ARiMR',
-    software_house: 'ABG Spin',
+    softwareHouse: 'ABG Spin',
     form: 'Employee',
     remote: false,
 
@@ -698,7 +698,7 @@ export default [
     link: null,
 
     company: 'Software Business Group',
-    software_house: 'Software Business Group',
+    softwareHouse: 'Software Business Group',
     form: 'Employee',
     remote: false,
 
@@ -720,7 +720,7 @@ export default [
     link: null,
 
     company: 'PJWSTK',
-    software_house: null,
+    softwareHouse: null,
     form: 'Freelancer',
     remote: true,
 
@@ -742,12 +742,12 @@ export default [
     link: null,
 
     company: 'Institute of Bankers in Ireland',
-    software_house: 'Gateway 2 Future',
+    softwareHouse: 'Gateway 2 Future',
     form: 'Freelancer',
     remote: true,
 
     role: 'Software architect',
-    team: ['PHP developer', 'PHP developer', 'Front-end developer', 'Senior developer'],
+    team: ['2 PHP developers', 'Front-end developer', 'Senior developer'],
 
     skills: [
       'PHP', 'Oracle Database', 'UML'
@@ -764,12 +764,12 @@ export default [
     link: null,
 
     company: 'JOKO Cosmetics',
-    software_house: 'Software Business Group',
+    softwareHouse: 'Software Business Group',
     form: 'Employee',
     remote: false,
 
     role: 'Software architect',
-    team: ['Java developer', 'Java developer', 'Java developer', 'Java developer', 'Analyst'],
+    team: ['4 Java developers', 'Analyst'],
 
     skills: [
       'UML', 'requirements analysis', 'Java'
@@ -786,7 +786,7 @@ export default [
     link: null,
 
     company: 'Milch und Zucker',
-    software_house: 'Software Business Group',
+    softwareHouse: 'Software Business Group',
     form: 'Employee',
     remote: false,
 
@@ -808,7 +808,7 @@ export default [
     link: null,
 
     company: 'Ministry of Environment',
-    software_house: 'Software Business Group',
+    softwareHouse: 'Software Business Group',
     form: 'Employee',
     remote: false,
 
@@ -830,7 +830,7 @@ export default [
     link: null,
 
     company: 'Milch und Zucker',
-    software_house: 'Software Business Group',
+    softwareHouse: 'Software Business Group',
     form: 'Employee',
     remote: false,
 
@@ -852,12 +852,12 @@ export default [
     link: null,
 
     company: 'Polish Golf Union',
-    software_house: 'Microsoft (Students to Business)',
+    softwareHouse: 'Microsoft (Students to Business)',
     form: 'Freelance',
     remote: true,
 
     role: 'Lead analyst',
-    team: 20,
+    team: ['4 Analysts', '15 Developers'],
 
     skills: [
       'UML', 'requirements analysis', 'SQL Server', 'SQL'
@@ -874,7 +874,7 @@ export default [
     link: null,
 
     company: 'Triplan',
-    software_house: null,
+    softwareHouse: null,
     form: 'Freelance',
     remote: true,
 
@@ -896,7 +896,7 @@ export default [
     link: null,
 
     company: 'Ula Białowąs',
-    software_house: null,
+    softwareHouse: null,
     form: 'Freelance',
     remote: true,
 
@@ -918,7 +918,7 @@ export default [
     link: null,
 
     company: 'Ania Okrasko',
-    software_house: null,
+    softwareHouse: null,
     form: 'Freelance',
     remote: true,
 

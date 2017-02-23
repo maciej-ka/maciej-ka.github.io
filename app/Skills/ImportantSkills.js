@@ -16,7 +16,7 @@ class ImportantSkills extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    this.setState({skills: this.calculate(props.skills)});
+    this.setState({skills: this.calculate(props)});
   }
 
   render() {
