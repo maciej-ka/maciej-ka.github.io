@@ -1,8 +1,9 @@
 import React from 'react';
 import moment from 'moment';
 import RolesChart from '../RolesChart/';
-import Projects from '../Projects/';
+import Calendar from '../Calendar/';
 import Skills from '../Skills/';
+import ProjectList from '../ProjectList/';
 
 class Portfolio extends React.Component {
 
@@ -58,13 +59,21 @@ class Portfolio extends React.Component {
         <section>
           <div className='col-sm-9'>
             <h1>Projects</h1>
-            <Projects projects={this.state.projects} />
+            <Calendar projects={this.state.projects} />
           </div>
 
           <div className='col-sm-3'>
             <h1>Skills</h1>
-            <Skills projects={this.state.projects} />
+            <Skills
+              importantSkills={this.props.importantSkills}
+              projects={this.state.projects} />
           </div>
+        </section>
+
+        <section>
+          <ProjectList
+            importantSkills={this.props.importantSkills}
+            projects={this.state.projects} />
         </section>
 
       </div>
@@ -74,7 +83,21 @@ class Portfolio extends React.Component {
 }
 
 Portfolio.propTypes = {
-  projects: React.PropTypes.array
+  projects: React.PropTypes.array,
+  importantSkills: React.PropTypes.array
+};
+
+Portfolio.defaultProps = {
+  importantSkills: [
+    'Rails',
+    'JavaScript',
+    'PHP',
+    'CSS',
+    'Java',
+    'Angular',
+    'React',
+    'SQL'
+  ]
 };
 
 export default Portfolio;

@@ -1,2 +1,2 @@
-import component from './Portfolio.js';
+import component from './Portfolio';
 export default component;

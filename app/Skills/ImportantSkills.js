@@ -4,25 +4,15 @@ class ImportantSkills extends React.Component {
 
   constructor(props) {
     super();
-    const skills = this.calculate(props.skills);
+    const skills = this.calculate(props);
     this.state = {
       skills: skills,
       max: Math.max(...skills.map(s => s.duration))
     };
   }
 
-  calculate(skills) {
-    const important = [
-      'Rails',
-      'JavaScript',
-      'PHP',
-      'CSS',
-      'Java',
-      'Angular',
-      'React',
-      'SQL'
-    ];
-    return skills.filter(skill => important.indexOf(skill.name) >= 0);
+  calculate(props) {
+    return props.skills.filter(skill => props.important.indexOf(skill.name) >= 0);
   }
 
   componentWillReceiveProps(props) {
@@ -48,7 +38,8 @@ class ImportantSkills extends React.Component {
 }
 
 ImportantSkills.propTypes = {
-  skills: React.PropTypes.array
+  skills: React.PropTypes.array,
+  important: React.PropTypes.array
 };
 
 export default ImportantSkills;

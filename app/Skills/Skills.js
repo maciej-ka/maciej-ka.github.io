@@ -80,7 +80,7 @@ class Skills extends React.Component {
         </select>
 
         {this.state.show === 'important'
-          ? <ImportantSkills skills={this.state.skills} />
+          ? <ImportantSkills skills={this.state.skills} important={this.props.importantSkills} />
           : <AllSkills skills={this.state.skills} />
         }
       </div>
@@ -90,7 +90,8 @@ class Skills extends React.Component {
 }
 
 Skills.propTypes = {
-  projects: React.PropTypes.array
+  projects: React.PropTypes.array,
+  importantSkills: React.PropTypes.array
 };
 
 export default Skills;
