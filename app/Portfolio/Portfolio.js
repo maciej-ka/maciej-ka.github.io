@@ -75,11 +75,20 @@ class Portfolio extends React.Component {
         </section>
 
         <section>
+          <div className='col-sm-12'>
+            <img className='strip' src='assets/images/strip4.jpg' />
+          </div>
+        </section>
+
+        <section>
           <ProjectList
             importantSkills={this.props.importantSkills}
             projects={this.state.projects} />
         </section>
 
+        <section>
+          <img src='assets/images/footer.png' />
+        </section>
       </div>
     );
   }
