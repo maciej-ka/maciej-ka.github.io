@@ -65,7 +65,7 @@ export default [
     skills: [
       'Java', 'Spring', 'Gradle', 'Elasticsearch',
       'JavaScript', 'Angular', 'CoffeeScript',
-      'Bootstrap', 'Sass', 'Jade', 'Responsive Web Design', 'CSS animations', 'interface design', 'CSS',
+      'Bootstrap', 'Sass', 'Jade', 'Responsive Web Design', 'CSS animations',  'CSS',
       'gulp', 'UML'
     ],
     side: 'fullstack'
@@ -193,7 +193,7 @@ export default [
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium',
       'Angular', 'JavaScript', 'CoffeeScript',
-      'Haml', 'Sass', 'CSS animations', 'interface design', 'CSS',
+      'Haml', 'Sass', 'CSS animations',  'CSS',
       'PostgreSQL', 'UML'
     ],
     side: 'fullstack'
@@ -243,7 +243,7 @@ export default [
 
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP',
-      'Haml', 'Bootstrap', 'interface design', 'CSS',
+      'Haml', 'Bootstrap',  'CSS',
       'Capistrano', 'UML'
     ],
     side: 'fullstack'
@@ -393,7 +393,7 @@ export default [
 
     skills: [
       'Ruby', 'Rails', 'RSpec',
-      'CSS', 'interface design',
+      'CSS',
       'JavaScript', 'jQuery', 'JS animations',
       'MySQL'
     ],
@@ -419,7 +419,7 @@ export default [
 
     skills: [
       'PHP', 'Symfony', 'Doctrine', 'Apache Lucene',
-      'interface design',
+
       'JavaScript', 'jQuery', 'JS animations',
       'MySQL', 'SQL'
     ],
@@ -445,7 +445,7 @@ export default [
 
     skills: [
       'PHP', 'Symfony', 'Doctrine',
-      'CSS', 'interface design',
+      'CSS',
       'JavaScript', 'jQuery',
       'MySQL', 'SQL'
     ],
@@ -471,7 +471,7 @@ export default [
 
     skills: [
       'PHP', 'Symfony', 'Doctrine',
-      'CSS', 'interface design',
+      'CSS',
       'JavaScript', 'jQuery',
       'MySQL', 'SQL'
     ],
@@ -543,7 +543,7 @@ export default [
 
     skills: [
       'PHP', 'Symfony', 'Doctrine',
-      'CSS', 'interface design',
+      'CSS',
       'JavaScript', 'jQuery',
       'MySQL', 'SQL'
     ],
@@ -556,7 +556,7 @@ export default [
     name: 'Internship in the EU contest',
     start: '2009-09-01',
     end: '2009-12-01',
-    description: 'Ccontest app on Facebook',
+    description: 'Contest app on Facebook',
     link: null,
 
     company: 'EPL Group',
@@ -594,7 +594,7 @@ export default [
 
     skills: [
       'PHP', 'Symfony', 'Doctrine',
-      'CSS', 'interface design',
+      'CSS',
       'JavaScript', 'jQuery',
       'MySQL', 'SQL'
     ],
@@ -919,7 +919,7 @@ export default [
     team: [],
 
     skills: [
-      'ActionScript', 'interface design'
+      'ActionScript'
     ],
     side: 'frontend'
   },
