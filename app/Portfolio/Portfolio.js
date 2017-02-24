@@ -4,6 +4,7 @@ import RolesChart from '../RolesChart/';
 import Calendar from '../Calendar/';
 import Skills from '../Skills/';
 import ProjectList from '../ProjectList/';
+import StackChart from '../StackChart/';
 import {monthsToHuman} from '../helpers';
 
 class Portfolio extends React.Component {
@@ -40,7 +41,6 @@ class Portfolio extends React.Component {
   render() {
     return (
       <div>
-
         <section className='row'>
           <div className='col-sm-12 col-md-6'>
             <img className='strip' src='assets/images/strip1.jpg' />
@@ -60,6 +60,7 @@ class Portfolio extends React.Component {
           <div className='hidden-xs col-sm-6 col-md-4'>
             <h1>Fullstack</h1>
             <p>Due to possibilities in a modern javascript I moved from the server side to fullstack.</p>
+            <StackChart projects={this.state.projects} />
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
@@ -68,12 +69,12 @@ class Portfolio extends React.Component {
         </section>
 
         <section>
-          <div className='col-sm-9'>
+          <div className='col-sm-8'>
             <h1>Projects</h1>
             <Calendar projects={this.state.projects} />
           </div>
 
-          <div className='col-sm-3'>
+          <div className='col-sm-4'>
             <h1>Skills</h1>
             <Skills
               importantSkills={this.props.importantSkills}

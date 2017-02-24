@@ -29,7 +29,7 @@ class PieChart extends React.Component {
       .sort(null)
       .value(function(d) { return d.value; });
 
-    var svg = d3.select('.some-chart')
+    var svg = d3.select(`.${this.props.name}`)
       .attr('viewBox', `0 0 ${width} ${height}`)
       .append('g')
       .attr('transform', `translate(${width/2} ${height/2})`);
@@ -61,7 +61,7 @@ class PieChart extends React.Component {
 
   render() {
     return (
-      <svg className='some-chart'></svg>
+      <svg className={this.props.name}></svg>
     );
   }
 
@@ -69,7 +69,8 @@ class PieChart extends React.Component {
 
 PieChart.propTypes = {
   data: React.PropTypes.array,
-  rotate:  React.PropTypes.number
+  rotate: React.PropTypes.number,
+  name: React.PropTypes.string
 };
 
 PieChart.defaultProps = {
