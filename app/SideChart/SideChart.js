@@ -1,5 +1,6 @@
 import React from 'react';
 import VennDiagram from '../VennDiagram';
+import {monthsToHuman} from '../helpers';
 
 class SideChart extends React.Component {
 
@@ -11,12 +12,39 @@ class SideChart extends React.Component {
   }
 
   calculate(props) {
-    let sides=[];
+    // sum month durations
+    let durations={};
+    props.projects.forEach(project => {
+      let side = project.side || 'other';
+      durations[side] = durations[side] || 0;
+      durations[side] += project.duration;
+    });
+    durations['frontend'] += durations['fullstack'];
+    durations['backend'] += durations['fullstack'];
+
+    // get max
+    let maxDuration=0;
+    for(let key in durations) {
+      maxDuration = Math.max(maxDuration, durations[key]);
+    }
+    let maxRadius=Math.sqrt(maxDuration/3.14);
+
+    // set diagram details
+    let data={};
+    for(let key in durations) {
+      let side = {
+        subtitle: monthsToHuman(durations[key]),
+        radius: Math.sqrt(durations[key]/3.14) / maxRadius
+      };
+      data[key] = side;
+    }
+
+    return data;
   }
 
   render() {
     return (
-      <VennDiagram />
+      <VennDiagram data={this.state.data} />
     );
   }
 
