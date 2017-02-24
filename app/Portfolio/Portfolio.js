@@ -42,21 +42,28 @@ class Portfolio extends React.Component {
       <div>
 
         <section className='row'>
-          <div className='col-sm-12'>
+          <div className='col-sm-12 col-md-6'>
             <img className='strip' src='assets/images/strip1.jpg' />
+          </div>
+          <div className='hidden-xs hidden-sm col-md-6'>
+            <img className='strip' src='assets/images/strip3.jpg' />
           </div>
         </section>
 
         <section className='row'>
-          <div className='col-sm-6'>
+          <div className='col-xs-12 col-sm-6 col-md-4'>
             <h1>Web developer</h1>
             <p>I write code and hope that machines will not take revenge on programmers one day.</p>
             <RolesChart projects={this.state.projects} />
           </div>
 
-          <div className='col-sm-6'>
+          <div className='hidden-xs col-sm-6 col-md-4'>
             <h1>Fullstack</h1>
             <p>Due to possibilities in a modern javascript I moved from the server side to fullstack.</p>
+          </div>
+
+          <div className='hidden-xs hidden-sm col-md-4'>
+            <h1>Remote</h1>
           </div>
         </section>
 
@@ -74,13 +81,12 @@ class Portfolio extends React.Component {
           </div>
         </section>
 
-        <section>
-          <div className='col-sm-12'>
-            <img className='strip' src='assets/images/strip4.jpg' />
-          </div>
+        <section className='row'>
+          <h1>Maciej Kasprzyk</h1>
+          maciej.kasprzyk.it@gmail.com
         </section>
 
-        <section>
+        <section className='row'>
           <ProjectList
             importantSkills={this.props.importantSkills}
             projects={this.state.projects} />
