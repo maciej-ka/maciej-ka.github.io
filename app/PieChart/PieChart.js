@@ -9,8 +9,8 @@ class PieChart extends React.Component {
 
   drawChart() {
     var data = this.props.data;
-    var height = 218;
-    var width = 269;
+    var height = 200;
+    var width = 264;
     var radius = 100;
     var rotate = this.props.rotate;
 

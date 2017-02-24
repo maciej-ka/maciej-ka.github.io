@@ -20,7 +20,8 @@ export default [
       'JavaScript', 'ES6', 'React', 'Redux', 'JSX',
       'CSS',
       'Webpack', 'Babel', 'Mocha', 'Enzyme'
-    ]
+    ],
+    side: 'fullstack'
   },
 
   {
@@ -40,7 +41,8 @@ export default [
 
     skills: [
       'React', 'ES6', 'JSX', 'JavaScript', 'Webpack', 'Babel', 'CSS', 'D3'
-    ]
+    ],
+    side: 'frontend'
   },
 
 
@@ -65,7 +67,8 @@ export default [
       'JavaScript', 'Angular', 'CoffeeScript',
       'Bootstrap', 'Sass', 'Jade', 'Responsive Web Design', 'CSS animations', 'interface design', 'CSS',
       'gulp', 'UML'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -89,8 +92,9 @@ export default [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium',
       'Ember', 'JavaScript', 'CoffeeScript',
       'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS',
-      'Capistrano', 'PostgreSQL', 'UML', 'requirements analysis'
-    ]
+      'Capistrano', 'PostgreSQL', 'UML'
+    ],
+    side: 'fullstack'
   },
 
 
@@ -115,7 +119,8 @@ export default [
       'Ember', 'JavaScript', 'CoffeeScript',
       'Haml', 'Sass', 'CSS',
       'PostgreSQL', 'UML'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -138,7 +143,8 @@ export default [
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium',
       'PayPal API'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -163,7 +169,8 @@ export default [
       'Angular', 'JavaScript', 'CoffeeScript',
       'Haml', 'Sass', 'CSS',
       'PostgreSQL', 'UML'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -188,7 +195,8 @@ export default [
       'Angular', 'JavaScript', 'CoffeeScript',
       'Haml', 'Sass', 'CSS animations', 'interface design', 'CSS',
       'PostgreSQL', 'UML'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -212,7 +220,8 @@ export default [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP',
       'Haml',
       'Capistrano', 'PostgreSQL', 'UML'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -236,7 +245,8 @@ export default [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP',
       'Haml', 'Bootstrap', 'interface design', 'CSS',
       'Capistrano', 'UML'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -260,7 +270,8 @@ export default [
       'Ruby', 'Rails', 'RSpec', 'Capybara',
       'Haml',
       'Capistrano'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -284,7 +295,8 @@ export default [
       'Ruby', 'Rails', 'RSpec', 'Capybara',
       'Haml',
       'Capistrano'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -308,7 +320,8 @@ export default [
       'Ruby', 'Rails', 'RSpec', 'Capybara',
       'Haml',
       'Capistrano', 'UML'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -332,7 +345,8 @@ export default [
       'Ruby', 'Rails',
       'Haml',
       'MySQL'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -356,7 +370,8 @@ export default [
       'Ruby', 'Rails',
       'Haml',
       'SQL'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -380,8 +395,9 @@ export default [
       'Ruby', 'Rails', 'RSpec',
       'CSS', 'interface design',
       'JavaScript', 'jQuery', 'JS animations',
-      'MySQL', 'requirements analysis'
-    ]
+      'MySQL'
+    ],
+    side: 'fullstack'
   },
 
 
@@ -406,7 +422,8 @@ export default [
       'interface design',
       'JavaScript', 'jQuery', 'JS animations',
       'MySQL', 'SQL'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -431,7 +448,8 @@ export default [
       'CSS', 'interface design',
       'JavaScript', 'jQuery',
       'MySQL', 'SQL'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -455,8 +473,9 @@ export default [
       'PHP', 'Symfony', 'Doctrine',
       'CSS', 'interface design',
       'JavaScript', 'jQuery',
-      'MySQL', 'requirements analysis', 'SQL'
-    ]
+      'MySQL', 'SQL'
+    ],
+    side: 'fullstack'
   },
 
 
@@ -478,7 +497,8 @@ export default [
 
     skills: [
       'Android', 'Java'
-    ]
+    ],
+    side: 'mobile'
   },
 
 
@@ -500,7 +520,8 @@ export default [
 
     skills: [
       'Android', 'Java'
-    ]
+    ],
+    side: 'mobile'
   },
 
 
@@ -525,7 +546,8 @@ export default [
       'CSS', 'interface design',
       'JavaScript', 'jQuery',
       'MySQL', 'SQL'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -549,7 +571,8 @@ export default [
       'PHP', 'Symfony', 'Doctrine',
       'CSS',
       'MySQL', 'Facebook API', 'SQL'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -574,7 +597,8 @@ export default [
       'CSS', 'interface design',
       'JavaScript', 'jQuery',
       'MySQL', 'SQL'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -596,7 +620,8 @@ export default [
 
     skills: [
       'Python'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -618,7 +643,8 @@ export default [
 
     skills: [
       'ExtJS', 'JavaScript'
-    ]
+    ],
+    side: 'frontend'
   },
 
 
@@ -641,7 +667,8 @@ export default [
 
     skills: [
       'PHP', 'CSS'
-    ]
+    ],
+    side: 'fullstack'
   },
 
 
@@ -662,8 +689,9 @@ export default [
     team: [],
 
     skills: [
-      'UML', 'requirements analysis', 'Oracle Database', 'PL/SQL'
-    ]
+      'UML', 'Oracle Database', 'PL/SQL'
+    ],
+    side: null
   },
 
 
@@ -684,8 +712,9 @@ export default [
     team: [],
 
     skills: [
-      'UML', 'requirements analysis', 'Oracle Database', 'PL/SQL'
-    ]
+      'UML', 'Oracle Database', 'PL/SQL'
+    ],
+    side: null
   },
 
 
@@ -707,7 +736,8 @@ export default [
 
     skills: [
       'project management'
-    ]
+    ],
+    side: null
   },
 
 
@@ -729,7 +759,8 @@ export default [
 
     skills: [
       'Java'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -751,7 +782,8 @@ export default [
 
     skills: [
       'PHP', 'Oracle Database', 'UML'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -772,8 +804,9 @@ export default [
     team: ['4 Java developers', 'Analyst'],
 
     skills: [
-      'UML', 'requirements analysis', 'Java'
-    ]
+      'UML', 'Java'
+    ],
+    side: 'backend'
   },
 
 
@@ -795,7 +828,8 @@ export default [
 
     skills: [
       'PHP', 'SQL'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -817,7 +851,8 @@ export default [
 
     skills: [
       'PHP', 'MySQL', 'SQL'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -839,7 +874,8 @@ export default [
 
     skills: [
       'PHP', 'SQL'
-    ]
+    ],
+    side: 'backend'
   },
 
 
@@ -860,8 +896,9 @@ export default [
     team: ['4 Analysts', '15 Developers'],
 
     skills: [
-      'UML', 'requirements analysis', 'SQL Server', 'SQL'
-    ]
+      'UML', 'SQL Server', 'SQL'
+    ],
+    side: null
   },
 
 
@@ -882,8 +919,9 @@ export default [
     team: [],
 
     skills: [
-      'ActionScript', 'requirements analysis', 'interface design'
-    ]
+      'ActionScript', 'interface design'
+    ],
+    side: 'frontend'
   },
 
 
@@ -905,7 +943,8 @@ export default [
 
     skills: [
       'MySQL', 'ActionScript',  'CSS'
-    ]
+    ],
+    side: 'frontend'
   },
 
 
@@ -926,8 +965,9 @@ export default [
     team: [],
 
     skills: [
-      'PHP',  'CSS', 'requirements analysis'
-    ]
+      'PHP',  'CSS'
+    ],
+    side: 'fullstack'
   }
 
 ];
