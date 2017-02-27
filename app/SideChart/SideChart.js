@@ -21,33 +21,60 @@ class SideChart extends React.Component {
     durations['frontend'] += durations['fullstack'];
     durations['backend'] += durations['fullstack'];
 
-    // get max
-    let maxDuration=0;
+    // get max duration
+    let max=0;
     for(let key in durations) {
-      maxDuration = Math.max(maxDuration, durations[key]);
+      max = Math.max(max, durations[key]);
     }
-    let maxRadius=Math.sqrt(maxDuration/3.14);
 
-    // set diagram details
+    // calculate normalized values (between zero and one)
     let data={};
     for(let key in durations) {
-      let side = {
+      data[key] = {
+        value: durations[key] / max,
         subtitle: monthsToHuman(durations[key]),
-        radius: Math.sqrt(durations[key]/3.14) / maxRadius
+        radius: Math.sqrt(durations[key] / Math.PI) / Math.sqrt(max / Math.PI)
       };
-      data[key] = side;
     }
 
     return data;
   }
 
   calculateDistance() {
-    console.log(this.state);
-    return 0;
+    // find distance between two overlapping circles
+    const r1 = this.state.data['backend'].radius;
+    const r2 = this.state.data['frontend'].radius;
+    const area = this.state.data['fullstack'].value;
+
+    // find intersection height numerically
+    let max = Math.min(r1, r2);
+    let min = 0;
+    let h;
+    for(let i = 0; i < 10; i++) {
+      h = (max + min) / 2;
+      let miss = this.calculateMistake(r1, r2, area, h);
+      if (miss < 0) {
+        min = h;
+      } else {
+        max = h;
+      }
+      console.log(h, miss);
+    }
+
+    // convert height of overlap to distance
+    return Math.sqrt(h * h - r1 * r1) + Math.sqrt(h * h - r2 * r2);
+  }
+
+  calculateMistake(r1, r2, area, h) {
+    let result =
+      + r1 * r1 * Math.asin(h / r1)
+      + r2 * r2 * Math.asin(h / r2)
+      - h * (Math.sqrt(r1 * r1 - h * h) + Math.sqrt(r2 * r2 - h * h))
+      - area;
+    return result;
   }
 
   render() {
-    // radiuses in data are between zero and one
     const scale = 40;
     const data = this.state.data;
 
