@@ -56,57 +56,32 @@ class SideChart extends React.Component {
   }
 
   calculateDistance() {
-    const r2 = this.state.data['frontend'].radius;
-    const inside = this.calculateMiss(r2).miss < 0;
-
-    // set range of intersection height
-    let h, max, min, res;
-    if (inside) {
-      min = r2;
-      max = 0;
-    } else {
-      min = 0;
-      max = r2;
-    }
-
-    // interpolate intersection height
+    let min = 0;
+    let max = Math.PI;
+    let res;
     for(let i = 0; i < 10; i++) {
-      h = (max + min) / 2;
-      res = this.calculateMiss(h, inside);
-      if (res.miss < 0) {
-        min = h;
+      let arc = (max + min) / 2;
+      res = this.calculateMiss(arc);
+      if (res.miss > 0) {
+        max = arc;
       } else {
-        max = h;
+        min = arc;
       }
       console.log(res.d, res.miss);
     }
     return res.d;
   }
 
-  calculateMiss(h, inside = false) {
+  calculateMiss(alpha) {
     const r1 = this.state.data['backend'].radius;
     const r2 = this.state.data['frontend'].radius;
     const area = this.state.data['fullstack'].value;
+    const beta = Math.asin(r2 * Math.sin(alpha) / r1);
 
-    if (!inside) {
-      let d = Math.sqrt(r1 * r1 - h * h) + Math.sqrt(r2 * r2 - h * h);
-      let miss =
-        + r1 * r1 * Math.asin(h / r1)
-        + r2 * r2 * Math.asin(h / r2)
-        - h * d
-        - area;
-      return {d, miss};
-    }
-
-    let d = Math.sqrt(r1 * r1 - h * h) - Math.sqrt(r2 * r2 - h * h);
+    let d = r2 * Math.cos(alpha) + r1 * Math.cos(beta);
     let miss =
-      + r1 * r1 * Math.asin(h / r1)
-      - h * Math.sqrt(r1 * r1 - h * h)
-      + Math.PI * r2 * r2
-      - (
-        + r2 * r2 * Math.asin(h / r2)
-        - h * Math.sqrt(r2 * r2 - h * h)
-        )
+      r2 * r2 * (alpha - Math.sin(alpha) * Math.cos(alpha))
+      + r1 * r1 * (beta - Math.sin(beta) * Math.cos(beta))
       - area;
     return {d, miss};
   }
