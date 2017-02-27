@@ -6,84 +6,131 @@ class SideChart extends React.Component {
   constructor(props) {
     super();
     this.state = {};
-    this.state.data = this.calculate(props);
+    this.state.data = this.calculateData(props);
     this.state.distance = this.calculateDistance();
   }
 
-  calculate(props) {
+  calculateData(props) {
     // sum month durations
-    let durations={};
+    let data={};
     props.projects.forEach(project => {
       let side = project.side || 'other';
-      durations[side] = durations[side] || 0;
-      durations[side] += project.duration;
+      data[side] = data[side] || {value: 0};
+      data[side].value += project.duration;
     });
-    durations['frontend'] += durations['fullstack'];
-    durations['backend'] += durations['fullstack'];
+    data['frontend'].value += data['fullstack'].value;
+    data['backend'].value += data['fullstack'].value;
 
-    // get max duration
-    let max=0;
-    for(let key in durations) {
-      max = Math.max(max, durations[key]);
+    // add title and radius
+    for(let key in data) {
+      data[key].subtitle = monthsToHuman(data[key].value);
+      data[key].radius = Math.sqrt(data[key].value / Math.PI);
     }
 
-    // calculate normalized values (between zero and one)
-    let data={};
-    for(let key in durations) {
-      data[key] = {
-        value: durations[key] / max,
-        subtitle: monthsToHuman(durations[key]),
-        radius: Math.sqrt(durations[key] / Math.PI) / Math.sqrt(max / Math.PI)
-      };
-    }
+    // // get max duration
+    // let max=0;
+    // for(let key in durations) {
+    //   max = Math.max(max, durations[key]);
+    // }
+
+    // // calculate normalized values (between zero and one)
+    // let data={};
+    // for(let key in durations) {
+    //   data[key] = {
+    //     value: durations[key] / max,
+    //     subtitle: monthsToHuman(durations[key]),
+    //     radius: Math.sqrt(durations[key] / Math.PI) / Math.sqrt(max / Math.PI)
+    //   };
+    // }
+
+    // let data={};
+    // for(let key in durations) {
+    //   data[key] = {
+    //     value: durations[key],
+    //     subtitle: monthsToHuman(durations[key]),
+    //     radius: Math.sqrt(durations[key] / Math.PI)
+    //   };
+    // }
 
     return data;
   }
 
   calculateDistance() {
-    // find distance between two overlapping circles
-    const r1 = this.state.data['backend'].radius;
     const r2 = this.state.data['frontend'].radius;
-    const area = this.state.data['fullstack'].value;
+    const inside = this.calculateMiss(r2).miss < 0;
 
-    // find intersection height numerically
-    let max = Math.min(r1, r2);
-    let min = 0;
-    let h;
+    // set range of intersection height
+    let h, max, min, res;
+    if (inside) {
+      min = r2;
+      max = 0;
+    } else {
+      min = 0;
+      max = r2;
+    }
+
+    // interpolate intersection height
     for(let i = 0; i < 10; i++) {
       h = (max + min) / 2;
-      let miss = this.calculateMistake(r1, r2, area, h);
-      if (miss < 0) {
+      res = this.calculateMiss(h, inside);
+      if (res.miss < 0) {
         min = h;
       } else {
         max = h;
       }
-      console.log(h, miss);
+      console.log(res.d, res.miss);
     }
-
-    // convert height of overlap to distance
-    return Math.sqrt(h * h - r1 * r1) + Math.sqrt(h * h - r2 * r2);
+    return res.d;
   }
 
-  calculateMistake(r1, r2, area, h) {
-    let result =
+  calculateMiss(h, inside = false) {
+    const r1 = this.state.data['backend'].radius;
+    const r2 = this.state.data['frontend'].radius;
+    const area = this.state.data['fullstack'].value;
+
+    if (!inside) {
+      let d = Math.sqrt(r1 * r1 - h * h) + Math.sqrt(r2 * r2 - h * h);
+      let miss =
+        + r1 * r1 * Math.asin(h / r1)
+        + r2 * r2 * Math.asin(h / r2)
+        - h * d
+        - area;
+      return {d, miss};
+    }
+
+    let d = Math.sqrt(r1 * r1 - h * h) - Math.sqrt(r2 * r2 - h * h);
+    let miss =
       + r1 * r1 * Math.asin(h / r1)
-      + r2 * r2 * Math.asin(h / r2)
-      - h * (Math.sqrt(r1 * r1 - h * h) + Math.sqrt(r2 * r2 - h * h))
+      - h * Math.sqrt(r1 * r1 - h * h)
+      + Math.PI * r2 * r2
+      - (
+        + r2 * r2 * Math.asin(h / r2)
+        - h * Math.sqrt(r2 * r2 - h * h)
+        )
       - area;
-    return result;
+    return {d, miss};
   }
 
   render() {
-    const scale = 40;
+    const scale = 1;
     const data = this.state.data;
+    // position of second circle
+    // const cy = (data['backend'].radius + this.state.distance) * scale;
 
     return (
-      <svg className='vennDiagram' viewBox='0 0 200 174'>
-        <circle cx='40' cy='40' r={data['backend'].radius * scale} />
-        <circle cx='40' cy='59' r={data['frontend'].radius * scale} />
-        <circle cx='40' cy='107' r={data['mobile'].radius * scale} />
-        <circle cx='40' cy='141' r={data['other'].radius * scale} />
+      <svg className='vennDiagram' viewBox='0 0 20 50'>
+        <circle
+          cx='10'
+          cy={data['backend'].radius * scale}
+          r={data['backend'].radius * scale} />
+
+        <circle
+          cx='10'
+          cy={(data['backend'].radius + this.state.distance) * scale}
+          r={data['frontend'].radius * scale} />
+
+        <circle cx='25' cy='107' r={data['mobile'].radius * scale} />
+        <circle cx='25' cy='141' r={data['other'].radius * scale} />
         <text x='85' y='25'>backend</text>
       </svg>
     );
