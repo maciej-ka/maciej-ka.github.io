@@ -21,36 +21,18 @@ class SideChart extends React.Component {
     data['frontend'].value += data['fullstack'].value;
     data['backend'].value += data['fullstack'].value;
 
-    // add title and radius
+    // get max value
+    let max=0;
     for(let key in data) {
-      data[key].subtitle = monthsToHuman(data[key].value);
-      data[key].radius = Math.sqrt(data[key].value / Math.PI);
+      max = Math.max(max, data[key].value);
     }
 
-    // // get max duration
-    // let max=0;
-    // for(let key in durations) {
-    //   max = Math.max(max, durations[key]);
-    // }
-
-    // // calculate normalized values (between zero and one)
-    // let data={};
-    // for(let key in durations) {
-    //   data[key] = {
-    //     value: durations[key] / max,
-    //     subtitle: monthsToHuman(durations[key]),
-    //     radius: Math.sqrt(durations[key] / Math.PI) / Math.sqrt(max / Math.PI)
-    //   };
-    // }
-
-    // let data={};
-    // for(let key in durations) {
-    //   data[key] = {
-    //     value: durations[key],
-    //     subtitle: monthsToHuman(durations[key]),
-    //     radius: Math.sqrt(durations[key] / Math.PI)
-    //   };
-    // }
+    // normalize and add title
+    for(let key in data) {
+      data[key].subtitle = monthsToHuman(data[key].value);
+      data[key].radius = Math.sqrt(data[key].value * Math.PI) / Math.sqrt(max * Math.PI);
+      data[key].value = data[key].radius * data[key].radius * Math.PI;
+    }
 
     return data;
   }
@@ -59,6 +41,8 @@ class SideChart extends React.Component {
     let min = 0;
     let max = Math.PI;
     let res;
+
+    // interpolate angle
     for(let i = 0; i < 10; i++) {
       let arc = (max + min) / 2;
       res = this.calculateMiss(arc);
@@ -67,8 +51,9 @@ class SideChart extends React.Component {
       } else {
         min = arc;
       }
-      console.log(res.d, res.miss);
     }
+
+    // return distance for last angle
     return res.d;
   }
 
@@ -78,7 +63,9 @@ class SideChart extends React.Component {
     const area = this.state.data['fullstack'].value;
     const beta = Math.asin(r2 * Math.sin(alpha) / r1);
 
+    // distance between circles
     let d = r2 * Math.cos(alpha) + r1 * Math.cos(beta);
+    // error in area of intersection
     let miss =
       r2 * r2 * (alpha - Math.sin(alpha) * Math.cos(alpha))
       + r1 * r1 * (beta - Math.sin(beta) * Math.cos(beta))
@@ -87,25 +74,31 @@ class SideChart extends React.Component {
   }
 
   render() {
-    const scale = 1;
+    const scale = 40;
     const data = this.state.data;
-    // position of second circle
-    // const cy = (data['backend'].radius + this.state.distance) * scale;
 
     return (
-      <svg className='vennDiagram' viewBox='0 0 20 50'>
+      <svg className='vennDiagram' viewBox='0 0 200 200'>
         <circle
-          cx='10'
+          cx={scale}
           cy={data['backend'].radius * scale}
           r={data['backend'].radius * scale} />
 
         <circle
-          cx='10'
+          cx={scale}
           cy={(data['backend'].radius + this.state.distance) * scale}
           r={data['frontend'].radius * scale} />
 
-        <circle cx='25' cy='107' r={data['mobile'].radius * scale} />
-        <circle cx='25' cy='141' r={data['other'].radius * scale} />
+        <circle
+          cx={scale}
+          cy='107'
+          r={data['mobile'].radius * scale} />
+
+        <circle
+          cx={scale}
+          cy='141'
+          r={data['other'].radius * scale} />
+
         <text x='85' y='25'>backend</text>
       </svg>
     );
