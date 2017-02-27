@@ -53,7 +53,7 @@ class Portfolio extends React.Component {
         <section className='row'>
           <div className='col-xs-12 col-sm-6 col-md-4'>
             <h1>Web developer</h1>
-            <p>I write code and hope that machines will not take revenge on programmers one day.</p>
+            <p>I write code and contribute to Open Source to see how big projects are organized.</p>
             <RolesChart projects={this.state.projects} />
           </div>
 
