@@ -65,8 +65,7 @@ class Portfolio extends React.Component {
 
           <div className='hidden-xs hidden-sm col-md-4'>
             <h1>Remote</h1>
-            <p>Fully remote projects is something I value and have experience in.</p>
-            <p>My usuall place to work is in a rented office next to home. I try to at least once meet team in person and stay reachable by chat or video call. And I worked like this for the last 2 years and 7 months.</p>
+            <p>My usuall place to work is in a rented office next to home. I try to meet team in person at least once and stay reachable by chat or video call. And I worked like this for the last 2 years and 7 months.</p>
           </div>
         </section>
 
@@ -85,8 +84,11 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
-          <h1>Maciej Kasprzyk</h1>
-          maciej.kasprzyk.it@gmail.com
+          <div className='col-sm-4'>
+            <h1>Maciej Kasprzyk</h1>
+            maciej.kasprzyk.it@gmail.com
+            <img width='200px' src='assets/images/photo.jpg' />
+          </div>
         </section>
 
         <section className='row'>
