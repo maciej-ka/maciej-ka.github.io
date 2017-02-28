@@ -59,12 +59,14 @@ class Portfolio extends React.Component {
 
           <div className='hidden-xs col-sm-6 col-md-4'>
             <h1>Fullstack</h1>
-            <p>Due to possibilities in a modern javascript I moved from the server side to fullstack.</p>
+            <p>Due to possibilities in modern javascript I moved from the server side to fullstack.</p>
             <SideChart projects={this.state.projects} />
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
             <h1>Remote</h1>
+            <p>Fully remote projects is something I value and have experience in.</p>
+            <p>My usuall place to work is in a rented office next to home. I try to at least once meet team in person and stay reachable by chat or video call. And I worked like this for the last 2 years and 7 months.</p>
           </div>
         </section>
 
