@@ -65,7 +65,7 @@ class SideChart extends React.Component {
 
     // distance between circles
     let d = r2 * Math.cos(alpha) + r1 * Math.cos(beta);
-    // error in area of intersection
+    // area of intersection
     let miss =
       r2 * r2 * (alpha - Math.sin(alpha) * Math.cos(alpha))
       + r1 * r1 * (beta - Math.sin(beta) * Math.cos(beta))
@@ -74,30 +74,48 @@ class SideChart extends React.Component {
   }
 
   render() {
-    const scale = 40;
-    const data = this.state.data;
+    const height = 153;
+    const width = 200;
+    const scale = 34;
+
+    // scale radiuses
+    let r = {};
+    for(let key in this.state.data) {
+      r[key] = this.state.data[key].radius * scale;
+    }
+
+    // space groups evengly across height
+    let y = {
+      backend: r.backend,
+      frontend: r.backend + this.state.distance * scale,
+      other: height - r.other
+    };
+    let gap = height - y.frontend - r.frontend - 2 * (r.mobile + r.other);
+    y.mobile = y.frontend + r.frontend + gap / 2 + r.mobile;
+
+    // label
 
     return (
-      <svg className='vennDiagram' viewBox='0 0 200 200'>
+      <svg className='vennDiagram' viewBox={`0 0 ${width} ${height}`}>
         <circle
           cx={scale}
-          cy={data['backend'].radius * scale}
-          r={data['backend'].radius * scale} />
+          cy={r.backend}
+          r={r.backend} />
 
         <circle
           cx={scale}
-          cy={(data['backend'].radius + this.state.distance) * scale}
-          r={data['frontend'].radius * scale} />
+          cy={y.frontend}
+          r={r.frontend} />
 
         <circle
           cx={scale}
-          cy='107'
-          r={data['mobile'].radius * scale} />
+          cy={y.mobile}
+          r={r.mobile} />
 
         <circle
           cx={scale}
-          cy='141'
-          r={data['other'].radius * scale} />
+          cy={y.other}
+          r={r.other} />
 
         <text x='85' y='25'>backend</text>
       </svg>
