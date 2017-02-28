@@ -37,3 +37,9 @@ path,
   opacity: 0.3;
   cursor: default;
 }
+.vennDiagram {
+  font-size: 70%;
+}
+.vennDiagram text {
+  alignment-baseline: middle;
+}

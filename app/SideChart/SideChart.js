@@ -77,23 +77,24 @@ class SideChart extends React.Component {
     const height = 153;
     const width = 200;
     const scale = 34;
+    const data = this.state.data;
 
-    // scale radiuses
+    // radiuses
     let r = {};
     for(let key in this.state.data) {
-      r[key] = this.state.data[key].radius * scale;
+      r[key] = data[key].radius * scale;
     }
 
-    // space groups evengly across height
+    // y positions
     let y = {
       backend: r.backend,
       frontend: r.backend + this.state.distance * scale,
       other: height - r.other
     };
-    let gap = height - y.frontend - r.frontend - 2 * (r.mobile + r.other);
+    // place free spaces evengly
+    const vennHeight = y.frontend + r.frontend;
+    let gap = height - vennHeight - 2 * (r.mobile + r.other);
     y.mobile = y.frontend + r.frontend + gap / 2 + r.mobile;
-
-    // label
 
     return (
       <svg className='vennDiagram' viewBox={`0 0 ${width} ${height}`}>
@@ -117,7 +118,30 @@ class SideChart extends React.Component {
           cy={y.other}
           r={r.other} />
 
-        <text x='85' y='25'>backend</text>
+        <g transform='translate(85, 10)'>
+          <text className='title'>backend</text>
+          <text className='subtitle' dy='1em'>{data['backend'].subtitle}</text>
+        </g>
+
+        <g transform={`translate(85, ${vennHeight / 2})`}>
+          <text className='title'>fullstack</text>
+          <text className='subtitle' dy='1em'>{data['fullstack'].subtitle}</text>
+        </g>
+
+        <g transform={`translate(85, ${vennHeight - 11})`}>
+          <text className='title'>frontend</text>
+          <text className='subtitle' dy='1em'>{data['frontend'].subtitle}</text>
+        </g>
+
+        <g transform={`translate(85, ${y.mobile})`}>
+          <text className='title'>mobile</text>
+          <text className='subtitle' dy='1em'>{data['mobile'].subtitle}</text>
+        </g>
+
+        <g transform={`translate(85, ${y.other})`}>
+          <text className='title'>other</text>
+          <text className='subtitle' dy='1em'>{data['other'].subtitle}</text>
+        </g>
       </svg>
     );
   }
