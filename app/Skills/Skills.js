@@ -31,7 +31,7 @@ class Skills extends React.Component {
     // format data
     let skills = [];
     for (let name in durations) {
-      let ago = moment().diff(moment(lastUsed[name]), 'months') - 1;
+      let ago = moment().diff(new Date(lastUsed[name]), 'months') - 1;
       skills.push({
         name: name,
         ago: ago,

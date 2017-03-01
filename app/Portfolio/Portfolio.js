@@ -31,7 +31,11 @@ class Portfolio extends React.Component {
     var calendar = {};
     this.state.projects.forEach(project => {
       let date = project.start.clone();
-      let info = {role: project.roleLabel, side: project.side, skills: project.skills};
+      let info = {
+        role: project.roleLabel,
+        side: project.side,
+        skills: project.skills,
+        remote: project.remote };
       while (date < project.end) {
         let year = date.year();
         let month = date.month();
@@ -54,7 +58,8 @@ class Portfolio extends React.Component {
     return {
       role: roles.find(role => role == a.role || role == b.role),
       side: sides.find(side => side == a.side || side == b.side),
-      skills: Array.from(new Set(a.skills.concat(b.skills)))
+      skills: Array.from(new Set(a.skills.concat(b.skills))),
+      remote: a.remote || b.remote
     };
   }
 
@@ -84,8 +89,8 @@ class Portfolio extends React.Component {
 
           <div className='hidden-xs hidden-sm col-md-4'>
             <h1>Remote</h1>
-            <p>I value remote offers and have experience in them.</p>
-            <p>My usuall place to work is in a rented office next to home. I try to at least once meet team in person and stay reachable by chat or video call. And I worked like this for the last 2 years and 7 months.</p>
+            <p>I have experience in fully remote jobs.</p>
+            <p>My office is a rented place near home. I stay reachable by a chat or video call. And I worked this way for the last 2 years and 7 months.</p>
           </div>
         </section>
 
@@ -102,7 +107,7 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
-          <p>Charts are calculated on base of those projects. Open Source contributions to Sass, Google lighthouse, React and others are not included.</p>
+          <p>View my Open Source activity <a href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
           <ProjectList projects={this.state.projects} />
         </section>
 
