@@ -1,4 +1,5 @@
 import React from 'react';
+import {importantSkills} from '../settings';
 
 class ProjectList extends React.Component {
 
@@ -13,7 +14,7 @@ class ProjectList extends React.Component {
     // divide projects by year
     let buckets = [];
     props.projects.forEach(project => {
-      project.importantSkills = project.skills.filter(skill => props.importantSkills.indexOf(skill) >= 0);
+      project.importantSkills = project.skills.filter(skill => importantSkills.indexOf(skill) >= 0);
       let year = project.end.year();
       let bucket = buckets.find(b => b.year == year);
       if(!bucket) {
@@ -58,8 +59,7 @@ class ProjectList extends React.Component {
 }
 
 ProjectList.propTypes = {
-  projects: React.PropTypes.array,
-  importantSkills: React.PropTypes.array
+  projects: React.PropTypes.array
 };
 
 export default ProjectList;

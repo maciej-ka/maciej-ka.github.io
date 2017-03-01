@@ -13,11 +13,14 @@ class SideChart extends React.Component {
   calculateData(props) {
     // sum month durations
     let data={};
-    props.projects.forEach(project => {
-      let side = project.side || 'other';
-      data[side] = data[side] || {value: 0};
-      data[side].value += project.duration;
-    });
+    let calendar = props.calendar;
+    for (let year in calendar) {
+      for (let month in calendar[year]) {
+        let side = calendar[year][month].side;
+        data[side] = data[side] || {value: 0};
+        data[side].value += 1;
+      }
+    }
     data['frontend'].value += data['fullstack'].value;
     data['backend'].value += data['fullstack'].value;
 
@@ -42,7 +45,7 @@ class SideChart extends React.Component {
     let max = Math.PI;
     let res;
 
-    // interpolate angle
+    // numerically solve intesection equation
     for(let i = 0; i < 10; i++) {
       let arc = (max + min) / 2;
       res = this.calculateMiss(arc);
@@ -65,7 +68,7 @@ class SideChart extends React.Component {
 
     // distance between circles
     let d = r2 * Math.cos(alpha) + r1 * Math.cos(beta);
-    // area of intersection
+    // intersection equation
     let miss =
       r2 * r2 * (alpha - Math.sin(alpha) * Math.cos(alpha))
       + r1 * r1 * (beta - Math.sin(beta) * Math.cos(beta))
@@ -149,7 +152,7 @@ class SideChart extends React.Component {
 }
 
 SideChart.propTypes = {
-  projects: React.PropTypes.array
+  calendar: React.PropTypes.object
 };
 
 export default SideChart;

@@ -8,39 +8,38 @@ class Skills extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      skills: this.calculate(props.projects),
+      skills: this.calculate(props),
       show: 'important',
       order: 'duration'
     };
   }
 
-  calculate(projects) {
+  calculate(props) {
+    // count durations and last use
+    let durations = {};
+    let lastUsed = {};
+    let calendar = props.calendar;
+    for (let year in calendar) {
+      for (let month in calendar[year]) {
+        calendar[year][month].skills.forEach(skill => {
+          durations[skill] = (durations[skill] || 0) + 1;
+          lastUsed[skill] = [(lastUsed[skill] || '1990'), `${year}-${parseInt(month) + 1}`].sort()[1];
+        });
+      }
+    }
+
+    // format data
     let skills = [];
-
-    // count durations and ago
-    projects.forEach(project => {
-      project.skills.forEach(name => {
-        let skill = skills.find(s => s.name == name);
-        if(!skill) {
-          skill = {name: name, duration: 0};
-          skills.push(skill);
-        }
-        skill.duration += project.duration;
-        skill.ago = skill.ago
-          ? moment.max(skill.ago, project.end)
-          : project.end;
+    for (let name in durations) {
+      let ago = moment().diff(moment(lastUsed[name]), 'months') - 1;
+      skills.push({
+        name: name,
+        ago: ago,
+        agoHuman: ago == 0 ? 'currently using' : monthsToHuman(ago) + ' ago',
+        duration: durations[name],
+        durationHuman: monthsToHuman(durations[name])
       });
-    });
-
-    // humanize time
-    skills.forEach(skill => {
-      skill.durationHuman = monthsToHuman(skill.duration);
-      skill.ago = moment().diff(skill.ago, 'months');
-      skill.agoHuman = skill.ago == 0
-        ? 'currently using'
-        : monthsToHuman(skill.ago) + ' ago';
-    });
-
+    }
     return this.sortSkills(skills, 'duration');
   }
 
@@ -80,7 +79,7 @@ class Skills extends React.Component {
         </select>
 
         {this.state.show === 'important'
-          ? <ImportantSkills skills={this.state.skills} important={this.props.importantSkills} />
+          ? <ImportantSkills skills={this.state.skills} />
           : <AllSkills skills={this.state.skills} />
         }
       </div>
@@ -90,8 +89,7 @@ class Skills extends React.Component {
 }
 
 Skills.propTypes = {
-  projects: React.PropTypes.array,
-  importantSkills: React.PropTypes.array
+  calendar: React.PropTypes.object
 };
 
 export default Skills;

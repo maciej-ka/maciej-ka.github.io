@@ -6,36 +6,56 @@ import Skills from '../Skills/';
 import ProjectList from '../ProjectList/';
 import SideChart from '../SideChart/';
 import {monthsToHuman} from '../helpers';
+import {roles, sides} from '../settings';
 
 class Portfolio extends React.Component {
 
   constructor(props) {
     super();
-    let id=0;
-    let projects = props.projects.map(p => {
+    let id = 0;
+    this.state = {};
+    this.state.projects = props.projects.map(p => {
       p.id = id++;
       p.start = moment(p.start);
       p.end = p.end ? moment(p.end) : moment().startOf('month');
       p.duration = p.end.diff(p.start, 'months');
       p.durationHuman = monthsToHuman(p.duration);
-      this.parseRole(p);
+      p.roleLabel = roles.find(role => p.role.toLowerCase().indexOf(role) >= 0);
+      p.side = p.side || 'other';
       return p;
     });
-    this.state = {
-      projects: projects
-    };
+    this.state.calendar = this.calculateCalendar();
   }
 
-  parseRole(project) {
-    var role = project.role.toLowerCase();
-    var roles = ['analyst', 'manager', 'developer', 'architect'];
-    for(let i=0; i<roles.length; i++) {
-      if (role.indexOf(roles[i]) >= 0) {
-        project.rolePriority = i;
-        project.roleLabel = roles[i];
-        return;
+  calculateCalendar() {
+    var calendar = {};
+    this.state.projects.forEach(project => {
+      let date = project.start.clone();
+      let info = {role: project.roleLabel, side: project.side, skills: project.skills};
+      while (date < project.end) {
+        let year = date.year();
+        let month = date.month();
+        calendar[year] = calendar[year] || [];
+        calendar[year][month] = this.calendarMerge(info, calendar[year][month]);
+        date = date.add(1, 'month');
       }
+    });
+    return calendar;
+  }
+
+  // set role, side and skills for overlapping projects
+  calendarMerge(a, b) {
+    if(!a) {
+      return b;
     }
+    if(!b) {
+      return a;
+    }
+    return {
+      role: roles.find(role => role == a.role || role == b.role),
+      side: sides.find(side => side == a.side || side == b.side),
+      skills: Array.from(new Set(a.skills.concat(b.skills)))
+    };
   }
 
   render() {
@@ -53,19 +73,19 @@ class Portfolio extends React.Component {
           <div className='col-xs-12 col-sm-6 col-md-4'>
             <h1>Web developer</h1>
             <p>I write code and contribute to Open Source to see how big projects are made.</p>
-            <RolesChart projects={this.state.projects} />
+            <RolesChart calendar={this.state.calendar} />
           </div>
 
           <div className='hidden-xs col-sm-6 col-md-4'>
             <h1>Fullstack</h1>
             <p>Due to possibilities in modern javascript I moved from the server side to fullstack.</p>
-            <SideChart projects={this.state.projects} />
+            <SideChart calendar={this.state.calendar} />
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
             <h1>Remote</h1>
-            <p>Fully remote projects is something I value and have experience in.</p>
-            <p>My usuall place to work is in a rented office next to home. I try to meet team in person at least once and stay reachable by chat or video call. And I worked like this for the last 2 years and 7 months.</p>
+            <p>I value remote offers and have experience in them.</p>
+            <p>My usuall place to work is in a rented office next to home. I try to at least once meet team in person and stay reachable by chat or video call. And I worked like this for the last 2 years and 7 months.</p>
           </div>
         </section>
 
@@ -77,17 +97,13 @@ class Portfolio extends React.Component {
 
           <div className='col-sm-4'>
             <h1>Skills</h1>
-            <Skills
-              importantSkills={this.props.importantSkills}
-              projects={this.state.projects} />
+            <Skills projects={this.state.projects} calendar={this.state.calendar} />
           </div>
         </section>
 
         <section className='row'>
           <p>Charts are calculated on base of those projects. Open Source contributions to Sass, Google lighthouse, React and others are not included.</p>
-          <ProjectList
-            importantSkills={this.props.importantSkills}
-            projects={this.state.projects} />
+          <ProjectList projects={this.state.projects} />
         </section>
 
         <section>
@@ -100,21 +116,7 @@ class Portfolio extends React.Component {
 }
 
 Portfolio.propTypes = {
-  projects: React.PropTypes.array,
-  importantSkills: React.PropTypes.array
-};
-
-Portfolio.defaultProps = {
-  importantSkills: [
-    'Rails',
-    'JavaScript',
-    'PHP',
-    'CSS',
-    'Java',
-    'Angular',
-    'React',
-    'SQL'
-  ]
+  projects: React.PropTypes.array
 };
 
 export default Portfolio;

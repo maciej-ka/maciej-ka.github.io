@@ -1,4 +1,5 @@
 import React from 'react';
+import {importantSkills} from '../settings';
 
 class ImportantSkills extends React.Component {
 
@@ -12,7 +13,7 @@ class ImportantSkills extends React.Component {
   }
 
   calculate(props) {
-    return props.skills.filter(skill => props.important.indexOf(skill.name) >= 0);
+    return props.skills.filter(skill => importantSkills.indexOf(skill.name) >= 0);
   }
 
   componentWillReceiveProps(props) {
@@ -38,8 +39,7 @@ class ImportantSkills extends React.Component {
 }
 
 ImportantSkills.propTypes = {
-  skills: React.PropTypes.array,
-  important: React.PropTypes.array
+  skills: React.PropTypes.array
 };
 
 export default ImportantSkills;

@@ -7,49 +7,35 @@ class RolesChart extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      data: this.calculate(props.projects)
+      data: this.calculate(props)
     };
   }
 
-  calculate(projects) {
-    // solve overlaping by priorities
-    var calendar = {};
-    var roles = {};
-    projects.forEach(project => {
-      roles[project.roleLabel] = project.rolePriority;
-      let date = project.start.clone();
-      while (date < project.end) {
-        let year = date.year();
-        let month = date.month();
-        calendar[year] = calendar[year] || [];
-        calendar[year][month] = Math.max(project.rolePriority, calendar[year][month] || -1);
-        date = date.add(1, 'month');
-      }
-    });
-
+  calculate(props) {
     // calculate counters
     var counters = {};
+    let calendar = props.calendar;
     for (let year in calendar) {
       for (let month in calendar[year]) {
-        let value = calendar[year][month];
+        let value = calendar[year][month].role;
         counters[value] = (counters[value] || 0) + 1;
       }
     }
 
-    // format chart data
+    // set order
     return ['architect', 'analyst', 'manager', 'developer'].map(role => ({
       title: role,
-      subtitle: monthsToHuman(counters[roles[role]]),
-      value: counters[roles[role]]
+      subtitle: monthsToHuman(counters[role]),
+      value: counters[role]
     }));
   }
 
   render() {
     return (
       <PieChart
-        data={this.state.data}
-        rotate={0}
-        name='rolesChart'
+        data = {this.state.data}
+        rotate = {0}
+        name = 'rolesChart'
       />
     );
   }
@@ -57,7 +43,7 @@ class RolesChart extends React.Component {
 }
 
 RolesChart.propTypes = {
-  projects: React.PropTypes.array
+  calendar: React.PropTypes.object
 };
 
 export default RolesChart;
