@@ -42,11 +42,10 @@ class Portfolio extends React.Component {
     return (
       <div>
         <section className='row'>
-          <div className='col-sm-12 col-md-6'>
-            <img className='strip' src='assets/images/strip1.jpg' />
-          </div>
-          <div className='hidden-xs hidden-sm col-md-6'>
-            <img className='strip' src='assets/images/strip3.jpg' />
+          <div className='col-sm-4'>
+            <h1>Maciej Kasprzyk</h1>
+            maciej.kasprzyk.it@gmail.com
+            <img width='200px' src='assets/images/photo.jpg' />
           </div>
         </section>
 
@@ -65,6 +64,7 @@ class Portfolio extends React.Component {
 
           <div className='hidden-xs hidden-sm col-md-4'>
             <h1>Remote</h1>
+            <p>Fully remote projects is something I value and have experience in.</p>
             <p>My usuall place to work is in a rented office next to home. I try to meet team in person at least once and stay reachable by chat or video call. And I worked like this for the last 2 years and 7 months.</p>
           </div>
         </section>
@@ -84,14 +84,7 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
-          <div className='col-sm-4'>
-            <h1>Maciej Kasprzyk</h1>
-            maciej.kasprzyk.it@gmail.com
-            <img width='200px' src='assets/images/photo.jpg' />
-          </div>
-        </section>
-
-        <section className='row'>
+          <p>Charts are calculated on base of those projects. Open Source contributions to Sass, Google lighthouse, React and others are not included.</p>
           <ProjectList
             importantSkills={this.props.importantSkills}
             projects={this.state.projects} />
