@@ -24,7 +24,9 @@ class RemoteTime extends React.Component {
 
   render() {
     return (
-      <span>
+      <span
+        onMouseEnter={() => this.props.setActive({remote: true})}
+        onMouseLeave={() => this.props.setActive()} >
         {monthsToHuman(this.state.count)}
       </span>
     );
@@ -33,7 +35,8 @@ class RemoteTime extends React.Component {
 }
 
 RemoteTime.propTypes = {
-  calendar: React.PropTypes.object
+  calendar: React.PropTypes.object,
+  setActive: React.PropTypes.func
 };
 
 export default RemoteTime;

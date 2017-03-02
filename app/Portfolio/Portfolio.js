@@ -7,12 +7,13 @@ import ProjectList from '../ProjectList/';
 import SideChart from '../SideChart/';
 import {monthsToHuman} from '../helpers';
 import {roles, sides} from '../settings';
-import RemoteTime from '../RemoteTime'
+import RemoteTime from '../RemoteTime';
 
 class Portfolio extends React.Component {
 
   constructor(props) {
     super();
+    this.setActive = this.setActive.bind(this);
     let id = 0;
     this.state = {};
     this.state.projects = props.projects.map(p => {
@@ -84,19 +85,25 @@ class Portfolio extends React.Component {
           <div className='col-xs-12 col-sm-6 col-md-4'>
             <h1>Web developer</h1>
             <p>I write code and contribute to Open Source to see how big projects are made.</p>
-            <RolesChart calendar={this.state.calendar} />
+            <RolesChart
+              calendar={this.state.calendar}
+              setActive={this.setActive}
+              active={this.state.active} />
           </div>
 
           <div className='hidden-xs col-sm-6 col-md-4'>
             <h1>Fullstack</h1>
             <p>Due to possibilities in modern javascript I moved from the server side to fullstack.</p>
-            <SideChart calendar={this.state.calendar} active={this.state.active} />
+            <SideChart
+              calendar={this.state.calendar}
+              setActive={this.setActive}
+              active={this.state.active} />
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
             <h1>Remote</h1>
             <p>I have experience in fully remote jobs.</p>
-            <p>My office is a rented place near home. I stay reachable by a chat or video call. And I worked this way for the last <RemoteTime calendar={this.state.calendar} />.
+            <p>My office is a rented place near home. I stay reachable by a chat or video call. And I worked this way for the last <RemoteTime calendar={this.state.calendar} setActive={this.setActive} />.
             </p>
           </div>
         </section>
@@ -104,12 +111,19 @@ class Portfolio extends React.Component {
         <section>
           <div className='col-sm-8'>
             <h1>Projects</h1>
-            <Calendar projects={this.state.projects} />
+            <Calendar
+              projects={this.state.projects}
+              setActive={this.setActive}
+              active={this.state.active} />
           </div>
 
           <div className='col-sm-4'>
             <h1>Skills</h1>
-            <Skills projects={this.state.projects} calendar={this.state.calendar} />
+            <Skills
+              projects={this.state.projects}
+              calendar={this.state.calendar}
+              setActive={this.setActive}
+              active={this.state.active} />
           </div>
         </section>
 

@@ -48,6 +48,7 @@ class Calendar extends React.Component {
     while (project.start < project.end) {
       let bucket = buckets[this.bucketIndex(project.start.year())];
       bucket.data.push({
+        project: project,
         start: project.start,
         end: moment.min(project.end, bucket.end)
       });
@@ -65,6 +66,8 @@ class Calendar extends React.Component {
             data={bucket.data}
             start={bucket.start}
             end={bucket.end.subtract(1, 'day')}
+            setActive={this.props.setActive}
+            active={this.props.active}
           />
         )}
       </div>
@@ -74,7 +77,9 @@ class Calendar extends React.Component {
 }
 
 Calendar.propTypes = {
-  projects: React.PropTypes.array
+  projects: React.PropTypes.array,
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object
 };
 
 export default Calendar;

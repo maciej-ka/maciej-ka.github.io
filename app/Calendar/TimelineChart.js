@@ -7,6 +7,10 @@ class TimelineChart extends React.Component {
     this.drawChart();
   }
 
+  componentDidUpdate() {
+    this.drawChart();
+  }
+
   drawChart() {
     var data = this.props.data;
     var height = 60;
@@ -27,7 +31,8 @@ class TimelineChart extends React.Component {
       .attr('width', d => scale(d.start) - scale(d.end) - 4)
       .attr('height', height - 20)
       .attr('x', d => scale(d.end) + 2)
-      .attr('y', 0);
+      .attr('y', 0)
+      .classed('active', d => this.isActive(d.project));
 
     var axis = d3.axisBottom()
       .scale(scale)
@@ -36,6 +41,18 @@ class TimelineChart extends React.Component {
     svg.append('g')
       .attr('transform', `translate(0, ${height - 20})`)
       .call(axis);
+  }
+
+  isActive(project) {
+    let active = this.props.active;
+    console.log(active);
+    if(!active) {
+      return false;
+    }
+    if(active.remote) {
+      console.log('true');
+      return project.remote
+    }
   }
 
   render() {
@@ -50,7 +67,9 @@ TimelineChart.propTypes = {
   data: React.PropTypes.array,
   start: React.PropTypes.object,
   end: React.PropTypes.object,
-  id: React.PropTypes.number
+  id: React.PropTypes.number,
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object
 };
 
 export default TimelineChart;
