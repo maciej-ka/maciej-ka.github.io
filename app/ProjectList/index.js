@@ -1,2 +1,1 @@
-import component from './ProjectList';
-export default component;
+export {default} from './ProjectList';

@@ -7,6 +7,7 @@ import ProjectList from '../ProjectList/';
 import SideChart from '../SideChart/';
 import {monthsToHuman} from '../helpers';
 import {roles, sides} from '../settings';
+import RemoteTime from '../RemoteTime'
 
 class Portfolio extends React.Component {
 
@@ -25,6 +26,11 @@ class Portfolio extends React.Component {
       return p;
     });
     this.state.calendar = this.calculateCalendar();
+    this.state.active = {};
+  }
+
+  setActive(active) {
+    this.setState({active: active});
   }
 
   calculateCalendar() {
@@ -84,13 +90,14 @@ class Portfolio extends React.Component {
           <div className='hidden-xs col-sm-6 col-md-4'>
             <h1>Fullstack</h1>
             <p>Due to possibilities in modern javascript I moved from the server side to fullstack.</p>
-            <SideChart calendar={this.state.calendar} />
+            <SideChart calendar={this.state.calendar} active={this.state.active} />
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
             <h1>Remote</h1>
             <p>I have experience in fully remote jobs.</p>
-            <p>My office is a rented place near home. I stay reachable by a chat or video call. And I worked this way for the last 2 years and 7 months.</p>
+            <p>My office is a rented place near home. I stay reachable by a chat or video call. And I worked this way for the last <RemoteTime calendar={this.state.calendar} />.
+            </p>
           </div>
         </section>
 

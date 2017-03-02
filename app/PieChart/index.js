@@ -1,2 +1,1 @@
-import component from './PieChart';
-export default component;
+export {default} from './PieChart';

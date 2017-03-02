@@ -1,2 +1,1 @@
-import component from './SideChart';
-export default component;
+export {default} from './SideChart';

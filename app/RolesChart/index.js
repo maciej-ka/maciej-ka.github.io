@@ -1,2 +1,1 @@
-import component from './RolesChart';
-export default component;
+export {default} from './RolesChart';

@@ -1,2 +1,1 @@
-import component from './Portfolio';
-export default component;
+export {default} from './Portfolio';
