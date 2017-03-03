@@ -59,14 +59,17 @@ class TimelineChart extends React.Component {
 
   isActive(project) {
     let active = this.props.active;
-    if(!active) {
+    if (!active) {
       return false;
     }
-    if(active.remote) {
+    if (active.remote) {
       return project.remote;
     }
-    if(active.project) {
+    if (active.project) {
       return project.id == active.project;
+    }
+    if (active.skill) {
+      return project.skills.indexOf(active.skill) >= 0;
     }
   }
 

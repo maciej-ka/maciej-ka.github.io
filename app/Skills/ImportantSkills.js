@@ -23,13 +23,16 @@ class ImportantSkills extends React.Component {
   render() {
     return (
       <div>
-        {this.state.skills.map(s =>
-          <div key={s.name}>
-            <span className="title">{s.name}</span>
-            <div className="bar" style={{height: '1em', width: `${100 * s.duration / this.state.max}%`}}></div>
-            <span className="subtitle">{s.durationHuman}</span>
+        {this.state.skills.map(skill =>
+          <div
+            onMouseEnter = {() => this.props.setActive({skill: skill.name})}
+            onMouseLeave = {() => this.props.setActive()}
+            key={skill.name}>
+            <span className="title">{skill.name}</span>
+            <div className="bar" style={{height: '1em', width: `${100 * skill.duration / this.state.max}%`}}></div>
+            <span className="subtitle">{skill.durationHuman}</span>
             <br />
-            <span className="subtitle">{s.agoHuman}</span>
+            <span className="subtitle">{skill.agoHuman}</span>
           </div>
         )}
       </div>
@@ -39,6 +42,8 @@ class ImportantSkills extends React.Component {
 }
 
 ImportantSkills.propTypes = {
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object,
   skills: React.PropTypes.array
 };
 

@@ -79,8 +79,14 @@ class Skills extends React.Component {
         </select>
 
         {this.state.show === 'important'
-          ? <ImportantSkills skills={this.state.skills} />
-          : <AllSkills skills={this.state.skills} />
+          ? <ImportantSkills
+              setActive = {this.props.setActive}
+              active = {this.props.active}
+              skills = {this.state.skills} />
+          : <AllSkills
+              setActive = {this.props.setActive}
+              active = {this.props.active}
+              skills={this.state.skills} />
         }
       </div>
     );
@@ -89,7 +95,9 @@ class Skills extends React.Component {
 }
 
 Skills.propTypes = {
-  calendar: React.PropTypes.object
+  calendar: React.PropTypes.object,
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object
 };
 
 export default Skills;

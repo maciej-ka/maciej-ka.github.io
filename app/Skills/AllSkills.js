@@ -4,8 +4,11 @@ class AllSkills extends React.Component {
   render() {
     return (
       <div>
-        {this.props.skills.map(s =>
-          <span key={s.name}>{s.name} </span>
+        {this.props.skills.map(skill =>
+          <span
+            onMouseEnter = {() => this.props.setActive({skill: skill.name})}
+            onMouseLeave = {() => this.props.setActive()}
+            key={skill.name}>{skill.name} </span>
         )}
       </div>
     );
@@ -13,6 +16,8 @@ class AllSkills extends React.Component {
 }
 
 AllSkills.propTypes = {
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object,
   skills: React.PropTypes.array
 };
 
