@@ -36,13 +36,16 @@ class RolesChart extends React.Component {
         data = {this.state.data}
         rotate = {0}
         name = 'rolesChart'
-      />
+        setActive={this.setActive}
+        active={this.state.active} />
     );
   }
 
 }
 
 RolesChart.propTypes = {
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object,
   calendar: React.PropTypes.object
 };
 

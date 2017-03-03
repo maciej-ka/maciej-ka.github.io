@@ -108,7 +108,7 @@ class Portfolio extends React.Component {
           </div>
         </section>
 
-        <section>
+        <section className='row'>
           <div className='col-sm-8'>
             <h1>Projects</h1>
             <Calendar
@@ -132,7 +132,7 @@ class Portfolio extends React.Component {
           <ProjectList projects={this.state.projects} />
         </section>
 
-        <section>
+        <section className='row'>
           <img src='assets/images/footer.png' />
         </section>
       </div>

@@ -3,7 +3,18 @@ import * as d3 from 'd3';
 
 class PieChart extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      drawn: false
+    };
+  }
+
   componentDidMount() {
+    this.drawChart();
+  }
+
+  componentDidUpdate() {
     this.drawChart();
   }
 
@@ -29,13 +40,25 @@ class PieChart extends React.Component {
       .sort(null)
       .value(function(d) { return d.value; });
 
-    var svg = d3.select(`.${this.props.name}`)
-      .attr('viewBox', `0 0 ${width} ${height}`)
-      .append('g')
-      .attr('transform', `translate(${width/2} ${height/2})`);
+    var svg;
+    if(!this.state.drawn) {
+      svg = d3.select(`.${this.props.name}`)
+        .attr('viewBox', `0 0 ${width} ${height}`)
+        .append('g')
+        .classed('graph', true)
+        .attr('transform', `translate(${width/2} ${height/2})`);
+      this.setState({drawn: true});
+    } else {
+      svg =
+        d3.select(`.${this.props.name}`)
+        .select('.graph');
+    }
 
     var g = svg.selectAll('.arc')
       .data(pie(data))
+      .on('mouseover', d => { this.props.setActive({role: d.data.title}); })
+      .on('mouseleave', () => { this.props.setActive({}); })
+      .classed('active', d => this.isActive(d.data.title))
       .enter()
       .append('path')
       .attr('d', arc)
@@ -65,12 +88,25 @@ class PieChart extends React.Component {
     );
   }
 
+  isActive(role) {
+    let active = this.props.active;
+    if (!active) {
+      return false;
+    }
+    if (active.role) {
+      return role == active.role;
+    }
+  }
+
 }
+
 
 PieChart.propTypes = {
   data: React.PropTypes.array,
   rotate: React.PropTypes.number,
-  name: React.PropTypes.string
+  name: React.PropTypes.string,
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object
 };
 
 PieChart.defaultProps = {

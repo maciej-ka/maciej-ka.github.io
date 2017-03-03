@@ -86,7 +86,7 @@ class Skills extends React.Component {
           : <AllSkills
               setActive = {this.props.setActive}
               active = {this.props.active}
-              skills={this.state.skills} />
+              skills = {this.state.skills} />
         }
       </div>
     );

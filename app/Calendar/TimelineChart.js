@@ -6,7 +6,7 @@ class TimelineChart extends React.Component {
   constructor() {
     super();
     this.state = {
-      axis: false
+      drawn: false
     };
   }
 
@@ -33,7 +33,7 @@ class TimelineChart extends React.Component {
 
     svg.selectAll('rect')
       .data(data)
-      .on('mouseover', d => { this.props.setActive({project: d.project.id}); })
+      .on('mouseover', d => { this.props.setActive({project: d.project}); })
       .on('mouseleave', () => { this.props.setActive({}); })
       .classed('active', d => this.isActive(d.project))
       .enter()
@@ -43,7 +43,7 @@ class TimelineChart extends React.Component {
       .attr('x', d => scale(d.end) + 2)
       .attr('y', 0);
 
-    if (this.state.axis) { return; }
+    if (this.state.drawn) { return; }
 
     var axis = d3.axisBottom()
       .scale(scale)
@@ -53,7 +53,7 @@ class TimelineChart extends React.Component {
       .attr('transform', `translate(0, ${height - 20})`)
       .call(axis);
 
-    this.setState({axis: true});
+    this.setState({drawn: true});
 
   }
 
@@ -66,10 +66,13 @@ class TimelineChart extends React.Component {
       return project.remote;
     }
     if (active.project) {
-      return project.id == active.project;
+      return project.id == active.project.id;
     }
     if (active.skill) {
       return project.skills.indexOf(active.skill) >= 0;
+    }
+    if (active.role) {
+      return project.role = active.role;
     }
   }
 

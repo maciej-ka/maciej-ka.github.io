@@ -27,6 +27,7 @@ class ImportantSkills extends React.Component {
           <div
             onMouseEnter = {() => this.props.setActive({skill: skill.name})}
             onMouseLeave = {() => this.props.setActive()}
+            className = {this.isActive(skill) ? 'active' : ''}
             key={skill.name}>
             <span className="title">{skill.name}</span>
             <div className="bar" style={{height: '1em', width: `${100 * skill.duration / this.state.max}%`}}></div>
@@ -37,6 +38,19 @@ class ImportantSkills extends React.Component {
         )}
       </div>
     );
+  }
+
+  isActive(skill) {
+    let active = this.props.active;
+    if (!active) {
+      return;
+    }
+    if (active.project) {
+      return active.project.skills.indexOf(skill.name) >= 0;
+    }
+    if (active.skill) {
+      return active.skill == skill.name;
+    }
   }
 
 }
