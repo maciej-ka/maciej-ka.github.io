@@ -19,7 +19,7 @@ class TimelineChart extends React.Component {
   }
 
   drawChart() {
-    var data = this.props.data;
+    var data = this.props.data.sort((a,b) => a.start - b.start);
     var height = 60;
     var width = 600;
     var margin = 20;
@@ -33,6 +33,8 @@ class TimelineChart extends React.Component {
 
     svg.selectAll('rect')
       .data(data)
+      .on('mouseover', d => { this.props.setActive({project: d.project.id}); })
+      .on('mouseleave', () => { this.props.setActive({}); })
       .classed('active', d => this.isActive(d.project))
       .enter()
       .append('rect')
@@ -62,6 +64,9 @@ class TimelineChart extends React.Component {
     }
     if(active.remote) {
       return project.remote;
+    }
+    if(active.project) {
+      return project.id == active.project;
     }
   }
 

@@ -14,7 +14,7 @@ class Portfolio extends React.Component {
   constructor(props) {
     super();
     this.setActive = this.setActive.bind(this);
-    let id = 0;
+    let id = 1;
     this.state = {};
     this.state.projects = props.projects.map(p => {
       p.id = id++;
