@@ -44,15 +44,15 @@ class Calendar extends React.Component {
   }
 
   populateBuckets(project, buckets) {
-    project = {start: project.start, end: project.end};
-    while (project.start < project.end) {
-      let bucket = buckets[this.bucketIndex(project.start.year())];
+    let data = {start: project.start, end: project.end};
+    while (data.start < data.end) {
+      let bucket = buckets[this.bucketIndex(data.start.year())];
       bucket.data.push({
         project: project,
-        start: project.start,
-        end: moment.min(project.end, bucket.end)
+        start: data.start,
+        end: moment.min(data.end, bucket.end)
       });
-      project.start = bucket.end;
+      data.start = bucket.end;
     }
   }
 

@@ -3,6 +3,13 @@ import * as d3 from 'd3';
 
 class TimelineChart extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      axis: false
+    };
+  }
+
   componentDidMount() {
     this.drawChart();
   }
@@ -26,13 +33,15 @@ class TimelineChart extends React.Component {
 
     svg.selectAll('rect')
       .data(data)
+      .classed('active', d => this.isActive(d.project))
       .enter()
       .append('rect')
       .attr('width', d => scale(d.start) - scale(d.end) - 4)
       .attr('height', height - 20)
       .attr('x', d => scale(d.end) + 2)
-      .attr('y', 0)
-      .classed('active', d => this.isActive(d.project));
+      .attr('y', 0);
+
+    if (this.state.axis) { return; }
 
     var axis = d3.axisBottom()
       .scale(scale)
@@ -41,17 +50,18 @@ class TimelineChart extends React.Component {
     svg.append('g')
       .attr('transform', `translate(0, ${height - 20})`)
       .call(axis);
+
+    this.setState({axis: true});
+
   }
 
   isActive(project) {
     let active = this.props.active;
-    console.log(active);
     if(!active) {
       return false;
     }
     if(active.remote) {
-      console.log('true');
-      return project.remote
+      return project.remote;
     }
   }
 
