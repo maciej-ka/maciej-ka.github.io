@@ -7,7 +7,7 @@ class AllSkills extends React.Component {
         {this.props.skills.map(skill =>
           <span
             onMouseEnter = {() => this.props.setActive({skill: skill.name})}
-            onMouseLeave = {() => this.props.setActive()}
+            onMouseLeave = {() => this.props.setActive({})}
             key={skill.name}>{skill.name} </span>
         )}
       </div>

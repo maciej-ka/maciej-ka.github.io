@@ -74,6 +74,9 @@ class TimelineChart extends React.Component {
     if (active.role) {
       return project.roleLabel == active.role;
     }
+    if (active.side) {
+      return project.side == active.side;
+    }
   }
 
   render() {

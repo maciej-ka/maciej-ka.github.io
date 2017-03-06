@@ -70,11 +70,15 @@ class PieChart extends React.Component {
         .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; });
 
       g.append('text')
+        .on('mouseover', d => { this.props.setActive({role: d.data.title}); })
+        .on('mouseleave', () => { this.props.setActive({}); })
         .attr('dy', '0.35em')
         .attr('class', 'title')
         .text(function(d) { return d.data.title; });
 
       g.append('text')
+        .on('mouseover', d => { this.props.setActive({role: d.data.title}); })
+        .on('mouseleave', () => { this.props.setActive({}); })
         .attr('dy', '1.55em')
         .attr('class', 'subtitle')
         .text(function(d) { return d.data.subtitle; });

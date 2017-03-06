@@ -112,7 +112,8 @@ class Portfolio extends React.Component {
           <div className='col-sm-8'>
             <h1>
               {this.state.active.project
-                ? [this.state.active.project.company, this.state.active.project.name].filter(e => e).join(': ')
+                // ? [this.state.active.project.company, this.state.active.project.name].filter(e => e).join(': ')
+                ? [this.state.active.project.company, this.state.active.project.name].filter(e => e)[0]
                 : ''} &nbsp;
             </h1>
             <Calendar

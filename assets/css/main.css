@@ -17,6 +17,14 @@ select {
   border: none;
   border-bottom: 1px solid rgba(0,0,0,0.8);
 }
+mask rect,
+mask circle {
+  opacity: 1;
+}
+mask .stroke {
+  stroke: #000;
+  stroke-width: 3;
+}
 circle,
 rect,
 path,

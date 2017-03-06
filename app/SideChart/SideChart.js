@@ -17,8 +17,9 @@ class SideChart extends React.Component {
     for (let year in calendar) {
       for (let month in calendar[year]) {
         let side = calendar[year][month].side;
-        data[side] = data[side] || {value: 0};
+        data[side] = data[side] || {value: 0, valueSeparate: 0};
         data[side].value += 1;
+        data[side].valueSeparate += 1;
       }
     }
     data['frontend'].value += data['fullstack'].value;
@@ -32,7 +33,7 @@ class SideChart extends React.Component {
 
     // normalize and add title
     for(let key in data) {
-      data[key].subtitle = monthsToHuman(data[key].value);
+      data[key].subtitle = monthsToHuman(data[key].valueSeparate);
       data[key].radius = Math.sqrt(data[key].value * Math.PI) / Math.sqrt(max * Math.PI);
       data[key].value = data[key].radius * data[key].radius * Math.PI;
     }
@@ -101,47 +102,124 @@ class SideChart extends React.Component {
 
     return (
       <svg className='vennDiagram' viewBox={`0 0 ${width} ${height}`}>
+        <defs>
+          <mask id='no-backend' >
+            <rect
+              width='100%'
+              height='100%'
+              style={{fill: 'white'}} />
+            <circle
+              cx={scale}
+              cy={r.backend}
+              r={r.backend}
+              className='stroke'
+              style={{fill: 'black'}} />
+          </mask>
+
+          <mask id='backend'>
+            <circle
+              cx={scale}
+              cy={r.backend}
+              r={r.backend}
+              style={{fill: 'white'}} />
+          </mask>
+
+          <mask id='no-frontend'>
+            <rect
+              width='100%'
+              height='100%'
+              style={{fill: 'white'}} />
+            <circle
+              cx={scale}
+              cy={y.frontend}
+              r={r.frontend}
+              className='stroke'
+              style={{fill: 'black'}} />
+          </mask>
+
+          <mask id='frontend'>
+            <circle
+              cx={scale}
+              cy={y.frontend}
+              r={r.frontend}
+              style={{fill: 'white'}} />
+          </mask>
+        </defs>
+
         <circle
+          mask='url(#no-frontend)'
+          onMouseEnter={() => this.props.setActive({side: 'backend'})}
+          onMouseLeave={() => this.props.setActive({})}
+          className={this.isActive('backend') && 'active'}
           cx={scale}
           cy={r.backend}
           r={r.backend} />
 
         <circle
+          mask='url(#frontend)'
+          onMouseEnter={() => this.props.setActive({side: 'fullstack'})}
+          onMouseLeave={() => this.props.setActive({})}
+          className={this.isActive('fullstack') && 'active'}
+          cx={scale}
+          cy={r.backend}
+          r={r.backend} />
+
+        <circle
+          mask='url(#no-backend)'
+          onMouseEnter={() => this.props.setActive({side: 'frontend'})}
+          onMouseLeave={() => this.props.setActive({})}
+          className={this.isActive('frontend') && 'active'}
           cx={scale}
           cy={y.frontend}
           r={r.frontend} />
 
         <circle
+          onMouseEnter={() => this.props.setActive({side: 'mobile'})}
+          onMouseLeave={() => this.props.setActive({})}
+          className={this.isActive('mobile') && 'active'}
           cx={scale}
           cy={y.mobile}
           r={r.mobile} />
 
         <circle
+          onMouseEnter={() => this.props.setActive({side: 'other'})}
+          onMouseLeave={() => this.props.setActive({})}
+          className={this.isActive('other') && 'active'}
           cx={scale}
           cy={y.other}
           r={r.other} />
 
-        <g transform='translate(85, 10)'>
+        <g transform='translate(85, 10)'
+          onMouseEnter={() => this.props.setActive({side: 'backend'})}
+          onMouseLeave={() => this.props.setActive({})}>
           <text className='title'>backend</text>
           <text className='subtitle' dy='1em'>{data['backend'].subtitle}</text>
         </g>
 
-        <g transform={`translate(85, ${vennHeight / 2})`}>
+        <g transform={`translate(85, ${vennHeight / 2})`}
+          onMouseEnter={() => this.props.setActive({side: 'fullstack'})}
+          onMouseLeave={() => this.props.setActive({})}>
           <text className='title'>fullstack</text>
           <text className='subtitle' dy='1em'>{data['fullstack'].subtitle}</text>
         </g>
 
-        <g transform={`translate(85, ${vennHeight - 11})`}>
+        <g transform={`translate(85, ${vennHeight - 11})`}
+          onMouseEnter={() => this.props.setActive({side: 'frontend'})}
+          onMouseLeave={() => this.props.setActive({})}>
           <text className='title'>frontend</text>
           <text className='subtitle' dy='1em'>{data['frontend'].subtitle}</text>
         </g>
 
-        <g transform={`translate(85, ${y.mobile})`}>
+        <g transform={`translate(85, ${y.mobile})`}
+          onMouseEnter={() => this.props.setActive({side: 'mobile'})}
+          onMouseLeave={() => this.props.setActive({})}>
           <text className='title'>mobile</text>
           <text className='subtitle' dy='1em'>{data['mobile'].subtitle}</text>
         </g>
 
-        <g transform={`translate(85, ${y.other})`}>
+        <g transform={`translate(85, ${y.other})`}
+          onMouseEnter={() => this.props.setActive({side: 'other'})}
+          onMouseLeave={() => this.props.setActive({})}>
           <text className='title'>other</text>
           <text className='subtitle' dy='1em'>{data['other'].subtitle}</text>
         </g>
@@ -149,9 +227,24 @@ class SideChart extends React.Component {
     );
   }
 
+  isActive(side) {
+    let active = this.props.active;
+    if (!active) {
+      return false;
+    }
+    if (active.project) {
+      return side == active.project.side;
+    }
+    if (active.side) {
+      return side == active.side;
+    }
+  }
+
 }
 
 SideChart.propTypes = {
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object,
   calendar: React.PropTypes.object
 };
 
