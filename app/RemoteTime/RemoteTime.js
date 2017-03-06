@@ -26,7 +26,7 @@ class RemoteTime extends React.Component {
     return (
       <span
         onMouseEnter={() => this.props.setActive({remote: true})}
-        onMouseLeave={() => this.props.setActive()} >
+        onMouseLeave={() => this.props.setActive({})} >
         {monthsToHuman(this.state.count)}
       </span>
     );

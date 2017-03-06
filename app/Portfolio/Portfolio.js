@@ -110,7 +110,11 @@ class Portfolio extends React.Component {
 
         <section className='row'>
           <div className='col-sm-8'>
-            <h1>Projects</h1>
+            <h1>
+              {this.state.active.project
+                ? [this.state.active.project.company, this.state.active.project.name].filter(e => e).join(': ')
+                : ''} &nbsp;
+            </h1>
             <Calendar
               projects={this.state.projects}
               setActive={this.setActive}
@@ -128,7 +132,7 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
-          <p>View my Open Source activity <a href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
+          <p>View my Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
           <ProjectList projects={this.state.projects} />
         </section>
 

@@ -26,7 +26,7 @@ class ImportantSkills extends React.Component {
         {this.state.skills.map(skill =>
           <div
             onMouseEnter = {() => this.props.setActive({skill: skill.name})}
-            onMouseLeave = {() => this.props.setActive()}
+            onMouseLeave = {() => this.props.setActive({})}
             className = {this.isActive(skill) ? 'active' : ''}
             key={skill.name}>
             <span className="title">{skill.name}</span>
