@@ -116,14 +116,6 @@ class SideChart extends React.Component {
               style={{fill: 'black'}} />
           </mask>
 
-          <mask id='backend'>
-            <circle
-              cx={scale}
-              cy={r.backend}
-              r={r.backend}
-              style={{fill: 'white'}} />
-          </mask>
-
           <mask id='no-frontend'>
             <rect
               width='100%'
@@ -137,13 +129,13 @@ class SideChart extends React.Component {
               style={{fill: 'black'}} />
           </mask>
 
-          <mask id='frontend'>
+          <clipPath id='frontend'>
             <circle
               cx={scale}
               cy={y.frontend}
               r={r.frontend}
               style={{fill: 'white'}} />
-          </mask>
+          </clipPath>
         </defs>
 
         <circle
@@ -156,15 +148,6 @@ class SideChart extends React.Component {
           r={r.backend} />
 
         <circle
-          mask='url(#frontend)'
-          onMouseEnter={() => this.props.setActive({side: 'fullstack'})}
-          onMouseLeave={() => this.props.setActive({})}
-          className={this.isActive('fullstack') && 'active'}
-          cx={scale}
-          cy={r.backend}
-          r={r.backend} />
-
-        <circle
           mask='url(#no-backend)'
           onMouseEnter={() => this.props.setActive({side: 'frontend'})}
           onMouseLeave={() => this.props.setActive({})}
@@ -172,6 +155,15 @@ class SideChart extends React.Component {
           cx={scale}
           cy={y.frontend}
           r={r.frontend} />
+
+        <circle
+          clipPath='url(#frontend)'
+          onMouseEnter={() => this.props.setActive({side: 'fullstack'})}
+          onMouseLeave={() => this.props.setActive({})}
+          className={this.isActive('fullstack') && 'active'}
+          cx={scale}
+          cy={r.backend}
+          r={r.backend} />
 
         <circle
           onMouseEnter={() => this.props.setActive({side: 'mobile'})}
