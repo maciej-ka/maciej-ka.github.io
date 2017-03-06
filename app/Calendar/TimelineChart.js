@@ -72,7 +72,7 @@ class TimelineChart extends React.Component {
       return project.skills.indexOf(active.skill) >= 0;
     }
     if (active.role) {
-      return project.role = active.role;
+      return project.roleLabel == active.role;
     }
   }
 

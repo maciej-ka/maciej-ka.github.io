@@ -40,18 +40,15 @@ class PieChart extends React.Component {
       .sort(null)
       .value(function(d) { return d.value; });
 
-    var svg;
+    var svg = d3.select(`.${this.props.name}`)
+      .select('.graph');
+
     if(!this.state.drawn) {
       svg = d3.select(`.${this.props.name}`)
         .attr('viewBox', `0 0 ${width} ${height}`)
         .append('g')
         .classed('graph', true)
         .attr('transform', `translate(${width/2} ${height/2})`);
-      this.setState({drawn: true});
-    } else {
-      svg =
-        d3.select(`.${this.props.name}`)
-        .select('.graph');
     }
 
     var g = svg.selectAll('.arc')
@@ -64,21 +61,26 @@ class PieChart extends React.Component {
       .attr('d', arc)
       .attr('class', 'arc');
 
-    g = svg.selectAll('.label')
-      .data(pie(data))
-      .enter()
-      .append('g')
-      .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; });
+    if(!this.state.drawn) {
 
-    g.append('text')
-      .attr('dy', '0.35em')
-      .attr('class', 'title')
-      .text(function(d) { return d.data.title; });
+      g = svg.selectAll('.label')
+        .data(pie(data))
+        .enter()
+        .append('g')
+        .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; });
 
-    g.append('text')
-      .attr('dy', '1.55em')
-      .attr('class', 'subtitle')
-      .text(function(d) { return d.data.subtitle; });
+      g.append('text')
+        .attr('dy', '0.35em')
+        .attr('class', 'title')
+        .text(function(d) { return d.data.title; });
+
+      g.append('text')
+        .attr('dy', '1.55em')
+        .attr('class', 'subtitle')
+        .text(function(d) { return d.data.subtitle; });
+
+      this.setState({drawn: true});
+    }
 
   }
 
@@ -95,6 +97,9 @@ class PieChart extends React.Component {
     }
     if (active.role) {
       return role == active.role;
+    }
+    if (active.project) {
+      return role == active.project.roleLabel;
     }
   }
 

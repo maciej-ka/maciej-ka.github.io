@@ -36,8 +36,8 @@ class RolesChart extends React.Component {
         data = {this.state.data}
         rotate = {0}
         name = 'rolesChart'
-        setActive={this.setActive}
-        active={this.state.active} />
+        setActive={this.props.setActive}
+        active={this.props.active} />
     );
   }
 
