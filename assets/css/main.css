@@ -55,3 +55,15 @@ path,
 .vennDiagram text {
   alignment-baseline: middle;
 }
+.important-skills .col-xs-6 {
+  padding: 0;
+  margin: 0;
+}
+.important-skills .bar {
+  margin-top: 0.25em;
+  height: 1em;
+}
+.important-skills .ago {
+  position: relative;
+  top: -0.25em;
+}
