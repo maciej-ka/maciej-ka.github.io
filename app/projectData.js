@@ -258,7 +258,7 @@ export default [
     description: 'Messanger for office and its customers',
     link: 'personallawyers.pl',
 
-    company: 'Juszkiewicz',
+    company: 'Juszkiewicz Lawyers',
     softwareHouse: 'Hemnes',
     form: 'Employee',
     remote: false,
@@ -358,7 +358,7 @@ export default [
     description: 'A service to store digitalized receipts',
     link: 'guaranteesbox.com',
 
-    company: 'Moja Gwarancja',
+    company: 'Guarantees Box',
     softwareHouse: 'Beside the Park',
     form: 'Employee',
     remote: false,
@@ -435,7 +435,7 @@ export default [
     description: 'Purchase order system for post office.',
     link: null,
 
-    company: 'Polish Post Office',
+    company: 'Polish Post Offices',
     softwareHouse: 'High Quality Solutions',
     form: 'Employee',
     remote: false,
