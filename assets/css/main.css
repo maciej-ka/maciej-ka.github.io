@@ -3,7 +3,7 @@ body {
   font-family: Lato;
   font-size: 14pt;
   color: #000;
-  background: radial-gradient(circle at 90% 46%, #7b92d1 1%, #e3ecf2 174%);
+  background: radial-gradient(circle at 90% 46%, #7b92d1 1%, #6968c0 174%);
 }
 .strip {
   width: 100%;
@@ -32,10 +32,12 @@ path,
   background: #cfd6f2;
   fill: #cfd6f2;
   opacity: 0.3;
+  transition: opacity 0.4s ease;
 }
 .title {
   opacity: 0.8;
   cursor: default;
+  transition: color 0.4s ease;
 }
 .subtitle {
   stroke: #fff;
@@ -44,10 +46,17 @@ path,
   font-size: 59%;
   opacity: 0.3;
   cursor: default;
+  transition: color 0.4s ease;
 }
 .active,
-.active .bar {
-  opacity: 0.8;
+.active .bar,
+.active .title,
+.active .subtitle {
+  color: #fff;
+  opacity: 0.9;
+}
+.domain {
+  fill: none;
 }
 .vennDiagram {
   font-size: 70%;

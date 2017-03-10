@@ -7,7 +7,10 @@ body
   font-family: Lato
   font-size: 14pt
   color: black
-  background: radial-gradient(circle at 90% 46%, hsl(224, 48%, 65%) 1%, hsl(204,38%,92%) 174%)
+  background: radial-gradient(circle at 90% 46%, hsl(224, 48%, 65%) 1%, #6968c0 174%)
+// hsl(204,38%,92%)
+// hsl(224, 48%, 65%)
+// #6968c0
 
 .strip
   width: 100%
@@ -36,10 +39,12 @@ path,
   background: hsl(228,58%,88%)
   fill: hsl(228,58%,88%)
   opacity: .3
+  transition: opacity .4s ease;
 
 .title
   opacity: .8
   cursor: default
+  transition: color .4s ease;
 
 .subtitle
   stroke: white
@@ -48,11 +53,17 @@ path,
   font-size: 59%
   opacity: .3
   cursor: default
+  transition: color .4s ease;
 
 .active,
-.active .bar
-  opacity: .8
+.active .bar,
+.active .title,
+.active .subtitle
+  color: white
+  opacity: .9
 
+.domain
+  fill: none
 
 
 //
