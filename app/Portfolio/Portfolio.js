@@ -75,16 +75,21 @@ class Portfolio extends React.Component {
       <div>
         <section className='row'>
           <div className='col-sm-4'>
-            <h1>Maciej Kasprzyk</h1>
-            maciej.kasprzyk.it@gmail.com
             <img width='200px' src='assets/images/photo.jpg' />
+
+          </div>
+          <div className='col-sm-6'>
+            <h1>Maciej Kasprzyk</h1>
+            <p>
+              Fullstack web developer<br/>
+              Ten years of experience<br/>
+              Open source contributor
+            </p>
           </div>
         </section>
 
         <section className='row'>
           <div className='col-xs-12 col-sm-6 col-md-4'>
-            <h1>Web developer</h1>
-            <p>I write code and contribute to Open Source to see how big projects are made.</p>
             <RolesChart
               calendar={this.state.calendar}
               setActive={this.setActive}
@@ -92,8 +97,6 @@ class Portfolio extends React.Component {
           </div>
 
           <div className='hidden-xs col-sm-6 col-md-4'>
-            <h1>Fullstack</h1>
-            <p>Due to possibilities in modern javascript I moved from the server side to fullstack.</p>
             <SideChart
               calendar={this.state.calendar}
               setActive={this.setActive}
@@ -101,10 +104,7 @@ class Portfolio extends React.Component {
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
-            <h1>Remote</h1>
-            <p>I have experience in fully remote jobs.</p>
-            <p>My office is a rented place near home. I stay reachable by a chat or video call. And I worked this way for the last <RemoteTime calendar={this.state.calendar} setActive={this.setActive} />.
-            </p>
+            Remote for <RemoteTime calendar={this.state.calendar} setActive={this.setActive} />.
           </div>
         </section>
 
@@ -114,7 +114,7 @@ class Portfolio extends React.Component {
               {this.state.active.project
                 // ? [this.state.active.project.company, this.state.active.project.name].filter(e => e).join(': ')
                 ? [this.state.active.project.company, this.state.active.project.name].filter(e => e)[0]
-                : ''} &nbsp;
+                : 'Projects'} &nbsp;
             </h1>
             <Calendar
               projects={this.state.projects}
@@ -133,12 +133,8 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
-          <p>View my Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
+          <p>Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
           <ProjectList projects={this.state.projects} />
-        </section>
-
-        <section className='row'>
-          <img src='assets/images/footer.png' />
         </section>
       </div>
     );
