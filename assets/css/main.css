@@ -3,20 +3,30 @@ body {
   font-family: Lato;
   font-size: 14pt;
   color: #000;
-  background: radial-gradient(circle at 10% 26%, #a6a6a6 1%, #4d4d4d 300%);
+  background: radial-gradient(circle at 10% 26%, #999 1%, #4d4d4d 300%);
 }
-.strip {
-  width: 100%;
-  box-shadow: 0 0 5vmin 2vmin #ccc;
+
+circle,
+rect,
+path,
+.bar {
+  background: #a7a9ae;
+  fill: #a2a4a9;
+  transition: all 0.4s ease;
 }
-h1:first-letter {
-  text-transform: capitalize;
+
+circle.active,
+rect.active,
+path.active,
+.active .bar {
+  background: #d5d5d8;
+  fill: #d5d5d8;
 }
-select {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(0,0,0,0.8);
-}
+
+
+
+
+
 mask rect,
 mask circle {
   opacity: 1;
@@ -24,15 +34,6 @@ mask circle {
 mask .stroke {
   stroke: #000;
   stroke-width: 3;
-}
-circle,
-rect,
-path,
-.bar {
-  background: #e0e0e0;
-  fill: #cfd6f2;
-  opacity: 0.3;
-  transition: opacity 0.4s ease;
 }
 .title {
   opacity: 0.8;
@@ -48,8 +49,6 @@ path,
   cursor: default;
   transition: color 0.4s ease;
 }
-.active,
-.active .bar,
 .active .title,
 .active .subtitle {
   color: #fff;
@@ -76,3 +75,10 @@ path,
   position: relative;
   top: -0.25em;
 }
+
+select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.8);
+}
+

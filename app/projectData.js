@@ -203,8 +203,8 @@ export default [
 
   {
     name: 'CERT',
-    start: '2014-09-01',
-    end: '2015-01-01',
+    start: '2015-01-01',
+    end: '2015-05-01',
     description: 'Portal with member zone reports',
     link: 'cert.orange.pl',
 
@@ -229,7 +229,7 @@ export default [
   {
     name: 'Logneto',
     start: '2014-06-01',
-    end: '2015-06-01',
+    end: '2015-01-01',
     description: 'Warehouse solution for eCommerce',
     link: null,
 
@@ -744,8 +744,8 @@ export default [
 
   {
     name: 'P2P computations',
-    start: '2006-10-01',
-    end: '2006-12-01',
+    start: '2007-01-01',
+    end: '2007-02-01',
     description: 'Framework to run scripts in Peer to Peer grid',
     link: null,
 
@@ -766,32 +766,9 @@ export default [
 
 
   {
-    name: 'Software architect',
-    start: '2006-06-01',
-    end: '2006-08-01',
-    description: 'Database design and support for developers',
-    link: null,
-
-    company: 'Institute of Bankers in Ireland',
-    softwareHouse: 'Gateway 2 Future',
-    form: 'Freelancer',
-    remote: true,
-
-    role: 'Software architect',
-    team: ['2 PHP developers', 'Front-end developer', 'Senior developer'],
-
-    skills: [
-      'PHP', 'Oracle Database', 'UML'
-    ],
-    side: 'backend'
-  },
-
-
-
-  {
     name: 'ERP',
     start: '2006-02-01',
-    end: '2007-02-01',
+    end: '2007-01-01',
     description: 'Warehouse, orders and an evolutionary algorithm for production planning',
     link: null,
 
