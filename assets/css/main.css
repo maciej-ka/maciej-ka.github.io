@@ -3,15 +3,19 @@ body {
   font-family: Lato;
   font-size: 14pt;
   color: #000;
-  background: radial-gradient(circle at 10% 26%, #999 1%, #4d4d4d 300%);
+  background: radial-gradient(circle at 10% 3%, hsl(0, 0%, 57%) 0%, hsl(0, 0%, 30%) 59%);
+}
+section {
+  padding-bottom: 16vh
 }
 
 circle,
 rect,
 path,
 .bar {
-  background: #a7a9ae;
-  fill: #a2a4a9;
+  background: hsl(228,4%,75%);
+  fill: hsl(228,4%,75%);
+  opacity: 0.5;
   transition: all 0.4s ease;
 }
 
@@ -19,14 +23,45 @@ circle.active,
 rect.active,
 path.active,
 .active .bar {
-  background: #d5d5d8;
-  fill: #d5d5d8;
+  background: hsl(228,4%,84%);
+  fill: hsl(228,4%,84%);
+  opacity: 0.8;
+}
+
+img {
+  width: 100%;
+  padding-right: 8%;
 }
 
 
+.title {
+  opacity: 0.8;
+  cursor: default;
+  transition: all 0.4s ease;
+}
+.subtitle {
+  color: hsl(0, 0%, 20%);
+  paint-order: stroke;
+  font-size: 59%;
+  cursor: default;
+  transition: all 0.4s ease;
+}
+.active .title,
+.active .subtitle {
+  color: hsl(228, 4%, 84%);
+  opacity: 0.9;
+}
 
+.domain {
+  fill: none;
+}
 
-
+.vennDiagram {
+  font-size: 70%;
+}
+.vennDiagram text {
+  alignment-baseline: middle;
+}
 mask rect,
 mask circle {
   opacity: 1;
@@ -35,34 +70,7 @@ mask .stroke {
   stroke: #000;
   stroke-width: 3;
 }
-.title {
-  opacity: 0.8;
-  cursor: default;
-  transition: color 0.4s ease;
-}
-.subtitle {
-  stroke: #fff;
-  stroke-width: 0;
-  paint-order: stroke;
-  font-size: 59%;
-  opacity: 0.3;
-  cursor: default;
-  transition: color 0.4s ease;
-}
-.active .title,
-.active .subtitle {
-  color: #fff;
-  opacity: 0.9;
-}
-.domain {
-  fill: none;
-}
-.vennDiagram {
-  font-size: 70%;
-}
-.vennDiagram text {
-  alignment-baseline: middle;
-}
+
 .important-skills .col-xs-6 {
   padding: 0;
   margin: 0;

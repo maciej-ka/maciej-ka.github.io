@@ -74,37 +74,17 @@ class Portfolio extends React.Component {
     return (
       <div>
         <section className='row'>
-          <div className='col-sm-4'>
-            <img width='200px' src='assets/images/photo.jpg' />
+          <div className='col-sm-4 col-sm-offset-4'>
+            <img src='assets/images/photo.jpg' />
 
           </div>
-          <div className='col-sm-6'>
+          <div className='col-sm-4'>
             <h1>Maciej Kasprzyk</h1>
             <p>
               Fullstack web developer<br/>
               Ten years of experience<br/>
               Open source contributor
             </p>
-          </div>
-        </section>
-
-        <section className='row'>
-          <div className='col-xs-12 col-sm-6 col-md-4'>
-            <RolesChart
-              calendar={this.state.calendar}
-              setActive={this.setActive}
-              active={this.state.active} />
-          </div>
-
-          <div className='hidden-xs col-sm-6 col-md-4'>
-            <SideChart
-              calendar={this.state.calendar}
-              setActive={this.setActive}
-              active={this.state.active} />
-          </div>
-
-          <div className='hidden-xs hidden-sm col-md-4'>
-            Remote for <RemoteTime calendar={this.state.calendar} setActive={this.setActive} />.
           </div>
         </section>
 
@@ -129,6 +109,26 @@ class Portfolio extends React.Component {
               calendar={this.state.calendar}
               setActive={this.setActive}
               active={this.state.active} />
+          </div>
+        </section>
+
+        <section className='row'>
+          <div className='col-xs-12 col-sm-6 col-md-4'>
+            <RolesChart
+              calendar={this.state.calendar}
+              setActive={this.setActive}
+              active={this.state.active} />
+          </div>
+
+          <div className='hidden-xs col-sm-6 col-md-4'>
+            <SideChart
+              calendar={this.state.calendar}
+              setActive={this.setActive}
+              active={this.state.active} />
+          </div>
+
+          <div className='hidden-xs hidden-sm col-md-4'>
+            Remote for <RemoteTime calendar={this.state.calendar} setActive={this.setActive} />.
           </div>
         </section>
 

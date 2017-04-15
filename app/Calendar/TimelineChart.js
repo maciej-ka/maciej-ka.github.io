@@ -20,7 +20,7 @@ class TimelineChart extends React.Component {
 
   drawChart() {
     var data = this.props.data.sort((a,b) => a.start - b.start);
-    var height = 60;
+    var height = 50;
     var width = 600;
     var margin = 20;
 
