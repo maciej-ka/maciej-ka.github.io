@@ -78,7 +78,7 @@ class Portfolio extends React.Component {
             <img src='assets/images/photo.jpg' />
 
           </div>
-          <div className='col-sm-4'>
+          <div className='col-sm-4 fluid'>
             <h1>Maciej Kasprzyk</h1>
             <p>
               Fullstack web developer<br/>
@@ -99,10 +99,11 @@ class Portfolio extends React.Component {
             <Calendar
               projects={this.state.projects}
               setActive={this.setActive}
-              active={this.state.active} />
+              active={this.state.active}
+              name='calendar2' />
           </div>
 
-          <div className='col-sm-4'>
+          <div className='col-sm-4 fluid'>
             <h1>Skills</h1>
             <Skills
               projects={this.state.projects}
@@ -124,10 +125,17 @@ class Portfolio extends React.Component {
             <SideChart
               calendar={this.state.calendar}
               setActive={this.setActive}
-              active={this.state.active} />
+              active={this.state.active}
+              />
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
+            <Calendar
+              projects={this.state.projects}
+              setActive={this.setActive}
+              active={this.state.active}
+              name='calendar1'
+              />
             Remote for <RemoteTime calendar={this.state.calendar} setActive={this.setActive} />.
           </div>
         </section>

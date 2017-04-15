@@ -27,11 +27,11 @@ class PieChart extends React.Component {
 
     var arc = d3.arc()
       .outerRadius(radius)
-      .innerRadius(radius * 0.2);
+      .innerRadius(radius * 0.7);
 
     var labelArc = d3.arc()
-      .outerRadius(radius * 0.6)
-      .innerRadius(radius * 0.6);
+      .outerRadius(radius * 0.60)
+      .innerRadius(radius * 0.60);
 
     var pie = d3.pie()
       .padAngle(0.03)

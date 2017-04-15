@@ -68,6 +68,7 @@ class Calendar extends React.Component {
             end={bucket.end.subtract(1, 'day')}
             setActive={this.props.setActive}
             active={this.props.active}
+            name={this.props.name}
           />
         )}
       </div>
@@ -79,7 +80,8 @@ class Calendar extends React.Component {
 Calendar.propTypes = {
   projects: React.PropTypes.array,
   setActive: React.PropTypes.func,
-  active: React.PropTypes.object
+  active: React.PropTypes.object,
+  name: React.PropTypes.string
 };
 
 export default Calendar;
