@@ -26,6 +26,16 @@ section {
   margin-top: 20vh;
   margin-bottom: 20vh;
 }
+section.projects {
+  margin-bottom: 5vh;
+}
+section.summaries {
+  margin-top: 5vh;
+}
+section.summaries svg {
+  width: 80%;
+}
+
 
 circle,
 rect,
@@ -33,6 +43,8 @@ path,
 .bar {
   background: hsl(228,4%,75%);
   fill: hsl(228,4%,75%);
+  stroke: transparent;
+  stroke-width: 4;
   opacity: 0.5;
   transition: all 0.4s ease;
 }

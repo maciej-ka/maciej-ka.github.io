@@ -24,6 +24,17 @@ class PieChart extends React.Component {
     var width = 264;
     var radius = 100;
     var rotate = this.props.rotate;
+    var g;
+
+    if (!this.state.drawn) {
+      d3.select(`svg.${this.props.name}`)
+        .attr('viewBox', `0 0 ${width} ${height}`)
+        .append('g')
+        .attr('class', 'graph')
+        .attr('transform', `translate(${width/2} ${height/2})`);
+    }
+
+    var graph = d3.select(`.${this.props.name} .graph`);
 
     var arc = d3.arc()
       .outerRadius(radius)
@@ -40,18 +51,7 @@ class PieChart extends React.Component {
       .sort(null)
       .value(function(d) { return d.value; });
 
-    var svg = d3.select(`.${this.props.name}`)
-      .select('.graph');
-
-    if(!this.state.drawn) {
-      svg = d3.select(`.${this.props.name}`)
-        .attr('viewBox', `0 0 ${width} ${height}`)
-        .append('g')
-        .classed('graph', true)
-        .attr('transform', `translate(${width/2} ${height/2})`);
-    }
-
-    var g = svg.selectAll('.arc')
+    g = graph.selectAll('.arc')
       .data(pie(data))
       .on('mouseover', d => { this.props.setActive({role: d.data.title}); })
       .on('mouseleave', () => { this.props.setActive({}); })
@@ -61,30 +61,29 @@ class PieChart extends React.Component {
       .attr('d', arc)
       .attr('class', 'arc');
 
-    if(!this.state.drawn) {
+    g = graph.selectAll('.label')
+      .data(pie(data))
+      .classed('active', d => this.isActive(d.data.title))
+      .enter()
+      .append('g')
+      .attr('class', 'label')
+      .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; });
 
-      g = svg.selectAll('.label')
-        .data(pie(data))
-        .enter()
-        .append('g')
-        .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; });
+    g.append('text')
+      .on('mouseover', d => { this.props.setActive({role: d.data.title}); })
+      .on('mouseleave', () => { this.props.setActive({}); })
+      .attr('dy', '0.35em')
+      .attr('class', 'title')
+      .text(function(d) { return d.data.title; });
 
-      g.append('text')
-        .on('mouseover', d => { this.props.setActive({role: d.data.title}); })
-        .on('mouseleave', () => { this.props.setActive({}); })
-        .attr('dy', '0.35em')
-        .attr('class', 'title')
-        .text(function(d) { return d.data.title; });
+    g.append('text')
+      .on('mouseover', d => { this.props.setActive({role: d.data.title}); })
+      .on('mouseleave', () => { this.props.setActive({}); })
+      .attr('dy', '1.55em')
+      .attr('class', 'subtitle')
+      .text(function(d) { return d.data.subtitle; });
 
-      g.append('text')
-        .on('mouseover', d => { this.props.setActive({role: d.data.title}); })
-        .on('mouseleave', () => { this.props.setActive({}); })
-        .attr('dy', '1.55em')
-        .attr('class', 'subtitle')
-        .text(function(d) { return d.data.subtitle; });
-
-      this.setState({drawn: true});
-    }
+    this.setState({drawn: true});
 
   }
 

@@ -73,7 +73,7 @@ class Portfolio extends React.Component {
   render() {
     return (
       <div>
-        <section className='row'>
+        <section className='row photo'>
           <div className='col-sm-4 col-sm-offset-4'>
             <img src='assets/images/photo.jpg' />
 
@@ -88,7 +88,7 @@ class Portfolio extends React.Component {
           </div>
         </section>
 
-        <section className='row'>
+        <section className='row projects'>
           <div className='col-sm-8'>
             <h1>
               {this.state.active.project
@@ -113,7 +113,7 @@ class Portfolio extends React.Component {
           </div>
         </section>
 
-        <section className='row'>
+        <section className='row summaries'>
           <div className='col-xs-12 col-sm-6 col-md-4'>
             <RolesChart
               calendar={this.state.calendar}
@@ -130,18 +130,23 @@ class Portfolio extends React.Component {
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
-            <Calendar
-              projects={this.state.projects}
-              setActive={this.setActive}
-              active={this.state.active}
-              name='calendar1'
-              />
             Remote for <RemoteTime calendar={this.state.calendar} setActive={this.setActive} />.
           </div>
         </section>
 
         <section className='row'>
           <p>Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
+        </section>
+
+        <section className='row'>
+        {
+          // <Calendar
+          //   projects={this.state.projects}
+          //   setActive={this.setActive}
+          //   active={this.state.active}
+          //   name='calendar1'
+          //   />
+        }
           <ProjectList projects={this.state.projects} />
         </section>
       </div>
