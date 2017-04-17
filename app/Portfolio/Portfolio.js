@@ -135,6 +135,11 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
+          <h1>Interested in remote job offers</h1>
+          maciej.kasprzyk.it@gmail.com
+        </section>
+
+        <section className='row'>
           <p>Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
         </section>
 
