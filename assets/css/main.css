@@ -59,6 +59,7 @@ path.active,
 }
 
 .title {
+  paint-order: stroke;
   opacity: 0.8;
   cursor: default;
   transition: all 0.4s ease;
@@ -72,8 +73,15 @@ path.active,
 }
 .active .title,
 .active .subtitle {
+  fill: hsl(228, 4%, 84%);
   color: hsl(228, 4%, 84%);
   opacity: 0.9;
+}
+.active.developer .title,
+.active.developer .subtitle {
+  stroke: hsl(0, 0%, 47%);
+  stroke-width: 4.5;
+  stroke-linejoin: round;
 }
 
 .vennDiagram {
@@ -96,7 +104,10 @@ mask .stroke {
   height: 1em;
 }
 .important-skills .ago {
+  top: -1.25em;
+}
+.important-skills .subtitle {
   position: relative;
-  top: -0.25em;
+  top: -0.75em;
 }
 

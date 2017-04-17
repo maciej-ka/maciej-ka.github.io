@@ -21,7 +21,7 @@ class PieChart extends React.Component {
   drawChart() {
     var data = this.props.data;
     var height = 200;
-    var width = 264;
+    var width = 304;
     var radius = 100;
     var rotate = this.props.rotate;
     var g;
@@ -32,6 +32,9 @@ class PieChart extends React.Component {
         .append('g')
         .attr('class', 'graph')
         .attr('transform', `translate(${width/2} ${height/2})`);
+
+      this.setState({drawn: true});
+      return;
     }
 
     var graph = d3.select(`.${this.props.name} .graph`);
@@ -61,12 +64,13 @@ class PieChart extends React.Component {
       .attr('d', arc)
       .attr('class', 'arc');
 
-    g = graph.selectAll('.label')
+    g = graph.selectAll('.graph-label')
       .data(pie(data))
       .classed('active', d => this.isActive(d.data.title))
       .enter()
       .append('g')
-      .attr('class', 'label')
+      .attr('class', 'graph-label')
+      .classed('developer', d => d.data.title == 'developer')
       .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; });
 
     g.append('text')
@@ -82,8 +86,6 @@ class PieChart extends React.Component {
       .attr('dy', '1.55em')
       .attr('class', 'subtitle')
       .text(function(d) { return d.data.subtitle; });
-
-    this.setState({drawn: true});
 
   }
 
