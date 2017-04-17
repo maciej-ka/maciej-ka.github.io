@@ -70,7 +70,7 @@ class Skills extends React.Component {
         <select value={this.state.show} onChange={(e) => this.handleChangeShow(e)}>
           <option value='important'>important</option>
           <option value='all'>all</option>
-        </select>
+        </select><br/>
 
         order:
         <select value={this.state.order} onChange={(e) => this.handleChangeOrder(e)}>

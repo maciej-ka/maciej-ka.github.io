@@ -79,7 +79,7 @@ class SideChart extends React.Component {
 
   render() {
     const height = 153;
-    const width = 200;
+    const width = 152;
     const scale = 34;
     const data = this.state.data;
 

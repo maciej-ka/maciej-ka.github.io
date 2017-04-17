@@ -21,7 +21,7 @@ class PieChart extends React.Component {
   drawChart() {
     var data = this.props.data;
     var height = 200;
-    var width = 304;
+    var width = 243;
     var radius = 100;
     var rotate = this.props.rotate;
     var g;
@@ -31,7 +31,7 @@ class PieChart extends React.Component {
         .attr('viewBox', `0 0 ${width} ${height}`)
         .append('g')
         .attr('class', 'graph')
-        .attr('transform', `translate(${width/2} ${height/2})`);
+        .attr('transform', `translate(${width/2 - (width-2*radius)/2} ${height/2})`);
 
       this.setState({drawn: true});
       return;

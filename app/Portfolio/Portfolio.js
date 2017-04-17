@@ -92,7 +92,6 @@ class Portfolio extends React.Component {
           <div className='col-sm-8'>
             <h1>
               {this.state.active.project
-                // ? [this.state.active.project.company, this.state.active.project.name].filter(e => e).join(': ')
                 ? [this.state.active.project.company, this.state.active.project.name].filter(e => e)[0]
                 : 'Projects'} &nbsp;
             </h1>
@@ -104,7 +103,7 @@ class Portfolio extends React.Component {
           </div>
 
           <div className='col-sm-4 fluid'>
-            <h1>Skills</h1>
+            <h1 className='pull-left'>Skills</h1>
             <Skills
               projects={this.state.projects}
               calendar={this.state.calendar}
@@ -114,6 +113,7 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row summaries'>
+          <h1>Summaries</h1>
           <div className='col-xs-12 col-sm-6 col-md-4'>
             <RolesChart
               calendar={this.state.calendar}
@@ -135,12 +135,12 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
-          <h1>Interested in remote job offers</h1>
-          maciej.kasprzyk.it@gmail.com
+          <p>Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
         </section>
 
         <section className='row'>
-          <p>Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
+          <h1>Have a remote job offer?</h1>
+          maciej.kasprzyk.it@gmail.com
         </section>
 
         <section className='row'>

@@ -85,7 +85,8 @@ path.active,
 }
 
 .vennDiagram {
-  font-size: 70%;
+  font-size: 64%;
+  stroke-width: 4.5;
 }
 .vennDiagram text {
   alignment-baseline: middle;
@@ -98,7 +99,9 @@ mask .stroke {
   stroke: #000;
   stroke-width: 3;
 }
-
+.important-skills {
+  clear: both;
+}
 .important-skills .bar {
   margin-top: 0.25em;
   height: 1em;
