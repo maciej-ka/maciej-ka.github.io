@@ -134,17 +134,20 @@ class Portfolio extends React.Component {
           </div>
         </section>
 
-        <section className='row'>
+        <section className='row text-center'>
           <p>Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
         </section>
 
-        <section className='row'>
+        <section className='row text-center'>
           <h1>Have a remote job offer?</h1>
           maciej.kasprzyk.it@gmail.com
         </section>
 
         <section className='row'>
-          <ProjectList projects={this.state.projects} />
+          <ProjectList
+            setActive={this.setActive}
+            active={this.state.active}
+            projects={this.state.projects} />
         </section>
       </div>
     );

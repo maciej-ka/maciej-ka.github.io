@@ -24,26 +24,26 @@ export default [
     side: 'fullstack'
   },
 
-  {
-    name: 'Portfolio',
-    start: '2016-07-01',
-    end: '2016-08-01',
-    description: 'This page',
-    link: 'maciej-kasprzyk.pl',
+  // {
+  //   name: 'Portfolio',
+  //   start: '2016-07-01',
+  //   end: '2016-08-01',
+  //   description: 'This page',
+  //   link: 'maciej-kasprzyk.pl',
 
-    company: null,
-    softwareHouse: null,
-    form: 'Freelancer',
-    remote: true,
+  //   company: null,
+  //   softwareHouse: null,
+  //   form: 'Freelancer',
+  //   remote: true,
 
-    role: 'Web developer',
-    team: [],
+  //   role: 'Web developer',
+  //   team: [],
 
-    skills: [
-      'React', 'ES6', 'JSX', 'JavaScript', 'Webpack', 'Babel', 'CSS', 'D3'
-    ],
-    side: 'frontend'
-  },
+  //   skills: [
+  //     'React', 'ES6', 'JSX', 'JavaScript', 'Webpack', 'Babel', 'CSS', 'D3'
+  //   ],
+  //   side: 'frontend'
+  // },
 
 
 

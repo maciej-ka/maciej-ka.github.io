@@ -8,6 +8,8 @@ class ProjectList extends React.Component {
     this.state = {
       buckets: this.calculate(props)
     };
+    this.isActive = this.isActive.bind(this);
+    this.renderProject = this.renderProject.bind(this);
   }
 
   calculate(props) {
@@ -31,15 +33,41 @@ class ProjectList extends React.Component {
 
   renderProject(project) {
     return (
-      <div key={project.id} className='project col-sm-6 col-lg-4'>
+      <div key={project.id} className='project projectList col-sm-6 col-lg-4'>
         <div className='subtitle'>{project.start.format('YYYY.MM')} - {project.end.format('YYYY.MM')} ({project.durationHuman})</div>
-        <strong>{[project.company, project.name].filter(e => e).join(': ')}</strong>
-        {project.link && <div><a href={project.link}>{project.link}</a></div>}
-        <div>{project.description}</div>
-        <strong>{project.role}</strong>
-        {project.softwareHouse && <div>at <strong>{project.softwareHouse}</strong></div>}
-        <div>team size: {project.teamSize}</div>
-        <div>{project.importantSkills.map(skill => <span key={skill} className='skillLabel'>{skill}</span>)}</div>
+
+        <strong className='ProjectAndCompanyName'>{[project.company, project.name].filter(e => e).join(': ')}</strong>
+        <br />
+
+        {project.description}
+        <br />
+
+        {project.link && <a className='projectLink' href={project.link}>{project.link}</a>}
+        {project.link && <br />}
+
+        <strong className='role'>{project.role}</strong>
+        <br />
+
+        { project.softwareHouse && <span className='subtitle softwareHouseLabel'> Software House: </span> }
+        { project.softwareHouse && <strong className='softwareHouse'>{project.softwareHouse}</strong> }
+        { project.softwareHouse && <br /> }
+
+        <span className='subtitle teamSizeLabel'>
+          team size: {project.teamSize}
+        </span>
+
+        <div className='skills'>
+          {project.importantSkills.map(skill =>
+            <span
+              key={skill}
+              onMouseEnter={() => this.props.setActive({skill: skill})}
+              onMouseLeave={() => this.props.setActive({})}
+              className={`skillLabel ${this.isActive(skill) ? 'active' : ''}`}
+              >
+              {skill}
+            </span>
+          )}
+        </div>
       </div>
     );
   }
@@ -57,9 +85,24 @@ class ProjectList extends React.Component {
     );
   }
 
+  isActive(skill) {
+    let active = this.props.active;
+    if (!active) {
+      return false;
+    }
+    if (active.skill) {
+      return skill == active.skill;
+    }
+    if (active.project) {
+      return active.project.skills.indexOf(skill.name) >= 0;
+    }
+  }
+
 }
 
 ProjectList.propTypes = {
+  setActive: React.PropTypes.func,
+  active: React.PropTypes.object,
   projects: React.PropTypes.array
 };
 
