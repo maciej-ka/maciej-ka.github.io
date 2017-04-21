@@ -16,7 +16,7 @@ export default [
     teamSize: 35,
 
     skills: [
-      'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal API',
+      'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal',
       'JavaScript', 'ES6', 'React', 'Redux', 'JSX',
       'CSS',
       'Webpack', 'Babel', 'Mocha', 'Enzyme'
@@ -65,7 +65,7 @@ export default [
     skills: [
       'Java', 'Spring', 'Gradle', 'Elasticsearch',
       'JavaScript', 'Angular', 'CoffeeScript',
-      'Bootstrap', 'Sass', 'Jade', 'Responsive Web Design', 'CSS animations',  'CSS',
+      'Bootstrap', 'Sass', 'Jade', 'Responsive Design', 'CSS animations',  'CSS',
       'gulp', 'UML'
     ],
     side: 'fullstack'
@@ -142,7 +142,7 @@ export default [
 
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium',
-      'PayPal API'
+      'PayPal'
     ],
     side: 'backend'
   },
@@ -418,8 +418,7 @@ export default [
     team: [],
 
     skills: [
-      'PHP', 'Symfony', 'Doctrine', 'Apache Lucene',
-
+      'PHP', 'Symfony', 'Doctrine', 'Lucene',
       'JavaScript', 'jQuery', 'JS animations',
       'MySQL', 'SQL'
     ],
@@ -689,7 +688,7 @@ export default [
     team: [],
 
     skills: [
-      'UML', 'Oracle Database', 'PL/SQL'
+      'UML', 'Oracle', 'PL/SQL'
     ],
     side: null
   },
@@ -712,7 +711,7 @@ export default [
     team: [],
 
     skills: [
-      'UML', 'Oracle Database', 'PL/SQL'
+      'UML', 'Oracle', 'PL/SQL'
     ],
     side: null
   },
@@ -734,9 +733,7 @@ export default [
     role: 'Project Manager',
     team: ['UX designer', 'Java developer', 'PHP developer', 'Front-end developer'],
 
-    skills: [
-      'project management'
-    ],
+    skills: [],
     side: null
   },
 

@@ -39,7 +39,7 @@ class ProjectList extends React.Component {
         <strong>{project.role}</strong>
         {project.softwareHouse && <div>at <strong>{project.softwareHouse}</strong></div>}
         <div>team size: {project.teamSize}</div>
-        <div>{project.importantSkills.map(skill => <span key={skill}>{skill}</span>)}</div>
+        <div>{project.importantSkills.map(skill => <span key={skill} className='skillLabel'>{skill}</span>)}</div>
       </div>
     );
   }

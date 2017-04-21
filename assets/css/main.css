@@ -69,15 +69,14 @@ path.active,
   transition: all 0.4s ease;
 }
 .subtitle {
-  color: hsl(0, 0%, 20%);
   paint-order: stroke;
   font-size: 59%;
   cursor: default;
   transition: all 0.4s ease;
 }
 .tick text {
+  cursor: default;
   font-size: 78%;
-  fill: hsl(0, 0%, 20%);
 }
 .tick line {
   stroke: hsl(0, 0%, 20%);
@@ -133,4 +132,25 @@ mask .stroke {
 
 .projectList .project {
   height: 15em;
+}
+
+.skillLabel {
+  float: left;
+  padding: 0.25em;
+  margin-bottom: 0.25em;
+  margin-right: 0.25em;
+  /* line-height: 2.1em; */
+  font-size: 92%;
+  background: hsla(0,0%,100%,0.15);
+  box-sizing: border-box;
+  cursor: default;
+  transition: all 0.4s ease;
+}
+.active .skillLabel,
+.skillLabel.active {
+  color: hsl(228,4%,84%);
+  background: hsla(0,0%,0%,0)
+}
+.allSkills .skillLabel:first-child {
+  clear: left;
 }

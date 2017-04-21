@@ -9,3 +9,25 @@ export const importantSkills = [
   'Angular',
   'React'
 ];
+export const ignoreSkills = [
+  'Haml',
+  'RSpec',
+  'Capybara',
+  'Doctrine',
+  'JS animations',
+  'Babel',
+  'JSX',
+  'Webpack',
+  'CSS animations',
+  'Enzyme',
+  'messaging',
+  'microservices',
+  'Mocha',
+  'Rspec',
+  'Selenium',
+  'Gradle',
+  'gulp',
+  'Jade',
+  'Responsive Design',
+  'Minitest',
+]

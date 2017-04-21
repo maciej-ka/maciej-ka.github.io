@@ -6,7 +6,7 @@ import Skills from '../Skills/';
 import ProjectList from '../ProjectList/';
 import SideChart from '../SideChart/';
 import {monthsToHuman} from '../helpers';
-import {roles, sides} from '../settings';
+import {roles, sides, ignoreSkills} from '../settings';
 import RemoteTime from '../RemoteTime';
 
 class Portfolio extends React.Component {
@@ -17,6 +17,7 @@ class Portfolio extends React.Component {
     let id = 1;
     this.state = {};
     this.state.projects = props.projects.map(p => {
+      p.skills = p.skills.filter(skill => ignoreSkills.indexOf(skill) < 0);
       p.id = id++;
       p.start = moment(p.start);
       p.end = p.end ? moment(p.end) : moment().startOf('month');
