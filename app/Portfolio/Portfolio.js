@@ -113,7 +113,6 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row summaries'>
-          <h1>Summaries</h1>
           <div className='col-xs-12 col-sm-6 col-md-4'>
             <RolesChart
               calendar={this.state.calendar}
@@ -144,14 +143,6 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row'>
-        {
-          // <Calendar
-          //   projects={this.state.projects}
-          //   setActive={this.setActive}
-          //   active={this.state.active}
-          //   name='calendar1'
-          //   />
-        }
           <ProjectList projects={this.state.projects} />
         </section>
       </div>

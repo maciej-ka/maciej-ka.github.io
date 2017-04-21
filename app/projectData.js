@@ -13,7 +13,7 @@ export default [
     remote: true,
 
     role: 'Web developer',
-    team: ['35 developers'],
+    teamSize: 35,
 
     skills: [
       'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal API',

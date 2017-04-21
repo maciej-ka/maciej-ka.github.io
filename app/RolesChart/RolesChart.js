@@ -34,7 +34,7 @@ class RolesChart extends React.Component {
     return (
       <PieChart
         data = {this.state.data}
-        rotate = {-0.73}
+        rotate = {-0.80}
         name = 'rolesChart'
         setActive={this.props.setActive}
         active={this.props.active} />

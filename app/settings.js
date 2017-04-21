@@ -7,6 +7,5 @@ export const importantSkills = [
   'CSS',
   'Java',
   'Angular',
-  'React',
-  'SQL'
+  'React'
 ];
