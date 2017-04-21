@@ -124,10 +124,11 @@ mask .stroke {
 }
 .important-skills .bar {
   margin-top: 0.25em;
-  height: 1em;
+  height: 0.85em;
 }
 .important-skills .ago {
-  top: -1.25em;
+  margin-top: .15em;
+  float: left;
 }
 .important-skills .subtitle {
   position: relative;

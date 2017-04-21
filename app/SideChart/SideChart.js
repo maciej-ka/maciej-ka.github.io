@@ -186,7 +186,7 @@ class SideChart extends React.Component {
           onMouseLeave={() => this.props.setActive({})}
           className={this.isActive('backend') && 'active'}>
           <text className='title'>backend</text>
-          <text className='subtitle' dy='1em'>{data['backend'].subtitle}</text>
+          <text className='subtitle' dy='1.1em'>{data['backend'].subtitle}</text>
         </g>
 
         <g transform={`translate(85, ${vennHeight / 2})`}
@@ -194,7 +194,7 @@ class SideChart extends React.Component {
           onMouseLeave={() => this.props.setActive({})}
           className={this.isActive('fullstack') && 'active'}>
           <text className='title'>fullstack</text>
-          <text className='subtitle' dy='1em'>{data['fullstack'].subtitle}</text>
+          <text className='subtitle' dy='1.1em'>{data['fullstack'].subtitle}</text>
         </g>
 
         <g transform={`translate(85, ${vennHeight - 11})`}
@@ -202,7 +202,7 @@ class SideChart extends React.Component {
           onMouseLeave={() => this.props.setActive({})}
           className={this.isActive('frontend') && 'active'}>
           <text className='title'>frontend</text>
-          <text className='subtitle' dy='1em'>{data['frontend'].subtitle}</text>
+          <text className='subtitle' dy='1.1em'>{data['frontend'].subtitle}</text>
         </g>
 
         <g transform={`translate(85, ${y.mobile})`}
@@ -210,7 +210,7 @@ class SideChart extends React.Component {
           onMouseLeave={() => this.props.setActive({})}
           className={this.isActive('mobile') && 'active'}>
           <text className='title'>mobile</text>
-          <text className='subtitle' dy='1em'>{data['mobile'].subtitle}</text>
+          <text className='subtitle' dy='1.1em'>{data['mobile'].subtitle}</text>
         </g>
 
         <g transform={`translate(85, ${y.other})`}
@@ -218,7 +218,7 @@ class SideChart extends React.Component {
           onMouseLeave={() => this.props.setActive({})}
           className={this.isActive('other') && 'active'}>
           <text className='title'>other</text>
-          <text className='subtitle' dy='1em'>{data['other'].subtitle}</text>
+          <text className='subtitle' dy='1.1em'>{data['other'].subtitle}</text>
         </g>
       </svg>
     );
