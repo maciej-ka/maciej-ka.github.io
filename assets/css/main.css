@@ -4,7 +4,7 @@ body {
   font-size: 14pt;
   color: #000;
   background:
-    radial-gradient(circle at 90% 2%, hsl(0, 0%, 50%) 0%, transparent 59%),
+    radial-gradient(circle at 106% 2%, hsl(0, 0%, 50%) 0%, transparent 59%),
     radial-gradient(circle at 90% 90%, hsl(0, 0%, 50%) 0%, hsl(189, 67%, 40%) 69%)
 }
 a, a:hover {
@@ -47,11 +47,13 @@ circle,
 rect,
 path,
 .bar {
-  background: hsl(228,4%,75%);
-  fill: hsl(228,4%,75%);
+  background: hsla(0,0%,100%,0.15);
+  /* background: hsl(228,4%,75%); */
+  /* fill: hsl(228,4%,75%); */
+  fill: hsla(0,0%,100%,0.15);
   stroke: transparent;
   stroke-width: 4;
-  opacity: 0.5;
+  opacity: 1;
   transition: all 0.4s ease;
 }
 
@@ -124,10 +126,10 @@ mask .stroke {
 }
 .important-skills .bar {
   margin-top: 0.25em;
-  height: 0.85em;
+  height: 0.90em;
 }
 .important-skills .ago {
-  margin-top: .15em;
+  margin-top: .30em;
   float: left;
 }
 .important-skills .subtitle {
