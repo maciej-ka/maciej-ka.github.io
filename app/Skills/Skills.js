@@ -66,17 +66,22 @@ class Skills extends React.Component {
   render() {
     return (
       <div>
-        show:
-        <select value={this.state.show} onChange={(e) => this.handleChangeShow(e)}>
-          <option value='important'>important</option>
-          <option value='all'>all</option>
-        </select><br/>
 
-        order:
-        <select value={this.state.order} onChange={(e) => this.handleChangeOrder(e)}>
-          <option value='duration'>experience</option>
-          <option value='ago'>recently used</option>
-        </select>
+        <div className='row skills-filter-form'>
+          <div className='col-xs-6 col-xs-offset-6 col-md-offset-4 col-md-6'>
+            show:
+            <select value={this.state.show} onChange={(e) => this.handleChangeShow(e)}>
+              <option value='important'>important</option>
+              <option value='all'>all</option>
+            </select><br/>
+
+            order:
+            <select value={this.state.order} onChange={(e) => this.handleChangeOrder(e)}>
+              <option value='duration'>experience</option>
+              <option value='ago'>recently used</option>
+            </select>
+          </div>
+        </div>
 
         {this.state.show === 'important'
           ? <ImportantSkills

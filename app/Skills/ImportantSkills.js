@@ -29,11 +29,11 @@ class ImportantSkills extends React.Component {
             onMouseLeave = {() => this.props.setActive({})}
             className = {'row ' + (this.isActive(skill) ? 'active' : '')}
             key={skill.name}>
-            <div className='col-xs-6 col-lg-4'>
+            <div className='col-xs-6 col-md-4'>
               <div className='title'>{skill.name}</div>
               <span className='ago subtitle'>{skill.agoHuman}</span>
             </div>
-            <div className='col-xs-6 col-lg-8'>
+            <div className='col-xs-6 col-md-8'>
               <div className='bar' style={{width: `${100 * skill.duration / this.state.max}%`}}></div>
               <span className='subtitle'>{skill.durationHuman}</span>
             </div>

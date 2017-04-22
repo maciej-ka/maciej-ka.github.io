@@ -187,3 +187,13 @@ mask .stroke {
 .text-center {
   text-align: center;
 }
+
+.skills-label {
+  position: absolute;
+}
+.skills-filter-form {
+  margin-top: 1em;
+  white-space: nowrap;
+  font-size: 80%;
+  height: 4.5em;;
+}

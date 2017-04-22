@@ -104,7 +104,7 @@ class Portfolio extends React.Component {
           </div>
 
           <div className='col-sm-4 fluid'>
-            <h1 className='pull-left'>Skills</h1>
+            <h1 className='pull-left skills-label'>Skills</h1>
             <Skills
               projects={this.state.projects}
               calendar={this.state.calendar}
