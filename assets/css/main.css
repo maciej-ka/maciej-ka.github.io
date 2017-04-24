@@ -197,3 +197,17 @@ mask .stroke {
   font-size: 80%;
   height: 4.5em;;
 }
+
+.summaries .remote {
+  margin: 2em auto;
+  width: auto;
+}
+.remote .title {
+  float: left;
+  clear: both;
+}
+.remote .subtitle {
+  clear: left;
+  float: left;
+  margin-top: -0.6em;
+}

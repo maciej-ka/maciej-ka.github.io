@@ -125,12 +125,14 @@ class Portfolio extends React.Component {
             <SideChart
               calendar={this.state.calendar}
               setActive={this.setActive}
-              active={this.state.active}
-              />
+              active={this.state.active} />
           </div>
 
           <div className='hidden-xs hidden-sm col-md-4'>
-            Remote for <RemoteTime calendar={this.state.calendar} setActive={this.setActive} />.
+            <RemoteTime
+              calendar={this.state.calendar}
+              setActive={this.setActive}
+              active={this.state.active} />
           </div>
         </section>
 
