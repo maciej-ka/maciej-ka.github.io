@@ -41887,7 +41887,7 @@ exports.default = [{
   name: 'Immmr',
   start: '2016-08-01',
   end: null,
-  description: 'VoIP client with video calls and SMS messaging',
+  description: 'VoIP client with video calls',
   link: 'immmr.com',
 
   company: 'Detsche Telekom',
@@ -41900,31 +41900,7 @@ exports.default = [{
 
   skills: ['Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal', 'JavaScript', 'ES6', 'React', 'Redux', 'JSX', 'CSS', 'Webpack', 'Babel', 'Mocha', 'Enzyme'],
   side: 'fullstack'
-},
-
-// {
-//   name: 'Portfolio',
-//   start: '2016-07-01',
-//   end: '2016-08-01',
-//   description: 'This page',
-//   link: 'maciej-kasprzyk.pl',
-
-//   company: null,
-//   softwareHouse: null,
-//   form: 'Freelancer',
-//   remote: true,
-
-//   role: 'Web developer',
-//   team: [],
-
-//   skills: [
-//     'React', 'ES6', 'JSX', 'JavaScript', 'Webpack', 'Babel', 'CSS', 'D3'
-//   ],
-//   side: 'frontend'
-// },
-
-
-{
+}, {
   name: 'IFAB',
   start: '2016-01-01',
   end: '2016-06-01',
@@ -43194,11 +43170,25 @@ var Portfolio = function (_React$Component) {
             'div',
             { className: 'col-sm-8' },
             _react2.default.createElement(
-              'h1',
-              null,
-              this.state.active.project ? [this.state.active.project.company, this.state.active.project.name].filter(function (e) {
-                return e;
-              })[0] : 'Projects',
+              'div',
+              { className: 'header' },
+              this.state.active.project ? _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  [this.state.active.project.company, this.state.active.project.name].filter(function (e) {
+                    return e;
+                  }).join(': ')
+                ),
+                _react2.default.createElement('br', null),
+                this.state.active.project && this.state.active.project.description
+              ) : _react2.default.createElement(
+                'h1',
+                null,
+                'Projects'
+              ),
               ' \xA0'
             ),
             _react2.default.createElement(_Calendar2.default, {
@@ -43243,7 +43233,7 @@ var Portfolio = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'hidden-xs hidden-sm col-md-4' },
+            { className: 'remote-container hidden-xs hidden-sm col-md-4' },
             _react2.default.createElement(_RemoteTime2.default, {
               calendar: this.state.calendar,
               setActive: this.setActive,
@@ -43254,13 +43244,17 @@ var Portfolio = function (_React$Component) {
           'section',
           { className: 'row text-center' },
           _react2.default.createElement(
+            'h1',
+            null,
+            'Open Source'
+          ),
+          _react2.default.createElement(
             'p',
             null,
-            'Open Source activity ',
             _react2.default.createElement(
               'a',
               { target: '_blank', href: 'https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues' },
-              'here'
+              'github activity'
             )
           )
         ),
@@ -43394,7 +43388,7 @@ var ProjectList = function (_React$Component) {
         _react2.default.createElement('br', null),
         project.link && _react2.default.createElement(
           'a',
-          { className: 'projectLink', href: project.link },
+          { className: 'projectLink', href: 'http://' + project.link },
           project.link
         ),
         project.link && _react2.default.createElement('br', null),
@@ -43587,7 +43581,7 @@ var RemoteTime = function (_React$Component) {
         _react2.default.createElement(
           'span',
           { className: 'title' },
-          'Remote'
+          'remote'
         ),
         _react2.default.createElement(
           'span',

@@ -91,11 +91,16 @@ class Portfolio extends React.Component {
 
         <section className='row projects'>
           <div className='col-sm-8'>
-            <h1>
-              {this.state.active.project
-                ? [this.state.active.project.company, this.state.active.project.name].filter(e => e)[0]
-                : 'Projects'} &nbsp;
-            </h1>
+            <div className='header'>
+            {this.state.active.project
+              ? <div>
+                <strong>{[this.state.active.project.company, this.state.active.project.name].filter(e => e).join(': ')}</strong><br/>
+                {this.state.active.project && this.state.active.project.description}
+              </div>
+              : <h1>Projects</h1>
+            } &nbsp;
+            </div>
+
             <Calendar
               projects={this.state.projects}
               setActive={this.setActive}
@@ -128,7 +133,7 @@ class Portfolio extends React.Component {
               active={this.state.active} />
           </div>
 
-          <div className='hidden-xs hidden-sm col-md-4'>
+          <div className='remote-container hidden-xs hidden-sm col-md-4'>
             <RemoteTime
               calendar={this.state.calendar}
               setActive={this.setActive}
@@ -137,7 +142,8 @@ class Portfolio extends React.Component {
         </section>
 
         <section className='row text-center'>
-          <p>Open Source activity <a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">here</a></p>
+          <h1>Open Source</h1>
+          <p><a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">github activity</a></p>
         </section>
 
         <section className='row text-center'>

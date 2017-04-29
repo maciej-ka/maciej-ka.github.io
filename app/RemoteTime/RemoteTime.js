@@ -28,7 +28,7 @@ class RemoteTime extends React.Component {
         className={`remote ${this.isActive() ? 'active' : ''}`}
         onMouseEnter={() => this.props.setActive({remote: true})}
         onMouseLeave={() => this.props.setActive({})} >
-        <span className='title'>Remote</span>
+        <span className='title'>remote</span>
         <span className='subtitle'>
           {monthsToHuman(this.state.count)}
         </span>

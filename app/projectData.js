@@ -4,7 +4,7 @@ export default [
     name: 'Immmr',
     start: '2016-08-01',
     end: null,
-    description: 'VoIP client with video calls and SMS messaging',
+    description: 'VoIP client with video calls',
     link: 'immmr.com',
 
     company: 'Detsche Telekom',
@@ -23,27 +23,6 @@ export default [
     ],
     side: 'fullstack'
   },
-
-  // {
-  //   name: 'Portfolio',
-  //   start: '2016-07-01',
-  //   end: '2016-08-01',
-  //   description: 'This page',
-  //   link: 'maciej-kasprzyk.pl',
-
-  //   company: null,
-  //   softwareHouse: null,
-  //   form: 'Freelancer',
-  //   remote: true,
-
-  //   role: 'Web developer',
-  //   team: [],
-
-  //   skills: [
-  //     'React', 'ES6', 'JSX', 'JavaScript', 'Webpack', 'Babel', 'CSS', 'D3'
-  //   ],
-  //   side: 'frontend'
-  // },
 
 
 

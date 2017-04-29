@@ -198,16 +198,26 @@ mask .stroke {
   height: 4.5em;;
 }
 
-.summaries .remote {
-  margin: 2em auto;
-  width: auto;
+.remote-container {
+  text-align: center;
 }
+
 .remote .title {
-  float: left;
-  clear: both;
+  display: block;
 }
 .remote .subtitle {
-  clear: left;
-  float: left;
+  display: block;
   margin-top: -0.6em;
+}
+
+.projects .description {
+  font-weight: normal;
+  font-size: 40%;
+  display: inline-block;
+}
+.projects .header {
+  height: 3em;
+}
+.projects .header h1 {
+  margin: 0;
 }

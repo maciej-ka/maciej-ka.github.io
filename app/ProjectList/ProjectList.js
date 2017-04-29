@@ -42,7 +42,7 @@ class ProjectList extends React.Component {
         {project.description}
         <br />
 
-        {project.link && <a className='projectLink' href={project.link}>{project.link}</a>}
+        {project.link && <a className='projectLink' href={'http://' + project.link}>{project.link}</a>}
         {project.link && <br />}
 
         <strong className='role'>{project.role}</strong>
