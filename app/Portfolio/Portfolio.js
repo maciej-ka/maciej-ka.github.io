@@ -76,7 +76,7 @@ class Portfolio extends React.Component {
       <div>
         <section className='row photo'>
           <div className='col-sm-4 col-sm-offset-4'>
-            <img src='assets/images/photo.jpg' />
+            <img src='assets/images/photo2.jpg' />
 
           </div>
           <div className='col-sm-4 fluid'>
@@ -91,14 +91,22 @@ class Portfolio extends React.Component {
 
         <section className='row projects'>
           <div className='col-sm-8'>
+            <div className={`project-details ${this.state.active.project ? '' : 'not-visible'}`}>
+              {this.state.active.project &&
+                <div>
+                  <div className='subtitle'>{this.state.active.project.start.format('YYYY.MM')} - {this.state.active.project.end.format('YYYY.MM')} ({this.state.active.project.durationHuman})</div>
+                  <strong>{[this.state.active.project.company, this.state.active.project.name].filter(e => e).join(': ')}</strong><br/>
+                  {this.state.active.project && this.state.active.project.description}
+                </div>
+              }
+            </div>
             <div className='header'>
-            {this.state.active.project
-              ? <div>
-                <strong>{[this.state.active.project.company, this.state.active.project.name].filter(e => e).join(': ')}</strong><br/>
-                {this.state.active.project && this.state.active.project.description}
-              </div>
-              : <h1>Projects</h1>
-            } &nbsp;
+              <h1>
+                <span className={`header-label ${this.state.active.project ? 'not-visible' : ''}`}>
+                  {this.state.active.project ? '' : 'Projects'}
+                  &nbsp;
+                </span>
+              </h1>
             </div>
 
             <Calendar
@@ -143,11 +151,11 @@ class Portfolio extends React.Component {
 
         <section className='row text-center'>
           <h1>Open Source</h1>
-          <p><a target="_blank" href="https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues">github activity</a></p>
+          <p><a target="_blank" href="https://github.com/pulls?q=is%3Apr+author%3Alokson+is%3Aclosed">contributions</a></p>
         </section>
 
         <section className='row text-center'>
-          <h1>Have a remote job offer?</h1>
+          <h1>Contact</h1>
           maciej.kasprzyk.it@gmail.com
         </section>
 

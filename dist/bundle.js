@@ -43142,7 +43142,7 @@ var Portfolio = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'col-sm-4 col-sm-offset-4' },
-            _react2.default.createElement('img', { src: 'assets/images/photo.jpg' })
+            _react2.default.createElement('img', { src: 'assets/images/photo2.jpg' })
           ),
           _react2.default.createElement(
             'div',
@@ -43171,10 +43171,20 @@ var Portfolio = function (_React$Component) {
             { className: 'col-sm-8' },
             _react2.default.createElement(
               'div',
-              { className: 'header' },
-              this.state.active.project ? _react2.default.createElement(
+              { className: 'project-details ' + (this.state.active.project ? '' : 'not-visible') },
+              this.state.active.project && _react2.default.createElement(
                 'div',
                 null,
+                _react2.default.createElement(
+                  'div',
+                  { className: 'subtitle' },
+                  this.state.active.project.start.format('YYYY.MM'),
+                  ' - ',
+                  this.state.active.project.end.format('YYYY.MM'),
+                  ' (',
+                  this.state.active.project.durationHuman,
+                  ')'
+                ),
                 _react2.default.createElement(
                   'strong',
                   null,
@@ -43184,12 +43194,21 @@ var Portfolio = function (_React$Component) {
                 ),
                 _react2.default.createElement('br', null),
                 this.state.active.project && this.state.active.project.description
-              ) : _react2.default.createElement(
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'header' },
+              _react2.default.createElement(
                 'h1',
                 null,
-                'Projects'
-              ),
-              ' \xA0'
+                _react2.default.createElement(
+                  'span',
+                  { className: 'header-label ' + (this.state.active.project ? 'not-visible' : '') },
+                  this.state.active.project ? '' : 'Projects',
+                  '\xA0'
+                )
+              )
             ),
             _react2.default.createElement(_Calendar2.default, {
               projects: this.state.projects,
@@ -43253,8 +43272,8 @@ var Portfolio = function (_React$Component) {
             null,
             _react2.default.createElement(
               'a',
-              { target: '_blank', href: 'https://github.com/search?l=&o=desc&q=author%3Alokson&ref=advsearch&s=created&type=Issues' },
-              'github activity'
+              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Alokson+is%3Aclosed' },
+              'contributions'
             )
           )
         ),
@@ -43264,7 +43283,7 @@ var Portfolio = function (_React$Component) {
           _react2.default.createElement(
             'h1',
             null,
-            'Have a remote job offer?'
+            'Contact'
           ),
           'maciej.kasprzyk.it@gmail.com'
         ),
