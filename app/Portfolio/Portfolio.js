@@ -151,7 +151,7 @@ class Portfolio extends React.Component {
 
         <section className='row text-center'>
           <h1>Open Source</h1>
-          <p><a target="_blank" href="https://github.com/pulls?q=is%3Apr+author%3Alokson+is%3Aclosed">contributions</a></p>
+          <p><a target="_blank" href="https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka+is%3Aclosed">contributions</a></p>
         </section>
 
         <section className='row text-center'>

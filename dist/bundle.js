@@ -4710,10 +4710,6 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -43276,7 +43272,7 @@ var Portfolio = function (_React$Component) {
             null,
             _react2.default.createElement(
               'a',
-              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Alokson+is%3Aclosed' },
+              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka+is%3Aclosed' },
               'contributions'
             )
           )
