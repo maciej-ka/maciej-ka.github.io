@@ -100,7 +100,7 @@ path.active,
 .active.developer .subtitle {
   stroke: hsl(194, 19%, 65%);
   /* stroke: var(--background-color); */
-  stroke-width: 4;
+  stroke-width: 3;
   stroke-linejoin: round;
 }
 
