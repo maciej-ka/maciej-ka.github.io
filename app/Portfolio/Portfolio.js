@@ -7,7 +7,7 @@ import ProjectList from '../ProjectList/';
 import SideChart from '../SideChart/';
 import {monthsToHuman} from '../helpers';
 import {roles, sides, ignoreSkills} from '../settings';
-import RemoteTime from '../RemoteTime';
+import Perks from '../Perks';
 
 class Portfolio extends React.Component {
 
@@ -25,6 +25,16 @@ class Portfolio extends React.Component {
       p.durationHuman = monthsToHuman(p.duration);
       p.roleLabel = roles.find(role => p.role.toLowerCase().indexOf(role) >= 0);
       p.side = p.side || 'other';
+      let teamSize = p.teamSize || p.team.length;
+      if (teamSize == 1) {
+        p.team = 'solo';
+      }
+      if (teamSize > 1 && teamSize <= 5) {
+        p.team = 'small';
+      }
+      if (teamSize > 5) {
+        p.team = 'large';
+      }
       return p;
     });
     this.state.calendar = this.calculateCalendar();
@@ -141,8 +151,8 @@ class Portfolio extends React.Component {
               active={this.state.active} />
           </div>
 
-          <div className='remote-container hidden-xs hidden-sm col-md-4'>
-            <RemoteTime
+          <div className='perks-container hidden-xs hidden-sm col-md-4'>
+            <Perks
               calendar={this.state.calendar}
               setActive={this.setActive}
               active={this.state.active} />
@@ -151,7 +161,7 @@ class Portfolio extends React.Component {
 
         <section className='row text-center'>
           <h1>Open Source</h1>
-          <p><a target="_blank" href="https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka+is%3Aclosed">contributions</a></p>
+          <p><a target="_blank" href="https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka">contributions</a></p>
         </section>
 
         <section className='row text-center'>

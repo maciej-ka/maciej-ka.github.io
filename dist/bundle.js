@@ -4710,10 +4710,6 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -41866,7 +41862,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Portfolio = __webpack_require__(209);
+var _Portfolio = __webpack_require__(211);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -42813,6 +42809,9 @@ var TimelineChart = function (_React$Component) {
       if (active.side) {
         return project.side == active.side;
       }
+      if (active.team) {
+        return project.team == active.team;
+      }
     }
   }, {
     key: 'render',
@@ -42838,6 +42837,307 @@ exports.default = TimelineChart;
 
 /***/ }),
 /* 207 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(9);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _helpers = __webpack_require__(22);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Perks = function (_React$Component) {
+  _inherits(Perks, _React$Component);
+
+  function Perks(props) {
+    _classCallCheck(this, Perks);
+
+    var _this = _possibleConstructorReturn(this, (Perks.__proto__ || Object.getPrototypeOf(Perks)).call(this));
+
+    _this.state = {};
+    _this.state.count = _this.calculate(props);
+    return _this;
+  }
+
+  _createClass(Perks, [{
+    key: 'calculate',
+    value: function calculate(props) {
+      var count = 0;
+      var calendar = props.calendar;
+      for (var year in calendar) {
+        for (var month in calendar[year]) {
+          if (calendar[year][month].remote) {
+            count += 1;
+          }
+        }
+      }
+      return count;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'row ' + (this.isActive('remote') ? 'active' : ''),
+            onMouseEnter: function onMouseEnter() {
+              return _this2.props.setActive({ remote: true });
+            },
+            onMouseLeave: function onMouseLeave() {
+              return _this2.props.setActive({});
+            } },
+          _react2.default.createElement(
+            'svg',
+            { viewBox: '0 0 1000 1000' },
+            _react2.default.createElement('path', { d: 'M973.4,26.5c-37.3-37.3-101.5,0-101.5,0L669.2,229.4l-557.9-50.7l-50.7,50.7l405.7,202.8L263.6,635H60.7L10,685.8l202.8,101.5l101.5,202.8l50.7-50.7V736.6l202.8-202.8l202.9,405.4l50.7-50.7l-50.7-557.9L973.4,128C973.4,128,1010.7,63.8,973.4,26.5L973.4,26.5z' })
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'span',
+              { className: 'title' },
+              'remote'
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'subtitle' },
+              (0, _helpers.monthsToHuman)(this.state.count)
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'row ' + (this.isActive('solo') ? 'active' : ''),
+            onMouseEnter: function onMouseEnter() {
+              return _this2.props.setActive({ team: 'solo' });
+            },
+            onMouseLeave: function onMouseLeave() {
+              return _this2.props.setActive({});
+            } },
+          _react2.default.createElement(
+            'svg',
+            { viewBox: '0 0 25 25' },
+            _react2.default.createElement('path', { d: 'm16.428 15.744c-.159-.052-1.164-.505-.536-2.414h-.009c1.637-1.686 2.888-4.399 2.888-7.07 0-4.107-2.731-6.26-5.905-6.26-3.176 0-5.892 2.152-5.892 6.26 0 2.682 1.244 5.406 2.891 7.088.642 1.684-.506 2.309-.746 2.396-2.238.724-8.325 4.332-8.229 9.586h24.05c.107-5.02-4.708-8.279-8.513-9.586' })
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'span',
+              { className: 'title' },
+              'solo'
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'subtitle' },
+              (0, _helpers.monthsToHuman)(this.state.count)
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'row ' + (this.isActive('small') ? 'active' : ''),
+            onMouseEnter: function onMouseEnter() {
+              return _this2.props.setActive({ team: 'small' });
+            },
+            onMouseLeave: function onMouseLeave() {
+              return _this2.props.setActive({});
+            } },
+          _react2.default.createElement(
+            'svg',
+            { viewBox: '0 0 45 45' },
+            _react2.default.createElement(
+              'defs',
+              null,
+              _react2.default.createElement('path', { id: 'user-small', d: 'm16.428 15.744c-.159-.052-1.164-.505-.536-2.414h-.009c1.637-1.686 2.888-4.399 2.888-7.07 0-4.107-2.731-6.26-5.905-6.26-3.176 0-5.892 2.152-5.892 6.26 0 2.682 1.244 5.406 2.891 7.088.642 1.684-.506 2.309-.746 2.396-2.238.724-8.325 4.332-8.229 9.586h24.05c.107-5.02-4.708-8.279-8.513-9.586' }),
+              _react2.default.createElement(
+                'mask',
+                { id: 'right-small' },
+                _react2.default.createElement('rect', { width: '100%', height: '100%', style: { fill: 'white' } }),
+                _react2.default.createElement('circle', { cx: '21.5', cy: '24', r: '8', style: { fill: 'black' } })
+              ),
+              _react2.default.createElement(
+                'mask',
+                { id: 'left-small' },
+                _react2.default.createElement('rect', { width: '100%', height: '100%', style: { fill: 'white' } }),
+                _react2.default.createElement('circle', { cx: '4', cy: '24', r: '8', style: { fill: 'black' } })
+              )
+            ),
+            _react2.default.createElement('use', { href: '#user-small', x: '0', y: '0', mask: 'url(#right-small)' }),
+            _react2.default.createElement('use', { href: '#user-small', x: '18', y: '0', mask: 'url(#left-small)' }),
+            _react2.default.createElement('use', { href: '#user-small', x: '9', y: '18' })
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'span',
+              { className: 'title' },
+              'small team'
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'subtitle' },
+              (0, _helpers.monthsToHuman)(this.state.count)
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          {
+            className: 'row ' + (this.isActive('large') ? 'active' : ''),
+            onMouseEnter: function onMouseEnter() {
+              return _this2.props.setActive({ team: 'large' });
+            },
+            onMouseLeave: function onMouseLeave() {
+              return _this2.props.setActive({});
+            } },
+          _react2.default.createElement(
+            'svg',
+            { viewBox: '0 0 62 62' },
+            _react2.default.createElement(
+              'defs',
+              null,
+              _react2.default.createElement('path', { id: 'user', d: 'm16.428 15.744c-.159-.052-1.164-.505-.536-2.414h-.009c1.637-1.686 2.888-4.399 2.888-7.07 0-4.107-2.731-6.26-5.905-6.26-3.176 0-5.892 2.152-5.892 6.26 0 2.682 1.244 5.406 2.891 7.088.642 1.684-.506 2.309-.746 2.396-2.238.724-8.325 4.332-8.229 9.586h24.05c.107-5.02-4.708-8.279-8.513-9.586' }),
+              _react2.default.createElement(
+                'mask',
+                { id: 'right' },
+                _react2.default.createElement('rect', { width: '100%', height: '100%', style: { fill: 'white' } }),
+                _react2.default.createElement('circle', { cx: '21.5', cy: '24', r: '8', style: { fill: 'black' } })
+              ),
+              _react2.default.createElement(
+                'mask',
+                { id: 'left' },
+                _react2.default.createElement('rect', { width: '100%', height: '100%', style: { fill: 'white' } }),
+                _react2.default.createElement('circle', { cx: '4', cy: '24', r: '8', style: { fill: 'black' } })
+              ),
+              _react2.default.createElement(
+                'mask',
+                { id: 'both' },
+                _react2.default.createElement('rect', { width: '100%', height: '100%', style: { fill: 'white' } }),
+                _react2.default.createElement('circle', { cx: '4', cy: '24', r: '8', style: { fill: 'black' } }),
+                _react2.default.createElement('circle', { cx: '21.5', cy: '24', r: '8', style: { fill: 'black' } })
+              )
+            ),
+            _react2.default.createElement('use', { href: '#user', x: '0', y: '0', mask: 'url(#right)' }),
+            _react2.default.createElement('use', { href: '#user', x: '18', y: '0', mask: 'url(#both)' }),
+            _react2.default.createElement('use', { href: '#user', x: '36', y: '0', mask: 'url(#left)' }),
+            _react2.default.createElement('use', { href: '#user', x: '9', y: '18', mask: 'url(#right)' }),
+            _react2.default.createElement('use', { href: '#user', x: '27', y: '18', mask: 'url(#left)' }),
+            _react2.default.createElement('use', { href: '#user', x: '18', y: '36' })
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'span',
+              { className: 'title' },
+              'large team'
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'subtitle' },
+              (0, _helpers.monthsToHuman)(this.state.count)
+            )
+          )
+        )
+      );
+    }
+  }, {
+    key: 'isActive',
+    value: function isActive(perk) {
+      var active = this.props.active;
+      if (!active) {
+        return false;
+      }
+      if (active.project) {
+        if (perk == 'remote') {
+          return active.project.remote;
+        }
+        if (perk == 'solo') {
+          return active.project.team == 'solo';
+        }
+        if (perk == 'small') {
+          return active.project.team == 'small';
+        }
+        if (perk == 'large') {
+          return active.project.team == 'large';
+        }
+      }
+      if (perk == 'remote') {
+        return active.remote;
+      }
+      if (perk == 'solo') {
+        return active.team == 'solo';
+      }
+      if (perk == 'small') {
+        return active.team == 'small';
+      }
+      if (perk == 'large') {
+        return active.team == 'large';
+      }
+    }
+  }]);
+
+  return Perks;
+}(_react2.default.Component);
+
+Perks.propTypes = {
+  calendar: _react2.default.PropTypes.object,
+  setActive: _react2.default.PropTypes.func,
+  active: _react2.default.PropTypes.object
+};
+
+exports.default = Perks;
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Perks = __webpack_require__(207);
+
+Object.defineProperty(exports, 'default', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Perks).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42991,7 +43291,7 @@ PieChart.defaultProps = {
 exports.default = PieChart;
 
 /***/ }),
-/* 208 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43001,7 +43301,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _PieChart = __webpack_require__(207);
+var _PieChart = __webpack_require__(209);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
@@ -43013,7 +43313,7 @@ Object.defineProperty(exports, 'default', {
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 209 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43045,7 +43345,7 @@ var _Skills = __webpack_require__(55);
 
 var _Skills2 = _interopRequireDefault(_Skills);
 
-var _ProjectList = __webpack_require__(211);
+var _ProjectList = __webpack_require__(213);
 
 var _ProjectList2 = _interopRequireDefault(_ProjectList);
 
@@ -43057,9 +43357,9 @@ var _helpers = __webpack_require__(22);
 
 var _settings = __webpack_require__(35);
 
-var _RemoteTime = __webpack_require__(213);
+var _Perks = __webpack_require__(208);
 
-var _RemoteTime2 = _interopRequireDefault(_RemoteTime);
+var _Perks2 = _interopRequireDefault(_Perks);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43093,6 +43393,16 @@ var Portfolio = function (_React$Component) {
         return p.role.toLowerCase().indexOf(role) >= 0;
       });
       p.side = p.side || 'other';
+      var teamSize = p.teamSize || p.team.length;
+      if (teamSize == 1) {
+        p.team = 'solo';
+      }
+      if (teamSize > 1 && teamSize <= 5) {
+        p.team = 'small';
+      }
+      if (teamSize > 5) {
+        p.team = 'large';
+      }
       return p;
     });
     _this.state.calendar = _this.calculateCalendar();
@@ -43273,8 +43583,8 @@ var Portfolio = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'remote-container hidden-xs hidden-sm col-md-4' },
-            _react2.default.createElement(_RemoteTime2.default, {
+            { className: 'perks-container hidden-xs hidden-sm col-md-4' },
+            _react2.default.createElement(_Perks2.default, {
               calendar: this.state.calendar,
               setActive: this.setActive,
               active: this.state.active })
@@ -43293,7 +43603,7 @@ var Portfolio = function (_React$Component) {
             null,
             _react2.default.createElement(
               'a',
-              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka+is%3Aclosed' },
+              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka' },
               'contributions'
             )
           )
@@ -43330,7 +43640,7 @@ Portfolio.propTypes = {
 exports.default = Portfolio;
 
 /***/ }),
-/* 210 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43528,134 +43838,6 @@ ProjectList.propTypes = {
 exports.default = ProjectList;
 
 /***/ }),
-/* 211 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _ProjectList = __webpack_require__(210);
-
-Object.defineProperty(exports, 'default', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_ProjectList).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-/* 212 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(9);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _helpers = __webpack_require__(22);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var RemoteTime = function (_React$Component) {
-  _inherits(RemoteTime, _React$Component);
-
-  function RemoteTime(props) {
-    _classCallCheck(this, RemoteTime);
-
-    var _this = _possibleConstructorReturn(this, (RemoteTime.__proto__ || Object.getPrototypeOf(RemoteTime)).call(this));
-
-    _this.state = {};
-    _this.state.count = _this.calculate(props);
-    return _this;
-  }
-
-  _createClass(RemoteTime, [{
-    key: 'calculate',
-    value: function calculate(props) {
-      var count = 0;
-      var calendar = props.calendar;
-      for (var year in calendar) {
-        for (var month in calendar[year]) {
-          if (calendar[year][month].remote) {
-            count += 1;
-          }
-        }
-      }
-      return count;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        'div',
-        {
-          className: 'remote ' + (this.isActive() ? 'active' : ''),
-          onMouseEnter: function onMouseEnter() {
-            return _this2.props.setActive({ remote: true });
-          },
-          onMouseLeave: function onMouseLeave() {
-            return _this2.props.setActive({});
-          } },
-        _react2.default.createElement(
-          'span',
-          { className: 'title' },
-          'remote'
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: 'subtitle' },
-          (0, _helpers.monthsToHuman)(this.state.count)
-        )
-      );
-    }
-  }, {
-    key: 'isActive',
-    value: function isActive() {
-      var active = this.props.active;
-      if (!active) {
-        return false;
-      }
-      if (active.project) {
-        return active.project.remote;
-      }
-      return active.remote;
-    }
-  }]);
-
-  return RemoteTime;
-}(_react2.default.Component);
-
-RemoteTime.propTypes = {
-  calendar: _react2.default.PropTypes.object,
-  setActive: _react2.default.PropTypes.func,
-  active: _react2.default.PropTypes.object
-};
-
-exports.default = RemoteTime;
-
-/***/ }),
 /* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43666,12 +43848,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _RemoteTime = __webpack_require__(212);
+var _ProjectList = __webpack_require__(212);
 
 Object.defineProperty(exports, 'default', {
   enumerable: true,
   get: function get() {
-    return _interopRequireDefault(_RemoteTime).default;
+    return _interopRequireDefault(_ProjectList).default;
   }
 });
 
@@ -43694,7 +43876,7 @@ var _react = __webpack_require__(9);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _PieChart = __webpack_require__(208);
+var _PieChart = __webpack_require__(210);
 
 var _PieChart2 = _interopRequireDefault(_PieChart);
 

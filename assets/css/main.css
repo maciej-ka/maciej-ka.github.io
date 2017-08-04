@@ -65,7 +65,8 @@ path,
 circle.active,
 rect.active,
 path.active,
-.active .bar {
+.active .bar,
+.active path {
   background: var(--active-color);
   fill: var(--active-color);
   opacity: 1;
@@ -196,21 +197,26 @@ mask .stroke {
 }
 .skills-filter-form {
   margin-top: 1em;
+  margin-bottom: 0;
   white-space: nowrap;
   font-size: 80%;
-  height: 4.5em;;
+  height: 4.5em;
 }
 
-.remote-container {
-  text-align: center;
+.perks-container .row {
+  margin-bottom: 0.4em;
 }
-
-.remote .title {
+.perks-container .title {
   display: block;
 }
-.remote .subtitle {
+.perks-container .subtitle {
   display: block;
   margin-top: -0.6em;
+}
+.perks-container svg {
+  float: left;
+  width: 35px;
+  margin: 2px 0.5em 0.5em
 }
 
 .projects .description {
