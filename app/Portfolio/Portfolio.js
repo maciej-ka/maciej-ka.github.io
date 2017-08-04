@@ -76,7 +76,7 @@ class Portfolio extends React.Component {
       <div>
         <section className='row photo'>
           <div className='col-sm-4 col-sm-offset-4'>
-            <img src='assets/images/photo2.jpg' />
+            <img src='assets/images/photo3.jpg' />
 
           </div>
           <div className='col-sm-4 fluid'>
