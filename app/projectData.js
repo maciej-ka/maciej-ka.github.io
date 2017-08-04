@@ -2,7 +2,7 @@ export default [
 
   {
     name: 'Immmr',
-    start: '2016-08-01',
+    start: '2016-12-01',
     end: null,
     description: 'VoIP client with video calls',
     link: 'immmr.com',
@@ -16,10 +16,34 @@ export default [
     teamSize: 35,
 
     skills: [
-      'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal',
       'JavaScript', 'ES6', 'React', 'Redux', 'JSX',
       'CSS',
       'Webpack', 'Babel', 'Mocha', 'Enzyme'
+    ],
+    side: 'frontend'
+  },
+
+
+
+  {
+    name: 'Immmr',
+    start: '2016-08-01',
+    end: '2016-12-01',
+    description: 'VoIP client with video calls',
+    link: 'immmr.com',
+
+    company: 'Detsche Telekom',
+    softwareHouse: 'IMPAQ',
+    form: 'Contractor',
+    remote: true,
+
+    role: 'Web developer',
+    teamSize: 35,
+
+    skills: [
+      'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal',
+      'JavaScript',
+      'CSS'
     ],
     side: 'fullstack'
   },
