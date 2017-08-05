@@ -6,20 +6,34 @@ class Perks extends React.Component {
   constructor(props) {
     super();
     this.state = {};
-    this.state.count = this.calculate(props);
+    this.state.counters = this.calculate(props);
   }
 
   calculate(props) {
-    let count = 0;
+    let counters = {
+      remote: 0,
+      solo: 0,
+      small: 0,
+      large: 0
+    };
     let calendar = props.calendar;
     for (let year in calendar) {
       for (let month in calendar[year]) {
         if (calendar[year][month].remote) {
-          count += 1;
+          counters.remote += 1;
+        }
+        if (calendar[year][month].team == 'solo') {
+          counters.solo += 1;
+        }
+        if (calendar[year][month].team == 'small') {
+          counters.small += 1;
+        }
+        if (calendar[year][month].team == 'large') {
+          counters.large += 1;
         }
       }
     }
-    return count;
+    return counters;
   }
 
   render() {
@@ -35,7 +49,7 @@ class Perks extends React.Component {
           <div>
             <span className='title'>remote</span>
             <span className='subtitle'>
-              {monthsToHuman(this.state.count)}
+              {monthsToHuman(this.state.counters.remote)}
             </span>
           </div>
         </div>
@@ -50,7 +64,7 @@ class Perks extends React.Component {
           <div>
             <span className='title'>solo</span>
             <span className='subtitle'>
-              {monthsToHuman(this.state.count)}
+              {monthsToHuman(this.state.counters.solo)}
             </span>
           </div>
         </div>
@@ -78,7 +92,7 @@ class Perks extends React.Component {
           <div>
             <span className='title'>small team</span>
             <span className='subtitle'>
-              {monthsToHuman(this.state.count)}
+              {monthsToHuman(this.state.counters.small)}
             </span>
           </div>
         </div>
@@ -114,7 +128,7 @@ class Perks extends React.Component {
           <div>
             <span className='title'>large team</span>
             <span className='subtitle'>
-              {monthsToHuman(this.state.count)}
+              {monthsToHuman(this.state.counters.large)}
             </span>
           </div>
         </div>

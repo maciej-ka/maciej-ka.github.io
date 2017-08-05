@@ -4710,6 +4710,10 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -42871,23 +42875,37 @@ var Perks = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Perks.__proto__ || Object.getPrototypeOf(Perks)).call(this));
 
     _this.state = {};
-    _this.state.count = _this.calculate(props);
+    _this.state.counters = _this.calculate(props);
     return _this;
   }
 
   _createClass(Perks, [{
     key: 'calculate',
     value: function calculate(props) {
-      var count = 0;
+      var counters = {
+        remote: 0,
+        solo: 0,
+        small: 0,
+        large: 0
+      };
       var calendar = props.calendar;
       for (var year in calendar) {
         for (var month in calendar[year]) {
           if (calendar[year][month].remote) {
-            count += 1;
+            counters.remote += 1;
+          }
+          if (calendar[year][month].team == 'solo') {
+            counters.solo += 1;
+          }
+          if (calendar[year][month].team == 'small') {
+            counters.small += 1;
+          }
+          if (calendar[year][month].team == 'large') {
+            counters.large += 1;
           }
         }
       }
-      return count;
+      return counters;
     }
   }, {
     key: 'render',
@@ -42923,7 +42941,7 @@ var Perks = function (_React$Component) {
             _react2.default.createElement(
               'span',
               { className: 'subtitle' },
-              (0, _helpers.monthsToHuman)(this.state.count)
+              (0, _helpers.monthsToHuman)(this.state.counters.remote)
             )
           )
         ),
@@ -42953,7 +42971,7 @@ var Perks = function (_React$Component) {
             _react2.default.createElement(
               'span',
               { className: 'subtitle' },
-              (0, _helpers.monthsToHuman)(this.state.count)
+              (0, _helpers.monthsToHuman)(this.state.counters.solo)
             )
           )
         ),
@@ -43002,7 +43020,7 @@ var Perks = function (_React$Component) {
             _react2.default.createElement(
               'span',
               { className: 'subtitle' },
-              (0, _helpers.monthsToHuman)(this.state.count)
+              (0, _helpers.monthsToHuman)(this.state.counters.small)
             )
           )
         ),
@@ -43061,7 +43079,7 @@ var Perks = function (_React$Component) {
             _react2.default.createElement(
               'span',
               { className: 'subtitle' },
-              (0, _helpers.monthsToHuman)(this.state.count)
+              (0, _helpers.monthsToHuman)(this.state.counters.large)
             )
           )
         )
@@ -43427,6 +43445,7 @@ var Portfolio = function (_React$Component) {
           role: project.roleLabel,
           side: project.side,
           skills: project.skills,
+          team: project.team,
           remote: project.remote };
         while (date < project.end) {
           var year = date.year();
@@ -43458,6 +43477,9 @@ var Portfolio = function (_React$Component) {
           return side == a.side || side == b.side;
         }),
         skills: Array.from(new Set(a.skills.concat(b.skills))),
+        team: ['large', 'small', 'solo'].find(function (size) {
+          return size == a.team || size == b.team;
+        }),
         remote: a.remote || b.remote
       };
     }

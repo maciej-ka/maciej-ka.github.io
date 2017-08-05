@@ -53,6 +53,7 @@ class Portfolio extends React.Component {
         role: project.roleLabel,
         side: project.side,
         skills: project.skills,
+        team: project.team,
         remote: project.remote };
       while (date < project.end) {
         let year = date.year();
@@ -77,6 +78,7 @@ class Portfolio extends React.Component {
       role: roles.find(role => role == a.role || role == b.role),
       side: sides.find(side => side == a.side || side == b.side),
       skills: Array.from(new Set(a.skills.concat(b.skills))),
+      team: ['large', 'small', 'solo'].find(size => size == a.team || size == b.team),
       remote: a.remote || b.remote
     };
   }
