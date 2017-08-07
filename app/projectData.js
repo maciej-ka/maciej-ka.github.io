@@ -13,7 +13,7 @@ export default [
     remote: true,
 
     role: 'Web developer',
-    teamSize: 35,
+    teamSize: 8,
 
     skills: [
       'JavaScript', 'ES6', 'React', 'Redux', 'JSX',
@@ -38,7 +38,7 @@ export default [
     remote: true,
 
     role: 'Web developer',
-    teamSize: 35,
+    teamSize: 6,
 
     skills: [
       'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal',
@@ -89,7 +89,7 @@ export default [
     remote: true,
 
     role: 'Web developer',
-    team: ['UI designer'],
+    team: [],
 
     skills: [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium',
@@ -342,7 +342,7 @@ export default [
     remote: false,
 
     role: 'Web developer',
-    team: ['Senior web developer', 'Senior front-end developer', 'Junior front-end developer', 'UI Designer', 'Tester'],
+    team: ['Senior web developer', 'Senior front-end developer', 'Tester'],
 
     skills: [
       'Ruby', 'Rails',
@@ -367,7 +367,7 @@ export default [
     remote: false,
 
     role: 'Web developer',
-    team: ['Senior web developer', 'Senior front-end developer', 'Junior front-end developer', 'UI Designer', 'Tester'],
+    team: ['Senior web developer', 'Senior front-end developer', 'Tester'],
 
     skills: [
       'Ruby', 'Rails',
@@ -392,7 +392,7 @@ export default [
     remote: true,
 
     role: 'Lead web developer',
-    team: ['Junior web developer'],
+    team: [],
 
     skills: [
       'Ruby', 'Rails', 'RSpec',
@@ -688,7 +688,7 @@ export default [
     remote: false,
 
     role: 'Analyst',
-    team: [],
+    teamSize: 5,
 
     skills: [
       'UML', 'Oracle', 'PL/SQL'
@@ -778,7 +778,7 @@ export default [
     remote: false,
 
     role: 'Software architect',
-    team: ['4 Java developers', 'Analyst'],
+    teamSize: 6,
 
     skills: [
       'UML', 'Java'
@@ -870,7 +870,7 @@ export default [
     remote: true,
 
     role: 'Lead analyst',
-    team: ['4 Analysts', '15 Developers'],
+    teamSize: 5,
 
     skills: [
       'UML', 'SQL Server', 'SQL'

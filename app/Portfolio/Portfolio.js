@@ -25,14 +25,14 @@ class Portfolio extends React.Component {
       p.durationHuman = monthsToHuman(p.duration);
       p.roleLabel = roles.find(role => p.role.toLowerCase().indexOf(role) >= 0);
       p.side = p.side || 'other';
-      let teamSize = p.teamSize || p.team.length;
+      let teamSize = p.teamSize || p.team.length + 1;
       if (teamSize == 1) {
         p.team = 'solo';
       }
-      if (teamSize > 1 && teamSize <= 5) {
+      if (teamSize > 1 && teamSize <= 4) {
         p.team = 'small';
       }
-      if (teamSize > 5) {
+      if (teamSize > 4) {
         p.team = 'large';
       }
       return p;

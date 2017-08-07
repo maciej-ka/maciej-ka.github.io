@@ -4710,10 +4710,6 @@ process.off = noop;
 process.removeListener = noop;
 process.removeAllListeners = noop;
 process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-
-process.listeners = function (name) { return [] }
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -41900,7 +41896,7 @@ exports.default = [{
   remote: true,
 
   role: 'Web developer',
-  teamSize: 35,
+  teamSize: 8,
 
   skills: ['JavaScript', 'ES6', 'React', 'Redux', 'JSX', 'CSS', 'Webpack', 'Babel', 'Mocha', 'Enzyme'],
   side: 'frontend'
@@ -41917,7 +41913,7 @@ exports.default = [{
   remote: true,
 
   role: 'Web developer',
-  teamSize: 35,
+  teamSize: 6,
 
   skills: ['Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal', 'JavaScript', 'CSS'],
   side: 'fullstack'
@@ -41951,7 +41947,7 @@ exports.default = [{
   remote: true,
 
   role: 'Web developer',
-  team: ['UI designer'],
+  team: [],
 
   skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS', 'Capistrano', 'PostgreSQL', 'UML'],
   side: 'fullstack'
@@ -42121,7 +42117,7 @@ exports.default = [{
   remote: false,
 
   role: 'Web developer',
-  team: ['Senior web developer', 'Senior front-end developer', 'Junior front-end developer', 'UI Designer', 'Tester'],
+  team: ['Senior web developer', 'Senior front-end developer', 'Tester'],
 
   skills: ['Ruby', 'Rails', 'Haml', 'MySQL'],
   side: 'backend'
@@ -42138,7 +42134,7 @@ exports.default = [{
   remote: false,
 
   role: 'Web developer',
-  team: ['Senior web developer', 'Senior front-end developer', 'Junior front-end developer', 'UI Designer', 'Tester'],
+  team: ['Senior web developer', 'Senior front-end developer', 'Tester'],
 
   skills: ['Ruby', 'Rails', 'Haml', 'SQL'],
   side: 'backend'
@@ -42155,7 +42151,7 @@ exports.default = [{
   remote: true,
 
   role: 'Lead web developer',
-  team: ['Junior web developer'],
+  team: [],
 
   skills: ['Ruby', 'Rails', 'RSpec', 'CSS', 'JavaScript', 'jQuery', 'JS animations', 'MySQL'],
   side: 'fullstack'
@@ -42359,7 +42355,7 @@ exports.default = [{
   remote: false,
 
   role: 'Analyst',
-  team: [],
+  teamSize: 5,
 
   skills: ['UML', 'Oracle', 'PL/SQL'],
   side: null
@@ -42427,7 +42423,7 @@ exports.default = [{
   remote: false,
 
   role: 'Software architect',
-  team: ['4 Java developers', 'Analyst'],
+  teamSize: 6,
 
   skills: ['UML', 'Java'],
   side: 'backend'
@@ -42495,7 +42491,7 @@ exports.default = [{
   remote: true,
 
   role: 'Lead analyst',
-  team: ['4 Analysts', '15 Developers'],
+  teamSize: 5,
 
   skills: ['UML', 'SQL Server', 'SQL'],
   side: null
@@ -43411,14 +43407,14 @@ var Portfolio = function (_React$Component) {
         return p.role.toLowerCase().indexOf(role) >= 0;
       });
       p.side = p.side || 'other';
-      var teamSize = p.teamSize || p.team.length;
+      var teamSize = p.teamSize || p.team.length + 1;
       if (teamSize == 1) {
         p.team = 'solo';
       }
-      if (teamSize > 1 && teamSize <= 5) {
+      if (teamSize > 1 && teamSize <= 4) {
         p.team = 'small';
       }
-      if (teamSize > 5) {
+      if (teamSize > 4) {
         p.team = 'large';
       }
       return p;
