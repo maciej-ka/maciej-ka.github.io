@@ -55,7 +55,7 @@ export default [
     form: 'Contractor',
     remote: true,
 
-    role: 'frontend developer',
+    role: 'Frontend developer',
     teamSize: 2,
 
     skills: [

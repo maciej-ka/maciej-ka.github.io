@@ -40533,7 +40533,7 @@ exports.default = [{
   form: 'Contractor',
   remote: true,
 
-  role: 'frontend developer',
+  role: 'Frontend developer',
   teamSize: 2,
 
   skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus'],
