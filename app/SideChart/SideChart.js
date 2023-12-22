@@ -217,7 +217,7 @@ class SideChart extends React.Component {
           onMouseEnter={() => this.props.setActive({side: 'other'})}
           onMouseLeave={() => this.props.setActive({})}
           className={this.isActive('other') && 'active'}>
-          <text className='title'>other</text>
+          <text className='title'>no coding</text>
           <text className='subtitle' dy='1.1em'>{data['other'].subtitle}</text>
         </g>
       </svg>

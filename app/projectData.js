@@ -1,9 +1,73 @@
 export default [
 
   {
+    name: 'AEC.View',
+    start: '2020-02-01',
+    end: '',
+    description: 'Software to track position and status of corporate vessel fleets',
+    link: '',
+
+    company: 'Zeppelin Power Systems',
+    softwareHouse: 'IMPAQ',
+    form: 'Contractor',
+    remote: true,
+
+    role: 'Lead developer',
+    teamSize: 4,
+
+    skills: [
+      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node', 'Typescript'
+    ],
+    side: 'fullstack'
+  },
+
+  {
+    name: 'Klickrent website',
+    start: '2019-04-01',
+    end: '2020-02-01',
+    description: 'Portal to order big construction machines',
+    link: 'https://www.klickrent.de/',
+
+    company: 'Klickrent',
+    softwareHouse: 'IMPAQ',
+    form: 'Contractor',
+    remote: true,
+
+    role: 'Web developer',
+    teamSize: 4,
+
+    skills: [
+      'JavaScript', 'Vue', 'Vuex', 'CSS', 'Sass', 'Typescript'
+    ],
+    side: 'frontend'
+  },
+
+
+  {
+    name: 'Globalmatix GUI',
+    start: '2018-09-01',
+    end: '2019-04-01',
+    description: 'Utility to manage reporting devices installed in cars',
+    link: null,
+
+    company: 'Globalmatix',
+    softwareHouse: 'IMPAQ',
+    form: 'Contractor',
+    remote: true,
+
+    role: 'frontend developer',
+    teamSize: 2,
+
+    skills: [
+      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus'
+    ],
+    side: 'frontend'
+  },
+
+  {
     name: 'Immmr',
     start: '2016-12-01',
-    end: null,
+    end: '2018-09-01',
     description: 'VoIP client with video calls',
     link: 'immmr.com',
 
@@ -54,7 +118,7 @@ export default [
     name: 'IFAB',
     start: '2016-01-01',
     end: '2016-06-01',
-    description: 'A portal about football rules',
+    description: 'Portal about football rules',
     link: 'theifab.com',
 
     company: 'FIFA',
@@ -80,7 +144,7 @@ export default [
     name: 'DSO',
     start: '2015-12-01',
     end: '2016-01-01',
-    description: 'A prototype of online analytics services',
+    description: 'Prototype of online analytics services',
     link: null,
 
     company: 'Apax',
@@ -106,7 +170,7 @@ export default [
     name: 'Duplikaty',
     start: '2015-11-01',
     end: '2015-12-01',
-    description: 'A panel to merge database duplicates',
+    description: 'Utility application to merge database duplicates',
     link: null,
 
     company: 'SAWP',
@@ -132,7 +196,7 @@ export default [
     name: 'the Incrediblest',
     start: '2015-10-01',
     end: '2015-11-01',
-    description: 'A To-Do planner',
+    description: 'To-Do planner',
     link: null,
 
     company: 'Motabi',
@@ -156,7 +220,7 @@ export default [
     name: 'SDEG',
     start: '2015-08-01',
     end: '2015-10-01',
-    description: 'A workflow for exchanging artist royalties',
+    description: 'Document workflow for exchanging artist royalties',
     link: null,
 
     company: 'SAWP',
@@ -182,7 +246,7 @@ export default [
     name: 'Motabi Intelligence',
     start: '2015-05-01',
     end: '2015-08-01',
-    description: 'A panel to configure charts',
+    description: 'Panel to configure reports with charts and datasources',
     link: null,
 
     company: 'Motabi',
@@ -283,7 +347,7 @@ export default [
     name: 'Commercial videos player',
     start: '2014-03-01',
     end: '2014-05-01',
-    description: 'A supermarket player on Raspberry Pi',
+    description: 'Supermarket commercial player for Raspberry Pi',
     link: null,
 
     company: 'Top Market',
@@ -308,7 +372,7 @@ export default [
     name: 'Punktożercy',
     start: '2013-12-01',
     end: '2014-03-01',
-    description: 'A loyalty program shop',
+    description: 'Loyalty points shop',
     link: null,
 
     company: 'Top Market',
@@ -333,7 +397,7 @@ export default [
     name: 'Bluewhite',
     start: '2013-10-01',
     end: '2013-12-01',
-    description: 'Doctor\'s appointment bookings',
+    description: "Doctor's appointment bookings",
     link: 'bluewhite.pl',
 
     company: 'One99',
@@ -358,7 +422,7 @@ export default [
     name: 'Guarantees box',
     start: '2013-07-01',
     end: '2013-10-01',
-    description: 'A service to store digitalized receipts',
+    description: 'Service to store digitalized receipts',
     link: 'guaranteesbox.com',
 
     company: 'Guarantees Box',
@@ -609,7 +673,7 @@ export default [
     name: 'Online job postings observer',
     start: '2009-02-01',
     end: '2009-05-01',
-    description: 'A tool to scrap job postings',
+    description: 'Tool to visit and process online job postings',
     link: null,
 
     company: 'Gemius',
@@ -930,7 +994,7 @@ export default [
     name: 'Homepage',
     start: '2004-02-01',
     end: '2004-04-01',
-    description: 'A painter\'s portfolio.',
+    description: "Painter's portfolio.",
     link: null,
 
     company: 'Ania Okrasko',
