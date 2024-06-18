@@ -42276,7 +42276,7 @@ var Portfolio = function (_React$Component) {
             null,
             _react2.default.createElement(
               'a',
-              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka' },
+              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka+-org%3Azepdev+-org%3Amaciej-ka' },
               'contributions'
             )
           )
