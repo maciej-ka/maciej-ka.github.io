@@ -77,8 +77,8 @@ class TimelineChart extends React.Component {
     if (active.side) {
       return project.side == active.side;
     }
-    if (active.team) {
-      return project.team == active.team;
+    if (active.teamType) {
+      return project.teamType == active.teamType;
     }
   }
 

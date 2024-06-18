@@ -22,13 +22,13 @@ class Perks extends React.Component {
         if (calendar[year][month].remote) {
           counters.remote += 1;
         }
-        if (calendar[year][month].team == 'solo') {
+        if (calendar[year][month].teamType == 'solo') {
           counters.solo += 1;
         }
-        if (calendar[year][month].team == 'small') {
+        if (calendar[year][month].teamType == 'small') {
           counters.small += 1;
         }
-        if (calendar[year][month].team == 'large') {
+        if (calendar[year][month].teamType == 'large') {
           counters.large += 1;
         }
       }
@@ -56,7 +56,7 @@ class Perks extends React.Component {
 
         <div
           className={`row ${this.isActive('solo') ? 'active' : ''}`}
-          onMouseEnter={() => this.props.setActive({team: 'solo'})}
+          onMouseEnter={() => this.props.setActive({teamType: 'solo'})}
           onMouseLeave={() => this.props.setActive({})} >
           <svg viewBox="0 0 25 25">
             <path d="m16.428 15.744c-.159-.052-1.164-.505-.536-2.414h-.009c1.637-1.686 2.888-4.399 2.888-7.07 0-4.107-2.731-6.26-5.905-6.26-3.176 0-5.892 2.152-5.892 6.26 0 2.682 1.244 5.406 2.891 7.088.642 1.684-.506 2.309-.746 2.396-2.238.724-8.325 4.332-8.229 9.586h24.05c.107-5.02-4.708-8.279-8.513-9.586"/>
@@ -71,7 +71,7 @@ class Perks extends React.Component {
 
         <div
           className={`row ${this.isActive('small') ? 'active' : ''}`}
-          onMouseEnter={() => this.props.setActive({team: 'small'})}
+          onMouseEnter={() => this.props.setActive({teamType: 'small'})}
           onMouseLeave={() => this.props.setActive({})} >
           <svg viewBox="0 0 45 45">
             <defs>
@@ -99,7 +99,7 @@ class Perks extends React.Component {
 
         <div
           className={`row ${this.isActive('large') ? 'active' : ''}`}
-          onMouseEnter={() => this.props.setActive({team: 'large'})}
+          onMouseEnter={() => this.props.setActive({teamType: 'large'})}
           onMouseLeave={() => this.props.setActive({})} >
           <svg viewBox="0 0 62 62">
             <defs>
@@ -146,26 +146,26 @@ class Perks extends React.Component {
         return active.project.remote;
       }
       if(perk == 'solo') {
-        return active.project.team == 'solo';
+        return active.project.teamType == 'solo';
       }
       if(perk == 'small') {
-        return active.project.team == 'small';
+        return active.project.teamType == 'small';
       }
       if(perk == 'large') {
-        return active.project.team == 'large';
+        return active.project.teamType == 'large';
       }
     }
     if(perk == 'remote') {
       return active.remote;
     }
     if(perk == 'solo') {
-      return active.team == 'solo';
+      return active.teamType == 'solo';
     }
     if(perk == 'small') {
-      return active.team == 'small';
+      return active.teamType == 'small';
     }
     if(perk == 'large') {
-      return active.team == 'large';
+      return active.teamType == 'large';
     }
   }
 

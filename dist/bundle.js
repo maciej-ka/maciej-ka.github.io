@@ -41464,8 +41464,8 @@ var TimelineChart = function (_React$Component) {
       if (active.side) {
         return project.side == active.side;
       }
-      if (active.team) {
-        return project.team == active.team;
+      if (active.teamType) {
+        return project.teamType == active.teamType;
       }
     }
   }, {
@@ -41545,13 +41545,13 @@ var Perks = function (_React$Component) {
           if (calendar[year][month].remote) {
             counters.remote += 1;
           }
-          if (calendar[year][month].team == 'solo') {
+          if (calendar[year][month].teamType == 'solo') {
             counters.solo += 1;
           }
-          if (calendar[year][month].team == 'small') {
+          if (calendar[year][month].teamType == 'small') {
             counters.small += 1;
           }
-          if (calendar[year][month].team == 'large') {
+          if (calendar[year][month].teamType == 'large') {
             counters.large += 1;
           }
         }
@@ -41601,7 +41601,7 @@ var Perks = function (_React$Component) {
           {
             className: 'row ' + (this.isActive('solo') ? 'active' : ''),
             onMouseEnter: function onMouseEnter() {
-              return _this2.props.setActive({ team: 'solo' });
+              return _this2.props.setActive({ teamType: 'solo' });
             },
             onMouseLeave: function onMouseLeave() {
               return _this2.props.setActive({});
@@ -41631,7 +41631,7 @@ var Perks = function (_React$Component) {
           {
             className: 'row ' + (this.isActive('small') ? 'active' : ''),
             onMouseEnter: function onMouseEnter() {
-              return _this2.props.setActive({ team: 'small' });
+              return _this2.props.setActive({ teamType: 'small' });
             },
             onMouseLeave: function onMouseLeave() {
               return _this2.props.setActive({});
@@ -41680,7 +41680,7 @@ var Perks = function (_React$Component) {
           {
             className: 'row ' + (this.isActive('large') ? 'active' : ''),
             onMouseEnter: function onMouseEnter() {
-              return _this2.props.setActive({ team: 'large' });
+              return _this2.props.setActive({ teamType: 'large' });
             },
             onMouseLeave: function onMouseLeave() {
               return _this2.props.setActive({});
@@ -41748,26 +41748,26 @@ var Perks = function (_React$Component) {
           return active.project.remote;
         }
         if (perk == 'solo') {
-          return active.project.team == 'solo';
+          return active.project.teamType == 'solo';
         }
         if (perk == 'small') {
-          return active.project.team == 'small';
+          return active.project.teamType == 'small';
         }
         if (perk == 'large') {
-          return active.project.team == 'large';
+          return active.project.teamType == 'large';
         }
       }
       if (perk == 'remote') {
         return active.remote;
       }
       if (perk == 'solo') {
-        return active.team == 'solo';
+        return active.teamType == 'solo';
       }
       if (perk == 'small') {
-        return active.team == 'small';
+        return active.teamType == 'small';
       }
       if (perk == 'large') {
-        return active.team == 'large';
+        return active.teamType == 'large';
       }
     }
   }]);
@@ -42064,13 +42064,13 @@ var Portfolio = function (_React$Component) {
       p.side = p.side || 'other';
       var teamSize = p.teamSize || p.team.length + 1;
       if (teamSize == 1) {
-        p.team = 'solo';
+        p.teamType = 'solo';
       }
       if (teamSize > 1 && teamSize <= 4) {
-        p.team = 'small';
+        p.teamType = 'small';
       }
       if (teamSize > 4) {
-        p.team = 'large';
+        p.teamType = 'large';
       }
       return p;
     });

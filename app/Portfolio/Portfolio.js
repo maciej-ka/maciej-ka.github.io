@@ -27,13 +27,13 @@ class Portfolio extends React.Component {
       p.side = p.side || 'other';
       let teamSize = p.teamSize || p.team.length + 1;
       if (teamSize == 1) {
-        p.team = 'solo';
+        p.teamType = 'solo';
       }
       if (teamSize > 1 && teamSize <= 4) {
-        p.team = 'small';
+        p.teamType = 'small';
       }
       if (teamSize > 4) {
-        p.team = 'large';
+        p.teamType = 'large';
       }
       return p;
     });
