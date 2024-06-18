@@ -95,7 +95,7 @@ class Portfolio extends React.Component {
             <h1>Maciej Kasprzyk</h1>
             <p>
               Fullstack web developer<br/>
-              Ten years of experience<br/>
+              20 years of experience<br/>
               Open source contributor
             </p>
           </div>

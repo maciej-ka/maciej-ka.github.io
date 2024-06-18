@@ -42161,7 +42161,7 @@ var Portfolio = function (_React$Component) {
               null,
               'Fullstack web developer',
               _react2.default.createElement('br', null),
-              'Ten years of experience',
+              '20 years of experience',
               _react2.default.createElement('br', null),
               'Open source contributor'
             )
