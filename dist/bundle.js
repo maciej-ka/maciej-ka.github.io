@@ -42744,7 +42744,7 @@ var SideChart = function (_React$Component) {
       var r1 = this.state.data['backend'].radius;
       var r2 = this.state.data['frontend'].radius;
       var area = this.state.data['fullstack'].value;
-      var beta = Math.asin(r2 * Math.sin(alpha) / r1);
+      var beta = Math.asin(Math.min(1, r2 * Math.sin(alpha) / r1));
 
       // distance between circles
       var d = r2 * Math.cos(alpha) + r1 * Math.cos(beta);
@@ -42770,10 +42770,11 @@ var SideChart = function (_React$Component) {
 
       // y positions
       var y = {
-        backend: r.backend,
         frontend: r.backend + this.state.distance * scale,
+        backend: r.backend,
         other: height - r.other
       };
+
       // place free spaces evengly
       var vennHeight = y.frontend + r.frontend;
       var gap = height - vennHeight - 2 * (r.mobile + r.other);

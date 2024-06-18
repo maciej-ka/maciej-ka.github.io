@@ -65,7 +65,7 @@ class SideChart extends React.Component {
     const r1 = this.state.data['backend'].radius;
     const r2 = this.state.data['frontend'].radius;
     const area = this.state.data['fullstack'].value;
-    const beta = Math.asin(r2 * Math.sin(alpha) / r1);
+    const beta = Math.asin(Math.min(1, r2 * Math.sin(alpha) / r1));
 
     // distance between circles
     let d = r2 * Math.cos(alpha) + r1 * Math.cos(beta);
@@ -91,10 +91,11 @@ class SideChart extends React.Component {
 
     // y positions
     let y = {
-      backend: r.backend,
       frontend: r.backend + this.state.distance * scale,
+      backend: r.backend,
       other: height - r.other
     };
+
     // place free spaces evengly
     const vennHeight = y.frontend + r.frontend;
     let gap = height - vennHeight - 2 * (r.mobile + r.other);
