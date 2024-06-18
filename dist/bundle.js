@@ -42146,7 +42146,7 @@ var Portfolio = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'col-sm-4 col-sm-offset-4' },
-            _react2.default.createElement('img', { src: 'assets/images/photo3.jpg' })
+            _react2.default.createElement('img', { src: 'assets/images/photo4.png' })
           ),
           _react2.default.createElement(
             'div',
