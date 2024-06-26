@@ -47,7 +47,6 @@ export default [
     name: 'Globalmatix GUI',
     start: '2018-09-01',
     end: '2019-04-01',
-    end: '',
     description: 'Utility to manage reporting devices installed in cars',
     link: null,
 
