@@ -14,6 +14,7 @@ class Portfolio extends React.Component {
   constructor(props) {
     super();
     this.setActive = this.setActive.bind(this);
+    this.getTotal = this.getTotal.bind(this);
     let id = 1;
     this.state = {};
     this.state.projects = props.projects.map(p => {
@@ -43,6 +44,10 @@ class Portfolio extends React.Component {
 
   setActive(active) {
     this.setState({active: active});
+  }
+
+  getTotal() {
+    return this.state.projects.reduce((acc, next) => acc + next.duration, 0)
   }
 
   calculateCalendar() {
@@ -95,7 +100,7 @@ class Portfolio extends React.Component {
             <h1>Maciej Kasprzyk</h1>
             <p>
               Fullstack web developer<br/>
-              20 years of experience<br/>
+              {Math.floor(this.getTotal() / 12)} years of experience<br/>
               Open source contributor
             </p>
           </div>

@@ -42047,6 +42047,7 @@ var Portfolio = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Portfolio.__proto__ || Object.getPrototypeOf(Portfolio)).call(this));
 
     _this.setActive = _this.setActive.bind(_this);
+    _this.getTotal = _this.getTotal.bind(_this);
     var id = 1;
     _this.state = {};
     _this.state.projects = props.projects.map(function (p) {
@@ -42083,6 +42084,13 @@ var Portfolio = function (_React$Component) {
     key: 'setActive',
     value: function setActive(active) {
       this.setState({ active: active });
+    }
+  }, {
+    key: 'getTotal',
+    value: function getTotal() {
+      return this.state.projects.reduce(function (acc, next) {
+        return acc + next.duration;
+      }, 0);
     }
   }, {
     key: 'calculateCalendar',
@@ -42161,7 +42169,8 @@ var Portfolio = function (_React$Component) {
               null,
               'Fullstack web developer',
               _react2.default.createElement('br', null),
-              '20 years of experience',
+              Math.floor(this.getTotal() / 12),
+              ' years of experience',
               _react2.default.createElement('br', null),
               'Open source contributor'
             )
