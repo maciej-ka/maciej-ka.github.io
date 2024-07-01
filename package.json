@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack -w & live-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -r build; mkdir build; cp ./index.html ./build; cp -r ./assets ./build; cp -r ./dist ./build",
   },
   "repository": {
     "type": "git",
