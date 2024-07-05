@@ -12918,8 +12918,22 @@ Object.defineProperty(exports, "__esModule", {
 });
 var roles = exports.roles = ['architect', 'developer', 'analyst', 'manager'];
 var sides = exports.sides = ['fullstack', 'backend', 'frontend', 'mobile', 'other'];
-var importantSkills = exports.importantSkills = ['Rails', 'JavaScript', 'PHP', 'CSS', 'Java', 'Angular', 'React'];
-var ignoreSkills = exports.ignoreSkills = ['Haml', 'RSpec', 'Capybara', 'Doctrine', 'JS animations', 'Babel', 'JSX', 'Webpack', 'CSS animations', 'Enzyme', 'messaging', 'microservices', 'Mocha', 'Rspec', 'Selenium', 'Gradle', 'gulp', 'Jade', 'Responsive Design', 'Minitest'];
+var importantSkills = exports.importantSkills = ['Rails', 'JavaScript', 'Typescript', 'PHP',
+// 'CSS',
+'Java',
+// 'Angular',
+'React', 'AWS'];
+var ignoreSkills = exports.ignoreSkills = [
+// 'Haml',
+// 'RSpec',
+'Capybara',
+// 'Doctrine',
+'JS animations', 'Babel', 'JSX', 'Webpack', 'CSS animations', 'Enzyme', 'messaging',
+// 'microservices',
+'Mocha',
+// 'Rspec',
+// 'Selenium',
+'Gradle', 'gulp', 'Jade', 'Responsive Design', 'Minitest'];
 
 /***/ }),
 /* 85 */
@@ -40502,7 +40516,7 @@ exports.default = [{
   role: 'Lead developer',
   teamSize: 4,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node', 'Typescript'],
+  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node', 'Typescript', 'AWS'],
   side: 'fullstack'
 }, {
   name: 'Klickrent website',
@@ -40536,7 +40550,7 @@ exports.default = [{
   role: 'Frontend developer',
   teamSize: 2,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus'],
+  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana'],
   side: 'frontend'
 }, {
   name: 'Immmr',
@@ -40545,7 +40559,7 @@ exports.default = [{
   description: 'VoIP client with video calls',
   link: 'immmr.com',
 
-  company: 'Detsche Telekom',
+  company: 'Deutsche Telekom',
   softwareHouse: 'IMPAQ',
   form: 'Contractor',
   remote: true,
@@ -40562,7 +40576,7 @@ exports.default = [{
   description: 'VoIP client with video calls',
   link: 'immmr.com',
 
-  company: 'Detsche Telekom',
+  company: 'Deutsche Telekom',
   softwareHouse: 'IMPAQ',
   form: 'Contractor',
   remote: true,
@@ -40950,7 +40964,7 @@ exports.default = [{
   name: 'Online job postings observer',
   start: '2009-02-01',
   end: '2009-05-01',
-  description: 'Tool to visit and process online job postings',
+  description: 'Tool to crawl and process online job postings',
   link: null,
 
   company: 'Gemius',

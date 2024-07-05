@@ -1,52 +1,52 @@
 export default [
 
-  {
-    name: 'AEC.View',
-    start: '2020-02-01',
-    end: '',
-    description: 'Software to track position and status of corporate vessel fleets',
-    link: '',
+  // {
+  //   name: 'AEC.View',
+  //   start: '2020-02-01',
+  //   end: '',
+  //   description: 'Software to track position and status of corporate vessel fleets',
+  //   link: '',
+  //
+  //   company: 'Zeppelin Power Systems',
+  //   softwareHouse: 'IMPAQ',
+  //   form: 'Contractor',
+  //   remote: true,
+  //
+  //   role: 'Lead developer',
+  //   teamSize: 4,
+  //
+  //   skills: [
+  //     'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node', 'Typescript'
+  //   ],
+  //   side: 'fullstack'
+  // },
 
-    company: 'Zeppelin Power Systems',
-    softwareHouse: 'IMPAQ',
-    form: 'Contractor',
-    remote: true,
-
-    role: 'Lead developer',
-    teamSize: 4,
-
-    skills: [
-      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node', 'Typescript', 'AWS'
-    ],
-    side: 'fullstack'
-  },
-
-  {
-    name: 'Klickrent website',
-    start: '2019-04-01',
-    end: '2020-02-01',
-    description: 'Portal to order big construction machines',
-    link: 'https://www.klickrent.de/',
-
-    company: 'Klickrent',
-    softwareHouse: 'IMPAQ',
-    form: 'Contractor',
-    remote: true,
-
-    role: 'Web developer',
-    teamSize: 4,
-
-    skills: [
-      'JavaScript', 'Vue', 'Vuex', 'CSS', 'Sass', 'Typescript'
-    ],
-    side: 'frontend'
-  },
+  // {
+  //   name: 'Klickrent website',
+  //   start: '2019-04-01',
+  //   end: '2020-02-01',
+  //   description: 'Portal to order big construction machines',
+  //   link: 'https://www.klickrent.de/',
+  //
+  //   company: 'Klickrent',
+  //   softwareHouse: 'IMPAQ',
+  //   form: 'Contractor',
+  //   remote: true,
+  //
+  //   role: 'Web developer',
+  //   teamSize: 4,
+  //
+  //   skills: [
+  //     'JavaScript', 'Vue', 'Vuex', 'CSS', 'Sass', 'Typescript'
+  //   ],
+  //   side: 'frontend'
+  // },
 
 
   {
     name: 'Globalmatix GUI',
     start: '2018-09-01',
-    end: '2019-04-01',
+    // end: '2019-04-01',
     description: 'Utility to manage reporting devices installed in cars',
     link: null,
 
@@ -59,7 +59,7 @@ export default [
     teamSize: 2,
 
     skills: [
-      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana'
+      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus'
     ],
     side: 'frontend'
   },
@@ -673,7 +673,7 @@ export default [
     name: 'Online job postings observer',
     start: '2009-02-01',
     end: '2009-05-01',
-    description: 'Tool to crawl and process online job postings',
+    description: 'Tool to visit and process online job postings',
     link: null,
 
     company: 'Gemius',
