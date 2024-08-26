@@ -12926,7 +12926,7 @@ var importantSkills = exports.importantSkills = ['Rails', 'JavaScript', 'Typescr
 var ignoreSkills = exports.ignoreSkills = [
 // 'Haml',
 // 'RSpec',
-'Capybara',
+'ES6', 'Capybara',
 // 'Doctrine',
 'JS animations', 'Babel', 'JSX', 'Webpack', 'CSS animations', 'Enzyme', 'messaging',
 // 'microservices',

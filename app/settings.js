@@ -15,6 +15,7 @@ export const importantSkills = [
 export const ignoreSkills = [
   // 'Haml',
   // 'RSpec',
+  'ES6',
   'Capybara',
   // 'Doctrine',
   'JS animations',
