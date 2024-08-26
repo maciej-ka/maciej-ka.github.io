@@ -16,10 +16,12 @@ export default [
     teamSize: 4,
 
     skills: [
-      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS'
+      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Knex.js', 'PostgreSQL', 'SQL'
     ],
     side: 'fullstack'
   },
+
+
 
   {
     name: 'Klickrent website',
@@ -43,6 +45,7 @@ export default [
   },
 
 
+
   {
     name: 'Globalmatix GUI',
     start: '2018-09-01',
@@ -63,6 +66,8 @@ export default [
     ],
     side: 'frontend'
   },
+
+
 
   {
     name: 'Immmr',
@@ -105,7 +110,7 @@ export default [
     teamSize: 6,
 
     skills: [
-      'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal',
+      'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal', 'PostgreSQL', 'SQL',
       'JavaScript',
       'CSS'
     ],
@@ -130,7 +135,7 @@ export default [
     team: ['Junior web developer', 'Front-end developer'],
 
     skills: [
-      'Java', 'Spring', 'Gradle', 'Elasticsearch',
+      'Java', 'Spring', 'Hibernate', 'Gradle', 'Elasticsearch', 'PostgreSQL', 'SQL',
       'JavaScript', 'Angular', 'CoffeeScript',
       'Bootstrap', 'Sass', 'Jade', 'Responsive Design', 'CSS animations',  'CSS',
       'gulp', 'UML'
@@ -159,7 +164,7 @@ export default [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium',
       'Ember', 'JavaScript', 'CoffeeScript',
       'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS',
-      'Capistrano', 'PostgreSQL', 'UML'
+      'Capistrano', 'PostgreSQL', 'UML', 'SQL'
     ],
     side: 'fullstack'
   },
@@ -185,7 +190,7 @@ export default [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium',
       'Ember', 'JavaScript', 'CoffeeScript',
       'Haml', 'Sass', 'CSS',
-      'PostgreSQL', 'UML'
+      'PostgreSQL', 'UML', 'SQL'
     ],
     side: 'fullstack'
   },
@@ -235,7 +240,7 @@ export default [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium',
       'Angular', 'JavaScript', 'CoffeeScript',
       'Haml', 'Sass', 'CSS',
-      'PostgreSQL', 'UML'
+      'PostgreSQL', 'UML', 'SQL'
     ],
     side: 'fullstack'
   },
@@ -261,7 +266,7 @@ export default [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium',
       'Angular', 'JavaScript', 'CoffeeScript',
       'Haml', 'Sass', 'CSS animations',  'CSS',
-      'PostgreSQL', 'UML'
+      'PostgreSQL', 'UML', 'SQL'
     ],
     side: 'fullstack'
   },
@@ -286,7 +291,7 @@ export default [
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP',
       'Haml',
-      'Capistrano', 'PostgreSQL', 'UML'
+      'Capistrano', 'PostgreSQL', 'UML', 'SQL'
     ],
     side: 'backend'
   },
@@ -311,7 +316,7 @@ export default [
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP',
       'Haml', 'Bootstrap',  'CSS',
-      'Capistrano', 'UML'
+      'Capistrano', 'UML', 'PostgreSQL', 'SQL'
     ],
     side: 'fullstack'
   },
@@ -361,7 +366,7 @@ export default [
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara',
       'Haml',
-      'Capistrano'
+      'Capistrano', 'Raspberry Pi'
     ],
     side: 'backend'
   },
@@ -386,7 +391,7 @@ export default [
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara',
       'Haml',
-      'Capistrano', 'UML'
+      'Capistrano', 'UML', 'PostgreSQL', 'SQL'
     ],
     side: 'backend'
   },
@@ -411,7 +416,7 @@ export default [
     skills: [
       'Ruby', 'Rails',
       'Haml',
-      'MySQL'
+      'MySQL', 'SQL'
     ],
     side: 'backend'
   },
@@ -436,7 +441,7 @@ export default [
     skills: [
       'Ruby', 'Rails',
       'Haml',
-      'SQL'
+      'MySQL', 'SQL'
     ],
     side: 'backend'
   },
@@ -462,7 +467,7 @@ export default [
       'Ruby', 'Rails', 'RSpec',
       'CSS',
       'JavaScript', 'jQuery', 'JS animations',
-      'MySQL'
+      'MySQL', 'SQL'
     ],
     side: 'fullstack'
   },
@@ -755,7 +760,7 @@ export default [
     teamSize: 5,
 
     skills: [
-      'UML', 'Oracle', 'PL/SQL'
+      'UML', 'Oracle', 'PL/SQL', 'SQL'
     ],
     side: null
   },
@@ -778,7 +783,7 @@ export default [
     team: [],
 
     skills: [
-      'UML', 'Oracle', 'PL/SQL'
+      'UML', 'Oracle', 'PL/SQL', 'SQL'
     ],
     side: null
   },
@@ -868,7 +873,7 @@ export default [
     team: ['PHP developer'],
 
     skills: [
-      'PHP', 'SQL'
+      'PHP', 'SQL', 'MySQL'
     ],
     side: 'backend'
   },
@@ -914,7 +919,7 @@ export default [
     team: ['Front-end developer'],
 
     skills: [
-      'PHP', 'SQL'
+      'PHP', 'SQL', 'MySQL'
     ],
     side: 'backend'
   },

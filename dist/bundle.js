@@ -12922,7 +12922,7 @@ var importantSkills = exports.importantSkills = ['Rails', 'JavaScript', 'Typescr
 // 'CSS',
 // 'Java',
 // 'Angular',
-'React', 'AWS'];
+'React', 'AWS', 'SQL'];
 var ignoreSkills = exports.ignoreSkills = [
 // 'Haml',
 // 'RSpec',
@@ -40516,7 +40516,7 @@ exports.default = [{
   role: 'Lead developer',
   teamSize: 4,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS'],
+  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Knex.js', 'PostgreSQL', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'Klickrent website',
@@ -40584,7 +40584,7 @@ exports.default = [{
   role: 'Web developer',
   teamSize: 6,
 
-  skills: ['Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal', 'JavaScript', 'CSS'],
+  skills: ['Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal', 'PostgreSQL', 'SQL', 'JavaScript', 'CSS'],
   side: 'fullstack'
 }, {
   name: 'IFAB',
@@ -40601,7 +40601,7 @@ exports.default = [{
   role: 'Lead web developer',
   team: ['Junior web developer', 'Front-end developer'],
 
-  skills: ['Java', 'Spring', 'Gradle', 'Elasticsearch', 'JavaScript', 'Angular', 'CoffeeScript', 'Bootstrap', 'Sass', 'Jade', 'Responsive Design', 'CSS animations', 'CSS', 'gulp', 'UML'],
+  skills: ['Java', 'Spring', 'Hibernate', 'Gradle', 'Elasticsearch', 'PostgreSQL', 'SQL', 'JavaScript', 'Angular', 'CoffeeScript', 'Bootstrap', 'Sass', 'Jade', 'Responsive Design', 'CSS animations', 'CSS', 'gulp', 'UML'],
   side: 'fullstack'
 }, {
   name: 'DSO',
@@ -40618,7 +40618,7 @@ exports.default = [{
   role: 'Web developer',
   team: [],
 
-  skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS', 'Capistrano', 'PostgreSQL', 'UML'],
+  skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS', 'Capistrano', 'PostgreSQL', 'UML', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'Duplikaty',
@@ -40635,7 +40635,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['SQL Server developer', 'UI designer'],
 
-  skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS', 'PostgreSQL', 'UML'],
+  skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS', 'PostgreSQL', 'UML', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'the Incrediblest',
@@ -40669,7 +40669,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['SQL Server developer', 'Front-end developer'],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium', 'Angular', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS', 'PostgreSQL', 'UML'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium', 'Angular', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS', 'PostgreSQL', 'UML', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'Motabi Intelligence',
@@ -40686,7 +40686,7 @@ exports.default = [{
   role: 'Web developer',
   team: [],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium', 'Angular', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS animations', 'CSS', 'PostgreSQL', 'UML'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium', 'Angular', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS animations', 'CSS', 'PostgreSQL', 'UML', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'CERT',
@@ -40703,7 +40703,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['Web developer', 'Front-end developer'],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP', 'Haml', 'Capistrano', 'PostgreSQL', 'UML'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP', 'Haml', 'Capistrano', 'PostgreSQL', 'UML', 'SQL'],
   side: 'backend'
 }, {
   name: 'Logneto',
@@ -40720,7 +40720,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['2 Mobile developers'],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP', 'Haml', 'Bootstrap', 'CSS', 'Capistrano', 'UML'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP', 'Haml', 'Bootstrap', 'CSS', 'Capistrano', 'UML', 'PostgreSQL', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'Personal Lawyers',
@@ -40754,7 +40754,7 @@ exports.default = [{
   role: 'Lead developer',
   team: ['Developer'],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Haml', 'Capistrano'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Haml', 'Capistrano', 'Raspberry Pi'],
   side: 'backend'
 }, {
   name: 'Punktożercy',
@@ -40771,7 +40771,7 @@ exports.default = [{
   role: 'Lead web developer',
   team: ['Web developer', 'Front-end developer'],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Haml', 'Capistrano', 'UML'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Haml', 'Capistrano', 'UML', 'PostgreSQL', 'SQL'],
   side: 'backend'
 }, {
   name: 'Bluewhite',
@@ -40788,7 +40788,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['Senior web developer', 'Senior front-end developer', 'Tester'],
 
-  skills: ['Ruby', 'Rails', 'Haml', 'MySQL'],
+  skills: ['Ruby', 'Rails', 'Haml', 'MySQL', 'SQL'],
   side: 'backend'
 }, {
   name: 'Guarantees box',
@@ -40805,7 +40805,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['Senior web developer', 'Senior front-end developer', 'Tester'],
 
-  skills: ['Ruby', 'Rails', 'Haml', 'SQL'],
+  skills: ['Ruby', 'Rails', 'Haml', 'MySQL', 'SQL'],
   side: 'backend'
 }, {
   name: 'Induction game',
@@ -40822,7 +40822,7 @@ exports.default = [{
   role: 'Lead web developer',
   team: [],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'CSS', 'JavaScript', 'jQuery', 'JS animations', 'MySQL'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'CSS', 'JavaScript', 'jQuery', 'JS animations', 'MySQL', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'Documents database',
@@ -41026,7 +41026,7 @@ exports.default = [{
   role: 'Analyst',
   teamSize: 5,
 
-  skills: ['UML', 'Oracle', 'PL/SQL'],
+  skills: ['UML', 'Oracle', 'PL/SQL', 'SQL'],
   side: null
 }, {
   name: 'IACS',
@@ -41043,7 +41043,7 @@ exports.default = [{
   role: 'Analyst',
   team: [],
 
-  skills: ['UML', 'Oracle', 'PL/SQL'],
+  skills: ['UML', 'Oracle', 'PL/SQL', 'SQL'],
   side: null
 }, {
   name: 'Project management',
@@ -41111,7 +41111,7 @@ exports.default = [{
   role: 'Software architect',
   team: ['PHP developer'],
 
-  skills: ['PHP', 'SQL'],
+  skills: ['PHP', 'SQL', 'MySQL'],
   side: 'backend'
 }, {
   name: 'Projects database',
@@ -41145,7 +41145,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['Front-end developer'],
 
-  skills: ['PHP', 'SQL'],
+  skills: ['PHP', 'SQL', 'MySQL'],
   side: 'backend'
 }, {
   name: 'GOLF',
