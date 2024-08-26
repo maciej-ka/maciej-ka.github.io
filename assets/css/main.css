@@ -104,6 +104,12 @@ path.active,
   stroke-width: 3;
   stroke-linejoin: round;
 }
+.manager > * {
+  transform: translateY(-9px);
+}
+.analyst > * {
+  transform: translateY(-4px);
+}
 
 
 

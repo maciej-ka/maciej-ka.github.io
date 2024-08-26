@@ -71,6 +71,9 @@ class PieChart extends React.Component {
       .append('g')
       .attr('class', 'graph-label')
       .classed('developer', d => d.data.title == 'developer')
+      .classed('analyst', d => d.data.title == 'analyst')
+      .classed('architect', d => d.data.title == 'architect')
+      .classed('manager', d => d.data.title == 'manager')
       .attr('transform', function(d) { return `translate(${labelArc.centroid(d)})`; });
 
     g.append('text')

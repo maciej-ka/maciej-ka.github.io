@@ -41915,6 +41915,12 @@ var PieChart = function (_React$Component) {
         return _this2.isActive(d.data.title);
       }).enter().append('g').attr('class', 'graph-label').classed('developer', function (d) {
         return d.data.title == 'developer';
+      }).classed('analyst', function (d) {
+        return d.data.title == 'analyst';
+      }).classed('architect', function (d) {
+        return d.data.title == 'architect';
+      }).classed('manager', function (d) {
+        return d.data.title == 'manager';
       }).attr('transform', function (d) {
         return 'translate(' + labelArc.centroid(d) + ')';
       });
