@@ -135,6 +135,7 @@ mask .stroke {
 .important-skills .ago {
   margin-top: .30em;
   float: left;
+  white-space: nowrap;
 }
 .important-skills .subtitle {
   position: relative;

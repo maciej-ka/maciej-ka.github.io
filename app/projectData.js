@@ -16,7 +16,7 @@ export default [
     teamSize: 4,
 
     skills: [
-      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node', 'Typescript', 'AWS'
+      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS'
     ],
     side: 'fullstack'
   },

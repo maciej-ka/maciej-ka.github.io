@@ -12918,9 +12918,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 var roles = exports.roles = ['architect', 'developer', 'analyst', 'manager'];
 var sides = exports.sides = ['fullstack', 'backend', 'frontend', 'mobile', 'other'];
-var importantSkills = exports.importantSkills = ['Rails', 'JavaScript', 'Typescript', 'PHP',
+var importantSkills = exports.importantSkills = ['Rails', 'JavaScript', 'Typescript', 'PHP', 'Node.js',
 // 'CSS',
-'Java',
+// 'Java',
 // 'Angular',
 'React', 'AWS'];
 var ignoreSkills = exports.ignoreSkills = [
@@ -40504,7 +40504,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = [{
   name: 'AEC.View',
   start: '2020-02-01',
-  end: '',
+  end: '2024-08-01',
   description: 'Software to track position and status of corporate vessel fleets',
   link: '',
 
@@ -40516,7 +40516,7 @@ exports.default = [{
   role: 'Lead developer',
   teamSize: 4,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node', 'Typescript', 'AWS'],
+  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS'],
   side: 'fullstack'
 }, {
   name: 'Klickrent website',
