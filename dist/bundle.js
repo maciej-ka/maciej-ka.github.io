@@ -40504,7 +40504,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = [{
   name: 'AEC.View',
   start: '2020-02-01',
-  end: '2024-08-01',
+  end: '2024-09-01',
   description: 'Software to track position and status of corporate vessel fleets',
   link: '',
 
