@@ -40503,21 +40503,38 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = [{
   name: 'AEC.View',
-  start: '2020-02-01',
+  start: '2020-08-01',
   end: '2024-09-01',
   description: 'Software to track position and status of corporate vessel fleets',
-  link: '',
+  // link: 'https://www.zeppelin-powersystems.com/de/en/solutions/digital-solutions/aec-view/',
 
   company: 'Zeppelin Power Systems',
-  softwareHouse: 'IMPAQ',
+  softwareHouse: 'Inetum',
   form: 'Contractor',
   remote: true,
 
   role: 'Lead developer',
   teamSize: 4,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Knex.js', 'PostgreSQL', 'SQL'],
+  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Docker', 'Knex.js', 'PostgreSQL', 'SQL'],
   side: 'fullstack'
+}, {
+  name: 'Zamics',
+  start: '2020-02-01',
+  end: '2020-08-01',
+  description: 'App to run construction site warehouse using RFID and QR codes',
+  link: 'https://zamics.de/en/',
+
+  company: 'Zeppelin Labs',
+  softwareHouse: 'Inetum',
+  form: 'Contractor',
+  remote: true,
+
+  role: 'Mobile web developer',
+  teamSize: 3,
+
+  skills: ['JavaScript', 'Vue', 'Vuex', 'CSS', 'Docker', 'Android', 'RFID', 'QR Code'],
+  side: 'frontend'
 }, {
   name: 'Klickrent website',
   start: '2019-04-01',
@@ -40526,14 +40543,14 @@ exports.default = [{
   link: 'https://www.klickrent.de/',
 
   company: 'Klickrent',
-  softwareHouse: 'IMPAQ',
+  softwareHouse: 'Inetum',
   form: 'Contractor',
   remote: true,
 
   role: 'Web developer',
   teamSize: 4,
 
-  skills: ['JavaScript', 'Vue', 'Vuex', 'CSS', 'Sass', 'Typescript'],
+  skills: ['JavaScript', 'React', 'Redux', 'Next.js', 'CSS', 'Sass', 'Typescript'],
   side: 'frontend'
 }, {
   name: 'Globalmatix GUI',
@@ -40543,41 +40560,41 @@ exports.default = [{
   link: null,
 
   company: 'Globalmatix',
-  softwareHouse: 'IMPAQ',
+  softwareHouse: 'Inetum',
   form: 'Contractor',
   remote: true,
 
   role: 'Frontend developer',
   teamSize: 2,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana'],
+  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python'],
   side: 'frontend'
 }, {
   name: 'Immmr',
   start: '2016-12-01',
   end: '2018-09-01',
   description: 'VoIP client with video calls',
-  link: 'immmr.com',
+  link: null,
 
   company: 'Deutsche Telekom',
-  softwareHouse: 'IMPAQ',
+  softwareHouse: 'Inetum',
   form: 'Contractor',
   remote: true,
 
   role: 'Web developer',
   teamSize: 8,
 
-  skills: ['JavaScript', 'ES6', 'React', 'Redux', 'JSX', 'CSS', 'Webpack', 'Babel', 'Mocha', 'Enzyme'],
+  skills: ['JavaScript', 'ES6', 'React', 'Redux', 'JSX', 'Next.js', 'CSS', 'Webpack', 'Babel', 'Mocha', 'Enzyme'],
   side: 'frontend'
 }, {
   name: 'Immmr',
   start: '2016-08-01',
   end: '2016-12-01',
   description: 'VoIP client with video calls',
-  link: 'immmr.com',
+  link: null,
 
   company: 'Deutsche Telekom',
-  softwareHouse: 'IMPAQ',
+  softwareHouse: 'Inetum',
   form: 'Contractor',
   remote: true,
 
@@ -40727,7 +40744,7 @@ exports.default = [{
   start: '2014-05-01',
   end: '2014-06-01',
   description: 'Messanger for office and its customers',
-  link: 'personallawyers.pl',
+  link: null,
 
   company: 'Juszkiewicz Lawyers',
   softwareHouse: 'Hemnes',
@@ -40778,7 +40795,7 @@ exports.default = [{
   start: '2013-10-01',
   end: '2013-12-01',
   description: "Doctor's appointment bookings",
-  link: 'bluewhite.pl',
+  link: null,
 
   company: 'One99',
   softwareHouse: 'Beside the Park',
@@ -40795,7 +40812,7 @@ exports.default = [{
   start: '2013-07-01',
   end: '2013-10-01',
   description: 'Service to store digitalized receipts',
-  link: 'guaranteesbox.com',
+  link: null,
 
   company: 'Guarantees Box',
   softwareHouse: 'Beside the Park',
