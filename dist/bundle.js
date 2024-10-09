@@ -40584,7 +40584,7 @@ exports.default = [{
   role: 'Web developer',
   teamSize: 8,
 
-  skills: ['JavaScript', 'ES6', 'React', 'Redux', 'JSX', 'Next.js', 'CSS', 'Webpack', 'Babel', 'Mocha', 'Enzyme'],
+  skills: ['JavaScript', 'ES6', 'React', 'Redux', 'JSX', 'Next.js', 'CSS', 'CouchDB', 'NoSQL', 'Webpack', 'Babel', 'Mocha', 'Enzyme'],
   side: 'frontend'
 }, {
   name: 'Immmr',
