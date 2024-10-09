@@ -107,7 +107,7 @@ export default [
 
     skills: [
       'JavaScript', 'ES6', 'React', 'Redux', 'JSX', 'Next.js',
-      'CSS',
+      'CSS', 'CouchDB', 'NoSQL',
       'Webpack', 'Babel', 'Mocha', 'Enzyme'
     ],
     side: 'frontend'
