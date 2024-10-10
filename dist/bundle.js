@@ -40503,9 +40503,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = [{
   name: 'AEC.View',
-  start: '2020-08-01',
+  start: '2021-12-01',
   end: '2024-09-01',
   description: 'Software to track position and status of corporate vessel fleets',
+  link: null,
   // link: 'https://www.zeppelin-powersystems.com/de/en/solutions/digital-solutions/aec-view/',
 
   company: 'Zeppelin Power Systems',
@@ -40520,8 +40521,8 @@ exports.default = [{
   side: 'fullstack'
 }, {
   name: 'Zamics',
-  start: '2020-02-01',
-  end: '2020-08-01',
+  start: '2021-06-01',
+  end: '2021-12-01',
   description: 'App to run construction site warehouse using RFID and QR codes',
   link: 'https://zamics.de/en/',
 
@@ -40534,6 +40535,23 @@ exports.default = [{
   teamSize: 3,
 
   skills: ['JavaScript', 'Vue', 'Vuex', 'CSS', 'Docker', 'Android', 'RFID', 'QR Code'],
+  side: 'frontend'
+}, {
+  name: 'Globalmatix GUI',
+  start: '2020-02-01',
+  end: '2021-06-01',
+  description: 'Utility to manage reporting devices installed in cars',
+  link: null,
+
+  company: 'Globalmatix',
+  softwareHouse: 'Inetum',
+  form: 'Contractor',
+  remote: true,
+
+  role: 'Frontend developer',
+  teamSize: 2,
+
+  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python', 'UI design', 'Sketch'],
   side: 'frontend'
 }, {
   name: 'Klickrent website',
@@ -40553,22 +40571,39 @@ exports.default = [{
   skills: ['JavaScript', 'React', 'Redux', 'Next.js', 'CSS', 'Sass', 'Typescript'],
   side: 'frontend'
 }, {
-  name: 'Globalmatix GUI',
-  start: '2018-09-01',
+  name: 'Smart City',
+  start: '2018-11-01',
   end: '2019-04-01',
-  description: 'Utility to manage reporting devices installed in cars',
+  description: 'Dashboard with city statistics',
   link: null,
 
-  company: 'Globalmatix',
+  company: 'Deutche Telekom',
   softwareHouse: 'Inetum',
   form: 'Contractor',
   remote: true,
 
-  role: 'Frontend developer',
+  role: 'Lead web developer',
   teamSize: 2,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python'],
+  skills: ['JavaScript', 'React', 'Redux', 'CSS', 'Styleguidist', 'Jest', 'Cypress'],
   side: 'frontend'
+}, {
+  name: 'Nordex',
+  start: '2018-09-01',
+  end: '2018-11-01',
+  description: 'Web app for monitoring large wind farms',
+  link: null,
+
+  company: 'Nordex',
+  softwareHouse: 'Inetum',
+  form: 'Contractor',
+  remote: true,
+
+  role: 'Analyst',
+  teamSize: 2,
+
+  skills: ['UI design', 'Sketch'],
+  side: null
 }, {
   name: 'Immmr',
   start: '2016-12-01',
@@ -40635,7 +40670,7 @@ exports.default = [{
   role: 'Web developer',
   team: [],
 
-  skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS', 'Capistrano', 'PostgreSQL', 'UML', 'SQL'],
+  skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS', 'Capistrano', 'PostgreSQL', 'UML', 'SQL', 'UI design'],
   side: 'fullstack'
 }, {
   name: 'Duplikaty',
@@ -40652,7 +40687,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['SQL Server developer', 'UI designer'],
 
-  skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS', 'PostgreSQL', 'UML', 'SQL'],
+  skills: ['Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium', 'Ember', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS', 'PostgreSQL', 'UML', 'SQL', 'UI design'],
   side: 'fullstack'
 }, {
   name: 'the Incrediblest',
@@ -40686,7 +40721,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['SQL Server developer', 'Front-end developer'],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium', 'Angular', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS', 'PostgreSQL', 'UML', 'SQL'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium', 'Angular', 'JavaScript', 'CoffeeScript', 'Haml', 'Sass', 'CSS', 'PostgreSQL', 'UML', 'SQL', 'UI design'],
   side: 'fullstack'
 }, {
   name: 'Motabi Intelligence',
@@ -40737,7 +40772,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['2 Mobile developers'],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP', 'Haml', 'Bootstrap', 'CSS', 'Capistrano', 'UML', 'PostgreSQL', 'SQL'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP', 'Haml', 'Bootstrap', 'CSS', 'Capistrano', 'UML', 'PostgreSQL', 'SQL', 'UI design'],
   side: 'fullstack'
 }, {
   name: 'Personal Lawyers',
@@ -40754,7 +40789,7 @@ exports.default = [{
   role: 'Lead web developer',
   team: ['Web developer', 'Front-end developer'],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Haml', 'Capistrano'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'Capybara', 'Haml', 'Capistrano', 'UI design'],
   side: 'backend'
 }, {
   name: 'Commercial videos player',
@@ -40839,7 +40874,7 @@ exports.default = [{
   role: 'Lead web developer',
   team: [],
 
-  skills: ['Ruby', 'Rails', 'RSpec', 'CSS', 'JavaScript', 'jQuery', 'JS animations', 'MySQL', 'SQL'],
+  skills: ['Ruby', 'Rails', 'RSpec', 'CSS', 'JavaScript', 'jQuery', 'JS animations', 'MySQL', 'SQL', 'UI design'],
   side: 'fullstack'
 }, {
   name: 'Documents database',
@@ -40856,7 +40891,7 @@ exports.default = [{
   role: 'Web developer',
   team: [],
 
-  skills: ['PHP', 'Symfony', 'Doctrine', 'Lucene', 'JavaScript', 'jQuery', 'JS animations', 'MySQL', 'SQL'],
+  skills: ['PHP', 'Symfony', 'Doctrine', 'Lucene', 'JavaScript', 'jQuery', 'JS animations', 'MySQL', 'SQL', 'UI design'],
   side: 'fullstack'
 }, {
   name: 'Podręczniki na poczcie',
@@ -40873,7 +40908,7 @@ exports.default = [{
   role: 'Web developer',
   team: [],
 
-  skills: ['PHP', 'Symfony', 'Doctrine', 'CSS', 'JavaScript', 'jQuery', 'MySQL', 'SQL'],
+  skills: ['PHP', 'Symfony', 'Doctrine', 'CSS', 'JavaScript', 'jQuery', 'MySQL', 'SQL', 'UI design'],
   side: 'fullstack'
 }, {
   name: 'Prerelease surveys',
@@ -40890,7 +40925,7 @@ exports.default = [{
   role: 'Lead web developer',
   team: ['Web developer'],
 
-  skills: ['PHP', 'Symfony', 'Doctrine', 'CSS', 'JavaScript', 'jQuery', 'MySQL', 'SQL'],
+  skills: ['PHP', 'Symfony', 'Doctrine', 'CSS', 'JavaScript', 'jQuery', 'MySQL', 'SQL', 'UI design'],
   side: 'fullstack'
 }, {
   name: 'Open\'er',
@@ -41196,7 +41231,7 @@ exports.default = [{
   role: 'Developer',
   team: [],
 
-  skills: ['ActionScript'],
+  skills: ['ActionScript', 'UI design'],
   side: 'frontend'
 }, {
   name: 'Warsaw creator',
@@ -41230,7 +41265,7 @@ exports.default = [{
   role: 'Web developer',
   team: [],
 
-  skills: ['PHP', 'CSS'],
+  skills: ['PHP', 'CSS', 'UI design'],
   side: 'fullstack'
 }];
 

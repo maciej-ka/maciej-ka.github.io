@@ -2,9 +2,10 @@ export default [
 
   {
     name: 'AEC.View',
-    start: '2020-08-01',
+    start: '2021-12-01',
     end: '2024-09-01',
     description: 'Software to track position and status of corporate vessel fleets',
+    link: null,
     // link: 'https://www.zeppelin-powersystems.com/de/en/solutions/digital-solutions/aec-view/',
 
     company: 'Zeppelin Power Systems',
@@ -25,8 +26,8 @@ export default [
 
   {
     name: 'Zamics',
-    start: '2020-02-01',
-    end: '2020-08-01',
+    start: '2021-06-01',
+    end: '2021-12-01',
     description: 'App to run construction site warehouse using RFID and QR codes',
     link: 'https://zamics.de/en/',
 
@@ -43,6 +44,31 @@ export default [
     ],
     side: 'frontend'
   },
+
+
+
+  {
+    name: 'Globalmatix GUI',
+    start: '2020-02-01',
+    end: '2021-06-01',
+    description: 'Utility to manage reporting devices installed in cars',
+    link: null,
+
+    company: 'Globalmatix',
+    softwareHouse: 'Inetum',
+    form: 'Contractor',
+    remote: true,
+
+    role: 'Frontend developer',
+    teamSize: 2,
+
+    skills: [
+      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python', 'UI design', 'Sketch'
+    ],
+    side: 'frontend'
+  },
+
+
 
   {
     name: 'Klickrent website',
@@ -68,24 +94,43 @@ export default [
 
 
   {
-    name: 'Globalmatix GUI',
-    start: '2018-09-01',
+    name: 'Smart City',
+    start: '2018-11-01',
     end: '2019-04-01',
-    description: 'Utility to manage reporting devices installed in cars',
+    description: 'Dashboard with city statistics',
     link: null,
 
-    company: 'Globalmatix',
+    company: 'Deutche Telekom',
     softwareHouse: 'Inetum',
     form: 'Contractor',
     remote: true,
 
-    role: 'Frontend developer',
+    role: 'Lead web developer',
     teamSize: 2,
 
-    skills: [
-      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python'
-    ],
+    skills: [ 'JavaScript', 'React', 'Redux', 'CSS', 'Styleguidist', 'Jest', 'Cypress'],
     side: 'frontend'
+  },
+
+
+
+  {
+    name: 'Nordex',
+    start: '2018-09-01',
+    end: '2018-11-01',
+    description: 'Web app for monitoring large wind farms',
+    link: null,
+
+    company: 'Nordex',
+    softwareHouse: 'Inetum',
+    form: 'Contractor',
+    remote: true,
+
+    role: 'Analyst',
+    teamSize: 2,
+
+    skills: [ 'UI design', 'Sketch' ],
+    side: null
   },
 
 
@@ -185,7 +230,7 @@ export default [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium',
       'Ember', 'JavaScript', 'CoffeeScript',
       'Haml', 'Bootstrap', 'Sass', 'CSS animations', 'CSS',
-      'Capistrano', 'PostgreSQL', 'UML', 'SQL'
+      'Capistrano', 'PostgreSQL', 'UML', 'SQL', 'UI design'
     ],
     side: 'fullstack'
   },
@@ -211,7 +256,7 @@ export default [
       'Ruby', 'Rails', 'Minitest', 'Capybara', 'Selenium',
       'Ember', 'JavaScript', 'CoffeeScript',
       'Haml', 'Sass', 'CSS',
-      'PostgreSQL', 'UML', 'SQL'
+      'PostgreSQL', 'UML', 'SQL', 'UI design'
     ],
     side: 'fullstack'
   },
@@ -261,7 +306,7 @@ export default [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'Selenium',
       'Angular', 'JavaScript', 'CoffeeScript',
       'Haml', 'Sass', 'CSS',
-      'PostgreSQL', 'UML', 'SQL'
+      'PostgreSQL', 'UML', 'SQL', 'UI design'
     ],
     side: 'fullstack'
   },
@@ -337,7 +382,7 @@ export default [
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara', 'SOAP',
       'Haml', 'Bootstrap',  'CSS',
-      'Capistrano', 'UML', 'PostgreSQL', 'SQL'
+      'Capistrano', 'UML', 'PostgreSQL', 'SQL', 'UI design'
     ],
     side: 'fullstack'
   },
@@ -362,7 +407,7 @@ export default [
     skills: [
       'Ruby', 'Rails', 'RSpec', 'Capybara',
       'Haml',
-      'Capistrano'
+      'Capistrano', 'UI design'
     ],
     side: 'backend'
   },
@@ -488,7 +533,7 @@ export default [
       'Ruby', 'Rails', 'RSpec',
       'CSS',
       'JavaScript', 'jQuery', 'JS animations',
-      'MySQL', 'SQL'
+      'MySQL', 'SQL', 'UI design'
     ],
     side: 'fullstack'
   },
@@ -513,7 +558,7 @@ export default [
     skills: [
       'PHP', 'Symfony', 'Doctrine', 'Lucene',
       'JavaScript', 'jQuery', 'JS animations',
-      'MySQL', 'SQL'
+      'MySQL', 'SQL', 'UI design'
     ],
     side: 'fullstack'
   },
@@ -539,7 +584,7 @@ export default [
       'PHP', 'Symfony', 'Doctrine',
       'CSS',
       'JavaScript', 'jQuery',
-      'MySQL', 'SQL'
+      'MySQL', 'SQL', 'UI design'
     ],
     side: 'fullstack'
   },
@@ -565,7 +610,7 @@ export default [
       'PHP', 'Symfony', 'Doctrine',
       'CSS',
       'JavaScript', 'jQuery',
-      'MySQL', 'SQL'
+      'MySQL', 'SQL', 'UI design'
     ],
     side: 'fullstack'
   },
@@ -986,7 +1031,7 @@ export default [
     team: [],
 
     skills: [
-      'ActionScript'
+      'ActionScript', 'UI design'
     ],
     side: 'frontend'
   },
@@ -1032,7 +1077,7 @@ export default [
     team: [],
 
     skills: [
-      'PHP',  'CSS'
+      'PHP',  'CSS', 'UI design'
     ],
     side: 'fullstack'
   }
