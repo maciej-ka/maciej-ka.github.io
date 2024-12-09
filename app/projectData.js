@@ -1,6 +1,29 @@
 export default [
 
   {
+    name: 'Yousty',
+    start: '2024-09-01',
+    end: '2025-01-01',
+    description: 'Portal to find matching apprencieships for Switzerland students',
+    link: 'https://www.yousty.ch/de-CH',
+
+    company: 'Yousty',
+    softwareHouse: 'Inetum',
+    form: 'Contractor',
+    remote: true,
+
+    role: 'Senior frontend developer',
+    teamSize: 7,
+
+    skills: [
+      'JavaScript', 'React', 'Next.js', 'Server Components', 'Zustand', 'Storybook', 'Atomic design', 'CSS', 'Sass', 'Typescript'
+    ],
+    side: 'frontend'
+  },
+
+
+
+  {
     name: 'AEC.View',
     start: '2021-12-01',
     end: '2024-09-01',
@@ -176,7 +199,7 @@ export default [
     teamSize: 6,
 
     skills: [
-      'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'microservices', 'PayPal', 'PostgreSQL', 'SQL',
+      'Ruby', 'Rails', 'Rspec', 'Rabbit', 'messaging', 'Kibana', 'Microservices', 'PayPal', 'PostgreSQL', 'SQL',
       'JavaScript',
       'CSS'
     ],
