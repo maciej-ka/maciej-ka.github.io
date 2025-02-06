@@ -767,7 +767,7 @@ export default [
     name: 'Online job postings observer',
     start: '2009-02-01',
     end: '2009-05-01',
-    description: 'Tool to crawl and process online job postings',
+    description: 'Tool to crawl, scrap and process online job postings',
     link: null,
 
     company: 'Gemius',
