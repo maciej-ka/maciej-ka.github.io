@@ -40503,7 +40503,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = [{
   name: 'Yousty',
-  start: '2024-09-01',
+  start: '2024-10-01',
   end: '2025-01-01',
   description: 'Portal to find matching apprencieships for Switzerland students',
   link: 'https://www.yousty.ch/de-CH',
@@ -40520,7 +40520,7 @@ exports.default = [{
   side: 'frontend'
 }, {
   name: 'AEC.View',
-  start: '2021-12-01',
+  start: '2020-02-01',
   end: '2024-09-01',
   description: 'Software to track position and status of corporate vessel fleets',
   link: null,
@@ -40538,8 +40538,8 @@ exports.default = [{
   side: 'fullstack'
 }, {
   name: 'Zamics',
-  start: '2021-06-01',
-  end: '2021-12-01',
+  start: '2020-01-01',
+  end: '2020-02-01',
   description: 'App to run construction site warehouse using RFID and QR codes',
   link: 'https://zamics.de/en/',
 
@@ -40555,8 +40555,8 @@ exports.default = [{
   side: 'frontend'
 }, {
   name: 'Globalmatix GUI',
-  start: '2020-02-01',
-  end: '2021-06-01',
+  start: '2019-04-01',
+  end: '2020-01-01',
   description: 'Utility to manage reporting devices installed in cars',
   link: null,
 
@@ -40572,8 +40572,8 @@ exports.default = [{
   side: 'frontend'
 }, {
   name: 'Klickrent website',
-  start: '2019-04-01',
-  end: '2020-02-01',
+  start: '2019-02-01',
+  end: '2019-04-01',
   description: 'Portal to order big construction machines',
   link: 'https://www.klickrent.de/',
 
@@ -40590,7 +40590,7 @@ exports.default = [{
 }, {
   name: 'Smart City',
   start: '2018-11-01',
-  end: '2019-04-01',
+  end: '2019-02-01',
   description: 'Dashboard with city statistics',
   link: null,
 
@@ -41033,7 +41033,7 @@ exports.default = [{
   name: 'Online job postings observer',
   start: '2009-02-01',
   end: '2009-05-01',
-  description: 'Tool to crawl and process online job postings',
+  description: 'Tool to crawl, scrap and process online job postings',
   link: null,
 
   company: 'Gemius',

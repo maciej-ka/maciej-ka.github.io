@@ -2,7 +2,7 @@ export default [
 
   {
     name: 'Yousty',
-    start: '2024-09-01',
+    start: '2024-10-01',
     end: '2025-01-01',
     description: 'Portal to find matching apprencieships for Switzerland students',
     link: 'https://www.yousty.ch/de-CH',
@@ -25,7 +25,7 @@ export default [
 
   {
     name: 'AEC.View',
-    start: '2021-12-01',
+    start: '2020-02-01',
     end: '2024-09-01',
     description: 'Software to track position and status of corporate vessel fleets',
     link: null,
@@ -49,8 +49,8 @@ export default [
 
   {
     name: 'Zamics',
-    start: '2021-06-01',
-    end: '2021-12-01',
+    start: '2020-01-01',
+    end: '2020-02-01',
     description: 'App to run construction site warehouse using RFID and QR codes',
     link: 'https://zamics.de/en/',
 
@@ -72,8 +72,8 @@ export default [
 
   {
     name: 'Globalmatix GUI',
-    start: '2020-02-01',
-    end: '2021-06-01',
+    start: '2019-04-01',
+    end: '2020-01-01',
     description: 'Utility to manage reporting devices installed in cars',
     link: null,
 
@@ -95,8 +95,8 @@ export default [
 
   {
     name: 'Klickrent website',
-    start: '2019-04-01',
-    end: '2020-02-01',
+    start: '2019-02-01',
+    end: '2019-04-01',
     description: 'Portal to order big construction machines',
     link: 'https://www.klickrent.de/',
 
@@ -119,7 +119,7 @@ export default [
   {
     name: 'Smart City',
     start: '2018-11-01',
-    end: '2019-04-01',
+    end: '2019-02-01',
     description: 'Dashboard with city statistics',
     link: null,
 
