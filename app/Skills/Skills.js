@@ -23,7 +23,10 @@ class Skills extends React.Component {
       for (let month in calendar[year]) {
         calendar[year][month].skills.forEach(skill => {
           durations[skill] = (durations[skill] || 0) + 1;
-          lastUsed[skill] = [(lastUsed[skill] || '1990'), `${year}-${parseInt(month) + 1}`].sort()[1];
+          lastUsed[skill] = [(lastUsed[skill] || '1990'), `${year}-${(parseInt(month) + 1).toString().padStart(2,0)}`].sort()[1];
+          if(skill === 'JavaScript') {
+            console.log([(lastUsed[skill] || '1990'), `${year}-${(parseInt(month) + 1).toString().padStart(2,0)}`].sort());
+          }
         });
       }
     }

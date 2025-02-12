@@ -43418,7 +43418,10 @@ var Skills = function (_React$Component) {
         var _loop2 = function _loop2(month) {
           calendar[year][month].skills.forEach(function (skill) {
             durations[skill] = (durations[skill] || 0) + 1;
-            lastUsed[skill] = [lastUsed[skill] || '1990', year + '-' + (parseInt(month) + 1)].sort()[1];
+            lastUsed[skill] = [lastUsed[skill] || '1990', year + '-' + (parseInt(month) + 1).toString().padStart(2, 0)].sort()[1];
+            if (skill === 'JavaScript') {
+              console.log([lastUsed[skill] || '1990', year + '-' + (parseInt(month) + 1).toString().padStart(2, 0)].sort());
+            }
           });
         };
 
