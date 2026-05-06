@@ -1,6 +1,43 @@
 export default [
 
   {
+    name: "NoCode-X",
+    end: null,
+    start: '2025-06-01',
+    description: "Low code plaform",
+    link: "https://www.nocode-x.com/",
+
+    company: "NoCode-X",
+    softwareHouse: "UpVanta",
+    form: "Contractor",
+    remote: true,
+
+    role: "Senior Software Engineer",
+    teamSize: 2,
+
+    skills: [
+      "Angular",
+      "Cloud",
+      "Docker",
+      "GCP",
+      "Helm",
+      "Hibernate",
+      "Java",
+      "Junit",
+      "Kafka",
+      "Kubernetes",
+      "MongoDB",
+      "MySQL",
+      "Playwright",
+      "React",
+      "Spring",
+      "Typescript",
+      "UML",
+    ],
+    side: "fullstack",
+  },
+
+  {
     name: 'Yousty',
     start: '2024-10-01',
     end: '2025-01-01',
@@ -40,7 +77,7 @@ export default [
     teamSize: 4,
 
     skills: [
-      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Docker', 'Knex.js', 'PostgreSQL', 'SQL'
+      'Cloud', 'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Docker', 'Knex.js', 'PostgreSQL', 'SQL'
     ],
     side: 'fullstack'
   },
@@ -86,7 +123,7 @@ export default [
     teamSize: 2,
 
     skills: [
-      'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python', 'UI design', 'Sketch'
+      'Cloud', 'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python', 'UI design', 'Sketch'
     ],
     side: 'frontend'
   },
@@ -916,7 +953,7 @@ export default [
     team: [],
 
     skills: [
-      'Java'
+      'Java', 'UML'
     ],
     side: 'backend'
   },
@@ -962,7 +999,7 @@ export default [
     team: ['PHP developer'],
 
     skills: [
-      'PHP', 'SQL', 'MySQL'
+      'PHP', 'SQL', 'MySQL', 'UML'
     ],
     side: 'backend'
   },
@@ -1008,7 +1045,7 @@ export default [
     team: ['Front-end developer'],
 
     skills: [
-      'PHP', 'SQL', 'MySQL'
+      'PHP', 'SQL', 'MySQL', 'UML'
     ],
     side: 'backend'
   },

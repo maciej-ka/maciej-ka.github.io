@@ -5,13 +5,16 @@ export const importantSkills = [
   'JavaScript',
   'Typescript',
   'PHP',
-  'Node.js',
+  // 'Node.js',
   // 'CSS',
-  // 'Java',
+  'Java',
+  // 'GCP',
   // 'Angular',
   'React',
-  'AWS',
-  'SQL'
+  // 'AWS',
+  'SQL',
+  'Cloud',
+  'UML'
 ];
 export const ignoreSkills = [
   // 'Haml',

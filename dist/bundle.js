@@ -12918,11 +12918,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 var roles = exports.roles = ['architect', 'developer', 'analyst', 'manager'];
 var sides = exports.sides = ['fullstack', 'backend', 'frontend', 'mobile', 'other'];
-var importantSkills = exports.importantSkills = ['Rails', 'JavaScript', 'Typescript', 'PHP', 'Node.js',
+var importantSkills = exports.importantSkills = ['Rails', 'JavaScript', 'Typescript', 'PHP',
+// 'Node.js',
 // 'CSS',
-// 'Java',
+'Java',
+// 'GCP',
 // 'Angular',
-'React', 'AWS', 'SQL'];
+'React',
+// 'AWS',
+'SQL', 'Cloud', 'UML'];
 var ignoreSkills = exports.ignoreSkills = [
 // 'Haml',
 // 'RSpec',
@@ -40502,6 +40506,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = [{
+  name: "NoCode-X",
+  end: null,
+  start: '2025-06-01',
+  description: "Low code plaform",
+  link: "https://www.nocode-x.com/",
+
+  company: "NoCode-X",
+  softwareHouse: "UpVanta",
+  form: "Contractor",
+  remote: true,
+
+  role: "Senior Software Engineer",
+  teamSize: 2,
+
+  skills: ["Angular", "Cloud", "Docker", "GCP", "Helm", "Hibernate", "Java", "Junit", "Kafka", "Kubernetes", "MongoDB", "MySQL", "Playwright", "React", "Spring", "Typescript", "UML"],
+  side: "fullstack"
+}, {
   name: 'Yousty',
   start: '2024-10-01',
   end: '2025-01-01',
@@ -40534,7 +40555,7 @@ exports.default = [{
   role: 'Lead developer',
   teamSize: 4,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Docker', 'Knex.js', 'PostgreSQL', 'SQL'],
+  skills: ['Cloud', 'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Docker', 'Knex.js', 'PostgreSQL', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'Zamics',
@@ -40568,7 +40589,7 @@ exports.default = [{
   role: 'Frontend developer',
   teamSize: 2,
 
-  skills: ['JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python', 'UI design', 'Sketch'],
+  skills: ['Cloud', 'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'GraphQL', 'Can Bus', 'AWS', 'Kibana', 'Amplify', 'Appsync', 'Apollo', 'WSO2', 'Python', 'UI design', 'Sketch'],
   side: 'frontend'
 }, {
   name: 'Klickrent website',
@@ -41146,7 +41167,7 @@ exports.default = [{
   role: 'Developer',
   team: [],
 
-  skills: ['Java'],
+  skills: ['Java', 'UML'],
   side: 'backend'
 }, {
   name: 'ERP',
@@ -41180,7 +41201,7 @@ exports.default = [{
   role: 'Software architect',
   team: ['PHP developer'],
 
-  skills: ['PHP', 'SQL', 'MySQL'],
+  skills: ['PHP', 'SQL', 'MySQL', 'UML'],
   side: 'backend'
 }, {
   name: 'Projects database',
@@ -41214,7 +41235,7 @@ exports.default = [{
   role: 'Web developer',
   team: ['Front-end developer'],
 
-  skills: ['PHP', 'SQL', 'MySQL'],
+  skills: ['PHP', 'SQL', 'MySQL', 'UML'],
   side: 'backend'
 }, {
   name: 'GOLF',
@@ -42374,7 +42395,7 @@ var Portfolio = function (_React$Component) {
             null,
             _react2.default.createElement(
               'a',
-              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka+-org%3Azepdev+-org%3Amaciej-ka' },
+              { target: '_blank', href: 'https://github.com/pulls?q=is%3Apr+author%3Amaciej-ka+-user%3Amaciej-ka' },
               'contributions'
             )
           )
