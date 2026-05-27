@@ -12,7 +12,7 @@ export default [
     form: "Contractor",
     remote: true,
 
-    role: "Senior Software Engineer",
+    role: "Senior software developer",
     teamSize: 2,
 
     skills: [
