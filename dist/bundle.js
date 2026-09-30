@@ -40555,7 +40555,7 @@ exports.default = [{
   role: 'Lead developer',
   teamSize: 4,
 
-  skills: ['Cloud', 'JavaScript', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Docker', 'Knex.js', 'PostgreSQL', 'SQL'],
+  skills: ['Cloud', 'JavaScript', 'Java', 'React', 'Redux', 'Styleguidist', 'Jest', 'Cypress', 'CSS', 'Express', 'Node.js', 'Typescript', 'AWS', 'Docker', 'Knex.js', 'PostgreSQL', 'SQL'],
   side: 'fullstack'
 }, {
   name: 'Zamics',
